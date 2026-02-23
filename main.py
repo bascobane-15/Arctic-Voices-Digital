@@ -165,9 +165,11 @@ elif menu == "🎮 Kültür Keşfi":
 
     st.title("🧭 Arctic Voices - Kültür Keşfi")
 
+    st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
+
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Sami"]
+        ["Seçiniz", "Sami", "Inuit", "Nenets"]
     )
 
     if culture == "Sami":
@@ -228,11 +230,11 @@ elif answer in ["Inuit", "Nenets"]:
 
     # ===================== DİĞERLERİ =====================
 
-    elif culture == "Inuit":
+elif culture == "Inuit":
         st.header("Inuit Kültürü")
         st.write("Yakında eklenecek...")
 
-    elif culture == "Nenets":
+elif culture == "Nenets":
         st.header("Nenets Kültürü")
         st.write("Yakında eklenecek...")
 
