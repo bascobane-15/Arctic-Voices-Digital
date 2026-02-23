@@ -56,31 +56,24 @@ if menu == "Ana Sayfa":
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("""
-        <div class="glass-card">
-            <h2>Inuit</h2>
-            <img src="inuit.jpg" width="100%">
-            <p>Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+        st.header("Inuit")
+        st.image("inuit.jpg", use_container_width=True)
+        st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown("""
-        <div class="glass-card">
-            <h2>Sami</h2>
-            <img src="sami.jpg" width="100%">
-            <p>İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+        st.header("Sami")
+        st.image("sami.jpg", use_container_width=True)
+        st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="glass-card">
-        <h2>Nenets</h2>
-        <img src="nenets.jpg" width="100%">
-        <p>Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.header("Nenets")
+    st.image("nenets.jpg", use_container_width=True)
+    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
 # -------------------------
 # HARİTA
 # -------------------------
