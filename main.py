@@ -216,6 +216,7 @@ elif menu == "🎮 Kültür Keşfi":
 
        
     # ===================== INUIT =====================
+       
         # ===================== INUIT =====================
     elif culture == "Inuit":
 
@@ -257,6 +258,7 @@ elif menu == "🎮 Kültür Keşfi":
         st.divider()
 
         st.info("💡 Inuit kültürü doğayla uyum, dayanıklılık ve topluluk dayanışmasına dayanır.")
+        
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
