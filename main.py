@@ -254,7 +254,7 @@ elif menu == "Kültür Keşfi":
    # 🎮Eğlenerek Öğrenelim
    # -------------------------
 
-   elif menu == "🎮 Eğlenerek Öğrenelim":
+    elif menu == "🎮 Eğlenerek Öğrenelim":
 
        st.title("🎯 Arctic Bilgi Görevleri")
        st.write("Sayfalardaki bilgileri okuduysan şimdi kendini test etme vakti!")
