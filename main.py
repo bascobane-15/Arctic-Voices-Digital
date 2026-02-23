@@ -117,23 +117,32 @@ if menu == "Kültürel Harita":
 # -------------------------
 elif menu == "NASA İklim Verisi":
 
-    st.header("📈 NASA GISTEMP Arktik Sıcaklık Anomalisi")
+    st.title("📈 NASA & NOAA İklim Verileri")
 
-    # NASA GISTEMP veri seti (gerçek veri)
-    url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
-    df = pd.read_csv(url, skiprows=1)
+    st.subheader("🌍 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
-    df = df[["Year", "J-D"]]
-    df.columns = ["Year", "Temperature Anomaly"]
-    df = df.dropna()
+    try:
+        url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+        df = pd.read_csv(url, skiprows=1)
 
-    fig = px.line(df, x="Year", y="Temperature Anomaly",
-                  title="NASA Küresel Sıcaklık Anomalisi (1880-Günümüz)")
+        df = df[["Year", "J-D"]]
+        df.columns = ["Year", "Temperature Anomaly (°C)"]
+        df = df.dropna()
 
-    fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="white")
-    )
+        fig = px.line(
+            df,
+            x="Year",
+            y="Temperature Anomaly (°C)",
+            title="NASA GISTEMP Küresel Sıcaklık Anomalisi (1880–Günümüz)"
+        )
 
-    st.plotly_chart(fig, use_container_width=True)
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="white")
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+    except:
+        st.error("NASA verisine erişilemedi. İnternet bağlantısını kontrol edin.")
