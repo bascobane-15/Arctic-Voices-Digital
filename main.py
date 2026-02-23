@@ -217,8 +217,7 @@ elif menu == "🎮 Kültür Keşfi":
        
     # ===================== INUIT =====================
        
-        # ===================== INUIT =====================
-    elif culture == "Inuit":
+elif culture == "Inuit":
 
         st.header("🧊 Inuit Kültürü")
 
@@ -230,7 +229,7 @@ elif menu == "🎮 Kültür Keşfi":
         Katmanlı yapı vücut ısısını korur.
         """)
 
-        st.image("inuit_clothing.jpg", use_container_width=True)
+        st.image("inuitclothes.jpg", use_container_width=True)
 
         st.divider()
 
