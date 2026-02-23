@@ -115,56 +115,45 @@ if menu == "Kültürel Harita":
 # -------------------------
 # NASA GERÇEK VERİ
 # -------------------------
-elif menu == "NASA İklim Verisi":
+    st.subheader("🧊 NOAA Arctic Sea Ice Extent")
 
-    st.title("📈 NASA & NOAA İklim Verileri")
+    try:
+        noaa_url = "https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/N_09_extent_v3.0.csv"
+        sea_ice = pd.read_csv(noaa_url)
 
-    url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
-    df = pd.read_csv(url, skiprows=1)
+        sea_ice = sea_ice[["Year", "Extent"]]
 
-    df = df[["Year", "J-D"]]
-    df.columns = ["Year", "Temperature"]
-    df = df.dropna()
+        fig2 = px.line(
+            sea_ice,
+            x="Year",
+            y="Extent",
+            title="NOAA Arctic Sea Ice Extent (1979–Günümüz)"
+        )
 
-    # Slider ile yıl filtresi
-    min_year = int(df["Year"].min())
-    max_year = int(df["Year"].max())
-
-    year_range = st.slider(
-        "Yıl Aralığını Seçin",
-        min_year,
-        max_year,
-        (1950, max_year)
+        fig.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="white", size=14),
+    title=dict(
+        text="NASA GISTEMP Küresel Sıcaklık Anomalisi (1880–Günümüz)",
+        font=dict(size=22, color="white"),
+        x=0.5
+    ),
+    xaxis=dict(
+        title="Yıl",
+        title_font=dict(size=16, color="white"),
+        tickfont=dict(color="white"),
+        gridcolor="rgba(255,255,255,0.2)"
+    ),
+    yaxis=dict(
+        title="Sıcaklık Anomalisi (°C)",
+        title_font=dict(size=16, color="white"),
+        tickfont=dict(color="white"),
+        gridcolor="rgba(255,255,255,0.2)"
     )
+)
 
-    df = df[(df["Year"] >= year_range[0]) & (df["Year"] <= year_range[1])]
+        st.plotly_chart(fig2, use_container_width=True)
 
-    # 5 yıllık hareketli ortalama
-    df["5-Year Moving Avg"] = df["Temperature"].rolling(5).mean()
-
-    fig = px.line(
-        df,
-        x="Year",
-        y=["Temperature", "5-Year Moving Avg"],
-        title="NASA Küresel Sıcaklık Anomalisi"
-    )
-
-    fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="white"),
-        title=dict(
-            font=dict(size=22, color="white"),
-            x=0.5
-        ),
-        xaxis=dict(gridcolor="rgba(255,255,255,0.2)"),
-        yaxis=dict(gridcolor="rgba(255,255,255,0.2)")
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    # Trend yorumu
-    if df["Temperature"].iloc[-1] > df["Temperature"].iloc[0]:
-        st.success("📈 Seçilen dönem boyunca genel sıcaklık artış trendi gözlemlenmektedir.")
-    else:
-        st.info("Belirgin bir artış trendi gözlemlenmemektedir.")
+    except:
+        st.error("NOAA deniz buzu verisine erişilemedi.")
