@@ -11,9 +11,15 @@ st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout=
 st.markdown("""
 <style>
 
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
 .glass-card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 20px;
     margin: 15px 0px;
@@ -26,8 +32,17 @@ st.markdown("""
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
+h1, h2, h3, p {
+    color: white;
+}
+
+img {
+    border-radius: 15px;
+}
+
 </style>
 """, unsafe_allow_html=True)
+
 st.title("🌍 Arctic Voices Digital")
 st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
