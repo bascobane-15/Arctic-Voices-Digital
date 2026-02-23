@@ -244,6 +244,7 @@ elif menu == "🎮 Kültür Keşfi":
     st.markdown('</div>', unsafe_allow_html=True)
 
     # --- GÖREV 3: NENETS ---
+    
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.subheader("3. Nenets Kültür Görevi")
     if "Nenets" in st.session_state.tamamlananlar:
