@@ -152,7 +152,6 @@ if menu == "Kültürel Harita":
         gridcolor="rgba(255,255,255,0.2)"
     )
 )
-
         st.plotly_chart(fig2, use_container_width=True)
 
     except:
