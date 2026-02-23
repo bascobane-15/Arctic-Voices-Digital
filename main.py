@@ -42,7 +42,7 @@ st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
     "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮Kültür Keşfi" ]
+    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮 Kültür Keşfi"]
 )
 
 # -------------------------
@@ -159,109 +159,93 @@ elif menu == "NASA İklim Verisi":
         st.error("NASA verisine erişilemedi.")
 
 # -------------------------
-# KÜLTÜR KEŞFİ & EĞLENCE
+# KÜLTÜR KEŞFİ
 # -------------------------
 
-# Puanı ve tamamlananları saklamak için başlangıç kontrolü (Dosyanın üst kısımlarında yoksa burada çalışır)
-if "puan" not in st.session_state:
-    st.session_state.puan = 0
-if "tamamlananlar" not in st.session_state:
-    st.session_state.tamamlananlar = set()
+elif menu == "🎮 Kültür Keşfi":
 
-if menu == "Kültür Keşfi":
     st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
 
-    # 🎨 RADIO YAZI RENGİ DÜZELTME
+    # 🎨 RADIO YAZI RENGİ DÜZELTME (BURAYA EKLENDİ)
     st.markdown("""
     <style>
-    div[data-testid="stRadio"] label { color: white !important; font-weight: 500; }
-    div[data-testid="stRadio"] div[role="radiogroup"] label { color: white !important; }
+    div[data-testid="stRadio"] label {
+        color: white !important;
+        font-weight: 500;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] label {
+        color: white !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
-    culture = st.selectbox("Topluluk Seç:", ["Seçiniz", "Sami", "Inuit", "Nenets"])
+    culture = st.selectbox(
+        "Topluluk Seç:",
+        ["Seçiniz", "Sami", "Inuit", "Nenets"]
+    )
 
+    # ===================== SAMI =====================
     if culture == "Sami":
+
         st.header("🎭 Sami Kültürü")
+
+        # ================= Kıyafet =================
         st.subheader("👘 Geleneksel Kıyafet: Gákti")
-        st.write("Gákti, Sami halkının geleneksel kıyafetidir. Renkler ve desenler kişinin bölgesini simgeler.")
+
+        st.write("""
+        Gákti, Sami halkının geleneksel kıyafetidir.
+        Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
+        """)
+
         st.image("gakti.jpg", use_container_width=True)
+
         st.divider()
+
+        # ================= Müzik =================
         st.subheader("🎵 Joik Müziği")
-        st.write("Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.")
+
+        st.write("""
+        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
+        Bir kişiyi, doğayı veya bir varlığı temsil eder.
+        """)
+
         st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
 
-    elif culture == "Inuit":
-        st.header("🧊 Inuit Kültürü")
-        st.subheader("👘 Geleneksel Kıyafet")
-        st.write("Inuitler aşırı soğuk koşullara uyum sağlayan kürk parkalar giyerler.")
-        st.image("inuit_clothing.jpg", use_container_width=True)
         st.divider()
+
+       
+    # ===================== INUIT =====================
+    elif culture == "Inuit":
+
+        st.header("🧊 Inuit Kültürü")
+
+        st.subheader("👘 Geleneksel Kıyafet")
+
+        st.write("""
+        Inuitler aşırı soğuk koşullara uyum sağlayan kürk parkalar giyerler.
+        Bu parkalar genellikle fok veya karibu derisinden yapılır.
+        Katmanlı yapı vücut ısısını korur.
+        """)
+
+        st.image("inuit_clothing.jpg", use_container_width=True)
+
+        st.divider()
+        
         st.subheader("🏠 İgloo ve Modern Yaşam")
-        st.write("İgloo kar bloklarından yapılan geçici barınaklardır.")
+
+        st.write("""
+        İgloo kar bloklarından yapılan geçici barınaklardır.
+        Günümüzde Inuit toplulukları modern evlerde yaşamaktadır,
+        ancak geleneksel bilgi ve avcılık kültürü devam etmektedir.
+        """)
+
         st.image("igloo.jpg", use_container_width=True)
 
+        st.divider()
+
+        st.info("💡 Inuit kültürü doğayla uyum, dayanıklılık ve topluluk dayanışmasına dayanır.")
+    # ===================== NENETS =====================
     elif culture == "Nenets":
-        st.header("🦌 Nenets Kültürü")
-        st.write("Nenetsler, Sibirya tundrasının kadim ren geyiği çobanlarıdır.")
-        st.image("nenets.jpg", use_container_width=True)
-
-elif menu == "🎮 Kültür Keşfi":
-    st.title("🎯 Arctic Bilgi Görevleri")
-    st.write("Öğrendiğin bilgileri test etme vakti! Her görev 10 puan değerindedir.")
-
-    # --- GÖREV 1: SAMI ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("1. Sami Kültür Görevi")
-    if "Sami" in st.session_state.tamamlananlar:
-        st.success("✅ Tamamlandı! (Joik Müziğini öğrendin)")
-    else:
-        secim1 = st.radio("Sami geleneksel müziğine ne ad verilir?", ["Kanto", "Joik", "Haka"], key="sami_q")
-        if st.button("Sami Cevabını Onayla"):
-            if secim1 == "Joik":
-                st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("Sami")
-                st.rerun()
-            else:
-                st.error("Yanlış! İpucu: Ana sayfadaki Sami kısmına bak.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # --- GÖREV 2: INUIT ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("2. Inuit Kültür Görevi")
-    if "Inuit" in st.session_state.tamamlananlar:
-        st.success("✅ Tamamlandı! (İgloo yapısını öğrendin)")
-    else:
-        secim2 = st.radio("İgloo inşasında hangi tip kar tercih edilir?", ["Yumuşak Kar", "Sıkışmış Sert Kar", "Islak Kar"], key="inuit_q")
-        if st.button("Inuit Cevabını Onayla"):
-            if secim2 == "Sıkışmış Sert Kar":
-                st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("Inuit")
-                st.rerun()
-            else:
-                st.error("Yanlış! İpucu: Sert bloklar rüzgara dayanır.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # --- GÖREV 3: NENETS ---
-    
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("3. Nenets Kültür Görevi")
-    if "Nenets" in st.session_state.tamamlananlar:
-        st.success("✅ Tamamlandı! (Ren Geyiği Çobanlığını öğrendin)")
-    else:
-        secim3 = st.radio("Nenets halkı hangi hayvanın sürülerinden sorumludur?", ["Kutup Ayısı", "Ren Geyiği", "Kurt"], key="nenets_q")
-        if st.button("Nenets Cevabını Onayla"):
-            if secim3 == "Ren Geyiği":
-                st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("Nenets")
-                st.rerun()
-            else:
-                st.error("Yanlış! Onlar tundranın kadim geyik çobanlarıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # Final Kutlaması
-    if len(st.session_state.tamamlananlar) == 3:
-        st.balloons()
-        st.sidebar.success(f"🏆 Toplam Puanın: {st.session_state.puan}")
-        st.success("Tebrikler! Tüm görevleri başarıyla tamamladın!")
+        st.header("Nenets Kültürü")
+        st.write("Yakında eklenecek...")
