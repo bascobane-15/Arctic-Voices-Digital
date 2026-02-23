@@ -42,7 +42,7 @@ st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
     "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", " Kültür Keşfi". "🎮Eğlenerek Öğrenelim" ]
+    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", " Kültür Keşfi", "🎮Eğlenerek Öğrenelim" ]
 )
 
 # -------------------------
