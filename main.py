@@ -45,35 +45,21 @@ menu = st.sidebar.radio("Menü", ["Ana Sayfa", "Kültürel Harita", "NASA İklim
 # -------------------------
 if menu == "Ana Sayfa":
 
-    # INUIT
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
-    st.markdown(
-        '<img src="inuit.jpg" style="width:100%; height:400px; object-fit:cover; border-radius:15px;">',
-        unsafe_allow_html=True
-    )
+    st.image("inuit.jpg", use_container_width=True)
     st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-
-    # SAMI
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Sami")
-    st.markdown(
-        '<img src="sami.jpg" style="width:100%; height:400px; object-fit:cover; border-radius:15px;">',
-        unsafe_allow_html=True
-    )
+    st.image("sami.jpg", use_container_width=True)
     st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-
-    # NENETS
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Nenets")
-    st.markdown(
-        '<img src="nenets.jpg" style="width:100%; height:400px; object-fit:cover; border-radius:15px;">',
-        unsafe_allow_html=True
-    )
+    st.image("nenets.jpg", use_container_width=True)
     st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 # -------------------------
