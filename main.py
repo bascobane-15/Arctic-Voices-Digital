@@ -42,7 +42,7 @@ st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
     "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮 Kültür Keşfi"]
+    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", " Kültür Keşfi". "🎮Eğlenerek Öğrenelim" ]
 )
 
 # -------------------------
@@ -162,7 +162,7 @@ elif menu == "NASA İklim Verisi":
 # KÜLTÜR KEŞFİ
 # -------------------------
 
-elif menu == "🎮 Kültür Keşfi":
+elif menu == "Kültür Keşfi":
 
     st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
@@ -249,3 +249,71 @@ elif menu == "🎮 Kültür Keşfi":
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
         st.write("Yakında eklenecek...")
+        
+   # -------------------------
+   # 🎮Eğlenerek Öğrenelim
+   # -------------------------
+
+   elif menu == "🎮 Eğlenerek Öğrenelim":
+
+       st.title("🎯 Arctic Bilgi Görevleri")
+       st.write("Sayfalardaki bilgileri okuduysan şimdi kendini test etme vakti!")
+
+    # Puanı ve tamamlananları saklamak için (Koda daha önce eklemediysen buraya ekliyoruz)
+    if "puan" not in st.session_state:
+        st.session_state.puan = 0
+    if "tamamlananlar" not in st.session_state:
+        st.session_state.tamamlananlar = set()
+
+    # --- GÖREV 1: SAMI ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("1. Sami Kültür Görevi")
+    if "Sami" in st.session_state.tamamlananlar:
+        st.success("✅ Tamamlandı! (Joik Müziğini öğrendin)")
+    else:
+        secim1 = st.radio("Sami geleneksel müziğine ne ad verilir?", ["Kanto", "Joik", "Haka"], key="sami_q")
+        if st.button("Sami Cevabını Onayla"):
+            if secim1 == "Joik":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Sami")
+                st.rerun()
+            else:
+                st.error("Yanlış! İpucu: Ana sayfadaki Sami kısmına bak.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- GÖREV 2: INUIT ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("2. Inuit Kültür Görevi")
+    if "Inuit" in st.session_state.tamamlananlar:
+        st.success("✅ Tamamlandı! (İgloo yapısını öğrendin)")
+    else:
+        secim2 = st.radio("İgloo inşasında hangi tip kar tercih edilir?", ["Yumuşak Kar", "Sıkışmış Sert Kar", "Islak Kar"], key="inuit_q")
+        if st.button("Inuit Cevabını Onayla"):
+            if secim2 == "Sıkışmış Sert Kar":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Inuit")
+                st.rerun()
+            else:
+                st.error("Yanlış! İpucu: Sert bloklar rüzgara dayanır.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- GÖREV 3: NENETS ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("3. Nenets Kültür Görevi")
+    if "Nenets" in st.session_state.tamamlananlar:
+        st.success("✅ Tamamlandı! (Ren Geyiği Çobanlığını öğrendin)")
+    else:
+        secim3 = st.radio("Nenets halkı hangi hayvanın sürülerinden sorumludur?", ["Kutup Ayısı", "Ren Geyiği", "Kurt"], key="nenets_q")
+        if st.button("Nenets Cevabını Onayla"):
+            if secim3 == "Ren Geyiği":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Nenets")
+                st.rerun()
+            else:
+                st.error("Yanlış! Onlar tundranın kadim geyik çobanlarıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # Final Kutlaması
+    if len(st.session_state.tamamlananlar) == 3:
+        st.balloons()
+        st.sidebar.success(f"🏆 Toplam Puanın: {st.session_state.puan}")
