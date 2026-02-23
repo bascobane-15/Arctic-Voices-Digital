@@ -11,33 +11,25 @@ st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout=
 st.markdown("""
 <style>
 
+/* Ana arka plan */
 [data-testid="stAppViewContainer"] {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 15px 0px;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.3s ease;
+/* Sidebar arka plan */
+[data-testid="stSidebar"] {
+    background: #0f2027;
 }
 
-.glass-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+/* Sidebar yazılar */
+[data-testid="stSidebar"] * {
+    color: white !important;
 }
 
-h1, h2, h3, p {
-    color: white;
-}
-
-img {
-    border-radius: 15px;
+/* Radio buton yazıları */
+div[role="radiogroup"] label {
+    color: white !important;
 }
 
 </style>
