@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import pydeck as pdk
+import folium
+from streamlit_folium import st_folium
 
 st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout="wide")
 
@@ -65,32 +67,50 @@ if menu == "Ana Sayfa":
 # -------------------------
 # HARİTA
 # -------------------------
-elif menu == "Kültürel Harita":
 
-    st.header("🗺️ Yerli Halkların Coğrafi Dağılımı")
+if menu == "Kültürel Harita":
 
-    data = pd.DataFrame({
-        "Topluluk": ["Inuit", "Sami", "Nenets"],
-        "lat": [64.2008, 68.9690, 67.5000],
-        "lon": [-149.4937, 23.2710, 63.0000]
-    })
+    st.title("🗺️ Arktik Yerli Kültür Haritası")
 
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=data,
-        get_position='[lon, lat]',
-        get_radius=200000,
-        get_fill_color=[79, 195, 247],
-        pickable=True
+    # Harita merkezi (Arktik bölge)
+    m = folium.Map(
+        location=[70, 0],
+        zoom_start=3,
+        tiles="CartoDB dark_matter"
     )
 
-    view_state = pdk.ViewState(latitude=68, longitude=20, zoom=2)
+    # Inuit
+    folium.Marker(
+        location=[64.2, -51.7],  # Grönland
+        popup="""
+        <b>Inuit</b><br>
+        Kanada, Alaska ve Grönland'da yaşayan Arktik halk.
+        """,
+        icon=folium.Icon(color="blue", icon="info-sign")
+    ).add_to(m)
 
-    st.pydeck_chart(pdk.Deck(
-        layers=[layer],
-        initial_view_state=view_state,
-        tooltip={"text": "{Topluluk}"}
-    ))
+    # Sami
+    folium.Marker(
+        location=[68.5, 23.6],  # Norveç-Finlandiya bölgesi
+        popup="""
+        <b>Sami</b><br>
+        İskandinavya'nın kuzeyinde yaşayan yerli topluluk.
+        """,
+        icon=folium.Icon(color="green", icon="info-sign")
+    ).add_to(m)
+
+    # Nenets
+    folium.Marker(
+        location=[67.5, 53.0],  # Rusya tundra
+        popup="""
+        <b>Nenets</b><br>
+        Sibirya tundrasında göçebe ren geyiği çobanları.
+        """,
+        icon=folium.Icon(color="red", icon="info-sign")
+    ).add_to(m)
+
+    # Haritayı göster
+    st_folium(m, width=900, height=600)
 
 # -------------------------
 # NASA GERÇEK VERİ
