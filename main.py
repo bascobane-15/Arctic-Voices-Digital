@@ -214,21 +214,7 @@ elif menu == "🎮 Kültür Keşfi":
 
         st.divider()
 
-        # ================= Quiz =================
-        st.subheader("🧠 Mini Quiz")
-
-        answer = st.radio(
-            "Gákti hangi topluluğa aittir?",
-            ["Inuit", "Sami", "Nenets"],
-            key="sami_quiz"
-        )
-
-        if answer == "Sami":
-            st.success("🎉 Doğru! Sami kültürünü keşfettin!")
-            st.balloons()
-        elif answer in ["Inuit", "Nenets"]:
-            st.error("❌ Tekrar dene!")
-
+       
     # ===================== INUIT =====================
     elif culture == "Inuit":
         st.header("Inuit Kültürü")
