@@ -40,7 +40,10 @@ div[role="radiogroup"] label {
 st.title("🌍 Arctic Voices Digital")
 st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
-menu = st.sidebar.radio("Menü", ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi"])
+menu = st.sidebar.selectbox(
+    "Sayfa Seç",
+    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮 Kültür Keşfi"]
+)
 
 # -------------------------
 # ANA SAYFA - KART TASARIMI
@@ -154,3 +157,30 @@ elif menu == "NASA İklim Verisi":
 
     except:
         st.error("NASA verisine erişilemedi.")
+# -------------------------
+# NASA GERÇEK VERİ 
+# -------------------------
+
+
+elif menu == "🎮 Kültür Keşfi":
+
+    st.title("🧭 Arctic Voices - Kültür Keşfi")
+
+    st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
+
+    culture = st.selectbox(
+        "Topluluk Seç:",
+        ["Seçiniz", "Inuit", "Sami", "Nenets"]
+    )
+
+    if culture == "Inuit":
+        st.header("Inuit Kültürü")
+        st.write("Detaylar birazdan eklenecek...")
+
+    elif culture == "Sami":
+        st.header("Sami Kültürü")
+        st.write("Detaylar birazdan eklenecek...")
+
+    elif culture == "Nenets":
+        st.header("Nenets Kültürü")
+        st.write("Detaylar birazdan eklenecek...")
