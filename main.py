@@ -1,113 +1,82 @@
-import streamlit as st
 import pandas as pd
 import plotly.express as px
 import pydeck as pdk
 
-st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout="wide")
+import streamlit as st
 
-# -------------------------
-# GLASSMORPHISM CSS
-# -------------------------
+st.set_page_config(page_title="Arctic Voices Digital", layout="wide")
+
+# ------------------ GLASSMORPHISM CSS ------------------
+
 st.markdown("""
 <style>
 body {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
+
 .glass-card {
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-radius: 20px;
     padding: 25px;
-    margin: 15px 0px;
-    border: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
 }
-h1, h2, h3 {
-    color: #4FC3F7;
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+img {
+    border-radius: 15px;
+    margin-top: 15px;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌍 Arctic Voices Digital")
-st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
+# ------------------ HEADER ------------------
 
-menu = st.sidebar.radio("Menü", ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi"])
+st.markdown("<h1 style='color:white;'>🌍 Arctic Voices Digital</h1>", unsafe_allow_html=True)
+st.write(" ")
 
-# -------------------------
-# ANA SAYFA - KART TASARIMI
-# -------------------------
-if menu == "Ana Sayfa":
+# ------------------ CARD GRID ------------------
 
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Inuit")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/8/8d/Inuit_family.jpg")
-    st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
+col1, col2 = st.columns(2)
 
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Sami")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/3/3a/Sami_people.jpg")
-    st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
-    st.markdown('</div>', unsafe_allow_html=True)
+with col1:
+    st.markdown("""
+    <div class="glass-card">
+        <div class="card-title">Inuit</div>
+        <div class="card-text">
+        Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.
+        Deniz buzuna dayalı avcılık kültürü ve dayanıklı yaşam biçimi ile bilinir.
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Inuit_family_1906.jpg" width="100%">
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Nenets")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/0/0c/Nenets_people.jpg")
-    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# -------------------------
-# HARİTA
-# -------------------------
-elif menu == "Kültürel Harita":
-
-    st.header("🗺️ Yerli Halkların Coğrafi Dağılımı")
-
-    data = pd.DataFrame({
-        "Topluluk": ["Inuit", "Sami", "Nenets"],
-        "lat": [64.2008, 68.9690, 67.5000],
-        "lon": [-149.4937, 23.2710, 63.0000]
-    })
-
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=data,
-        get_position='[lon, lat]',
-        get_radius=200000,
-        get_fill_color=[79, 195, 247],
-        pickable=True
-    )
-
-    view_state = pdk.ViewState(latitude=68, longitude=20, zoom=2)
-
-    st.pydeck_chart(pdk.Deck(
-        layers=[layer],
-        initial_view_state=view_state,
-        tooltip={"text": "{Topluluk}"}
-    ))
-
-# -------------------------
-# NASA GERÇEK VERİ
-# -------------------------
-elif menu == "NASA İklim Verisi":
-
-    st.header("📈 NASA GISTEMP Arktik Sıcaklık Anomalisi")
-
-    # NASA GISTEMP veri seti (gerçek veri)
-    url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
-    df = pd.read_csv(url, skiprows=1)
-
-    df = df[["Year", "J-D"]]
-    df.columns = ["Year", "Temperature Anomaly"]
-    df = df.dropna()
-
-    fig = px.line(df, x="Year", y="Temperature Anomaly",
-                  title="NASA Küresel Sıcaklık Anomalisi (1880-Günümüz)")
-
-    fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="white")
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
+with col2:
+    st.markdown("""
+    <div class="glass-card">
+        <div class="card-title">Sami</div>
+        <div class="card-text">
+        İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.
+        Ren geyiği yetiştiriciliği ve geleneksel joik müziği ile tanınır.
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Sami_people_1900.jpg" width="100%">
+    </div>
+    """, unsafe_allow_html=True)
