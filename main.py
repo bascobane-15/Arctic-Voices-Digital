@@ -216,10 +216,47 @@ elif menu == "🎮 Kültür Keşfi":
 
        
     # ===================== INUIT =====================
+        # ===================== INUIT =====================
     elif culture == "Inuit":
-        st.header("Inuit Kültürü")
-        st.write("Yakında eklenecek...")
 
+        st.header("🧊 Inuit Kültürü")
+
+        st.subheader("👘 Geleneksel Kıyafet")
+
+        st.write("""
+        Inuitler aşırı soğuk koşullara uyum sağlayan kürk parkalar giyerler.
+        Bu parkalar genellikle fok veya karibu derisinden yapılır.
+        Katmanlı yapı vücut ısısını korur.
+        """)
+
+        st.image("inuit_clothing.jpg", use_container_width=True)
+
+        st.divider()
+
+        st.subheader("🛷 Ulaşım ve Yaşam")
+
+        st.write("""
+        Geleneksel olarak köpekli kızaklar (qamutik) kullanılır.
+        Ayrıca kayak ve küçük tekneler (kayak) avcılıkta önemli rol oynar.
+        """)
+
+        st.image("inuit_sled.jpg", use_container_width=True)
+
+        st.divider()
+
+        st.subheader("🏠 İgloo ve Modern Yaşam")
+
+        st.write("""
+        İgloo kar bloklarından yapılan geçici barınaklardır.
+        Günümüzde Inuit toplulukları modern evlerde yaşamaktadır,
+        ancak geleneksel bilgi ve avcılık kültürü devam etmektedir.
+        """)
+
+        st.image("igloo.jpg", use_container_width=True)
+
+        st.divider()
+
+        st.info("💡 Inuit kültürü doğayla uyum, dayanıklılık ve topluluk dayanışmasına dayanır.")
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
