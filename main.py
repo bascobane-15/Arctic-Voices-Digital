@@ -137,10 +137,27 @@ elif menu == "NASA İklim Verisi":
         )
 
         fig.update_layout(
-            plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)",
-            font=dict(color="white")
-        )
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="white", size=14),
+    title=dict(
+        text="NASA GISTEMP Küresel Sıcaklık Anomalisi (1880–Günümüz)",
+        font=dict(size=22, color="white"),
+        x=0.5
+    ),
+    xaxis=dict(
+        title="Yıl",
+        title_font=dict(size=16, color="white"),
+        tickfont=dict(color="white"),
+        gridcolor="rgba(255,255,255,0.2)"
+    ),
+    yaxis=dict(
+        title="Sıcaklık Anomalisi (°C)",
+        title_font=dict(size=16, color="white"),
+        tickfont=dict(color="white"),
+        gridcolor="rgba(255,255,255,0.2)"
+    )
+)
 
         st.plotly_chart(fig, use_container_width=True)
 
