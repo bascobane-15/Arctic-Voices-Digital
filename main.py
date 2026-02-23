@@ -40,19 +40,19 @@ if menu == "Ana Sayfa":
 
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/8/8d/Inuit_family.jpg")
+    st.image("inuit.jpg", use_container_width=True)
     st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Sami")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/3/3a/Sami_people.jpg")
+    st.image("sami.jpg", use_container_width=True)
     st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Nenets")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/0/0c/Nenets_people.jpg")
+    st.image("nenets.jpg", use_container_width=True)
     st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 
