@@ -165,57 +165,54 @@ elif menu == "🎮 Kültür Keşfi":
 
     st.title("🧭 Arctic Voices - Kültür Keşfi")
 
-    st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
-
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Inuit", "Sami", "Nenets"]
+        ["Seçiniz", "Sami"]
     )
-
-    # ===================== SAMI =====================
 
     if culture == "Sami":
 
         st.header("🎭 Sami Kültürü")
 
+        # ================= Kıyafet =================
         st.subheader("👘 Geleneksel Kıyafet: Gákti")
 
         st.write("""
         Gákti, Sami halkının geleneksel kıyafetidir.
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
-        Törenlerde ve günlük yaşamda farklı versiyonları kullanılır.
         """)
 
-        st.image(
-            "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sami_people_traditional_clothing.jpg",
-            use_container_width=True
-        )
+        # 📌 main.py ile aynı klasördeyse bu yeterli
+        st.image("gakti.jpg", use_container_width=True)
 
         st.divider()
 
+        # ================= Müzik =================
         st.subheader("🎵 Joik Müziği")
 
         st.write("""
         Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
-        Bir kişiyi, hayvanı ya da doğa unsurunu temsil eder.
-        Şarkı söylemekten çok, 'varlığı sesle ifade etme' geleneğidir.
+        Bir kişiyi, doğayı veya bir varlığı temsil eder.
         """)
 
-        st.video("https://www.youtube.com/watch?v=4YFJxZ3kzv4")
+        # Doğru embed formatı
+        st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
 
         st.divider()
 
+        # ================= Quiz =================
         st.subheader("🧠 Mini Quiz")
 
         answer = st.radio(
             "Gákti hangi topluluğa aittir?",
-            ["Inuit", "Sami", "Nenets"]
+            ["Inuit", "Sami", "Nenets"],
+            key="sami_quiz"
         )
 
         if answer == "Sami":
             st.success("🎉 Doğru! Sami kültürünü keşfettin!")
             st.balloons()
-        elif answer:
+        elif answer in ["Inuit", "Nenets"]:
             st.error("❌ Tekrar dene!")
 
     # ===================== DİĞERLERİ =====================
