@@ -360,8 +360,75 @@ elif menu == "🎮 Görev Merkezi":
                 st.session_state.tamamlananlar.add("Av")
                 st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
+    # --- 8. KUTUP AYISI SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "KutupAyisi" in st.session_state.tamamlananlar:
+        st.success("✅ Kutup ayısı uzmanlığı tamam!")
+    else:
+        bear_q = st.radio("🐻 Kutup ayılarının derisi aslında ne renktir?", ["Beyaz", "Siyah", "Pembe"], key="q8")
+        if st.button("Ayı Bilgisini Onayla"):
+            # İlginç bilgi: Kutup ayılarının tüyleri şeffaftır, altındaki derileri güneş ısısını emmek için siyahtır!
+            if bear_q == "Siyah":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("KutupAyisi")
+                st.rerun()
+            else:
+                st.error("Yanlış! İpucu: Güneş ısısını en iyi hangi renk emer?")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 9. NARVAL (DENİZ GERGEDANI) SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Narval" in st.session_state.tamamlananlar:
+        st.success("✅ Deniz Gergedanı uzmanlığı tamam!")
+    else:
+        narval_q = st.radio("🦄 'Deniz Tekboynuzu' olarak bilinen, uzun bir dişi olan kutup canlısı hangisidir?", ["Mors", "Narval", "Beluga"], key="q9")
+        if st.button("Narval Cevabını Onayla"):
+            if narval_q == "Narval":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Narval")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 10. KUZEY IŞIKLARI SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Aurora" in st.session_state.tamamlananlar:
+        st.success("✅ Gökyüzü olayları öğrenildi!")
+    else:
+        aurora_q = st.radio("✨ Kuzey gökyüzünde görülen renkli ışık dansına ne ad verilir?", ["Aurora Borealis", "Meteor Yağmuru", "Samanyolu"], key="q10")
+        if st.button("Aurora Cevabını Onayla"):
+            if aurora_q == "Aurora Borealis":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Aurora")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 11. HAYVAN ADAPTASYONU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Adaptasyon" in st.session_state.tamamlananlar:
+        st.success("✅ Hayatta kalma uzmanlığı!")
+    else:
+        adapt_q = st.radio("🦊 Arctic tilkisi (Kutup Tilkisi) neden kışın beyaz, yazın ise kahverengidir?", ["Moda için", "Kamuflaj (Gizlenme) için", "Daha iyi duymak için"], key="q11")
+        if st.button("Adaptasyon Cevabını Onayla"):
+            if adapt_q == "Kamuflaj (Gizlenme) için":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Adaptasyon")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 12. MORS SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Mors" in st.session_state.tamamlananlar:
+        st.success("✅ Mors bilgisi eklendi!")
+    else:
+        walrus_q = st.radio("🐘 Hangi Arctic hayvanı devasa dişlerini buzun üzerine tırmanmak için bir 'çapa' gibi kullanır?", ["Mors", "Fok", "Deniz Aslanı"], key="q12")
+        if st.button("Mors Cevabını Onayla"):
+            if walrus_q == "Mors":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Mors")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
 
     # Final Durumu
-    if len(st.session_state.tamamlananlar) == 7:
+    if len(st.session_state.tamamlananlar) == 12:
         st.balloons()
-        st.success("🎉 İNANILMAZ! 7 Görevin tamamını bitirdin ve gerçek bir 'Kutup Kaşifi' oldun!")
+        st.success("🎉 İNANILMAZ! 12 Görevin tamamını bitirdin ve gerçek bir 'Kutup Kaşifi' oldun!")
