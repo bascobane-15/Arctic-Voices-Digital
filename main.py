@@ -82,28 +82,4 @@ with col2:
         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Sami_people_1900.jpg" width="100%">
     </div>
     """, unsafe_allow_html=True)
-# -------------------------
-# NASA GERÇEK VERİ
-# -------------------------
-elif menu == "NASA İklim Verisi":
 
-    st.header("📈 NASA GISTEMP Arktik Sıcaklık Anomalisi")
-
-    # NASA GISTEMP veri seti (gerçek veri)
-    url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
-    df = pd.read_csv(url, skiprows=1)
-
-    df = df[["Year", "J-D"]]
-    df.columns = ["Year", "Temperature Anomaly"]
-    df = df.dropna()
-
-    fig = px.line(df, x="Year", y="Temperature Anomaly",
-                  title="NASA Küresel Sıcaklık Anomalisi (1880-Günümüz)")
-
-    fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="white")
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
