@@ -262,50 +262,63 @@ elif menu == "🎮 Görev Merkezi":
 
     st.sidebar.metric("🏆 Toplam Puan", st.session_state.puan)
 
+    # Radyo buton metinlerini beyaza zorlayan CSS (Sadece bu sayfada etkili olur)
+    st.markdown("""
+        <style>
+        div[data-testid="stRadio"] label p { color: white !important; font-size: 1.1rem; font-weight: 500; }
+        </style>
+    """, unsafe_allow_html=True)
+
     # --- SAMI SORUSU ---
-    with st.expander("Sami Kültür Testi", expanded=True):
-        if "Sami" in st.session_state.tamamlananlar:
-            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
-        else:
-            sami_soru = st.radio("Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
-            if st.button("Sami Cevabını Gönder"):
-                if sami_soru == "Joik":
-                    st.session_state.puan += 10
-                    st.session_state.tamamlananlar.add("Sami")
-                    st.balloons()
-                    st.rerun()
-                else:
-                    st.error("Yanlış! Kültür Keşfi sayfasına tekrar göz atmak ister misin?")
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("❄️ Sami Kültür Testi")
+    if "Sami" in st.session_state.tamamlananlar:
+        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+    else:
+        sami_soru = st.radio("Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
+        if st.button("Sami Cevabını Gönder"):
+            if sami_soru == "Joik":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Sami")
+                st.balloons()
+                st.rerun()
+            else:
+                st.error("Yanlış! Kültür Keşfi sayfasına tekrar göz atmak ister misin?")
+    st.markdown('</div>', unsafe_allow_html=True)
 
     # --- INUIT SORUSU ---
-    with st.expander("Inuit Kültür Testi", expanded=True):
-        if "Inuit" in st.session_state.tamamlananlar:
-            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
-        else:
-            inuit_soru = st.radio("İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
-            if st.button("Inuit Cevabını Gönder"):
-                if inuit_soru == "Sıkışmış Sert Kar":
-                    st.session_state.puan += 10
-                    st.session_state.tamamlananlar.add("Inuit")
-                    st.balloons()
-                    st.rerun()
-                else:
-                    st.error("Maalesef yanlış. İpuçlarını iyi oku!")
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("🏠 Inuit Kültür Testi")
+    if "Inuit" in st.session_state.tamamlananlar:
+        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+    else:
+        inuit_soru = st.radio("İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
+        if st.button("Inuit Cevabını Gönder"):
+            if inuit_soru == "Sıkışmış Sert Kar":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Inuit")
+                st.balloons()
+                st.rerun()
+            else:
+                st.error("Maalesef yanlış. İpuçlarını iyi oku!")
+    st.markdown('</div>', unsafe_allow_html=True)
 
     # --- NENETS SORUSU ---
-    with st.expander("Nenets Kültür Testi", expanded=True):
-        if "Nenets" in st.session_state.tamamlananlar:
-            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
-        else:
-            nenets_soru = st.radio("Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
-            if st.button("Nenets Cevabını Gönder"):
-                if nenets_soru == "Ren Geyiği":
-                    st.session_state.puan += 10
-                    st.session_state.tamamlananlar.add("Nenets")
-                    st.balloons()
-                    st.rerun()
-                else:
-                    st.error("Yanlış cevap! Nenetslerin en sadık dostlarını hatırla.")
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.subheader("🦌 Nenets Kültür Testi")
+    if "Nenets" in st.session_state.tamamlananlar:
+        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+    else:
+        nenets_soru = st.radio("Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
+        if st.button("Nenets Cevabını Gönder"):
+            if nenets_soru == "Ren Geyiği":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Nenets")
+                st.balloons()
+                st.rerun()
+            else:
+                st.error("Yanlış cevap! Nenetslerin en sadık dostlarını hatırla.")
+    st.markdown('</div>', unsafe_allow_html=True)
 
     # Final Durumu
     if len(st.session_state.tamamlananlar) == 3:
