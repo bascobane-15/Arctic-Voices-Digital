@@ -130,7 +130,7 @@ if menu == "Kültürel Harita":
             title="NOAA Arctic Sea Ice Extent (1979–Günümüz)"
         )
 
-        fig.update_layout(
+        fig2.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     paper_bgcolor="rgba(0,0,0,0)",
     font=dict(color="white", size=14),
