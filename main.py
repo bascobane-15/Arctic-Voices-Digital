@@ -8,6 +8,9 @@ st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout=
 # -------------------------
 # GLASSMORPHISM CSS
 # -------------------------
+st.markdown("""
+<style>
+
 .glass-card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
@@ -23,6 +26,8 @@ st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout=
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
+</style>
+""", unsafe_allow_html=True)
 st.title("🌍 Arctic Voices Digital")
 st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
