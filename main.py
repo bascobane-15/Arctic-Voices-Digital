@@ -157,21 +157,35 @@ elif menu == "NASA İklim Verisi":
 
     except:
         st.error("NASA verisine erişilemedi.")
+
 # -------------------------
-# KÜLTÜRKEŞFİ
+# KÜLTÜR KEŞFİ
 # -------------------------
 
 elif menu == "🎮 Kültür Keşfi":
 
     st.title("🧭 Arctic Voices - Kültür Keşfi")
-
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
+
+    # 🎨 RADIO YAZI RENGİ DÜZELTME (BURAYA EKLENDİ)
+    st.markdown("""
+    <style>
+    div[data-testid="stRadio"] label {
+        color: white !important;
+        font-weight: 500;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] label {
+        color: white !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     culture = st.selectbox(
         "Topluluk Seç:",
         ["Seçiniz", "Sami", "Inuit", "Nenets"]
     )
 
+    # ===================== SAMI =====================
     if culture == "Sami":
 
         st.header("🎭 Sami Kültürü")
@@ -184,7 +198,6 @@ elif menu == "🎮 Kültür Keşfi":
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
 
-        # 📌 main.py ile aynı klasördeyse bu yeterli
         st.image("gakti.jpg", use_container_width=True)
 
         st.divider()
@@ -197,44 +210,31 @@ elif menu == "🎮 Kültür Keşfi":
         Bir kişiyi, doğayı veya bir varlığı temsil eder.
         """)
 
-        # Doğru embed formatı
         st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
 
         st.divider()
 
-      # ================= Quiz =================
-st.subheader("🧠 Mini Quiz")
+        # ================= Quiz =================
+        st.subheader("🧠 Mini Quiz")
 
-st.markdown("""
-<div style="
-    background-color:#f8f9fa;
-    padding:20px;
-    border-radius:10px;
-    color:black;
-">
-""", unsafe_allow_html=True)
+        answer = st.radio(
+            "Gákti hangi topluluğa aittir?",
+            ["Inuit", "Sami", "Nenets"],
+            key="sami_quiz"
+        )
 
-answer = st.radio(
-    "Gákti hangi topluluğa aittir?",
-    ["Inuit", "Sami", "Nenets"],
-    key="sami_quiz"
-)
+        if answer == "Sami":
+            st.success("🎉 Doğru! Sami kültürünü keşfettin!")
+            st.balloons()
+        elif answer in ["Inuit", "Nenets"]:
+            st.error("❌ Tekrar dene!")
 
-st.markdown("</div>", unsafe_allow_html=True)
-
-if answer == "Sami":
-    st.success("🎉 Doğru! Sami kültürünü keşfettin!")
-    st.balloons()
-elif answer in ["Inuit", "Nenets"]:
-    st.error("❌ Tekrar dene!")
-
-    # ===================== DİĞERLERİ =====================
-
-elif culture == "Inuit":
+    # ===================== INUIT =====================
+    elif culture == "Inuit":
         st.header("Inuit Kültürü")
         st.write("Yakında eklenecek...")
 
-elif culture == "Nenets":
+    # ===================== NENETS =====================
+    elif culture == "Nenets":
         st.header("Nenets Kültürü")
         st.write("Yakında eklenecek...")
-
