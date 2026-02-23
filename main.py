@@ -231,18 +231,7 @@ elif menu == "🎮 Kültür Keşfi":
         st.image("inuit_clothing.jpg", use_container_width=True)
 
         st.divider()
-
-        st.subheader("🛷 Ulaşım ve Yaşam")
-
-        st.write("""
-        Geleneksel olarak köpekli kızaklar (qamutik) kullanılır.
-        Ayrıca kayak ve küçük tekneler (kayak) avcılıkta önemli rol oynar.
-        """)
-
-        st.image("inuit_sled.jpg", use_container_width=True)
-
-        st.divider()
-
+        
         st.subheader("🏠 İgloo ve Modern Yaşam")
 
         st.write("""
