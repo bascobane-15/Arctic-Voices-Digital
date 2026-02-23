@@ -158,9 +158,8 @@ elif menu == "NASA İklim Verisi":
     except:
         st.error("NASA verisine erişilemedi.")
 # -------------------------
-# NASA GERÇEK VERİ 
+# KÜLTÜRKEŞFİ
 # -------------------------
-
 
 elif menu == "🎮 Kültür Keşfi":
 
@@ -173,14 +172,59 @@ elif menu == "🎮 Kültür Keşfi":
         ["Seçiniz", "Inuit", "Sami", "Nenets"]
     )
 
-    if culture == "Inuit":
-        st.header("Inuit Kültürü")
-        st.write("Detaylar birazdan eklenecek...")
+    # ===================== SAMI =====================
 
-    elif culture == "Sami":
-        st.header("Sami Kültürü")
-        st.write("Detaylar birazdan eklenecek...")
+    if culture == "Sami":
+
+        st.header("🎭 Sami Kültürü")
+
+        st.subheader("👘 Geleneksel Kıyafet: Gákti")
+
+        st.write("""
+        Gákti, Sami halkının geleneksel kıyafetidir.
+        Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
+        Törenlerde ve günlük yaşamda farklı versiyonları kullanılır.
+        """)
+
+        st.image(
+            "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sami_people_traditional_clothing.jpg",
+            use_container_width=True
+        )
+
+        st.divider()
+
+        st.subheader("🎵 Joik Müziği")
+
+        st.write("""
+        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
+        Bir kişiyi, hayvanı ya da doğa unsurunu temsil eder.
+        Şarkı söylemekten çok, 'varlığı sesle ifade etme' geleneğidir.
+        """)
+
+        st.video("https://www.youtube.com/watch?v=4YFJxZ3kzv4")
+
+        st.divider()
+
+        st.subheader("🧠 Mini Quiz")
+
+        answer = st.radio(
+            "Gákti hangi topluluğa aittir?",
+            ["Inuit", "Sami", "Nenets"]
+        )
+
+        if answer == "Sami":
+            st.success("🎉 Doğru! Sami kültürünü keşfettin!")
+            st.balloons()
+        elif answer:
+            st.error("❌ Tekrar dene!")
+
+    # ===================== DİĞERLERİ =====================
+
+    elif culture == "Inuit":
+        st.header("Inuit Kültürü")
+        st.write("Yakında eklenecek...")
 
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
-        st.write("Detaylar birazdan eklenecek...")
+        st.write("Yakında eklenecek...")
+
