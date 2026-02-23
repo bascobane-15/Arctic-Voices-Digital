@@ -6,7 +6,6 @@ import folium
 from streamlit_folium import st_folium
 
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
-
 # -------------------------
 # GLASSMORPHISM CSS
 # -------------------------
