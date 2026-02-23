@@ -42,7 +42,7 @@ st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
     "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮 Kültür Keşfi"]
+    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
 
 # -------------------------
@@ -162,7 +162,7 @@ elif menu == "NASA İklim Verisi":
 # KÜLTÜR KEŞFİ
 # -------------------------
 
-elif menu == "🎮 Kültür Keşfi":
+elif menu == "🧭 Kültür Keşfi":
 
     st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
@@ -249,3 +249,64 @@ elif menu == "🎮 Kültür Keşfi":
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
         st.write("Yakında eklenecek...")
+# -------------------------
+# 5. SAYFA: OYUN SAYFASI (Test Alanı)
+# -------------------------
+elif menu == "🎮 Görev Merkezi":
+    st.title("🎯 Arctic Bilgi Görevleri")
+    st.write("Kültür Keşfi sayfasında öğrendiklerini kanıtlama vakti!")
+
+    # Puan sistemi kurulumu
+    if "puan" not in st.session_state: st.session_state.puan = 0
+    if "tamamlananlar" not in st.session_state: st.session_state.tamamlananlar = set()
+
+    st.sidebar.metric("🏆 Toplam Puan", st.session_state.puan)
+
+    # --- SAMI SORUSU ---
+    with st.expander("Sami Kültür Testi", expanded=True):
+        if "Sami" in st.session_state.tamamlananlar:
+            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        else:
+            sami_soru = st.radio("Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
+            if st.button("Sami Cevabını Gönder"):
+                if sami_soru == "Joik":
+                    st.session_state.puan += 10
+                    st.session_state.tamamlananlar.add("Sami")
+                    st.balloons()
+                    st.rerun()
+                else:
+                    st.error("Yanlış! Kültür Keşfi sayfasına tekrar göz atmak ister misin?")
+
+    # --- INUIT SORUSU ---
+    with st.expander("Inuit Kültür Testi", expanded=True):
+        if "Inuit" in st.session_state.tamamlananlar:
+            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        else:
+            inuit_soru = st.radio("İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
+            if st.button("Inuit Cevabını Gönder"):
+                if inuit_soru == "Sıkışmış Sert Kar":
+                    st.session_state.puan += 10
+                    st.session_state.tamamlananlar.add("Inuit")
+                    st.balloons()
+                    st.rerun()
+                else:
+                    st.error("Maalesef yanlış. İpuçlarını iyi oku!")
+
+    # --- NENETS SORUSU ---
+    with st.expander("Nenets Kültür Testi", expanded=True):
+        if "Nenets" in st.session_state.tamamlananlar:
+            st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        else:
+            nenets_soru = st.radio("Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
+            if st.button("Nenets Cevabını Gönder"):
+                if nenets_soru == "Ren Geyiği":
+                    st.session_state.puan += 10
+                    st.session_state.tamamlananlar.add("Nenets")
+                    st.balloons()
+                    st.rerun()
+                else:
+                    st.error("Yanlış cevap! Nenetslerin en sadık dostlarını hatırla.")
+
+    # Final Durumu
+    if len(st.session_state.tamamlananlar) == 3:
+        st.success("🎊 MÜKEMMEL! Tüm kutup kültürlerini keşfettin ve bir Kutup Bilgesi oldun!")
