@@ -12,28 +12,28 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 st.markdown("""
 <style>
-
-/* Ana arka plan */
+/* Arka Plan */
 [data-testid="stAppViewContainer"] {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
 }
 
-/* Sidebar arka plan */
-[data-testid="stSidebar"] {
-    background: #0f2027;
-}
-
-/* Sidebar yazılar */
-[data-testid="stSidebar"] * {
+/* Seçeneklerin (Radio Buttons) Okunmasını Sağlayan Kısım */
+div[data-testid="stRadio"] label p {
     color: white !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px black; /* Yazıyı daha da belirgin yapar */
 }
 
-/* Radio buton yazıları */
-div[role="radiogroup"] label {
-    color: white !important;
+/* Glass-card tasarımı */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
 }
-
 </style>
 """, unsafe_allow_html=True)
 
