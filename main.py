@@ -5,7 +5,7 @@ import pydeck as pdk
 import folium
 from streamlit_folium import st_folium
 
-st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
 # GLASSMORPHISM CSS
@@ -37,7 +37,7 @@ div[role="radiogroup"] label {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌍 Arctic Voices Digital")
+st.title("🌍 Arctic Culture")
 st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
