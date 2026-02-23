@@ -249,6 +249,7 @@ elif menu == "🧭 Kültür Keşfi":
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
         st.write("Yakında eklenecek...")
+        
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
@@ -276,7 +277,7 @@ elif menu == "🎮 Görev Merkezi":
         st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
     else:
         sami_soru = st.radio("Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
-        if st.button("Cevabı Gönder"):
+        if st.button("Sami Cevabını Gönder"):
             if sami_soru == "Joik":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Sami")
@@ -293,7 +294,7 @@ elif menu == "🎮 Görev Merkezi":
         st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
     else:
         inuit_soru = st.radio("İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
-        if st.button("Cevabı Gönder"):
+        if st.button("Inuit Cevabını Gönder"):
             if inuit_soru == "Sıkışmış Sert Kar":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Inuit")
@@ -310,7 +311,7 @@ elif menu == "🎮 Görev Merkezi":
         st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
     else:
         nenets_soru = st.radio("Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
-        if st.button("Cevabı Gönder"):
+        if st.button("Nenets Cevabını Gönder"):
             if nenets_soru == "Ren Geyiği":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Nenets")
