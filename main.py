@@ -255,7 +255,7 @@ elif menu == "🧭 Kültür Keşfi":
 # -------------------------
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
-    st.write("Kültür Keşfi sayfasında öğrendiklerini kanıtlama vakti!")
+    st.write("Kültür Keşfi sayfasında öğrendiklerini kanıtlama vakti! Bakalım kaç puan toplayabileceksin?")
 
     # Puan sistemi kurulumu
     if "puan" not in st.session_state: st.session_state.puan = 0
@@ -270,54 +270,98 @@ elif menu == "🎮 Görev Merkezi":
         </style>
     """, unsafe_allow_html=True)
 
-    # --- SAMI SORUSU ---
+    # --- 1. SAMI SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     if "Sami" in st.session_state.tamamlananlar:
         st.success("✅ Sami bilgisi ustalıkla öğrenildi!")
     else:
-        sami_soru = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
-        if st.button("Sami Cevabını Gönder"):
-            if sami_soru == "Joik":
+        sami_q = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q1")
+        if st.button("Sami Cevabını Onayla"):
+            if sami_q == "Joik":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Sami")
-                st.balloons()
                 st.rerun()
-            else:
-                st.error("Yanlış! Kültür Keşfi sayfasına tekrar göz atmak ister misin?")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- INUIT SORUSU ---
+    # --- 2. INUIT SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     if "Inuit" in st.session_state.tamamlananlar:
         st.success("✅ Inuit bilgisi ustalıkla öğrenildi!")
     else:
-        inuit_soru = st.radio("🏠 İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
-        if st.button("Inuit Cevabını Gönder"):
-            if inuit_soru == "Sıkışmış Sert Kar":
+        inuit_q = st.radio("🏠 İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q2")
+        if st.button("Inuit Cevabını Onayla"):
+            if inuit_q == "Sıkışmış Sert Kar":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Inuit")
-                st.balloons()
                 st.rerun()
-            else:
-                st.error("Maalesef yanlış. İpuçlarını iyi oku!")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- NENETS SORUSU ---
+    # --- 3. NENETS SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     if "Nenets" in st.session_state.tamamlananlar:
         st.success("✅ Nenets bilgisi ustalıkla öğrenildi!")
     else:
-        nenets_soru = st.radio("🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
-        if st.button("Nenets Cevabını Gönder"):
-            if nenets_soru == "Ren Geyiği":
+        nenets_q = st.radio("🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q3")
+        if st.button("Nenets Cevabını Onayla"):
+            if nenets_q == "Ren Geyiği":
                 st.session_state.puan += 10
                 st.session_state.tamamlananlar.add("Nenets")
-                st.balloons()
                 st.rerun()
-            else:
-                st.error("Yanlış cevap! Nenetslerin en sadık dostlarını hatırla.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 4. NAVİGASYON SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Inukshuk" in st.session_state.tamamlananlar:
+        st.success("✅ Navigasyon bilgisi tamam!")
+    else:
+        nav_q = st.radio("🗿 Arctic bölgelerinde yol bulmak veya bir yeri işaretlemek için üst üste dizilen taşlara ne denir?", ["Totem", "Inukshuk", "Piramit"], key="q4")
+        if st.button("Navigasyon Cevabını Onayla"):
+            if nav_q == "Inukshuk":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Inukshuk")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 5. ULAŞIM SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Ulasim" in st.session_state.tamamlananlar:
+        st.success("✅ Ulaşım kültürü öğrenildi!")
+    else:
+        trans_q = st.radio("🐕 Inuitlerin geleneksel kış ulaşımında en çok güvendiği araç hangisidir?", ["Köpek Kızağı (Qamutik)", "Kar Arabası", "At Arabası"], key="q5")
+        if st.button("Ulaşım Cevabını Onayla"):
+            if trans_q == "Köpek Kızağı (Qamutik)":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Ulasim")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 6. SANAT SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Sanat" in st.session_state.tamamlananlar:
+        st.success("✅ Arctic sanatı keşfedildi!")
+    else:
+        art_q = st.radio("🎨 Inuit sanatında heykel yapmak için en çok kullanılan yumuşak ve doğal taş hangisidir?", ["Mermer", "Granit", "Sabun Taşı (Soapstone)"], key="q6")
+        if st.button("Sanat Cevabını Onayla"):
+            if art_q == "Sabun Taşı (Soapstone)":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Sanat")
+                st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- 7. AV ARAÇLARI SORUSU ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "Av" in st.session_state.tamamlananlar:
+        st.success("✅ Hayatta kalma araçları öğrenildi!")
+    else:
+        hunt_q = st.radio("🛶 Inuitlerin denizde fok veya balina avlamak için kullandığı tek kişilik deri kaplı kanoya ne denir?", ["Kano", "Kayak", "Sal"], key="q7")
+        if st.button("Avcılık Cevabını Onayla"):
+            if hunt_q == "Kayak":
+                st.session_state.puan += 10
+                st.session_state.tamamlananlar.add("Av")
+                st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
     # Final Durumu
-    if len(st.session_state.tamamlananlar) == 3:
-        st.success("🎊 MÜKEMMEL! Tüm kutup kültürlerini keşfettin ve bir Kutup Bilgesi oldun!")
+    if len(st.session_state.tamamlananlar) == 7:
+        st.balloons()
+        st.success("🎉 İNANILMAZ! 7 Görevin tamamını bitirdin ve gerçek bir 'Kutup Kaşifi' oldun!")
