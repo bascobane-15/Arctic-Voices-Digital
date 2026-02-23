@@ -164,7 +164,7 @@ elif menu == "NASA İklim Verisi":
 
 elif menu == "🎮 Kültür Keşfi":
 
-    st.title("🧭 Arctic Voices - Kültür Keşfi")
+    st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
 
     # 🎨 RADIO YAZI RENGİ DÜZELTME (BURAYA EKLENDİ)
