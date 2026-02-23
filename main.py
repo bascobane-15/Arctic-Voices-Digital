@@ -3,74 +3,65 @@ import pandas as pd
 import plotly.express as px
 import pydeck as pdk
 
-# -------------------------
-# SAYFA AYARLARI
-# -------------------------
-st.set_page_config(
-    page_title="Arctic Voices Digital",
-    page_icon="🌍",
-    layout="wide"
-)
+st.set_page_config(page_title="Arctic Voices Digital", page_icon="🌍", layout="wide")
 
 # -------------------------
-# MODERN CSS TASARIM
+# GLASSMORPHISM CSS
 # -------------------------
 st.markdown("""
 <style>
-.main {
-    background-color: #0E1117;
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 15px 0px;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 h1, h2, h3 {
     color: #4FC3F7;
 }
-.stMarkdown {
-    font-size: 18px;
-}
-.sidebar .sidebar-content {
-    background-color: #111827;
-}
 </style>
 """, unsafe_allow_html=True)
 
-# -------------------------
-# BAŞLIK
-# -------------------------
 st.title("🌍 Arctic Voices Digital")
-st.markdown("### Arktik Yerli Kültürlerini Tanıma Platformu")
+st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
-st.markdown("---")
-
-# -------------------------
-# SIDEBAR MENU
-# -------------------------
-menu = st.sidebar.radio(
-    "Menü",
-    [
-        "Ana Sayfa",
-        "Kültürel Harita",
-        "İklim Değişikliği Grafiği"
-    ]
-)
+menu = st.sidebar.radio("Menü", ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi"])
 
 # -------------------------
-# ANA SAYFA
+# ANA SAYFA - KART TASARIMI
 # -------------------------
 if menu == "Ana Sayfa":
-    st.header("Proje Hakkında")
-    st.write("""
-    Arctic Voices Digital, Arktik yerli halklarının kültürlerini
-    akademik ve saygı temelli bir yaklaşımla tanıtmayı amaçlayan
-    dijital bir platformdur.
-    """)
 
-    st.info("Platform; kültür, coğrafya ve iklim verilerini bir arada sunar.")
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.header("Inuit")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/8/8d/Inuit_family.jpg")
+    st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.header("Sami")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/3/3a/Sami_people.jpg")
+    st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.header("Nenets")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/0/0c/Nenets_people.jpg")
+    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # -------------------------
-# HARİTA BÖLÜMÜ
+# HARİTA
 # -------------------------
 elif menu == "Kültürel Harita":
 
-    st.header("🗺️ Arktik Yerli Halkları Haritası")
+    st.header("🗺️ Yerli Halkların Coğrafi Dağılımı")
 
     data = pd.DataFrame({
         "Topluluk": ["Inuit", "Sami", "Nenets"],
@@ -87,45 +78,35 @@ elif menu == "Kültürel Harita":
         pickable=True
     )
 
-    view_state = pdk.ViewState(
-        latitude=68,
-        longitude=20,
-        zoom=2,
-        pitch=0,
-    )
+    view_state = pdk.ViewState(latitude=68, longitude=20, zoom=2)
 
-    r = pdk.Deck(
+    st.pydeck_chart(pdk.Deck(
         layers=[layer],
         initial_view_state=view_state,
         tooltip={"text": "{Topluluk}"}
-    )
-
-    st.pydeck_chart(r)
+    ))
 
 # -------------------------
-# İKLİM GRAFİĞİ
+# NASA GERÇEK VERİ
 # -------------------------
-elif menu == "İklim Değişikliği Grafiği":
+elif menu == "NASA İklim Verisi":
 
-    st.header("📊 Arktik Sıcaklık Artışı")
+    st.header("📈 NASA GISTEMP Arktik Sıcaklık Anomalisi")
 
-    # Örnek veri (temsilî)
-    df = pd.DataFrame({
-        "Yıl": [1980, 1990, 2000, 2010, 2020],
-        "Sıcaklık Artışı (°C)": [0.3, 0.6, 0.9, 1.4, 2.1]
-    })
+    # NASA GISTEMP veri seti (gerçek veri)
+    url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+    df = pd.read_csv(url, skiprows=1)
 
-    fig = px.line(
-        df,
-        x="Yıl",
-        y="Sıcaklık Artışı (°C)",
-        markers=True,
-        title="Arktik Bölgesinde Ortalama Sıcaklık Artışı"
-    )
+    df = df[["Year", "J-D"]]
+    df.columns = ["Year", "Temperature Anomaly"]
+    df = df.dropna()
+
+    fig = px.line(df, x="Year", y="Temperature Anomaly",
+                  title="NASA Küresel Sıcaklık Anomalisi (1880-Günümüz)")
 
     fig.update_layout(
-        plot_bgcolor="#0E1117",
-        paper_bgcolor="#0E1117",
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
         font=dict(color="white")
     )
 
