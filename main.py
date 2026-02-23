@@ -40,10 +40,12 @@ div[role="radiogroup"] label {
 st.title("🌍 Arctic Voices Digital")
 st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
-menu = st.sidebar.selectbox(
-    "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🎮 Kültür Keşfi"]
-)
+tab1, tab2, tab3, tab4 = st.tabs([
+    "🏠 Ana Sayfa",
+    "🗺️ Kültürel Harita",
+    "📈 NASA İklim",
+    "🎮 Kültür Keşfi"
+])
 
 # -------------------------
 # ANA SAYFA - KART TASARIMI
