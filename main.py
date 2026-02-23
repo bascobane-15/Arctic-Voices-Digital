@@ -263,7 +263,7 @@ elif menu == "🎮 Görev Merkezi":
 
     st.sidebar.metric("🏆 Toplam Puan", st.session_state.puan)
 
-    # Radyo buton metinlerini beyaza zorlayan CSS (Sadece bu sayfada etkili olur)
+    # Seçeneklerin beyaz ve okunaklı olması için CSS
     st.markdown("""
         <style>
         div[data-testid="stRadio"] label p { color: white !important; font-size: 1.1rem; font-weight: 500; }
@@ -272,11 +272,10 @@ elif menu == "🎮 Görev Merkezi":
 
     # --- SAMI SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("❄️ Sami Kültür Testi")
     if "Sami" in st.session_state.tamamlananlar:
-        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        st.success("✅ Sami bilgisi ustalıkla öğrenildi!")
     else:
-        sami_soru = st.radio("Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
+        sami_soru = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q_sami")
         if st.button("Sami Cevabını Gönder"):
             if sami_soru == "Joik":
                 st.session_state.puan += 10
@@ -289,11 +288,10 @@ elif menu == "🎮 Görev Merkezi":
 
     # --- INUIT SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("🏠 Inuit Kültür Testi")
     if "Inuit" in st.session_state.tamamlananlar:
-        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        st.success("✅ Inuit bilgisi ustalıkla öğrenildi!")
     else:
-        inuit_soru = st.radio("İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
+        inuit_soru = st.radio("🏠 İgloo inşasında en önemli malzeme hangisidir?", ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], key="q_inuit")
         if st.button("Inuit Cevabını Gönder"):
             if inuit_soru == "Sıkışmış Sert Kar":
                 st.session_state.puan += 10
@@ -306,11 +304,10 @@ elif menu == "🎮 Görev Merkezi":
 
     # --- NENETS SORUSU ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.subheader("🦌 Nenets Kültür Testi")
     if "Nenets" in st.session_state.tamamlananlar:
-        st.success("✅ Bu bilgiyi ustalıkla öğrendin!")
+        st.success("✅ Nenets bilgisi ustalıkla öğrenildi!")
     else:
-        nenets_soru = st.radio("Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
+        nenets_soru = st.radio("🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", ["Ren Geyiği", "Kutup Ayısı", "Kurt"], key="q_nenets")
         if st.button("Nenets Cevabını Gönder"):
             if nenets_soru == "Ren Geyiği":
                 st.session_state.puan += 10
