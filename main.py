@@ -113,53 +113,44 @@ if menu == "Kültürel Harita":
     st_folium(m, width=900, height=600)
 
 # -------------------------
-# NOAA GERÇEK VERİ – Arctic Sea Ice
+# NASA GERÇEK VERİ 
 # -------------------------
 
-st.subheader("🧊 NOAA Arctic Sea Ice Extent")
+elif menu == "NASA İklim Verisi":
 
-try:
-    noaa_url = "https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/N_09_extent_v3.0.csv"
-    sea_ice = pd.read_csv(noaa_url)
+    st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
-    # Sadece gerekli kolonlar
-    sea_ice = sea_ice[["Year", "Month", "Extent"]]
+    try:
+        url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+        df = pd.read_csv(url, skiprows=1)
 
-    # Yıllık ortalama hesapla (daha akademik)
-    sea_ice_yearly = sea_ice.groupby("Year")["Extent"].mean().reset_index()
+        df = df[["Year", "J-D"]]
+        df.columns = ["Year", "Temperature"]
+        df = df.dropna()
 
-    # Grafik oluştur
-    fig2 = px.line(
-        sea_ice_yearly,
-        x="Year",
-        y="Extent",
-        title="NOAA Arctic Sea Ice Extent (1979–Günümüz)"
-    )
-
-    # Profesyonel koyu tema ayarları
-    fig2.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="white", size=14),
-        title=dict(
-            font=dict(size=22, color="white"),
-            x=0.5
-        ),
-        xaxis=dict(
-            title="Yıl",
-            title_font=dict(size=16, color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="rgba(255,255,255,0.2)"
-        ),
-        yaxis=dict(
-            title="Deniz Buzu Alanı (Milyon km²)",
-            title_font=dict(size=16, color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="rgba(255,255,255,0.2)"
+        fig = px.line(
+            df,
+            x="Year",
+            y="Temperature",
+            title="NASA GISTEMP Küresel Sıcaklık Anomalisi (1880–Günümüz)"
         )
-    )
 
-    st.plotly_chart(fig2, use_container_width=True)
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="white"),
+            title=dict(font=dict(size=22, color="white"), x=0.5),
+            xaxis=dict(
+                title="Yıl",
+                gridcolor="rgba(255,255,255,0.2)"
+            ),
+            yaxis=dict(
+                title="Sıcaklık Anomalisi (°C)",
+                gridcolor="rgba(255,255,255,0.2)"
+            )
+        )
 
-except Exception as e:
-    st.error("NOAA deniz buzu verisine erişilemedi.")
+        st.plotly_chart(fig, use_container_width=True)
+
+    except:
+        st.error("NASA verisine erişilemedi.")
