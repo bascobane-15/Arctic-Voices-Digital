@@ -163,7 +163,19 @@ if menu == "🗺️Kültürel Harita":
     # Haritayı göster
     st_folium(m, width=900, height=600)
 
-    st.info("💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!")
+    st.markdown("""
+        <div style="background-color: rgba(52, 152, 219, 0.2); 
+                    padding: 15px; 
+                    border-radius: 10px; 
+                    margin-top: 20px;
+                    border: 1px solid #3498db;
+                    text-align: center;">
+            <p style="color: #F1C40F; font-weight: bold; margin: 0; font-size: 1.1em;">
+                💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. 
+                Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
