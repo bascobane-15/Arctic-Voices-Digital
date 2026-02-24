@@ -77,7 +77,7 @@ if menu == "🏔️Ana Sayfa":
             <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
         </div>
     """, unsafe_allow_html=True)
-
+    # DİKKAT: Burada st.write() veya boş st.markdown() varsa SİL!
     # --- MEVCUT KARTLAR ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
