@@ -44,15 +44,14 @@ menu = st.sidebar.selectbox(
     "Sayfa Seç",
     ["🏔️Ana Sayfa", "🗺️Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
-
 # -------------------------
-# ANA SAYFA - KART TASARIMI
+# ANA SAYFA - KART TASARIMI (TEMİZLENMİŞ)
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
-    # --- YARATICI GİRİŞ VE VİZYON ---
+    # --- YARATICI GİRİŞ ---
     st.markdown("""
-        <div style="text-align: center; padding: 20px; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div style="text-align: center; padding: 20px; margin-bottom: 20px;">
             <h1 style="color: white; font-size: 2.5em;">Arctic Voices</h1>
             <p style="color: #a0a0a0; font-size: 1.2em; font-style: italic;">
                 "Kutuplar sadece birer veri noktası değil; binlerce yıllık hikayelerin, dillerin ve yaşamların evidir."
@@ -60,44 +59,47 @@ if menu == "🏔️Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ (YENİ!) ---
+    # --- GÜNÜN ARKTIK KELİMESİ ---
     import random
     kelimeler = [
         {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
-        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."}
     ]
-    # Sayfa her yenilendiğinde veya tıklandığında değişmemesi için basit bir seçim:
-    gunun_kelimesi = kelimeler[0] # İstersen random.choice(kelimeler) yapabilirsin
+    gunun_kelimesi = kelimeler[0]
 
     st.markdown(f"""
-        <div style="background: rgba(255, 255, 255, 0.05); 
-                    padding: 15px; 
-                    border-radius: 10px; 
-                    border: 1px dashed #3498db; 
-                    margin-bottom: 5px;">
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #3498db; margin-bottom: 30px;">
             <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
             <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
         </div>
     """, unsafe_allow_html=True)
-# BURADA HİÇBİR BOŞLUK, ST.WRITE VEYA YORUM SATIRI OLMASIN
-    st.header("Inuit")
-    # --- MEVCUT KARTLAR ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Inuit")
+
+    # --- KARTLAR (BAŞLIKLAR KARTIN İÇİNE ALINDI) ---
+    
+    # 1. INUIT KARTI
+    st.markdown("""
+        <div class="glass-card">
+            <h2 style="color: white; margin-bottom: 15px;">Inuit</h2>
+    """, unsafe_allow_html=True)
     st.image("inuit.jpg", use_container_width=True)
     st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Sami")
+    # 2. SAMI KARTI
+    st.markdown("""
+        <div class="glass-card">
+            <h2 style="color: white; margin-bottom: 15px;">Sami</h2>
+    """, unsafe_allow_html=True)
     st.image("sami.jpg", use_container_width=True)
     st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.header("Nenets")
+    # 3. NENETS KARTI
+    st.markdown("""
+        <div class="glass-card">
+            <h2 style="color: white; margin-bottom: 15px;">Nenets</h2>
+    """, unsafe_allow_html=True)
     st.image("nenets.jpg", use_container_width=True)
     st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
