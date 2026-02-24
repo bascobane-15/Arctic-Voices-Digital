@@ -215,7 +215,39 @@ elif menu == "🛰️ NASA İklim Verisi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
+# --- ZAMAN MAKİNESİ ÇİZELGESİ (ANALİZ KUTUSUNUN HEMEN ALTINA) ---
+        st.markdown("---")
+        st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
+        st.info("Sıcaklık artışının Arktik yaşamı üzerindeki etkilerini görmek için başlıklara tıklayın.")
+        
+        # Şık, genişletilebilir (expander) bir kronoloji
+        with st.expander("🔵 +0.5°C: Geleneksel Yaşamın Zirvesi"):
+            st.write("""
+                Bu dönemde deniz buzu (Siku) kalındı. Inuit avcıları güvenle buzun üzerine çıkabiliyor, 
+                İglolar kış boyunca erimeden kalabiliyordu. Doğal denge tamdı.
+            """)
 
+        with st.expander("🟡 +1.0°C: Değişimin Başlangıcı"):
+            st.write("""
+                **Albedo Etkisi** zayıflamaya başladı. Buzlar daha erken eriyor, ren geyikleri (Nenetslerin can damarı) 
+                göç yollarındaki nehirleri geçmekte zorlanıyor.
+            """)
+
+        with st.expander("🟠 +1.5°C: Kritik Eşik (Şu Anki Durum)"):
+            st.write("""
+                NASA verilerinin gösterdiği bu noktada, permafrost (donmuş toprak) eriyor. 
+                Sami halkının köylerinde zemin kaymaları görülmeye başladı. Kuzey Sumrusu'nun durakladığı 
+                kıyı şeritleri sular altında kalma riskiyle karşı karşıya.
+            """)
+
+        with st.expander("🔴 +2.0°C ve Ötesi: Belirsiz Gelecek"):
+            st.error("""
+                Bu seviyede 'Siku' yani kalıcı deniz buzu tamamen yok olabilir. 
+                Bu, sadece bir buzun erimesi değil, binlerce yıllık bir kültürün kütüphanesinin yanması demektir.
+            """)
+            
+    except Exception as e:
+        st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
 
