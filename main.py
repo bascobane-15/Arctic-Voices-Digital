@@ -59,14 +59,16 @@ if menu == "🏔️Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- GÜNÜN ARKTIK KELİMESİ ---
+    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ (YENİ!) ---
     import random
     kelimeler = [
         {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."}
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
+        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
     ]
-    gunun_kelimesi = kelimeler[0]
+    # Sayfa her yenilendiğinde veya tıklandığında değişmemesi için basit bir seçim:
+    gunun_kelimesi = kelimeler[0] # İstersen random.choice(kelimeler) yapabilirsin
 
     st.markdown(f"""
         <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #3498db; margin-bottom: 30px;">
