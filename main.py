@@ -186,55 +186,84 @@ if menu == "🗺️Kültürel Harita":
         </div>
     """, unsafe_allow_html=True)
 
-    # -------------------------
-# YENİ NESİL ARKTIK OYUNU
 # -------------------------
-if menu == "🗺️Kültürel Harita":
+# GELİŞTİRİLMİŞ ARKTIK STRATEJİ OYUNU
+# -------------------------
+st.markdown("---")
+st.header("🎮 Arktik Kurtarma Operasyonu: Strateji Modu")
+
+# NASA verisiyle zorluk ayarı (Eğer veri yoksa 1.25 sabit kabul edilir)
+temp_val = latest_temp if 'latest_temp' in locals() else 1.25
+zorluk_çarpanı = 1.0 + (temp_val * 0.5) # Isındıkça süre kısalır
+
+if 'game_active' not in st.session_state:
+    st.session_state.game_active = False
+    st.session_state.puan = 0
+    st.session_state.saglik = 100
+
+# PUAN VE SAĞLIK PANELİ
+c1, c2 = st.columns(2)
+with c1:
+    st.metric("🏆 Toplam Puan", st.session_state.puan)
+with c2:
+    st.metric("❤️ Arktik Dayanıklılığı", f"%{st.session_state.saglik}", delta="-10" if st.session_state.saglik < 50 else None)
+
+if not st.session_state.game_active:
+    st.info(f"🌍 Şu anki sıcaklık artışı: {temp_val}°C. Bu durum buzların erime hızını {zorluk_çarpanı:.1f} kat artırıyor!")
+    if st.button("🚀 Operasyonu Başlat"):
+        st.session_state.game_active = True
+        st.rerun()
+
+if st.session_state.game_active:
+    st.write("### 🚨 Acil Durum Bildirimi!")
+    st.write("Aynı anda 3 bölgeden kriz haberi geldi. Hangi kaynağı nereye göndereceksin?")
     
-    # Oyun puanını hafızada tutalım
-    if 'puan' not in st.session_state:
-        st.session_state.puan = 0
-
-    st.title("✈️ Arktik Kurtarma Operasyonu")
+    # Zaman Çubuğu Simülasyonu
+    zaman_bari = st.progress(0)
+    for i in range(100):
+        time.sleep(0.05 / zorluk_çarpanı) # Sıcaklık yüksekse bar çok hızlı dolar
+        zaman_bari.progress(i + 1)
     
-    # PUAN TABELASI (Şık bir kutu içinde)
-    st.markdown(f"""
-        <div style="background-color: #2c3e50; padding: 10px; border-radius: 10px; text-align: center; border: 2px solid #f1c40f;">
-            <h2 style="color: #f1c40f; margin: 0;">🏆 Toplam Puan: {st.session_state.puan}</h2>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # HARİTA BURADA ÇALIŞIR (Senin mevcut harita kodun)
-    # st_folium(m, ...)
-
-    st.markdown("### 🏹 Acil Durum Görevleri")
-    st.write("Haritadaki bölgelere ulaştın. Şimdi halka yardım etme zamanı!")
-
+    st.warning("⏰ Karar Zamanı Doluyor!")
+    
     col1, col2, col3 = st.columns(3)
-
+    
     with col1:
-        st.markdown("#### 🧑‍🌾 Inuit Bölgesi")
-        if st.button("Buzları Dondur! ❄️"):
-            st.success("Harika! İgloları erimekten kurtardın.")
-            st.session_state.puan += 10
-            st.balloons()
+        st.subheader("🧑‍🌾 Inuit")
+        secim_inuit = st.selectbox("Çözüm Seç:", ["Hareketsiz Kal", "Deniz Buzu Takviyesi", "Av Rotası Değişimi"], key="inuit")
+        if st.button("Onayla 📍", key="b1"):
+            if secim_inuit == "Deniz Buzu Takviyesi":
+                st.session_state.puan += 20
+                st.success("+20 Puan! Doğru seçim.")
+            else:
+                st.session_state.saglik -= 10
+                st.error("Yanlış strateji! Dayanıklılık azaldı.")
 
     with col2:
-        st.markdown("#### 🦌 Sami Bölgesi")
-        if st.button("Liken Topla! 🌿"):
-            st.success("Ren geyikleri artık aç kalmayacak!")
-            st.session_state.puan += 15
-            st.snow()
+        st.subheader("🦌 Sami")
+        secim_sami = st.selectbox("Çözüm Seç:", ["Hareketsiz Kal", "Geyiği Göç Ettir", "Ek Gıda Sağla"], key="sami")
+        if st.button("Onayla 📍", key="b2"):
+            if secim_sami == "Ek Gıda Sağla":
+                st.session_state.puan += 25
+                st.success("+25 Puan!")
+            else:
+                st.session_state.saglik -= 15
+                st.error("Geyikler aç kaldı!")
 
     with col3:
-        st.markdown("#### ⛺ Nenets Bölgesi")
-        if st.button("Fırtınayı Durdur! 🌪️"):
-            st.success("Çadırları (Chum) sağlama aldın!")
-            st.session_state.puan += 20
-            
-    # SIFIRLAMA BUTONU
-    if st.button("Yolculuğu Baştan Başlat 🔄"):
-        st.session_state.puan = 0
+        st.subheader("⛺ Nenets")
+        secim_nenets = st.selectbox("Çözüm Seç:", ["Hareketsiz Kal", "Çadırı Sabitle", "Bölgeyi Terk Et"], key="nenets")
+        if st.button("Onayla 📍", key="b3"):
+            if secim_nenets == "Çadırı Sabitle":
+                st.session_state.puan += 30
+                st.success("+30 Puan!")
+            else:
+                st.session_state.saglik -= 20
+                st.error("Fırtına çadırları uçurdu!")
+
+    if st.button("🔄 Turu Bitir ve Yeniden Başla"):
+        st.session_state.game_active = False
+        st.session_state.saglik = 100
         st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ
