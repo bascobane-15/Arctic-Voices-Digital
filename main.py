@@ -227,11 +227,6 @@ elif menu == "🛰️ NASA İklim Verisi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
-
-# --- ZAMAN MAKİNESİ ÇİZELGESİ (ANALİZ KUTUSUNUN HEMEN ALTINA) ---
-        st.markdown("---")
-        st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
-        st.info("Sıcaklık artışının Arktik yaşamı üzerindeki etkilerini görmek için başlıklara tıklayın.")
         
         # Şık, genişletilebilir (expander) bir kronoloji
         with st.expander("🔵 +0.5°C: Geleneksel Yaşamın Zirvesi"):
