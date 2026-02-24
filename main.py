@@ -185,63 +185,55 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
-    # --- OYUN BAŞLANGICI ---
-st.divider()
-st.markdown("### 🏹 Arktik Koruyucusu: Mini Oyun")
+    # -------------------------
+# YENİ NESİL ARKTIK OYUNU
+# -------------------------
+if menu == "🗺️Kültürel Harita":
+    
+    # Oyun puanını hafızada tutalım
+    if 'puan' not in st.session_state:
+        st.session_state.puan = 0
 
-if 'game_step' not in st.session_state:
-    st.session_state.game_step = "baslangic"
+    st.title("✈️ Arktik Kurtarma Operasyonu")
+    
+    # PUAN TABELASI (Şık bir kutu içinde)
+    st.markdown(f"""
+        <div style="background-color: #2c3e50; padding: 10px; border-radius: 10px; text-align: center; border: 2px solid #f1c40f;">
+            <h2 style="color: #f1c40f; margin: 0;">🏆 Toplam Puan: {st.session_state.puan}</h2>
+        </div>
+    """, unsafe_allow_html=True)
 
-# 1. Aşama: Yolculuk
-if st.session_state.game_step == "baslangic":
-    st.write("Uçağın Ankara'dan kalkmaya hazır! Arktik'teki dostlarımıza yardım etmek için yola çıkmalısın.")
-    if st.button("✈️ Motorları Çalıştır ve Havalan!"):
-        with st.spinner('Kuzeye doğru uçuyorsun...'):
-            time.sleep(2)
-            st.session_state.game_step = "secim"
-            st.rerun()
+    # HARİTA BURADA ÇALIŞIR (Senin mevcut harita kodun)
+    # st_folium(m, ...)
 
-# 2. Aşama: Bölge Seçimi
-elif st.session_state.game_step == "secim":
-    st.write("Arktik semalarındasın! Hangi halka yardım etmek istersin?")
+    st.markdown("### 🏹 Acil Durum Görevleri")
+    st.write("Haritadaki bölgelere ulaştın. Şimdi halka yardım etme zamanı!")
+
     col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        if st.button("🧑‍🌾 Inuitlere Git"):
-            st.session_state.hedef = "Inuit"
-            st.session_state.game_step = "gorev"
-            st.rerun()
-    with col2:
-        if st.button("🦌 Samilere Git"):
-            st.session_state.hedef = "Sami"
-            st.session_state.game_step = "gorev"
-            st.rerun()
-    with col3:
-        if st.button("⛺ Nenetslere Git"):
-            st.session_state.hedef = "Nenets"
-            st.session_state.game_step = "gorev"
-            st.rerun()
 
-# 3. Aşama: Görev ve İklim Etkisi
-elif st.session_state.game_step == "gorev":
-    st.write(f"📍 **{st.session_state.hedef}** bölgesine ulaştın!")
-    
-    # NASA Verisinden gelen sıcaklığı oyuna bağlıyoruz
-    # Not: latest_temp değişkenini NASA kısmından buraya taşımalıyız
-    sicaklik_etkisi = 1.26 # Örnek değer
-    
-    st.warning(f"⚠️ Dikkat! Sıcaklık anomalisi {sicaklik_etkisi}°C. Buzlar kaygan!")
-    
-    if st.session_state.hedef == "Inuit":
-        st.write("Görev: Erimeden önce igloyu sağlamlaştır!")
-        skor = st.slider("Güçlendirme Seviyesi", 0, 100, 50)
-        if skor > 80:
-            st.success("🎉 Harika! İglo kış boyunca dayanacak.")
-        else:
-            st.error("😢 Sıcaklık çok yüksek, iglo eriyor! Daha hızlı olmalısın.")
+    with col1:
+        st.markdown("#### 🧑‍🌾 Inuit Bölgesi")
+        if st.button("Buzları Dondur! ❄️"):
+            st.success("Harika! İgloları erimekten kurtardın.")
+            st.session_state.puan += 10
+            st.balloons()
+
+    with col2:
+        st.markdown("#### 🦌 Sami Bölgesi")
+        if st.button("Liken Topla! 🌿"):
+            st.success("Ren geyikleri artık aç kalmayacak!")
+            st.session_state.puan += 15
+            st.snow()
+
+    with col3:
+        st.markdown("#### ⛺ Nenets Bölgesi")
+        if st.button("Fırtınayı Durdur! 🌪️"):
+            st.success("Çadırları (Chum) sağlama aldın!")
+            st.session_state.puan += 20
             
-    if st.button("🔄 Ana Menüye Dön"):
-        st.session_state.game_step = "baslangic"
+    # SIFIRLAMA BUTONU
+    if st.button("Yolculuğu Baştan Başlat 🔄"):
+        st.session_state.puan = 0
         st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ
