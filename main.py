@@ -42,13 +42,13 @@ st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
 
 menu = st.sidebar.selectbox(
     "Sayfa Seç",
-    ["Ana Sayfa", "Kültürel Harita", "NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
+    ["🏔️Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
 
 # -------------------------
 # ANA SAYFA - KART TASARIMI
 # -------------------------
-if menu == "Ana Sayfa":
+if menu == "🏔️ Ana Sayfa":
 
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
@@ -119,7 +119,7 @@ if menu == "Kültürel Harita":
 # NASA GERÇEK VERİ 
 # -------------------------
 
-elif menu == "NASA İklim Verisi":
+elif menu == "🛰️ NASA İklim Verisi":
 
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
