@@ -161,7 +161,15 @@ if menu == "🗺️Kültürel Harita":
     ).add_to(m)
 
     # Haritayı göster
-    st_folium(m, width=900, height=600)
+    # width=None ve use_container_width=True beraber kullanılır
+    from streamlit_folium import st_folium
+    
+    st_folium(
+        m, 
+        width=None, 
+        height=500, 
+        use_container_width=True
+    )
 
     st.markdown("""
         <div style="background-color: rgba(52, 152, 219, 0.2); 
