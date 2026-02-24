@@ -185,56 +185,52 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
-    # -------------------------
-# YENİ NESİL ARKTIK OYUNU
 # -------------------------
-if menu == "🗺️Kültürel Harita":
+    # YENİ OYUN: ARKTİK DENGE OPERASYONU
+    # -------------------------
+    st.markdown("---")
+    st.header("🎮 Arktik Kurtarma Operasyonu: Zamanla Yarış!")
     
-    # Oyun puanını hafızada tutalım
-    if 'puan' not in st.session_state:
-        st.session_state.puan = 0
-
-    st.title("✈️ Arktik Kurtarma Operasyonu")
+    # NASA verisiyle bağlantı kuruyoruz (Eğer NASA verisi çekilemediyse varsayılan 1.2 kullanılır)
+    # Bu satır oyunun zorluğunu belirler
+    temp_check = latest_temp if 'latest_temp' in locals() else 1.2
     
-    # PUAN TABELASI (Şık bir kutu içinde)
-    st.markdown(f"""
-        <div style="background-color: #2c3e50; padding: 10px; border-radius: 10px; text-align: center; border: 2px solid #f1c40f;">
-            <h2 style="color: #f1c40f; margin: 0;">🏆 Toplam Puan: {st.session_state.puan}</h2>
-        </div>
-    """, unsafe_allow_html=True)
+    st.write(f"🌍 **Küresel Durum:** +{temp_check}°C | Zorluk: {'🔴 KRİTİK' if temp_check > 1.0 else '🟢 NORMAL'}")
 
-    # HARİTA BURADA ÇALIŞIR (Senin mevcut harita kodun)
-    # st_folium(m, ...)
+    if 'game_active' not in st.session_state:
+        st.session_state.game_active = False
 
-    st.markdown("### 🏹 Acil Durum Görevleri")
-    st.write("Haritadaki bölgelere ulaştın. Şimdi halka yardım etme zamanı!")
+    if not st.session_state.game_active:
+        if st.button("🚀 Operasyonu Başlat"):
+            st.session_state.game_active = True
+            st.rerun()
 
-    col1, col2, col3 = st.columns(3)
+    if st.session_state.game_active:
+        st.warning("⚠️ Buzlar eriyor! Süre dolmadan tüm halklara yardım et!")
+        
+        # Zaman Barı (Zorluğa göre hızı değişir)
+        hiz = 0.03 if temp_check > 1.0 else 0.08
+        progress_bar = st.progress(0)
+        
+        # Oyun butonları
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            inuit = st.button("🧑‍🌾 Inuit: Buzları Dondur")
+        with col2:
+            sami = st.button("🦌 Sami: Geyikleri Besle")
+        with col3:
+            nenets = st.button("⛺ Nenets: Çadırı Sabitle")
 
-    with col1:
-        st.markdown("#### 🧑‍🌾 Inuit Bölgesi")
-        if st.button("Buzları Dondur! ❄️"):
-            st.success("Harika! İgloları erimekten kurtardın.")
-            st.session_state.puan += 10
-            st.balloons()
-
-    with col2:
-        st.markdown("#### 🦌 Sami Bölgesi")
-        if st.button("Liken Topla! 🌿"):
-            st.success("Ren geyikleri artık aç kalmayacak!")
-            st.session_state.puan += 15
-            st.snow()
-
-    with col3:
-        st.markdown("#### ⛺ Nenets Bölgesi")
-        if st.button("Fırtınayı Durdur! 🌪️"):
-            st.success("Çadırları (Chum) sağlama aldın!")
-            st.session_state.puan += 20
-            
-    # SIFIRLAMA BUTONU
-    if st.button("Yolculuğu Baştan Başlat 🔄"):
-        st.session_state.puan = 0
-        st.rerun()
+        # Zaman akışı simülasyonu
+        for i in range(100):
+            time.sleep(hiz)
+            progress_bar.progress(i + 1)
+        
+        st.error("⏰ Zaman doldu! Operasyon merkezine dönülüyor.")
+        if st.button("Tekrar Dene 🔄"):
+            st.session_state.game_active = False
+            st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
