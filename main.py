@@ -45,7 +45,7 @@ menu = st.sidebar.selectbox(
     ["🏔️Ana Sayfa", "🗺️Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
 # -------------------------
-# ANA SAYFA - TEMİZ VE SIKI TASARIM
+# ANA SAYFA - EĞİTSEL ARKTIK SÖZLÜĞÜ
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
@@ -80,28 +80,8 @@ if menu == "🏔️Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- KARTLAR (ARADAKİ TÜM BOŞLUKLAR SİLİNDİ) ---
-    
-    # 1. INUIT
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.markdown('<h2 style="color: white; margin-top: 0;">Inuit</h2>', unsafe_allow_html=True)
-    st.image("inuit.jpg", use_container_width=True)
-    st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # 2. SAMI
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.markdown('<h2 style="color: white; margin-top: 0;">Sami</h2>', unsafe_allow_html=True)
-    st.image("sami.jpg", use_container_width=True)
-    st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # 3. NENETS
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.markdown('<h2 style="color: white; margin-top: 0;">Nenets</h2>', unsafe_allow_html=True)
-    st.image("nenets.jpg", use_container_width=True)
-    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
+    # --- KARTLAR BURADAN DEVAM EDER ---
+    # Not: Inuit, Sami, Nenets kartlarını bunun altına ekleyebilirsin.
     
 # -------------------------
 # HARİTA
