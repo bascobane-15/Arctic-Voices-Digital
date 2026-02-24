@@ -45,63 +45,52 @@ menu = st.sidebar.selectbox(
     ["🏔️Ana Sayfa", "🗺️Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
 # -------------------------
-# ANA SAYFA - KART TASARIMI (TEMİZLENMİŞ)
+# ANA SAYFA - TEMİZ VE SIKI TASARIM
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
-    # --- YARATICI GİRİŞ ---
-    st.markdown("""
-        <div style="text-align: center; padding: 20px; margin-bottom: 20px;">
-            <h1 style="color: white; font-size: 2.5em;">Arctic Voices</h1>
-            <p style="color: #a0a0a0; font-size: 1.2em; font-style: italic;">
-                "Kutuplar sadece birer veri noktası değil; binlerce yıllık hikayelerin, dillerin ve yaşamların evidir."
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ (YENİ!) ---
+    # --- GÜNÜN ARKTIK KELİMESİ (SADECE BU KALSIN) ---
     import random
     kelimeler = [
         {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
         {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."}
     ]
-    # Sayfa her yenilendiğinde veya tıklandığında değişmemesi için basit bir seçim:
-    gunun_kelimesi = kelimeler[0] # İstersen random.choice(kelimeler) yapabilirsin
+    # Sabit veya random seçebilirsin
+    gunun_kelimesi = kelimeler[0] 
 
     st.markdown(f"""
-        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #3498db; margin-bottom: 30px;">
+        <div style="background: rgba(255, 255, 255, 0.05); 
+                    padding: 15px; 
+                    border-radius: 10px; 
+                    border: 1px dashed #3498db; 
+                    margin-top: 10px;
+                    margin-bottom: 20px;">
             <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
             <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
         </div>
     """, unsafe_allow_html=True)
 
-    # --- KARTLAR (BAŞLIKLAR KARTIN İÇİNE ALINDI) ---
+    # --- KARTLAR (ARADAKİ TÜM BOŞLUKLAR SİLİNDİ) ---
     
-    # 1. INUIT KARTI
-    st.markdown("""
-        <div class="glass-card">
-            <h2 style="color: white; margin-bottom: 15px;">Inuit</h2>
-    """, unsafe_allow_html=True)
+    # 1. INUIT
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.markdown('<h2 style="color: white; margin-top: 0;">Inuit</h2>', unsafe_allow_html=True)
     st.image("inuit.jpg", use_container_width=True)
     st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # 2. SAMI KARTI
-    st.markdown("""
-        <div class="glass-card">
-            <h2 style="color: white; margin-bottom: 15px;">Sami</h2>
-    """, unsafe_allow_html=True)
+    # 2. SAMI
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.markdown('<h2 style="color: white; margin-top: 0;">Sami</h2>', unsafe_allow_html=True)
     st.image("sami.jpg", use_container_width=True)
     st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # 3. NENETS KARTI
-    st.markdown("""
-        <div class="glass-card">
-            <h2 style="color: white; margin-bottom: 15px;">Nenets</h2>
-    """, unsafe_allow_html=True)
+    # 3. NENETS
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    st.markdown('<h2 style="color: white; margin-top: 0;">Nenets</h2>', unsafe_allow_html=True)
     st.image("nenets.jpg", use_container_width=True)
     st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
