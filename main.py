@@ -278,9 +278,49 @@ elif menu == "🧭 Kültür Keşfi":
 """, unsafe_allow_html=True)
     # ===================== NENETS =====================
     elif culture == "Nenets":
-        st.header("Nenets Kültürü")
-        st.write("Yakında eklenecek...")
+        st.header("🦌 Nenets Kültürü: Tundra'nın Göçebe Efendileri")
         
+        st.write("""
+        Nenets halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
+        Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
+        """)
+
+        # Mevcut nenets.jpg dosyanı kullanıyoruz
+        st.image("nenets2.jpg", caption="Geleneksel Nenets Yaşamı ve Ren Geyikleri")
+
+        st.divider()
+
+        # --- AZ BİLİNEN BİLGİ: CHUM ÇADIRLARI ---
+        st.subheader("🏠 Hareketli Evler: Chum")
+        st.write("""
+        Nenetslerin 'Chum' adını verdikleri çadırları, ren geyiği derisinden yapılır. 
+        Bu çadırlar o kadar pratiktir ki, göç sırasında sadece **40 dakika** içinde kurulup sökülebilir. 
+        Bir aile yılda yaklaşık **1000 kilometreden fazla** yol kat eder ve her duraklamada bu evi yeniden kurar.
+        """)
+
+        st.divider()
+
+        # --- ÖZEL BİLGİ KUTUSU (BEYAZ YAZI) ---
+        st.markdown("""
+            <div style="background-color: rgba(255, 75, 75, 0.2); 
+                        padding: 20px; 
+                        border-radius: 10px; 
+                        border-left: 5px solid #ff4b4b;
+                        margin: 10px 0px;">
+                <span style="color: white; font-weight: bold;">💡 İnanılmaz Teknik Detay: Ren Geyiği Kılcal Damarları</span>
+                <p style="color: white; margin-top: 10px;">
+                Nenetslerin giydiği 'Malitsa' adlı kürkler, ren geyiği derisinden yapılır. 
+                Ren geyiği kıllarının içi boştur ve hava hapseder. Bu yapı, giysinin sadece sıcak tutmasını değil, 
+                aynı zamanda denize düşen birinin su üzerinde batmadan kalmasını (can yeleği gibi) sağlar.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+        # --- NENETS DİLİ VE DOĞA ---
+        st.info("""
+        ❄️ **Dilin Gücü:** Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
+        Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
+        """)
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
