@@ -101,52 +101,69 @@ if menu == "🏔️Ana Sayfa":
     st.markdown('</div>', unsafe_allow_html=True)
     
 # -------------------------
-# HARİTA
+# EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
-
 if menu == "🗺️Kültürel Harita":
 
-    st.title("🗺️ Arktik Yerli Kültür Haritası")
+    st.title("✈️ Türkiye'den Arktik'e Yolculuk")
+    st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
 
-    # Harita merkezi (Arktik bölge)
+    # Harita merkezi (Görünümü Türkiye ve Arktik arasını kapsayacak şekilde ayarladım)
     m = folium.Map(
-        location=[70, 0],
-        zoom_start=3,
+        location=[55, 20], 
+        zoom_start=3, 
         tiles="CartoDB dark_matter"
     )
 
-    # Inuit
+    # 1. TÜRKİYE (BAŞLANGIÇ NOKTASI)
     folium.Marker(
-        location=[64.2, -51.7],  # Grönland
-        popup="""
-        <b>Inuit</b><br>
-        Kanada, Alaska ve Grönland'da yaşayan Arktik halk.
-        """,
-        icon=folium.Icon(color="blue", icon="info-sign")
+        location=[39.9, 32.8], # Ankara
+        popup="<b>Burası Evimiz!</b><br>Arktik yolculuğu buradan başlıyor. 🚀",
+        icon=folium.Icon(color="red", icon="home", prefix="fa")
     ).add_to(m)
 
-    # Sami
+    # 2. HALKLAR VE ÖZEL İKONLAR (EMOJİLERLE)
+    # Inuit (Küçük Eskimo Emojisi)
     folium.Marker(
-        location=[68.5, 23.6],  # Norveç-Finlandiya bölgesi
-        popup="""
-        <b>Sami</b><br>
-        İskandinavya'nın kuzeyinde yaşayan yerli topluluk.
-        """,
-        icon=folium.Icon(color="green", icon="info-sign")
+        location=[64.2, -51.7],
+        popup="<b>İnuitler</b><br>❄️ Buzun ve karın koruyucuları.",
+        icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">🧑‍🌾</div>""")
     ).add_to(m)
 
-    # Nenets
+    # Sami (Ren Geyiği Emojisi)
     folium.Marker(
-        location=[67.5, 53.0],  # Rusya tundra
-        popup="""
-        <b>Nenets</b><br>
-        Sibirya tundrasında göçebe ren geyiği çobanları.
-        """,
-        icon=folium.Icon(color="red", icon="info-sign")
+        location=[68.5, 23.6],
+        popup="<b>Samiler</b><br>🦌 Ren geyikleriyle yaşayan kadim halk.",
+        icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">🦌</div>""")
+    ).add_to(m)
+
+    # Nenets (Çadır Emojisi)
+    folium.Marker(
+        location=[67.5, 53.0],
+        popup="<b>Nenetsler</b><br>⛺ Tundranın göçebe çobanları.",
+        icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">⛺</div>""")
+    ).add_to(m)
+
+    # 3. UÇAK ROTASI (TÜRKİYE -> ARKTIK)
+    # Ankara'dan her bir merkeze giden kesikli uçuş çizgileri
+    rota_inuit = [[39.9, 32.8], [64.2, -51.7]]
+    rota_sami = [[39.9, 32.8], [68.5, 23.6]]
+    rota_nenets = [[39.9, 32.8], [67.5, 53.0]]
+
+    folium.PolyLine(rota_inuit, color="#3498db", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
+    folium.PolyLine(rota_sami, color="#2ecc71", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
+    folium.PolyLine(rota_nenets, color="#e74c3c", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
+
+    # Rotanın ortasına küçük bir uçak ikonu (Opsiyonel görsel şölen)
+    folium.Marker(
+        location=[55, 10], 
+        icon=folium.DivIcon(html=f"""<div style="font-size: 20px; transform: rotate(45deg);">✈️</div>""")
     ).add_to(m)
 
     # Haritayı göster
     st_folium(m, width=900, height=600)
+
+    st.info("💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!")
 
 # -------------------------
 # NASA İKLİM VERİSİ
