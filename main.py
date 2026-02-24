@@ -49,35 +49,34 @@ menu = st.sidebar.selectbox(
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
-    # 1. Kütüphaneyi içe aktar (Değişim için şart)
     import random
 
-    # 2. Kelime listesi (Gákti eklendi, hatalar giderildi)
+    # Kelime listesi (Virgüller düzeltildi!)
     kelimeler = [
-        {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
-        {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
-        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 dereceye kadar düşse de içindeki insan ısısını hapseden efsanevi kubbe evler."},
         {"kelime": "Kutup Sumrusu", "dil": "Doğa Gezgini", "anlam": "Dünyanın en büyük yolcusu! Her yıl Kuzey ve Güney kutbu arasında uçarak hayatı boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
         {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
         {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Aurora Borealis! Güneşten gelen fırtınaların gece gökyüzünü yeşil ve mor bir dans pistine çevirdiği büyüleyici ışık gösterisi."},
-        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."}
+        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."},
+        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."} # Virgül hatası buradaydı!
     ]
 
-    # 3. RASTGELE SEÇİM (Sayfa her yenilendiğinde değişmesini sağlar)
+    # Sayfa her yenilendiğinde listeden rastgele birini seçer:
     gunun_kelimesi = random.choice(kelimeler)
 
-    # 4. GÖRSEL KUTU
     st.markdown(f"""
         <div style="background: rgba(255, 255, 255, 0.05); 
-                    padding: 15px; 
-                    border-radius: 10px; 
+                    padding: 20px; 
+                    border-radius: 12px; 
                     border: 1px dashed #3498db; 
                     margin-top: 10px;
-                    margin-bottom: 25px;">
-            <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
-            <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
+                    margin-bottom: 30px;">
+            <span style="color: #3498db; font-weight: bold; font-size: 1.1em;">❄️ Arktik Kaşif Notu:</span>
+            <div style="margin-top: 10px;">
+                <span style="color: white; font-size: 1.2em;"><b>{gunun_kelimesi['kelime']}</b></span>
+                <span style="color: #a0a0a0; font-size: 0.9em; margin-left: 5px;">({gunun_kelimesi['dil']})</span>
+                <p style="color: white; margin-top: 8px; line-height: 1.5;">{gunun_kelimesi['anlam']}</p>
+            </div>
         </div>
     """, unsafe_allow_html=True)
 
