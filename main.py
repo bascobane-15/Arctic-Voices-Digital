@@ -148,45 +148,77 @@ if menu == "🗺️Kültürel Harita":
     # Haritayı göster
     st_folium(m, width=900, height=600)
 
-if menu == "🛰️NASA İklim Verisi":
-    # 1. Başlık
-    st.markdown("<h1 style='text-align: center;'>🛰️ NASA GISTEMP Küresel Sıcaklık Analizi</h1>", unsafe_allow_html=True)
+# -------------------------
+# NASA İKLİM VERİSİ
+# -------------------------
 
-    # 2. ÖNCE METRİKLERİ VE SLIDER'I ÇİZELİM (Böylece hata alsa bile kutular görünür)
-    st.markdown("### 🌡️ Gelecek Tahmin Simülatörü")
-    
-    # Kullanıcı etkileşimi
-    hedef_sicaklik = st.slider("Hedef Sıcaklık Anomalisi Eşiği (°C)", 1.0, 3.5, 1.5, 0.1)
+elif menu == "🛰️ NASA İklim Verisi":
+    st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
-    # Hesaplamalar
-    tahmini_yil = 2024 + int((hedef_sicaklik - 1.2) * 45)
-    albedo_kaybi = int((hedef_sicaklik - 1.0) * 20)
-
-    # METRİK KUTULARI (İşte o şık kutular!)
-    m_col1, m_col2, m_col3 = st.columns(3)
-    m_col1.metric("Mevcut (2024)", "1.26 °C", "Artış")
-    m_col2.metric(f"Hedef {hedef_sicaklik}°C", f"{tahmini_yil} Yılı")
-    m_col3.metric("Albedo Kaybı", f"%{max(0, albedo_kaybi)}")
-
-    st.markdown("---")
-
-    # 3. GRAFİK BÖLÜMÜ
-    # Eğer senin grafiğinin adı 'inc_fig' değilse, buradaki ismi ona göre değiştir.
     try:
-        if 'inc_fig' in locals() or 'inc_fig' in globals():
-            st.plotly_chart(inc_fig, use_container_width=True)
-        else:
-            st.warning("Grafik verisi (inc_fig) şu an hazır değil, ancak analiz paneli aktif.")
-    except Exception as e:
-        st.info("Grafik yüklenirken bir adım beklendi...")
+        # Veri çekme işlemi
+        url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+        df = pd.read_csv(url, skiprows=1)
 
-    # 4. DİNAMİK MESAJLAR
-    if hedef_sicaklik <= 1.5:
-        st.success(f"🌱 **GÜVENLİ BÖLGE:** {tahmini_yil} yılına kadar bu seviyede kalınırsa Arktik kültürü korunabilir.")
-    elif hedef_sicaklik <= 2.2:
-        st.warning(f"⚠️ **RİSKLİ BÖLGE:** {tahmini_yil} yılında Albedo etkisi ciddi oranda azalacak.")
-    else:
-        st.error(f"🚨 **KRİTİK EŞİK:** {hedef_sicaklik}°C artışta 'Siku' (deniz buzu) tamamen yok olabilir.")
+        # Veri temizleme
+        df = df[["Year", "J-D"]]
+        df.columns = ["Year", "Temperature"]
+        
+        # 'Temperature' sütunundaki sayısal olmayan değerleri temizle
+        df['Temperature'] = pd.to_numeric(df['Temperature'], errors='coerce')
+        df = df.dropna()
+
+        # Son ölçülen anomali değerini al (İnovasyon için)
+        latest_temp = df['Temperature'].iloc[-1]
+        latest_year = df['Year'].iloc[-1]
+
+        # Grafik oluşturma
+        fig = px.line(
+            df,
+            x="Year",
+            y="Temperature",
+            title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
+        )
+
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="white"),
+            title=dict(font=dict(size=22, color="white"), x=0.5),
+            xaxis=dict(title="Yıl", gridcolor="rgba(255,255,255,0.1)"),
+            yaxis=dict(title="Sıcaklık Anomalisi (°C)", gridcolor="rgba(255,255,255,0.1)")
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+        # --- İNOVATİF ANALİZ KUTUSU (BEYAZ YAZI) ---
+        st.divider()
+        
+        # Sıcaklık durumuna göre dinamik renk ve mesaj belirleme
+        status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
+        border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
+        
+        st.markdown(f"""
+            <div style="background-color: {status_color}; 
+                        padding: 25px; 
+                        border-radius: 15px; 
+                        border-left: 8px solid {border_color};
+                        margin-top: 20px;">
+                <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
+                <p style="color: white; font-size: 1.1em;">
+                NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
+                </p>
+                <p style="color: white; font-style: italic;">
+                <b>Arktik Yansıma:</b> Bu artış kutup bölgelerinde 2-3 kat daha şiddetli hissediliyor. 
+                Inuitlerin avlanma rotaları değişiyor ve Nenetslerin ren geyiği göç yolları üzerindeki buzlar 
+                tahmin edilenden daha erken eriyor.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    except Exception as e:
+        st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
+
 # -------------------------
 # KÜLTÜR KEŞFİ
 # -------------------------
