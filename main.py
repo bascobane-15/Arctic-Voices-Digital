@@ -303,27 +303,20 @@ elif menu == "🧭 Kültür Keşfi":
 
         st.divider()
 
-        # --- ÖZEL BİLGİ KUTUSU (BEYAZ YAZI) ---
+        # --- NENETS DİLİ VE DOĞA  ---
         st.markdown("""
-            <div style="background-color: rgba(255, 75, 75, 0.2); 
+            <div style="background-color: rgba(52, 152, 219, 0.2); 
                         padding: 20px; 
                         border-radius: 10px; 
-                        border-left: 5px solid #ff4b4b;
+                        border-left: 5px solid #3498db;
                         margin: 10px 0px;">
-                <span style="color: white; font-weight: bold;">💡 İnanılmaz Teknik Detay: Ren Geyiği Kılcal Damarları</span>
+                <span style="color: white; font-weight: bold;">❄️ Dilin Gücü:</span>
                 <p style="color: white; margin-top: 10px;">
-                Nenetslerin giydiği 'Malitsa' adlı kürkler, ren geyiği derisinden yapılır. 
-                Ren geyiği kıllarının içi boştur ve hava hapseder. Bu yapı, giysinin sadece sıcak tutmasını değil, 
-                aynı zamanda denize düşen birinin su üzerinde batmadan kalmasını (can yeleği gibi) sağlar.
+                Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
+                Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
                 </p>
             </div>
         """, unsafe_allow_html=True)
-
-        # --- NENETS DİLİ VE DOĞA ---
-        st.info("""
-        ❄️ **Dilin Gücü:** Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
-        Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
-        """)
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
