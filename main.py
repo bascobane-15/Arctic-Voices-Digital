@@ -48,7 +48,7 @@ menu = st.sidebar.selectbox(
 # -------------------------
 # ANA SAYFA - KART TASARIMI
 # -------------------------
-if menu == "🏔️ Ana Sayfa":
+if menu == "Ana Sayfa":
 
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
