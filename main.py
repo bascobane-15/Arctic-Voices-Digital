@@ -186,53 +186,96 @@ if menu == "🗺️Kültürel Harita":
         </div>
     """, unsafe_allow_html=True)
 
-# --- OYUN PANELİ ---
-st.markdown("---")
-st.header("🎮 Arktik Kurtarma Operasyonu: Strateji Modu")
+# ---------------------------------------------------------
+# ARKTİK KURTARMA OPERASYONU: STRATEJİ VE DENGE OYUNU
+# ---------------------------------------------------------
 
-# Puan ve Sağlık Göstergeleri (Hata vermemesi için güvenli çekim)
+# 1. Oyun Hafızasını Hazırla (Hata almamak için bu kısım çok kritik)
+if 'saglik' not in st.session_state:
+    st.session_state.saglik = 100
+if 'puan' not in st.session_state:
+    st.session_state.puan = 0
+if 'oyun_mesaj' not in st.session_state:
+    st.session_state.oyun_mesaj = "Operasyon merkezine hoş geldin! Kararların Arktik'in geleceğini belirleyecek."
+
+st.markdown("---")
+st.header("✈️ Arktik Kurtarma Operasyonu")
+
+# 2. Gösterge Paneli (Puan ve Sağlık)
 col_m1, col_m2 = st.columns(2)
 col_m1.metric("🏆 Toplam Puan", st.session_state.puan)
-col_m2.metric("❤️ Arktik Dayanıklılığı", f"%{st.session_state.saglik}")
+col_m2.metric("❤️ Arktik Dayanıklılığı", f"%{st.session_state.saglik}", 
+              delta="-10" if st.session_state.saglik < 50 else None)
 
-st.write("### 🚨 Acil Durum Kararları")
-st.info("Unutma: Yanlış yardım Arktik dayanıklılığını düşürür!")
+# 3. Oyun Alanı
+st.markdown(f"""
+    <div style="background-color: rgba(44, 62, 80, 0.5); padding: 15px; border-radius: 10px; border-left: 5px solid #f1c40f;">
+        <p style="margin: 0; color: white;"><b>📡 Durum Raporu:</b> {st.session_state.oyun_mesaj}</p>
+    </div>
+""", unsafe_allow_html=True)
 
-# Üç bölge, üç farklı stratejik karar
+st.write("### 🚨 Kritik Karar Anı")
+st.write("Her halkın kendine has bir sorunu var. Doğru yöntemi seç!")
+
+# Üç sütunlu görev alanı
 c1, c2, c3 = st.columns(3)
 
+# --- INUIT GÖREVİ ---
 with c1:
-    st.subheader("🧑‍🌾 Inuit")
-    if st.button("Buz Takviyesi Yap ❄️"):
+    st.markdown("#### 🧑‍🌾 Inuit")
+    if st.button("Buzları Dondur ❄️", key="g1_dogru"):
         st.session_state.puan += 20
-        st.success("Doğru! Buzlar kalınlaştı.")
-    if st.button("Modern Ev İnşa Et 🏠"):
+        st.session_state.oyun_mesaj = "Harika! Inuit avcıları için deniz buzu takviyesi başarılı oldu."
+        st.rerun()
+    if st.button("Modern Ev Yap 🏠", key="g1_yanlis"):
         st.session_state.saglik -= 15
-        st.error("Hata! Geleneksel yapı bozuldu.")
+        st.session_state.oyun_mesaj = "Hata! Modern evler permafrostu eritiyor ve kültürü zayıflatıyor."
+        st.rerun()
 
+# --- SAMI GÖREVİ ---
 with c2:
-    st.subheader("🦌 Sami")
-    if st.button("Liken Havadan At 🌿"):
+    st.markdown("#### 🦌 Sami")
+    if st.button("Liken Sağla 🌿", key="g2_dogru"):
         st.session_state.puan += 25
-        st.success("Geyikler doydu!")
-    if st.button("Bölgeyi Çitle Çevir 🚧"):
+        st.session_state.oyun_mesaj = "Doğru! Ren geyikleri açlıktan kurtuldu."
+        st.rerun()
+    if st.button("Bölgeyi Çitle 🚧", key="g2_yanlis"):
         st.session_state.saglik -= 20
-        st.error("Hata! Göç yolları kapandı.")
+        st.session_state.oyun_mesaj = "Hata! Çitler geyiklerin doğal göç yollarını kesti."
+        st.rerun()
 
+# --- NENETS GÖREVİ ---
 with c3:
-    st.subheader("⛺ Nenets")
-    if st.button("Çadırları Sabitle 🔨"):
+    st.markdown("#### ⛺ Nenets")
+    if st.button("Çadırı Sabitle 🔨", key="g3_dogru"):
         st.session_state.puan += 30
-        st.success("Fırtına dindi!")
-    if st.button("Isıtıcı Gönder 🔥"):
+        st.session_state.oyun_mesaj = "Başarılı! Fırtınaya karşı Chum çadırları koruma altına alındı."
+        st.rerun()
+    if st.button("Isıtıcı Gönder 🔥", key="g3_yanlis"):
         st.session_state.saglik -= 25
-        st.error("Hata! Permafrost eriyor!")
+        st.session_state.oyun_mesaj = "Hata! Fosil yakıtlı ısıtıcılar yerel kirliliğe yol açtı."
+        st.rerun()
 
-# SIFIRLAMA
-if st.button("Operasyonu Baştan Başlat 🔄"):
-    st.session_state.saglik = 100
-    st.session_state.puan = 0
-    st.rerun()
+# 4. Oyun Sonu ve Sıfırlama
+st.markdown("---")
+if st.session_state.saglik <= 0:
+    st.error("❌ Arktik Dayanıklılığı tükendi! Bölge yaşanamaz hale geldi.")
+    if st.button("Yeniden Dene 🔄"):
+        st.session_state.saglik = 100
+        st.session_state.puan = 0
+        st.rerun()
+elif st.session_state.puan >= 150:
+    st.balloons()
+    st.success("🏆 TEBRİKLER! Arktik Elçisi unvanını kazandın!")
+    if st.button("Skoru Sıfırla 🔄"):
+        st.session_state.puan = 0
+        st.session_state.saglik = 100
+        st.rerun()
+else:
+    if st.button("Oyunu Sıfırla 🔄"):
+        st.session_state.puan = 0
+        st.session_state.saglik = 100
+        st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
