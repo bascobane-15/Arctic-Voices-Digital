@@ -58,6 +58,11 @@ if menu == "🏔️Ana Sayfa":
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
         {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
         {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
+        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 dereceye kadar düşse de içindeki insan ısısını hapseden efsanevi kubbe evler."},
+        {"kelime": "Kutup Sumrusu", "dil": "Doğa Gezgini", "anlam": "Dünyanın en büyük yolcusu! Her yıl Kuzey ve Güney kutbu arasında uçarak hayatı boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
+        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
+        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Aurora Borealis! Güneşten gelen fırtınaların gece gökyüzünü yeşil ve mor bir dans pistine çevirdiği büyüleyici ışık gösterisi."},
+        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."}
     ]
 
     # 3. RASTGELE SEÇİM (Sayfa her yenilendiğinde değişmesini sağlar)
