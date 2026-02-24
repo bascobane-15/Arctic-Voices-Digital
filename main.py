@@ -198,8 +198,7 @@ elif menu == "🛰️ NASA İklim Verisi":
         status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
         border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
-        # Mevcut st.info satırını bununla değiştir:
-st.markdown("""
+        st.markdown("""
     <div style="background-color: rgba(52, 152, 219, 0.2); 
                 padding: 10px; 
                 border-radius: 5px; 
@@ -210,6 +209,7 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
+
 # --- ZAMAN MAKİNESİ ÇİZELGESİ (ANALİZ KUTUSUNUN HEMEN ALTINA) ---
         st.markdown("---")
         st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
