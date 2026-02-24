@@ -262,9 +262,20 @@ elif menu == "🧭 Kültür Keşfi":
         # Dosyayı bilgisayarından 'dokunsal_harita.jpg' adıyla yüklediğini varsayıyorum:
         st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası")
 
-        st.info("""
-💡 **İnanılmaz Teknik Detay:** Bu ahşap haritalar o kadar hassas yontulmuştur ki, Inuitler eldivenlerini çıkarmadan, sadece başparmaklarıyla ahşap üzerindeki oyukları takip ederek hangi koyda veya burunda olduklarını %100 doğrulukla anlayabilirler. Ayrıca denize düştüğünde batmazlar ve zifiri karanlıkta (kutup gecesinde) bile çalışmaya devam eden dünyanın tek 'analog GPS' sistemidir.
-""")
+        st.markdown("""
+    <div style="background-color: rgba(13, 110, 253, 0.2); 
+                padding: 20px; 
+                border-radius: 10px; 
+                border-left: 5px solid #0d6efd;
+                margin: 10px 0px;">
+        <span style="color: white; font-weight: bold;">💡 İnanılmaz Teknik Detay:</span>
+        <p style="color: white; margin-top: 10px;">
+        Bu ahşap haritalar o kadar hassas yontulmuştur ki, Inuitler eldivenlerini çıkarmadan, 
+        sadece başparmaklarıyla ahşap üzerindeki oyukları takip ederek hangi koyda veya burunda olduklarını %100 doğrulukla anlayabilirler. 
+        Ayrıca denize düştüğünde batmazlar ve zifiri karanlıkta (kutup gecesinde) bile çalışmaya devam eden dünyanın tek 'analog GPS' sistemidir.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
