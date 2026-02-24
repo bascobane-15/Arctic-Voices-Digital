@@ -198,23 +198,18 @@ elif menu == "🛰️ NASA İklim Verisi":
         status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
         border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
-        st.markdown(f"""
-            <div style="background-color: {status_color}; 
-                        padding: 25px; 
-                        border-radius: 15px; 
-                        border-left: 8px solid {border_color};
-                        margin-top: 20px;">
-                <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
-                <p style="color: white; font-size: 1.1em;">
-                NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
-                </p>
-                <p style="color: white; font-style: italic;">
-                <b>Arktik Yansıma:</b> Bu artış kutup bölgelerinde 2-3 kat daha şiddetli hissediliyor. 
-                Inuitlerin avlanma rotaları değişiyor ve Nenetslerin ren geyiği göç yolları üzerindeki buzlar 
-                tahmin edilenden daha erken eriyor.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
+        # Mevcut st.info satırını bununla değiştir:
+st.markdown("""
+    <div style="background-color: rgba(52, 152, 219, 0.2); 
+                padding: 10px; 
+                border-radius: 5px; 
+                margin-bottom: 20px;
+                border: 1px solid #3498db;">
+        <p style="color: #F1C40F; font-weight: bold; margin: 0; text-align: center;">
+            ❄️ Sıcaklık artışının Arktik yaşamı üzerindeki etkilerini görmek için başlıklara tıklayın.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
 # --- ZAMAN MAKİNESİ ÇİZELGESİ (ANALİZ KUTUSUNUN HEMEN ALTINA) ---
         st.markdown("---")
         st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
