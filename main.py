@@ -151,36 +151,74 @@ if menu == "🗺️Kültürel Harita":
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
-if menu == "🛰️NASA İklim Verisi":
-    st.subheader("📊 NASA GISTEMP Küresel Sıcaklık Analizi")
-    
-    # --- İNTERAKTİF KONTROL ---
-    st.markdown("""<div style='background: rgba(52, 152, 219, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #3498db;'>
-        <b>İklim Simülatörü:</b> Aşağıdaki kaydırıcıyı kullanarak gelecekteki olası bir sıcaklık artış eşiği belirleyin.
-    </div>""", unsafe_allow_html=True)
-    
-    hedef_sicaklik = st.slider("Hedef Sıcaklık Anomalisi (°C)", 1.0, 3.0, 1.5, 0.1)
 
-    # Buraya mevcut Plotly grafik kodun gelecek (inc_fig gibi)
-    # st.plotly_chart(inc_fig, use_container_width=True)
+elif menu == "🛰️ NASA İklim Verisi":
+    st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
-    # --- ANALİZ MOTORU ---
-    # Basit bir tahmin algoritması (Gerçek NASA verisindeki son artış eğilimine göre)
-    tahmini_yil = 2024 + int((hedef_sicaklik - 1.2) * 40) # Temsili bir hesaplama
+    try:
+        # Veri çekme işlemi
+        url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+        df = pd.read_csv(url, skiprows=1)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.metric(label="Mevcut Anomali (2024)", value="1.26 °C", delta="Artış Eğiliminde")
-    with col2:
-        st.metric(label=f"Tahmini {hedef_sicaklik}°C Eşiği", value=f"{tahmini_yil} Yılı")
+        # Veri temizleme
+        df = df[["Year", "J-D"]]
+        df.columns = ["Year", "Temperature"]
+        
+        # 'Temperature' sütunundaki sayısal olmayan değerleri temizle
+        df['Temperature'] = pd.to_numeric(df['Temperature'], errors='coerce')
+        df = df.dropna()
 
-    # --- DURUM MESAJI (DİNAMİK) ---
-    if hedef_sicaklik <= 1.5:
-        st.success("🌱 Bu seviyede Arktik ekosistemi ve yerli kültürler büyük oranda korunabilir.")
-    elif hedef_sicaklik <= 2.2:
-        st.warning("⚠️ Bu artış, Permafrost tabakasının erimesine ve İgloların inşa edilemez hale gelmesine neden olur.")
-    else:
-        st.error("🚨 KRİTİK SEVİYE: Albedo etkisi tamamen kaybolabilir ve geleneksel av rotaları yok olabilir.")
+        # Son ölçülen anomali değerini al (İnovasyon için)
+        latest_temp = df['Temperature'].iloc[-1]
+        latest_year = df['Year'].iloc[-1]
+
+        # Grafik oluşturma
+        fig = px.line(
+            df,
+            x="Year",
+            y="Temperature",
+            title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
+        )
+
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="white"),
+            title=dict(font=dict(size=22, color="white"), x=0.5),
+            xaxis=dict(title="Yıl", gridcolor="rgba(255,255,255,0.1)"),
+            yaxis=dict(title="Sıcaklık Anomalisi (°C)", gridcolor="rgba(255,255,255,0.1)")
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+        # --- İNOVATİF ANALİZ KUTUSU (BEYAZ YAZI) ---
+        st.divider()
+        
+        # Sıcaklık durumuna göre dinamik renk ve mesaj belirleme
+        status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
+        border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
+        
+        st.markdown(f"""
+            <div style="background-color: {status_color}; 
+                        padding: 25px; 
+                        border-radius: 15px; 
+                        border-left: 8px solid {border_color};
+                        margin-top: 20px;">
+                <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
+                <p style="color: white; font-size: 1.1em;">
+                NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
+                </p>
+                <p style="color: white; font-style: italic;">
+                <b>Arktik Yansıma:</b> Bu artış kutup bölgelerinde 2-3 kat daha şiddetli hissediliyor. 
+                Inuitlerin avlanma rotaları değişiyor ve Nenetslerin ren geyiği göç yolları üzerindeki buzlar 
+                tahmin edilenden daha erken eriyor.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    except Exception as e:
+        st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
+
 # -------------------------
 # KÜLTÜR KEŞFİ
 # -------------------------
