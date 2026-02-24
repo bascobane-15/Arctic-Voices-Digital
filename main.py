@@ -46,7 +46,6 @@ menu = st.sidebar.selectbox(
 )
 
 # -------------------------
-# -------------------------
 # ANA SAYFA - KART TASARIMI
 # -------------------------
 if menu == "🏔️Ana Sayfa":
