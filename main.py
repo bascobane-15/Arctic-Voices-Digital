@@ -243,23 +243,27 @@ elif menu == "🧭 Kültür Keşfi":
         st.image("igloo.jpg", use_container_width=True)
 
         st.divider()
-        st.subheader("🕶️ Geleneksel Kar Gözlüğü")
+        # --- DÜNYANIN İLK GÜNEŞ GÖZLÜĞÜ ---
+        st.subheader("🕶️ Dünyanın İlk Güneş Gözlüğü")
         st.write("""
-        Inuitler, kar körlüğünü engellemek için fildişinden yapılan ince çizgili gözlükler kullanırdı. 
-        Bu, dünyanın en eski güneş gözlüğü teknolojisidir.
+        **Puvirnituq:** Inuitler binlerce yıl önce fildişinden bu gözlükleri icat etti. 
+        Camı yoktur; sadece ince bir çizgi sayesinde ışığı süzer ve kar körlüğünü engellerken görüşü keskinleştirir.
         """)
-        st.image("kar_gozlugu_url", caption="Inuit Kar Gözlüğü")
+        # Gerçek bir görsel linki ekledim:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Snow_goggles_-_Inuit_-_Hudson_Bay_-_Royal_Ontario_Museum_-_DSC09765.JPG/800px-Snow_goggles_-_Inuit_-_Hudson_Bay_-_Royal_Ontario_Museum_-_DSC09765.JPG", caption="Geleneksel Inuit Kar Gözlüğü")
 
         st.divider()
 
-        st.subheader("🗺️ Dokunsal Ahşap Haritalar")
+        # --- DOKUNSAL HARİTALAR ---
+        st.subheader("🗺️ Karanlıkta Yol Bulan Dokunsal Haritalar")
         st.write("""
-        Ammassalik Inuitleri tarafından yapılan bu haritalar, karanlık kutup gecelerinde 
-        sadece dokunarak kıyı şeridini tanımaya yarar.
+        **Ammassalik Ahşap Haritaları:** Doğu Grönland'daki Inuitler, kıyı şeritlerini ahşap üzerine 3 boyutlu oymuşlardır. 
+        Bu haritalar kağıt gibi ıslanmaz, donmaz ve en önemlisi **zifiri karanlıkta sadece dokunarak** yolu bulmayı sağlar.
         """)
-        st.image("ahsap_harita_url", caption="Ammassalik Dokunsal Haritası")
+        # Gerçek bir görsel linki ekledim:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Wooden_map_Greenland.jpg", caption="Ammassalik Dokunsal Ahşap Haritası")
 
-        st.info("💡 Inuit kültürü doğayla uyum, dayanıklılık ve topluluk dayanışmasına dayanır.")
+        st.info("💡 Biliyor muydun? Bu ahşap haritalar cebe sığacak kadar küçüktür ve suda batmazlar!")
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
