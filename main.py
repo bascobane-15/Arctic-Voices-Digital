@@ -249,8 +249,8 @@ elif menu == "🧭 Kültür Keşfi":
         **Puvirnituq:** Inuitler binlerce yıl önce fildişinden bu gözlükleri icat etti. 
         İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
-        # Daha doğrudan bir görsel yolu:
-        st.image("https://share.google/OY6LVMTw9S2lNUUT9")
+        # Dosyayı bilgisayarından 'kar_gozlugu.jpg' adıyla yüklediğini varsayıyorum:
+        st.image("kar_gozlugu.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
 
         st.divider()
 
@@ -259,10 +259,12 @@ elif menu == "🧭 Kültür Keşfi":
         st.write("""
         **Ammassalik Ahşap Haritaları:** Karanlık kutup gecelerinde sadece dokunarak yolu bulmayı sağlayan 3 boyutlu kıyı haritalarıdır.
         """)
-        # Müze kaynağı üzerinden doğrudan link:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Wooden_map_Greenland.jpg", caption="Dokunsal Ahşap Harita")
+        # Dosyayı bilgisayarından 'dokunsal_harita.jpg' adıyla yüklediğini varsayıyorum:
+        st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası")
 
-        st.info("💡 İpucu: Eğer görseller hala yüklenmiyorsa, internet bağlantını kontrol edip sayfayı yenilemeyi dene.")
+        st.info("""
+💡 **İnanılmaz Teknik Detay:** Bu ahşap haritalar o kadar hassas yontulmuştur ki, Inuitler eldivenlerini çıkarmadan, sadece başparmaklarıyla ahşap üzerindeki oyukları takip ederek hangi koyda veya burunda olduklarını %100 doğrulukla anlayabilirler. Ayrıca denize düştüğünde batmazlar ve zifiri karanlıkta (kutup gecesinde) bile çalışmaya devam eden dünyanın tek 'analog GPS' sistemidir.
+""")
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
