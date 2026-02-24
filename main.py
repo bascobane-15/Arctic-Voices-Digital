@@ -49,23 +49,28 @@ menu = st.sidebar.selectbox(
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
-    # --- GÜNÜN ARKTIK KELİMESİ (SADECE BU KALSIN) ---
+    # 1. Kütüphaneyi içe aktar (Değişim için şart)
     import random
+
+    # 2. Kelime listesi (Gákti eklendi, hatalar giderildi)
     kelimeler = [
         {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."}
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
+        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
     ]
-    # Sabit veya random seçebilirsin
-    gunun_kelimesi = kelimeler[0] 
 
+    # 3. RASTGELE SEÇİM (Sayfa her yenilendiğinde değişmesini sağlar)
+    gunun_kelimesi = random.choice(kelimeler)
+
+    # 4. GÖRSEL KUTU
     st.markdown(f"""
         <div style="background: rgba(255, 255, 255, 0.05); 
                     padding: 15px; 
                     border-radius: 10px; 
                     border: 1px dashed #3498db; 
                     margin-top: 10px;
-                    margin-bottom: 20px;">
+                    margin-bottom: 25px;">
             <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
             <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
         </div>
