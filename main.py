@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import pydeck as pdk
 import folium
+import time
 from streamlit_folium import st_folium
 
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
@@ -184,6 +185,64 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
+    # --- OYUN BAŞLANGICI ---
+st.divider()
+st.markdown("### 🏹 Arktik Koruyucusu: Mini Oyun")
+
+if 'game_step' not in st.session_state:
+    st.session_state.game_step = "baslangic"
+
+# 1. Aşama: Yolculuk
+if st.session_state.game_step == "baslangic":
+    st.write("Uçağın Ankara'dan kalkmaya hazır! Arktik'teki dostlarımıza yardım etmek için yola çıkmalısın.")
+    if st.button("✈️ Motorları Çalıştır ve Havalan!"):
+        with st.spinner('Kuzeye doğru uçuyorsun...'):
+            time.sleep(2)
+            st.session_state.game_step = "secim"
+            st.rerun()
+
+# 2. Aşama: Bölge Seçimi
+elif st.session_state.game_step == "secim":
+    st.write("Arktik semalarındasın! Hangi halka yardım etmek istersin?")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if st.button("🧑‍🌾 Inuitlere Git"):
+            st.session_state.hedef = "Inuit"
+            st.session_state.game_step = "gorev"
+            st.rerun()
+    with col2:
+        if st.button("🦌 Samilere Git"):
+            st.session_state.hedef = "Sami"
+            st.session_state.game_step = "gorev"
+            st.rerun()
+    with col3:
+        if st.button("⛺ Nenetslere Git"):
+            st.session_state.hedef = "Nenets"
+            st.session_state.game_step = "gorev"
+            st.rerun()
+
+# 3. Aşama: Görev ve İklim Etkisi
+elif st.session_state.game_step == "gorev":
+    st.write(f"📍 **{st.session_state.hedef}** bölgesine ulaştın!")
+    
+    # NASA Verisinden gelen sıcaklığı oyuna bağlıyoruz
+    # Not: latest_temp değişkenini NASA kısmından buraya taşımalıyız
+    sicaklik_etkisi = 1.26 # Örnek değer
+    
+    st.warning(f"⚠️ Dikkat! Sıcaklık anomalisi {sicaklik_etkisi}°C. Buzlar kaygan!")
+    
+    if st.session_state.hedef == "Inuit":
+        st.write("Görev: Erimeden önce igloyu sağlamlaştır!")
+        skor = st.slider("Güçlendirme Seviyesi", 0, 100, 50)
+        if skor > 80:
+            st.success("🎉 Harika! İglo kış boyunca dayanacak.")
+        else:
+            st.error("😢 Sıcaklık çok yüksek, iglo eriyor! Daha hızlı olmalısın.")
+            
+    if st.button("🔄 Ana Menüye Dön"):
+        st.session_state.game_step = "baslangic"
+        st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
