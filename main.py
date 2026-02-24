@@ -160,31 +160,10 @@ if menu == "🗺️Kültürel Harita":
         icon=folium.DivIcon(html=f"""<div style="font-size: 20px; transform: rotate(45deg);">✈️</div>""")
     ).add_to(m)
 
-    # 1. HARİTAYI TAM GENİŞLİKTE GÖSTER (Beyaz boşluğu siler)
-    # width=None ve use_container_width=True beraber kullanılır
-    from streamlit_folium import st_folium
-    
-    st_folium(
-        m, 
-        width=None, 
-        height=500, 
-        use_container_width=True
-    )
+    # Haritayı göster
+    st_folium(m, width=900, height=600)
 
-    # 2. ALTTAKİ YAZIYI OKUNUR YAP (Parlak sarı ve çerçeveli)
-    st.markdown("""
-        <div style="background-color: rgba(52, 152, 219, 0.2); 
-                    padding: 15px; 
-                    border-radius: 10px; 
-                    margin-top: 20px;
-                    border: 1px solid #3498db;
-                    text-align: center;">
-            <p style="color: #F1C40F; font-weight: bold; margin: 0; font-size: 1.1em;">
-                💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. 
-                Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!
-            </p>
-        </div>
-
+    st.info("💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!")
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
