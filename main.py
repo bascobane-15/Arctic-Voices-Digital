@@ -250,7 +250,7 @@ elif menu == "🧭 Kültür Keşfi":
         İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
         # Daha doğrudan bir görsel yolu:
-        st.image("https://www.metmuseum.org/toah/images/hb/hb_1978.412.301.jpg", caption="Inuit Kar Gözlüğü (Fildişi)")
+        st.image("https://raw.githubusercontent.com/MetMuseum/openaccess/master/Pre-Columbian/1978.412.301.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
 
         st.divider()
 
@@ -260,7 +260,7 @@ elif menu == "🧭 Kültür Keşfi":
         **Ammassalik Ahşap Haritaları:** Karanlık kutup gecelerinde sadece dokunarak yolu bulmayı sağlayan 3 boyutlu kıyı haritalarıdır.
         """)
         # Müze kaynağı üzerinden doğrudan link:
-        st.image("https://collection.it/api/v1/objects/119851/images/220235/download", caption="Ammassalik Dokunsal Haritası")
+        st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Wooden_map_Greenland.jpg", caption="Dokunsal Ahşap Harita")
 
         st.info("💡 İpucu: Eğer görseller hala yüklenmiyorsa, internet bağlantını kontrol edip sayfayı yenilemeyi dene.")
     # ===================== NENETS =====================
