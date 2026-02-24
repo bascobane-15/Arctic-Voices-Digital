@@ -60,20 +60,24 @@ if menu == "🏔️Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ ---
-    # (Buradaki markdown'ın bittiği yer ile alttaki st.header arasında boşluk olmamalı)
+    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ (YENİ!) ---
+    import random
+    kelimeler = [
+        {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
+        {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
+        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
+    ]
+    # Sayfa her yenilendiğinde veya tıklandığında değişmemesi için basit bir seçim:
+    gunun_kelimesi = kelimeler[0] # İstersen random.choice(kelimeler) yapabilirsin
+
     st.markdown(f"""
-        <div style="background: rgba(255, 255, 255, 0.05); 
-                    padding: 15px; 
-                    border-radius: 10px; 
-                    border: 1px dashed #3498db; 
-                    margin-bottom: 5px;">
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #3498db; margin-bottom: 25px;">
             <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
             <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
         </div>
     """, unsafe_allow_html=True)
 
-    # DİKKAT: Burada st.write() veya boş st.markdown() varsa SİL!
     # --- MEVCUT KARTLAR ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
