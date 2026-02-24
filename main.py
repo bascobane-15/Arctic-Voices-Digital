@@ -46,10 +46,40 @@ menu = st.sidebar.selectbox(
 )
 
 # -------------------------
+# -------------------------
 # ANA SAYFA - KART TASARIMI
 # -------------------------
 if menu == "🏔️Ana Sayfa":
 
+    # --- YARATICI GİRİŞ VE VİZYON ---
+    st.markdown("""
+        <div style="text-align: center; padding: 20px; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <h1 style="color: white; font-size: 2.5em;">Arctic Voices</h1>
+            <p style="color: #a0a0a0; font-size: 1.2em; font-style: italic;">
+                "Kutuplar sadece birer veri noktası değil; binlerce yıllık hikayelerin, dillerin ve yaşamların evidir."
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # --- GÜNÜN ARKTIK KELİMESİ MODÜLÜ (YENİ!) ---
+    import random
+    kelimeler = [
+        {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
+        {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
+        {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."},
+        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
+    ]
+    # Sayfa her yenilendiğinde veya tıklandığında değişmemesi için basit bir seçim:
+    gunun_kelimesi = kelimeler[0] # İstersen random.choice(kelimeler) yapabilirsin
+
+    st.markdown(f"""
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #3498db; margin-bottom: 25px;">
+            <span style="color: #3498db; font-weight: bold;">❄️ Günün Arktik Kavramı:</span>
+            <span style="color: white; margin-left: 10px;"><b>{gunun_kelimesi['kelime']}</b> ({gunun_kelimesi['dil']}): {gunun_kelimesi['anlam']}</span>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # --- MEVCUT KARTLAR ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     st.header("Inuit")
     st.image("inuit.jpg", use_container_width=True)
