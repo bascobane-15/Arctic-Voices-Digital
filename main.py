@@ -98,6 +98,7 @@ if menu == "🏔️Ana Sayfa":
     st.image("nenets.jpg", use_container_width=True)
     st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
     st.markdown('</div>', unsafe_allow_html=True)
+    
 # -------------------------
 # HARİTA
 # -------------------------
