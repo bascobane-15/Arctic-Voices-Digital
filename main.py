@@ -51,26 +51,26 @@ if menu == "🏔️Ana Sayfa":
 
     import random
 
-    # Kelime listesi (Virgüller düzeltildi!)
+    # Kelime listesi - Tüm virgüller ve parantezler kontrol edildi
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 dereceye kadar düşse de içindeki insan ısısını hapseden efsanevi kubbe evler."},
         {"kelime": "Kutup Sumrusu", "dil": "Doğa Gezgini", "anlam": "Dünyanın en büyük yolcusu! Her yıl Kuzey ve Güney kutbu arasında uçarak hayatı boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
         {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
         {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Aurora Borealis! Güneşten gelen fırtınaların gece gökyüzünü yeşil ve mor bir dans pistine çevirdiği büyüleyici ışık gösterisi."},
-        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."},
-        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."} # Virgül hatası buradaydı!
+        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."}
     ]
 
-    # Sayfa her yenilendiğinde listeden rastgele birini seçer:
+    # Her yenilemede bu 5 tanesinden birini rastgele seçer
     gunun_kelimesi = random.choice(kelimeler)
 
+    # Arktik Kaşif Notu Kutusu
     st.markdown(f"""
         <div style="background: rgba(255, 255, 255, 0.05); 
                     padding: 20px; 
                     border-radius: 12px; 
                     border: 1px dashed #3498db; 
                     margin-top: 10px;
-                    margin-bottom: 30px;">
+                    margin-bottom: 20px;">
             <span style="color: #3498db; font-weight: bold; font-size: 1.1em;">❄️ Arktik Kaşif Notu:</span>
             <div style="margin-top: 10px;">
                 <span style="color: white; font-size: 1.2em;"><b>{gunun_kelimesi['kelime']}</b></span>
@@ -80,8 +80,25 @@ if menu == "🏔️Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # --- KARTLAR BURADAN DEVAM EDER ---
-    # Not: Inuit, Sami, Nenets kartlarını bunun altına ekleyebilirsin.
+    # --- KARTLAR (BOŞLUKLARI ÖNLEMEK İÇİN BİRLEŞİK YAPI) ---
+    
+    # 1. INUIT
+    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Inuit</h2>', unsafe_allow_html=True)
+    st.image("inuit.jpg", use_container_width=True)
+    st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # 2. SAMI
+    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Sami</h2>', unsafe_allow_html=True)
+    st.image("sami.jpg", use_container_width=True)
+    st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # 3. NENETS
+    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Nenets</h2>', unsafe_allow_html=True)
+    st.image("nenets.jpg", use_container_width=True)
+    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
+    st.markdown('</div>', unsafe_allow_html=True)
     
 # -------------------------
 # HARİTA
