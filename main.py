@@ -148,6 +148,9 @@ if menu == "🗺️Kültürel Harita":
     # Haritayı göster
     st_folium(m, width=900, height=600)
 
+# -------------------------
+# NASA İKLİM VERİSİ
+# -------------------------
 if menu == "🛰️NASA İklim Verisi":
     st.subheader("📊 NASA GISTEMP Küresel Sıcaklık Analizi")
     
