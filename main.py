@@ -152,51 +152,74 @@ if menu == "🗺️Kültürel Harita":
 # NASA İKLİM VERİSİ
 # -------------------------
 
-if menu == "🛰️NASA İklim Verisi":
-    # 1. Başlık ve İkon
-    st.markdown("<h1 style='text-align: center;'>🛰️ NASA GISTEMP Küresel Sıcaklık Analizi</h1>", unsafe_allow_html=True)
+# ===================== NASA İKLİM VERİSİ =====================
+elif menu == "🛰️ NASA İklim Verisi":
+    st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
-    # 2. Grafik Bölümü (Senin Mevcut Plotly Grafiğini Buraya Bağlıyoruz)
-    # Not: Eğer grafik değişkeninin adı 'inc_fig' ise st.plotly_chart(inc_fig) yazmalısın.
-    # Burada senin görseldeki grafiği temsil eden alanı oluşturuyoruz:
     try:
-        st.plotly_chart(inc_fig, use_container_width=True) 
-    except NameError:
-        st.error("Grafik verisi yüklenemedi. Lütfen 'inc_fig' değişkeninin tanımlı olduğundan emin olun.")
+        # Veri çekme işlemi
+        url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+        df = pd.read_csv(url, skiprows=1)
 
-    st.markdown("---")
+        # Veri temizleme
+        df = df[["Year", "J-D"]]
+        df.columns = ["Year", "Temperature"]
+        
+        # 'Temperature' sütunundaki sayısal olmayan değerleri temizle
+        df['Temperature'] = pd.to_numeric(df['Temperature'], errors='coerce')
+        df = df.dropna()
 
-    # 3. İNTERAKTİF ANALİZ PANELİ (YENİ!)
-    st.subheader("🌡️ Gelecek Tahmin Simülatörü")
-    st.info("Aşağıdaki kaydırıcıyı kullanarak bir sıcaklık artış eşiği belirleyin ve Arktik üzerindeki etkisini görün.")
+        # Son ölçülen anomali değerini al (İnovasyon için)
+        latest_temp = df['Temperature'].iloc[-1]
+        latest_year = df['Year'].iloc[-1]
 
-    # Kullanıcı etkileşimi
-    hedef_sicaklik = st.slider("Hedef Sıcaklık Anomalisi Eşiği (°C)", min_value=1.0, max_value=3.5, value=1.5, step=0.1)
+        # Grafik oluşturma
+        fig = px.line(
+            df,
+            x="Year",
+            y="Temperature",
+            title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
+        )
 
-    # Basit bir doğrusal tahmin (NASA'nın son 20 yıldaki ivmesine göre hesaplanmıştır)
-    # 2024'te ~1.2°C olduğunu varsayarsak:
-    tahmini_yil = 2024 + int((hedef_sicaklik - 1.2) * 45)
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(color="white"),
+            title=dict(font=dict(size=22, color="white"), x=0.5),
+            xaxis=dict(title="Yıl", gridcolor="rgba(255,255,255,0.1)"),
+            yaxis=dict(title="Sıcaklık Anomalisi (°C)", gridcolor="rgba(255,255,255,0.1)")
+        )
 
-    # Metrik Kartları
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric(label="Mevcut Durum (2024)", value="1.26 °C", delta="Artış Eğilimi")
-    with col2:
-        st.metric(label=f"Hedef {hedef_sicaklik}°C Eşiği", value=f"{tahmini_yil} Yılı")
-    with col3:
-        # Albedo Etkisi Oranı (Temsili hesaplama)
-        albedo_kaybi = int((hedef_sicaklik - 1.0) * 20)
-        st.metric(label="Tahmini Albedo Kaybı", value=f"%{albedo_kaybi}")
+        st.plotly_chart(fig, use_container_width=True)
 
-    # 4. DİNAMİK KÜLTÜREL ETKİ MESAJI
-    st.markdown("### 🗺️ Kültürel ve Ekolojik Sonuçlar")
-    
-    if hedef_sicaklik <= 1.5:
-        st.success(f"✅ **GÜVENLİ BÖLGE:** {tahmini_yil} yılına kadar bu seviyede kalınırsa; İgloların yapısal bütünlüğü korunur, Kutup Sumrusu göç yolları değişmez.")
-    elif hedef_sicaklik <= 2.2:
-        st.warning(f"⚠️ **RİSKLİ BÖLGE:** {tahmini_yil} yılında Arktik'teki Albedo etkisi %{albedo_kaybi} oranında azalacak. Bu durum Nenets halkının ren geyiği göç yollarını sular altında bırakabilir.")
-    else:
-        st.error(f"🚨 **KRİTİK EŞİK:** {hedef_sicaklik}°C artışta 'Siku' (deniz buzu) tamamen yok olabilir. İnuit avcılık kültürü ve kutup ayılarının yaşam alanı geri dönülemez şekilde zarar görür.")
+        # --- İNOVATİF ANALİZ KUTUSU (BEYAZ YAZI) ---
+        st.divider()
+        
+        # Sıcaklık durumuna göre dinamik renk ve mesaj belirleme
+        status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
+        border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
+        
+        st.markdown(f"""
+            <div style="background-color: {status_color}; 
+                        padding: 25px; 
+                        border-radius: 15px; 
+                        border-left: 8px solid {border_color};
+                        margin-top: 20px;">
+                <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
+                <p style="color: white; font-size: 1.1em;">
+                NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
+                </p>
+                <p style="color: white; font-style: italic;">
+                <b>Arktik Yansıma:</b> Bu artış kutup bölgelerinde 2-3 kat daha şiddetli hissediliyor. 
+                Inuitlerin avlanma rotaları değişiyor ve Nenetslerin ren geyiği göç yolları üzerindeki buzlar 
+                tahmin edilenden daha erken eriyor.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    except Exception as e:
+        st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
+
 # -------------------------
 # KÜLTÜR KEŞFİ
 # -------------------------
