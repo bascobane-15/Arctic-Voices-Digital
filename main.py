@@ -329,6 +329,14 @@ elif menu == "🧭 Kültür Keşfi":
         </p>
     </div>
 """, unsafe_allow_html=True)
+        st.divider()
+
+        # --- İNOVATİF ARKTİK RADYOSU ---
+        st.subheader("📻 Arktik Radyosu: Inuit Frekansı")
+        with st.expander("🎧 Kutup Seslerini Dinlemek İçin Tıkla"):
+            st.write("Şu an Grönland kıyılarında bir buzun çatırmasını ve kutup rüzgarını duyuyorsunuz...")
+            # Bu link rüzgar sesi çalar, istersen kendi mp3 linkini koyabilirsin
+            st.audio("https://www.soundjay.com/nature/wind-01.mp3")
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("🦌 Nenets Kültürü: Tundra'nın Göçebe Efendileri")
