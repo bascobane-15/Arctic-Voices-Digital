@@ -247,23 +247,22 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🕶️ Dünyanın İlk Güneş Gözlüğü")
         st.write("""
         **Puvirnituq:** Inuitler binlerce yıl önce fildişinden bu gözlükleri icat etti. 
-        Camı yoktur; sadece ince bir çizgi sayesinde ışığı süzer ve kar körlüğünü engellerken görüşü keskinleştirir.
+        İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
-        # Gerçek bir görsel linki ekledim:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Snow_goggles_-_Inuit_-_Hudson_Bay_-_Royal_Ontario_Museum_-_DSC09765.JPG/800px-Snow_goggles_-_Inuit_-_Hudson_Bay_-_Royal_Ontario_Museum_-_DSC09765.JPG", caption="Geleneksel Inuit Kar Gözlüğü")
+        # Daha doğrudan bir görsel yolu:
+        st.image("https://www.metmuseum.org/toah/images/hb/hb_1978.412.301.jpg", caption="Inuit Kar Gözlüğü (Fildişi)")
 
         st.divider()
 
         # --- DOKUNSAL HARİTALAR ---
-        st.subheader("🗺️ Karanlıkta Yol Bulan Dokunsal Haritalar")
+        st.subheader("🗺️ Dokunsal Ahşap Haritalar")
         st.write("""
-        **Ammassalik Ahşap Haritaları:** Doğu Grönland'daki Inuitler, kıyı şeritlerini ahşap üzerine 3 boyutlu oymuşlardır. 
-        Bu haritalar kağıt gibi ıslanmaz, donmaz ve en önemlisi **zifiri karanlıkta sadece dokunarak** yolu bulmayı sağlar.
+        **Ammassalik Ahşap Haritaları:** Karanlık kutup gecelerinde sadece dokunarak yolu bulmayı sağlayan 3 boyutlu kıyı haritalarıdır.
         """)
-        # Gerçek bir görsel linki ekledim:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Wooden_map_Greenland.jpg", caption="Ammassalik Dokunsal Ahşap Haritası")
+        # Müze kaynağı üzerinden doğrudan link:
+        st.image("https://collection.it/api/v1/objects/119851/images/220235/download", caption="Ammassalik Dokunsal Haritası")
 
-        st.info("💡 Biliyor muydun? Bu ahşap haritalar cebe sığacak kadar küçüktür ve suda batmazlar!")
+        st.info("💡 İpucu: Eğer görseller hala yüklenmiyorsa, internet bağlantını kontrol edip sayfayı yenilemeyi dene.")
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("Nenets Kültürü")
