@@ -250,7 +250,7 @@ elif menu == "🧭 Kültür Keşfi":
         İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
         # Daha doğrudan bir görsel yolu:
-        st.image("https://raw.githubusercontent.com/MetMuseum/openaccess/master/Pre-Columbian/1978.412.301.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
+        st.image("https://picsum.photos/400/300")
 
         st.divider()
 
