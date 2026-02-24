@@ -231,15 +231,17 @@ elif menu == "🧭 Kültür Keşfi":
                         border-radius: 10px; 
                         border-left: 5px solid #f39c12;
                         margin: 10px 0px;">
-                <span style="color: white; font-weight: bold; font-size: 1.1em;">💡 İnanılmaz Teknik Detay: Kuksa ve Huş Ağacı</span>
+                <span style="color: white; font-weight: bold; font-size: 1.1em;">💡 İnanılmaz Teknik Detay: Kuksa ve Dokuma Sanatı</span>
                 <p style="color: white; margin-top: 10px; line-height: 1.6;">
                 Duodji'nin en bilinen örneği 'Kuksa' adı verilen ahşap bardaklardır. Bu bardaklar sıradan bir odun parçasından değil, 
                 huş ağacının üzerinde oluşan 'yumru' (burl) kısmından elle oyulur. Bu özel yapı sayesinde Kuksa asla çatlamaz, 
-                ısıyı mükemmel yalıtır ve ömür boyu kullanılabilir.
+                ısıyı mükemmel yalıtır ve ömür boyu kullanılabilir. 
+                <br><br>
+                Ayrıca, <b>yumuşak Duodji</b> olarak bilinen el dokuması ürünlerde, ren geyiği sinirlerinden yapılan ipler ve bitkisel boyalarla 
+                renklendirilmiş yünler kullanılarak, doğanın geometrisini yansıtan ve her biri bir hikaye anlatan eşsiz desenler dokunur.
                 </p>
             </div>
         """, unsafe_allow_html=True)
-
        
     # ===================== INUIT =====================
     elif culture == "Inuit":
