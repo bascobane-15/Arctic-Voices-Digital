@@ -243,6 +243,21 @@ elif menu == "🧭 Kültür Keşfi":
         st.image("igloo.jpg", use_container_width=True)
 
         st.divider()
+        st.subheader("🕶️ Geleneksel Kar Gözlüğü")
+        st.write("""
+        Inuitler, kar körlüğünü engellemek için fildişinden yapılan ince çizgili gözlükler kullanırdı. 
+        Bu, dünyanın en eski güneş gözlüğü teknolojisidir.
+        """)
+        st.image("kar_gozlugu_url", caption="Inuit Kar Gözlüğü")
+
+        st.divider()
+
+        st.subheader("🗺️ Dokunsal Ahşap Haritalar")
+        st.write("""
+        Ammassalik Inuitleri tarafından yapılan bu haritalar, karanlık kutup gecelerinde 
+        sadece dokunarak kıyı şeridini tanımaya yarar.
+        """)
+        st.image("ahsap_harita_url", caption="Ammassalik Dokunsal Haritası")
 
         st.info("💡 Inuit kültürü doğayla uyum, dayanıklılık ve topluluk dayanışmasına dayanır.")
     # ===================== NENETS =====================
