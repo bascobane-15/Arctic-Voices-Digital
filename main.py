@@ -54,7 +54,6 @@ if menu == "🏔️Ana Sayfa":
     kelimeler = [
         {"kelime": "Pukak", "dil": "Inuitçe", "anlam": "Kar kristalleri; özellikle toz gibi ince kar."},
         {"kelime": "Sápmi", "dil": "Sami dili", "anlam": "Sami halkının yaşadığı kültürel bölge ve vatan."},
-        {"kelime": "Gákti", "dil": "Sami dili", "anlam": "Kimliği ve kökeni temsil eden geleneksel kıyafet."}
         {"kelime": "Chum", "dil": "Nenets dili", "anlam": "Geleneksel, koni şeklinde taşınabilir çadır."}
     ]
     # Sabit veya random seçebilirsin
