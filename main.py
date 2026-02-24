@@ -250,7 +250,7 @@ elif menu == "🧭 Kültür Keşfi":
         İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
         # Daha doğrudan bir görsel yolu:
-        st.image("https://picsum.photos/400/300")
+        st.image("https://share.google/OY6LVMTw9S2lNUUT9")
 
         st.divider()
 
