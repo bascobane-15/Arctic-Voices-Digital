@@ -238,7 +238,7 @@ with nav_col1:
         st.session_state.current_slide -= 1
         st.rerun()
 with nav_col2:
-    if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
         st.session_state.current_slide += 1
         st.rerun()
 
