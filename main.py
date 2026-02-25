@@ -551,7 +551,7 @@ with nav_col2:
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
-elif menu == "🎮 Görev Merkezi":
+   elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
     st.write("Kültür Keşfi sayfasında öğrendiklerini kanıtlama vakti! Bakalım kaç puan toplayabileceksin?")
 
