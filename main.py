@@ -188,8 +188,8 @@ if menu == "🗺️Kültürel Harita":
 # -------------------------
 # ARKTIK ÖYKÜ VE KÜLTÜR PANELİ
 # -------------------------
-st.markdown("---")
-st.title("❄️ Arktik'in Hikayesi: Yerli Kültürler")
+    st.markdown("---")
+    st.title("❄️ Arktik'in Hikayesi: Yerli Kültürler")
 
 # 1. BÜTÜNSEL GÖRÜNÜM (ZİHİN HARİTASI)
 # Kullanıcı önce burayı görür, tıkladığında slaytları açar
