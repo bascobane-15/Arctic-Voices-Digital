@@ -186,8 +186,6 @@ elif menu == "🗺️Kültürel Harita":
         </div>
     """, unsafe_allow_html=True)
 
-# ... Harita kodlarının bittiği yer (st_folium'un altı) ...
-
     # -------------------------
     # ARKTIK ÖYKÜ VE KÜLTÜR PANELİ (İÇERİYE KAYDIRILDI)
     # -------------------------
