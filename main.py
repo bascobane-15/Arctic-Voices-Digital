@@ -185,7 +185,7 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
-# -------------------------
+    # -------------------------
 # ARKTIK ÖYKÜ VE KÜLTÜR PANELİ
 # -------------------------
 st.markdown("---")
@@ -241,12 +241,12 @@ with nav_col2:
    if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
         st.session_state.current_slide += 1
         st.rerun()
-
+    
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
 
-   elif menu == "🛰️ NASA İklim Verisi":
+ elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
     try:
@@ -357,7 +357,7 @@ with nav_col2:
 # KÜLTÜR KEŞFİ
 # -------------------------
 
-   elif menu == "🧭 Kültür Keşfi":
+elif menu == "🧭 Kültür Keşfi":
 
     st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
@@ -551,7 +551,7 @@ with nav_col2:
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
-   elif menu == "🎮 Görev Merkezi":
+elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
     st.write("Kültür Keşfi sayfasında öğrendiklerini kanıtlama vakti! Bakalım kaç puan toplayabileceksin?")
 
