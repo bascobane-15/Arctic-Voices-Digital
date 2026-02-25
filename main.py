@@ -245,8 +245,7 @@ with nav_col2:
 # -------------------------
 # NASA İKLİM VERİSİ
 # -------------------------
-
- elif menu == "🛰️ NASA İklim Verisi":
+elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
 
     try:
