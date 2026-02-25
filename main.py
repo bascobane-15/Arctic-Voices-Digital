@@ -238,17 +238,11 @@ elif menu == "🗺️Kültürel Harita":
             st.rerun()
 
 # -------------------------
-# NASA İKLİM VERİSİ (HİÇ BOŞLUKSUZ EN SOLA!)
+# NASA İKLİM VERİSİ 
 # -------------------------
 elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Analizi")
-    # NASA kodların buraya...
-# -------------------------
-# NASA İKLİM VERİSİ
-# -------------------------
-elif menu == "🛰️ NASA İklim Verisi":
-    st.title("📈 NASA GISTEMP Küresel Sıcaklık Anomalisi")
-
+    
     try:
         # Veri çekme işlemi
         url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
