@@ -104,8 +104,8 @@ if menu == "🏔️Ana Sayfa":
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
-if menu == "🗺️Kültürel Harita":
-
+elif menu == "🗺️Kültürel Harita":
+    
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
 
@@ -185,7 +185,7 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
-    # -------------------------
+# -------------------------
 # ARKTIK ÖYKÜ VE KÜLTÜR PANELİ
 # -------------------------
 st.markdown("---")
@@ -231,16 +231,10 @@ with col_right:
     st.write("🎧 **Sesli Anlatım:**")
     st.audio(slide_data["ses"])
 
-# Navigasyon Butonları
-nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
-with nav_col1:
-    if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
-        st.session_state.current_slide -= 1
-        st.rerun()
 with nav_col2:
-   if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
-        st.session_state.current_slide += 1
-        st.rerun()
+        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+            st.session_state.current_slide += 1
+            st.rerun()
     
 # -------------------------
 # NASA İKLİM VERİSİ
