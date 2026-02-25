@@ -357,7 +357,7 @@ with nav_col2:
 # KÜLTÜR KEŞFİ
 # -------------------------
 
-elif menu == "🧭 Kültür Keşfi":
+   elif menu == "🧭 Kültür Keşfi":
 
     st.title("🧭 Arctic Culture - Kültür Keşfi")
     st.write("Bir Arktik topluluğu seç ve kültürünü keşfet.")
