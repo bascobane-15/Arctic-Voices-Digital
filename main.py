@@ -185,7 +185,62 @@ if menu == "🗺️Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
+# -------------------------
+# ARKTIK ÖYKÜ VE KÜLTÜR PANELİ
+# -------------------------
+st.markdown("---")
+st.title("❄️ Arktik'in Hikayesi: Yerli Kültürler")
 
+# 1. BÜTÜNSEL GÖRÜNÜM (ZİHİN HARİTASI)
+# Kullanıcı önce burayı görür, tıkladığında slaytları açar
+with st.expander("🌐 Arktik Çevre ve Kültür Zihin Haritasını Gör", expanded=True):
+    # Buraya senin paylaştığın bütünsel zihin haritası görselini koyuyoruz
+    st.image("https://files.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-and-cultures-indigenous-peoples.png", 
+             use_container_width=True, 
+             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
+    st.info("💡 Aşağıdaki slaytlar üzerinden her bir bölümü detaylıca inceleyebilir ve sesli dinleyebilirsiniz.")
+
+# 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+if 'current_slide' not in st.session_state:
+    st.session_state.current_slide = 0
+
+# Senin verdiğin 7 Slaytlık İçerik Yapısı
+slides = [
+    {"baslik": "📍 YER", "metin": "Arktik ve Kuzey Kutup Bölgesi, kuzey Kanada, Alaska ve Grönland'da yer almaktadır. Pasifik Okyanusu'ndaki Bering denizinden Atlantik Okyanusu'ndaki Labrador Denizi'ne kadar uzanır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-location-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+    {"baslik": "🌌 ÇEVRE", "metin": "Arazi, donmuş tundradan boreal ormanlara kadar değişir. Aurora borealis (Kuzey Işıkları) bu bölgelerde gökyüzünü süsler.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+    {"baslik": "💎 DOĞAL KAYNAKLAR", "metin": "Foklar, orca, kutup ayıları, ren geyikleri ve kurtlar gibi birçok hayvan bu dondurucu ekosistemin parçasıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-resources-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
+    {"baslik": "🏠 EVLER", "metin": "İglolar, buzdan yapılmış 20 kişiyi barındırabilen geçici barınaklardır. Yazın ise hayvan derilerinden Tipiler inşa edilir.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-homes-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
+    {"baslik": "🏹 KIYAFETLER VE BULUŞLAR", "metin": "Kürkten yapılan mukluklar ve fildişinden oyulmuş kar gözlükleri, hayatta kalmak için icat edilen muazzam araçlardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-inventions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
+    {"baslik": "🤝 GELENEKLER", "metin": "Avcılar 'deniz tanrıçasına' teşekkür eder. Bir hayvanın hiçbir parçası asla ziyan edilmez; bu bir saygı kuralıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-traditions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
+    {"baslik": "👥 YERLİ İNSANLAR", "metin": "Inuit, Aleut, Yu'pik ve Cree gibi halklar bu toprakların kadim koruyucularıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-people-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"}
+]
+
+# Slayt Arayüzü
+slide_data = slides[st.session_state.current_slide]
+
+# İki Kolonlu Yapı: Sol Görsel, Sağ Metin ve Ses
+col_left, col_right = st.columns([1.2, 1])
+
+with col_left:
+    st.image(slide_data["img"], use_container_width=True)
+
+with col_right:
+    st.subheader(f"Slayt {st.session_state.current_slide + 1}: {slide_data['baslik']}")
+    st.write(slide_data["metin"])
+    st.write("---")
+    st.write("🎧 **Sesli Anlatım:**")
+    st.audio(slide_data["ses"])
+
+# Navigasyon Butonları
+nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
+with nav_col1:
+    if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+        st.session_state.current_slide -= 1
+        st.rerun()
+with nav_col2:
+    if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+        st.session_state.current_slide += 1
+        st.rerun()
 
 # -------------------------
 # NASA İKLİM VERİSİ
