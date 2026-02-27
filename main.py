@@ -90,33 +90,29 @@ st.markdown("""
 # SIDEBAR İÇERİĞİ (SOL TARAF)
 # -------------------------
 with st.sidebar:
-    # 1. Kuzey Işıkları Videosu
-    # Not: "kuzeyısıkları.mp4" dosyasının main.py ile aynı klasörde olduğundan emin ol
+    # Kuzey Işıkları Videosu
     try:
         st.video("kuzeyısıkları.mp4")
     except:
-        # Eğer video dosyası yoksa hata vermemesi için placeholder
-        st.info("Kuzey Işıkları videosu yükleniyor...")
+        st.info("Video dosyası bekleniyor...")
 
-    # 2. Başlık
     st.markdown("### Dijital Arktik Kültür Eğitim Platformu")
     
-    # 3. Menü (Navigasyon)
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
-        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları", "🎮 Görev Merkezi"]
+        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları"]
     )
 
     st.markdown("---")
     
-    # 4. Sol Alt Açıklama Metni (Sidebar footer)
-st.markdown("""
-    <div class="sidebar-footer">
-        <b>Bu platform;</b> Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
-        öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
-        <b>dijital bir eğitim platformudur.</b>
-    </div>
-""", unsafe_allow_html=True)
+    # 4. Sol Alt Açıklama Metni (İstediğin Siyah ve Büyük Stil)
+    st.markdown("""
+        <div class="sidebar-footer">
+            Bu platform; Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
+            öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
+            dijital bir eğitim platformudur.
+        </div>
+    """, unsafe_allow_html=True)
 
 # -------------------------
 # SAĞ TARAF (ANA SAYFA) İÇERİĞİ
