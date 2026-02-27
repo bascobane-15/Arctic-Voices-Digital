@@ -186,7 +186,7 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
         
-     with col5:
+    with col5:
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
