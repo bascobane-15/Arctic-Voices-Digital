@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+import pydeck as pdk
 import folium
+import time
 import random
 from streamlit_folium import st_folium
 
@@ -8,98 +11,109 @@ from streamlit_folium import st_folium
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# FERAH TASARIM CSS (SOL BEYAZ - SAĞ AÇIK GRİ)
+# GELİŞMİŞ CSS (SIDEBAR ÖZELLEŞTİRME)
 # -------------------------
 st.markdown("""
 <style>
-    /* Sağ Taraf (Ana İçerik Alanı) - Açık Gri */
+    /* Ana Arka Plan */
     .stApp {
-        background-color: #f8f9fa !important;
-        color: #2c3e50;
+        background-color: #0b1116;
+        color: #ffffff;
     }
 
-    /* Sol Taraf (Sidebar) - Tam Beyaz */
+    /* SOL TARAF (SIDEBAR) TASARIMI */
     [data-testid="stSidebar"] {
-        background-color: #ffffff !important;
-        border-right: 1px solid #e0e0e0;
+        background-color: #050a0e !important;
+        border-right: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
     }
 
-    /* Sidebar İçindeki Yazılar */
-    [data-testid="stSidebar"] .stText, [data-testid="stSidebar"] label, [data-testid="stSidebar"] h3 {
-        color: #1e293b !important;
+    /* Sidebar başlık ve metin renkleri */
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] p {
+        color: #a5f3fc !important;
+        text-align: center;
     }
 
-    /* Sidebar Alt Açıklama Kutusu */
+    /* Sidebar alt metni stili */
     .sidebar-footer {
         font-size: 0.85rem;
-        color: #64748b;
+        color: #94a3b8;
         text-align: center;
         padding: 15px;
-        background: #f1f5f9;
-        border-radius: 12px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 10px;
         margin-top: 20px;
-        line-height: 1.4;
     }
 
-    /* Hero Bölümü (Sağ Taraf Başlık Alanı) */
+    /* Hero Bölümü */
     .hero-container {
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        text-align: center;
-        margin-bottom: 30px;
-        border: 1px solid #edf2f7;
+        position: relative;
+        width: 100%;
+        height: 350px;
+        border-radius: 25px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.7);
     }
 
     .hero-title {
-        color: #1a365d;
-        font-size: 2.8rem !important;
+        font-size: 3rem !important;
         font-weight: 800;
-        margin-bottom: 10px;
+        text-align: center;
+        background: linear-gradient(to right, #ffffff, #a5f3fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    /* Kartlar (Explore Cards) */
+    /* Kartlar */
     .explore-card {
-        background: white;
-        border: 1px solid #e2e8f0;
-        border-radius: 15px;
-        padding: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 25px 15px;
         text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        transition: transform 0.2s;
-        min-height: 200px;
+        transition: all 0.4s ease;
+        min-height: 260px;
     }
-    .explore-card:hover {
-        transform: translateY(-5px);
-        border-color: #3182ce;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+
+    .tr-flag {
+        width: 60px; height: 40px; margin: 0 auto 15px auto;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
+        background-size: cover; border-radius: 4px;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # -------------------------
-# SOL TARAF (SIDEBAR) İÇERİĞİ
+# SIDEBAR İÇERİĞİ (SOL TARAF)
 # -------------------------
 with st.sidebar:
     # 1. Kuzey Işıkları Videosu
+    # Not: "kuzeyısıkları.mp4" dosyasının main.py ile aynı klasörde olduğundan emin ol
     try:
         st.video("kuzeyısıkları.mp4")
     except:
-        st.image("https://images.unsplash.com/photo-1531366930477-4fbd595da335?q=80&w=400", caption="Arktik Manzarası")
+        # Eğer video dosyası yoksa hata vermemesi için placeholder
+        st.info("Kuzey Işıkları videosu yükleniyor...")
 
-    # 2. Platform İsmi
+    # 2. Başlık
     st.markdown("### Dijital Arktik Kültür Eğitim Platformu")
     
-    # 3. Menü Seçimi
+    # 3. Menü (Navigasyon)
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
-        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları"]
+        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları", "🎮 Görev Merkezi"]
     )
 
-    st.write("---")
+    st.markdown("---")
     
-    # 4. Sol Alt Açıklama (İstediğin Metin)
+    # 4. Sol Alt Açıklama Metni
     st.markdown("""
         <div class="sidebar-footer">
             Bu platform; Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
