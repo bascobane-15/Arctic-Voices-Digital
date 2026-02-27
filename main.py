@@ -143,9 +143,9 @@ if menu == "🏔️ Ana Sayfa":
             <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
         </div>
     """, unsafe_allow_html=True)
-    # Tanıtım Cümlesi
+    # Tanıtım Cümlesi - Rengi beyaz (white) veya gümüş (silver) yaparak görünür kıldık
     st.markdown("""
-        <div style="text-align: center; margin-bottom: 40px; color: #2d3748;">
+        <div style="text-align: center; margin-bottom: 40px; color: #e2e8f0; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
             Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
             insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
         </div>
