@@ -177,7 +177,7 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
         
-    with col3:
+    with col4:
         st.markdown("""
             <div class="explore-card">
                 <div class="tr-flag-container"></div>
