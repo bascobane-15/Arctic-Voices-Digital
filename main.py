@@ -211,7 +211,7 @@ if menu == "🏔️ Ana Sayfa":
         {"kelime": "Umiak", "dil": "İnuit Ulaşımı", "anlam": "Genellikle mors veya mühür derisinden yapılan, ailelerin ve eşyaların taşınmasında kullanılan geniş, açık Arktik teknesi."},
         {"kelime": "Permafrost", "dil": "Jeoloji", "anlam": "En az iki yıl boyunca kesintisiz olarak donmuş halde kalan toprak tabakası. Çözülmesi küresel iklim için büyük bir risk oluşturur."},
         {"kelime": "Nanuq", "dil": "İnuit Dili", "anlam": "Kutup ayısı anlamına gelir. İnuit inanışında 'buzun efendisi' olarak kabul edilen kutsal ve saygın bir varlıktır."},
-        {"kelime": "Pemmikan", "dil": "Arktik Azığı", "anlam": "Kurutulmuş et, yağ ve bazen meyvelerin karıştırılmasıyla yapılan, bozulmadan yıllarca dayanabilen yüksek enerjili bir hayatta kalma yiyeceği."}
+        {"baslik": "Albedo Etkisi", "etiket": "İklim", "anlam": "Beyaz buzun güneş ışığını yansıtma gücüdür. Buzlar eridikçe koyulaşan deniz daha fazla ısı emer ve ısınma hızlanır."}
     ]
     gunun = random.choice(bilgiler)
     
