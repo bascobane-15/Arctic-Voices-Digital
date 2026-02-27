@@ -164,14 +164,14 @@ with st.sidebar:
 
     st.markdown("---")
     
-    # 4. Sol Alt Açıklama Metni
-    st.markdown("""
-        <div class="sidebar-footer">
-            Bu platform; Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
-            öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
-            dijital bir eğitim platformudur.
-        </div>
-    """, unsafe_allow_html=True)
+    # 4. Sol Alt Açıklama Metni (Sidebar footer)
+st.markdown("""
+    <div class="sidebar-footer">
+        <b>Bu platform;</b> Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
+        öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
+        <b>dijital bir eğitim platformudur.</b>
+    </div>
+""", unsafe_allow_html=True)
 
 # -------------------------
 # SAĞ TARAF (ANA SAYFA) İÇERİĞİ
