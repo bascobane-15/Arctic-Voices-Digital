@@ -148,7 +148,7 @@ if menu == "🏔️ Ana Sayfa":
     # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(4)
     
     with col1:
         st.markdown("""
@@ -178,6 +178,15 @@ if menu == "🏔️ Ana Sayfa":
         """, unsafe_allow_html=True)
         
     with col4:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🇹🇷</div>
+                <div class="card-title">Türkiye'nin Rotası</div>
+                <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+     with col5:
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
