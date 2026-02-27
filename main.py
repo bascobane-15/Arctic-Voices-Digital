@@ -27,10 +27,18 @@ st.markdown("""
         border-right: 1px solid #e2e8f0;
     }
 
-    /* Sidebar İçindeki Yazılar Siyah ve Net */
-    [data-testid="stSidebar"] h3, [data-testid="stSidebar"] label {
-        color: #000000 !important;
-    }
+    /* Sidebar Marka Başlığı Stili */
+.sidebar-brand-title {
+    font-size: 1.5rem !important; /* Yazı boyutunu büyüttük */
+    color: #000000 !important;    /* Tam siyah yaptık */
+    font-weight: 800 !important;  /* Ekstra kalın yaptık */
+    line-height: 1.2 !important;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;    /* Hepsini büyük harf yap */
+    letter-spacing: 1px;          /* Harf arası boşluk ile modern görünüm */
+}
 
     .card-icon { font-size: 3rem; margin-bottom: 15px; }
     
@@ -113,7 +121,7 @@ with st.sidebar:
     except:
         st.info("Video dosyası bekleniyor...")
 
-    st.markdown("### DİJİTAL ARKTİK KÜLTÜR EĞİTİM PLATFORMU ")
+    st.sidebar.markdown('<div class="sidebar-brand-title">DİJİTAL ARKTİK KÜLTÜR<br>EĞİTİM PLATFORMU</div>', unsafe_allow_html=True)
     
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
