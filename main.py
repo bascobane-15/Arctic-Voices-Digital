@@ -15,17 +15,16 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 st.markdown("""
 <style>
-    /* Ana Arka Plan */
-    .stApp {
-        background-color: #0b1116;
-        color: #ffffff;
-    }
+    /* Ana Arka Plan - Açık koyu gri */
+        .stApp {
+            background-color: #343a40;
+            color: #ffffff;
+        }
 
-    /* SOL TARAF (SIDEBAR) TASARIMI */
+    /* Sol Taraf (Sidebar) - Tam Beyaz */
     [data-testid="stSidebar"] {
-        background-color: #050a0e !important;
-        border-right: 1px solid rgba(255,255,255,0.1);
-        padding-top: 20px;
+        background-color: #ffffff !important;
+        border-right: 1px solid #e2e8f0;
     }
 
     /* Sidebar başlık ve metin renkleri */
