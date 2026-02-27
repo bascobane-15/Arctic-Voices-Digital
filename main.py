@@ -15,11 +15,11 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 st.markdown("""
 <style>
-    /* Ana Arka Plan (Koyu Tema) */
-    [data-testid="stAppViewContainer"] {
-        background-color: #0b1116;
-        color: white;
-    }
+    /* Ana Arka Plan  - Açık koyu gri */
+        .stApp {
+            background-color: #343a40;
+            color: #ffffff;
+        }
 
     /* SOL TARAF (SIDEBAR) BEYAZ OLSUN DEDİĞİN İÇİN */
     [data-testid="stSidebar"] {
