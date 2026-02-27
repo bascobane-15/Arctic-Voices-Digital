@@ -186,12 +186,7 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
 
-    # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
-    kelimeler = [
-        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, içindeki insan ısısını hapseden efsanevi kubbe evler."},
-        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Doğa'nın koruyucu kalkanı."},
-        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Güneş rüzgarlarının atmosferle dansı: Aurora Borealis."}
-    ]
+    
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
