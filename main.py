@@ -203,9 +203,14 @@ if menu == "🏔️ Ana Sayfa":
 
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
-        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, içindeki insan ısısını hapseden efsanevi kubbe evler."},
-        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Doğa'nın koruyucu kalkanı."},
-        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Güneş rüzgarlarının atmosferle dansı: Aurora Borealis."}
+        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
+        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
+        {"kelime": "Kutup Sumrusu", "dil": "Doğa Gezgini", "anlam": "Dünyanın en uzun yolculuğunu yapan kuş! Her yıl Kuzey ve Güney kutbu arasında uçarak ömrü boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
+        {"kelime": "Gakti", "dil": "Sami Kültürü", "anlam": "Sami halkının giydiği, nakışlarıyla kişinin memleketinden medeni durumuna kadar pek çok bilgi veren geleneksel kıyafet."},
+        {"kelime": "Umiak", "dil": "İnuit Ulaşımı", "anlam": "Genellikle mors veya mühür derisinden yapılan, ailelerin ve eşyaların taşınmasında kullanılan geniş, açık Arktik teknesi."},
+        {"kelime": "Permafrost", "dil": "Jeoloji", "anlam": "En az iki yıl boyunca kesintisiz olarak donmuş halde kalan toprak tabakası. Çözülmesi küresel iklim için büyük bir risk oluşturur."},
+        {"kelime": "Nanuq", "dil": "İnuit Dili", "anlam": "Kutup ayısı anlamına gelir. İnuit inanışında 'buzun efendisi' olarak kabul edilen kutsal ve saygın bir varlıktır."},
+        {"kelime": "Pemmikan", "dil": "Arktik Azığı", "anlam": "Kurutulmuş et, yağ ve bazen meyvelerin karıştırılmasıyla yapılan, bozulmadan yıllarca dayanabilen yüksek enerjili bir hayatta kalma yiyeceği."}
     ]
     gunun_kelimesi = random.choice(kelimeler)
 
