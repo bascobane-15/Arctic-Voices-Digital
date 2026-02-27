@@ -4,102 +4,205 @@ import plotly.express as px
 import pydeck as pdk
 import folium
 import time
+import random
 from streamlit_folium import st_folium
+
+import streamlit as st
+import random
 
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# GLASSMORPHISM CSS
+# GELİŞMİŞ CSS & GLASSMORPHISM
 # -------------------------
 st.markdown("""
 <style>
-/* Arka Plan */
-[data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-}
+    /* Genel Arka Plan */
+    [data-testid="stAppViewContainer"] {
+        background: #0b1116; /* Koyu Arktik Gece */
+        color: white;
+    }
 
-/* Seçeneklerin (Radio Buttons) Okunmasını Sağlayan Kısım */
-div[data-testid="stRadio"] label p {
-    color: white !important;
-    font-weight: bold !important;
-    text-shadow: 1px 1px 2px black; /* Yazıyı daha da belirgin yapar */
-}
+    /* Hero Bölümü Konteynırı */
+    .hero-container {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070&auto=format&fit=crop'); /* Aurora/Buzul Görseli */
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
-/* Glass-card tasarımı */
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 20px;
-}
+    .hero-text-area {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-title {
+        font-size: 3.5rem !important;
+        font-weight: 800;
+        margin-bottom: 0px;
+        background: -webkit-linear-gradient(#fff, #a5f3fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Keşif Kartları Tasarımı */
+    .card-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .explore-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .explore-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #3498db;
+        box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+    }
+
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .card-title {
+        color: #3498db;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Sözlük Kutusu Stilize */
+    .fact-box {
+        background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(0,0,0,0));
+        border-left: 5px solid #3498db;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 40px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌍 Arctic Culture")
-st.markdown("### Arktik Yerli Kültürleri | Kültür • Coğrafya • İklim")
-
+# -------------------------
+# NAVİGASYON (Sidebar Gizli Tutulabilir)
+# -------------------------
 menu = st.sidebar.selectbox(
-    "Sayfa Seç",
-    ["🏔️Ana Sayfa", "🗺️Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
+    "Gezinti",
+    ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
 )
-# -------------------------
-# ANA SAYFA - EĞİTSEL ARKTIK SÖZLÜĞÜ
-# -------------------------
-if menu == "🏔️Ana Sayfa":
 
-    import random
-
-    # Kelime listesi - Tüm virgüller ve parantezler kontrol edildi
-    kelimeler = [
-        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 dereceye kadar düşse de içindeki insan ısısını hapseden efsanevi kubbe evler."},
-        {"kelime": "Kutup Sumrusu", "dil": "Doğa Gezgini", "anlam": "Dünyanın en büyük yolcusu! Her yıl Kuzey ve Güney kutbu arasında uçarak hayatı boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
-        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
-        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Aurora Borealis! Güneşten gelen fırtınaların gece gökyüzünü yeşil ve mor bir dans pistine çevirdiği büyüleyici ışık gösterisi."},
-        {"kelime": "Tundra", "dil": "Coğrafya", "anlam": "Yılın büyük bölümü donmuş olan, ağaçsız ama yazın rengarenk yosun ve çiçeklerle kaplanan devasa Arktik düzlükler."}
-    ]
-
-    # Her yenilemede bu 5 tanesinden birini rastgele seçer
-    gunun_kelimesi = random.choice(kelimeler)
-
-    # Arktik Kaşif Notu Kutusu
-    st.markdown(f"""
-        <div style="background: rgba(255, 255, 255, 0.05); 
-                    padding: 20px; 
-                    border-radius: 12px; 
-                    border: 1px dashed #3498db; 
-                    margin-top: 10px;
-                    margin-bottom: 20px;">
-            <span style="color: #3498db; font-weight: bold; font-size: 1.1em;">❄️ Arktik Kaşif Notu:</span>
-            <div style="margin-top: 10px;">
-                <span style="color: white; font-size: 1.2em;"><b>{gunun_kelimesi['kelime']}</b></span>
-                <span style="color: #a0a0a0; font-size: 0.9em; margin-left: 5px;">({gunun_kelimesi['dil']})</span>
-                <p style="color: white; margin-top: 8px; line-height: 1.5;">{gunun_kelimesi['anlam']}</p>
+if menu == "🏔️ Ana Sayfa":
+    
+    # 1. HERO BÖLÜMÜ
+    st.markdown("""
+        <div class="hero-container">
+            <div class="hero-text-area">
+                <h1 class="hero-title">Arktik: Buzun ve İnsanın Hikayesi</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">
+                    Buzulların ötesine geçin, kadim kültürlerin yaşamına ve iklimin geleceğine dokunun.
+                </p>
             </div>
         </div>
     """, unsafe_allow_html=True)
 
-    # --- KARTLAR (BOŞLUKLARI ÖNLEMEK İÇİN BİRLEŞİK YAPI) ---
+    # 2. TANITIM METNİ
+    col_intro1, col_intro2, col_intro3 = st.columns([1, 2, 1])
+    with col_intro2:
+        st.markdown("""
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #d1d5db;">
+                    Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık insan mirasını barındıran bütüncül bir ekosistem olarak ele alır. 
+                    <b>Verinin gücünü, kültürün derinliğiyle birleştiriyoruz.</b>
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    # 3. İNTERAKTİF KEŞİF KARTLARI
+    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
+    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
-    # 1. INUIT
-    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Inuit</h2>', unsafe_allow_html=True)
-    st.image("inuit.jpg", use_container_width=True)
-    st.write("Kanada, Alaska ve Grönland bölgesinde yaşayan Arktik yerli halkıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🗺️</div>
+                <div class="card-title">Kültürel Harita</div>
+                <p style="font-size: 0.9rem;">Halkların izini sürün ve yaşam alanlarını keşfedin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🛰️</div>
+                <div class="card-title">NASA Verileri</div>
+                <p style="font-size: 0.9rem;">Buzulların değişimini gerçek zamanlı takip edin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🧭</div>
+                <div class="card-title">Kültür Keşfi</div>
+                <p style="font-size: 0.9rem;">Gelenekler, diller ve sanatın derinliklerine inin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col4:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🎮</div>
+                <div class="card-title">Görev Merkezi</div>
+                <p style="font-size: 0.9rem;">Arktik elçisi olun ve bilginizi test edin.</p>
+            </div>
+        """, unsafe_allow_html=True)
 
-    # 2. SAMI
-    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Sami</h2>', unsafe_allow_html=True)
-    st.image("sami.jpg", use_container_width=True)
-    st.write("İskandinavya'nın kuzeyinde yaşayan yerli topluluktur.")
-    st.markdown('</div>', unsafe_allow_html=True)
+    # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
+    kelimeler = [
+        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, içindeki insan ısısını hapseden efsanevi kubbe evler."},
+        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Doğa'nın koruyucu kalkanı."},
+        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Güneş rüzgarlarının atmosferle dansı: Aurora Borealis."}
+    ]
+    gunun_kelimesi = random.choice(kelimeler)
 
-    # 3. NENETS
-    st.markdown('<div class="glass-card"><h2 style="color: white; margin-top: 0;">Nenets</h2>', unsafe_allow_html=True)
-    st.image("nenets.jpg", use_container_width=True)
-    st.write("Rusya tundra bölgesinde göçebe ren geyiği çobanlarıdır.")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f"""
+        <div class="fact-box">
+            <span style="color: #3498db; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Günün Arktik Bilgisi</span>
+            <h4 style="margin: 5px 0;">{gunun_kelimesi['kelime']} <span style="font-size: 0.9rem; font-weight: normal; opacity: 0.6;">({gunun_kelimesi['dil']})</span></h4>
+            <p style="margin: 0; opacity: 0.8;">{gunun_kelimesi['anlam']}</p>
+        </div>
+    """, unsafe_allow_html=True)
     
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
