@@ -115,15 +115,11 @@ st.markdown("""
 # SIDEBAR İÇERİĞİ (SOL TARAF)
 # -------------------------
 with st.sidebar:
-    with open("kuzeyısıkları.mp4", "rb") as f:
-        video_bytes = f.read()
-        video_base64 = base64.b64encode(video_bytes).decode()
-
-    st.markdown(f"""
-<video width="100%" autoplay loop muted playsinline>
-    <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
-</video>
-""", unsafe_allow_html=True)
+    # Kuzey Işıkları Videosu
+    try:
+        st.video("kuzeyısıkları.mp4")
+    except:
+        st.info("Video dosyası bekleniyor...")
 
     st.sidebar.markdown('<div class="sidebar-brand-title">DİJİTAL ARKTİK KÜLTÜR<br>EĞİTİM PLATFORMU</div>', unsafe_allow_html=True)
     
