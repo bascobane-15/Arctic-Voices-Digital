@@ -144,36 +144,54 @@ if menu == "🏔️ Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # 3. 5'Lİ KEŞİF KARTLARI (Kapsayıcı HTML grid)
-    st.markdown("""
-    <div class="card-grid">
-        <div class="explore-card">
-            <div class="card-icon">🗺️</div>
-            <div class="card-title">Kültürel Harita</div>
-            <p class="card-text">Yerli halkların yaşam alanlarını ve sınırlarını keşfedin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🛰️</div>
-            <div class="card-title">İklim Verisi</div>
-            <p class="card-text">NASA verileriyle buzullardaki değişimi gözlemleyin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🧭</div>
-            <div class="card-title">Kültür Keşfi</div>
-            <p class="card-text">Gelenekler, diller ve sanatsal mirasın derinliklerine inin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🇹🇷</div>
-            <div class="card-title">Türkiye'nin Rotası</div>
-            <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🎮</div>
-            <div class="card-title">Görev Merkezi</div>
-            <p class="card-text">Bir Arktik elçisi olmak için eğitiminizi tamamlayın.</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # 3. İNTERAKTİF KEŞİF KARTLARI
+    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
+    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🗺️</div>
+                <div class="card-title">Kültürel Harita</div>
+                <p style="font-size: 0.9rem;">Halkların izini sürün ve yaşam alanlarını keşfedin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🛰️</div>
+                <div class="card-title">NASA Verileri</div>
+                <p style="font-size: 0.9rem;">Buzulların değişimini gerçek zamanlı takip edin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🧭</div>
+                <div class="card-title">Kültür Keşfi</div>
+                <p style="font-size: 0.9rem;">Gelenekler, diller ve sanatın derinliklerine inin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+    with col4:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="card-icon">🎮</div>
+                <div class="card-title">Görev Merkezi</div>
+                <p style="font-size: 0.9rem;">Arktik elçisi olun ve bilginizi test edin.</p>
+            </div>
+        """, unsafe_allow_html=True)
+
+    # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
+    kelimeler = [
+        {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, içindeki insan ısısını hapseden efsanevi kubbe evler."},
+        {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi uzaya geri yansıtma gücü. Doğa'nın koruyucu kalkanı."},
+        {"kelime": "Kuzey Işıkları", "dil": "Gök Olayı", "anlam": "Güneş rüzgarlarının atmosferle dansı: Aurora Borealis."}
+    ]
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
