@@ -15,132 +15,77 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 st.markdown("""
 <style>
-    /* Ana Arka Plan - Açık koyu gri */
-        .stApp {
-            background-color: #343a40;
-            color: #ffffff;
-        }
+    /* Ana Arka Plan (Koyu Tema) */
+    [data-testid="stAppViewContainer"] {
+        background-color: #0b1116;
+        color: white;
+    }
 
-    /* Sol Taraf (Sidebar) - Tam Beyaz */
+    /* SOL TARAF (SIDEBAR) BEYAZ OLSUN DEDİĞİN İÇİN */
     [data-testid="stSidebar"] {
         background-color: #ffffff !important;
         border-right: 1px solid #e2e8f0;
     }
 
-    /* Sidebar başlık ve metin renkleri */
-    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] p {
-        color: #E30A17 !important;
-        text-align: center;
+    /* Sidebar İçindeki Yazılar Siyah ve Net */
+    [data-testid="stSidebar"] h3, [data-testid="stSidebar"] label {
+        color: #000000 !important;
     }
 
-    /* Sidebar alt metni stili */
+    /* Sol Alt Açıklama Kutusu (Siyah, Büyük ve Görünür) */
     .sidebar-footer {
-        font-size: 0.85rem;
-        color: #94a3b8;
+        font-size: 1.1rem !important;
+        color: #000000 !important;
+        font-weight: 600 !important;
         text-align: center;
         padding: 15px;
-        background: rgba(255,255,255,0.03);
-        border-radius: 10px;
+        background-color: #f1f5f9;
+        border-radius: 12px;
         margin-top: 20px;
+        border: 2px solid #000000;
+        line-height: 1.5;
     }
 
-    /* Hero Alanı */
-    .hero-container {
-        position: relative;
-        width: 100%;
-        height: 400px;
-        border-radius: 30px;
-        margin-bottom: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070');
-        background-size: cover;
-        background-position: center;
-        border: 1px solid rgba(255,255,255,0.1);
+    /* GÜNÜN BİLGİSİ KUTUSU (Belirgin Siyah) */
+    .fact-box {
+        background: #ffffff !important;
+        border-radius: 15px;
+        padding: 25px 35px;
+        border-left: 10px solid #000000 !important;
+        margin-top: 50px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    .hero-title {
-        font-size: 3.5rem !important;
-        font-weight: 800;
-        text-align: center;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    .fact-box h4 {
+        color: #000000 !important;
+        font-size: 1.6rem !important;
+        font-weight: 800 !important;
+        margin-bottom: 5px !important;
     }
 
-    /* 5'li Kart Sistemi */
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        margin: 40px 0;
+    .fact-box p {
+        color: #1a1a1a !important;
+        font-size: 1.2rem !important;
+        line-height: 1.6;
     }
 
+    /* Keşif Kartları */
     .explore-card {
         background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 30px 15px;
+        padding: 20px;
         text-align: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        min-height: 250px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        min-height: 220px;
+        transition: transform 0.3s;
     }
-
     .explore-card:hover {
-        transform: translateY(-12px);
-        border-color: #3498db;
-        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
-        background: rgba(52, 152, 219, 0.05);
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #a5f3fc;
     }
-
-    .card-icon { font-size: 3rem; margin-bottom: 15px; }
-    
-    /* Türk Bayrağı Özel İkon */
-    .flag-icon {
-        width: 60px;
-        height: 40px;
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
-        background-size: cover;
-        background-position: center;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .card-title { color: #3498db; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
-    .card-text { font-size: 0.85rem; opacity: 0.8; line-height: 1.4; }
-
-    /* Güncellenmiş Belirgin Bilgi Kutusu */
-.fact-box {
-    background: #ffffff; /* Kutunun içi beyaz */
-    border-radius: 15px;
-    padding: 25px 35px;
-    border-left: 8px solid #000000; /* Sol çizgi siyah ve daha kalın */
-    border-top: 1px solid #e2e8f0; /* Hafif çerçeve */
-    border-right: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-    margin-top: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Daha görünür olması için gölge */
-}
-
-/* Kutu içindeki metin ayarları */
-.fact-box h4 {
-    color: #000000 !important; /* Başlık tam siyah */
-    font-size: 1.6rem !important; /* Daha büyük başlık */
-    font-weight: 800 !important;
-    margin-bottom: 10px !important;
-}
-
-.fact-box p {
-    color: #1a1a1a !important; /* Açıklama metni koyu ve net */
-    font-size: 1.2rem !important; /* Daha okunabilir font boyutu */
-    line-height: 1.6;
-}
-
+</style>
+""", unsafe_allow_html=True)
 # -------------------------
 # SIDEBAR İÇERİĞİ (SOL TARAF)
 # -------------------------
