@@ -11,7 +11,7 @@ from streamlit_folium import st_folium
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# GELİŞMİŞ CSS (SIDEBAR ÖZELLEŞTİRME)
+# CSS 
 # -------------------------
 st.markdown("""
 <style>
@@ -21,7 +21,7 @@ st.markdown("""
             color: #ffffff;
         }
 
-    /* SOL TARAF (SIDEBAR) BEYAZ OLSUN DEDİĞİN İÇİN */
+    /* SOL TARAF (SIDEBAR) BEYAZ */
     [data-testid="stSidebar"] {
         background-color: #ffffff !important;
         border-right: 1px solid #e2e8f0;
@@ -113,7 +113,7 @@ with st.sidebar:
     except:
         st.info("Video dosyası bekleniyor...")
 
-    st.markdown("### Dijital Arktik Kültür Eğitim Platformu")
+    st.markdown("### DİJİTAL ARKTİK KÜLTÜR EĞİTİM PLATFORMU ")
     
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
