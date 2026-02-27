@@ -129,7 +129,7 @@ menu = st.sidebar.selectbox(
 )
 with st.sidebar:
 
-    with open("Kuzey Işıkları.mp4", "rb") as f:
+    with open("kuzeyısıkları.mp4", "rb") as f:
         video_bytes = f.read()
         video_base64 = base64.b64encode(video_bytes).decode()
 
