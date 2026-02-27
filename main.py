@@ -151,17 +151,17 @@ if menu == "🏔️ Ana Sayfa":
         """, unsafe_allow_html=True)
 
     # 3. İNTERAKTİF KEŞİF KARTLARI
-    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
-    col1, col2, col3, col4, col5 = st.columns(4)
+    # Kolonları tanımlıyoruz (Virgül ve sayı kontrol edildi)
+    col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🗺️</div>
                 <div class="card-title">Kültürel Harita</div>
-                <p style="font-size: 0.9rem;">Halkların izini sürün ve yaşam alanlarını keşfedin.</p>
+                <p style="font-size: 0.8rem;">Halkların izini sürün.</p>
             </div>
         """, unsafe_allow_html=True)
         
@@ -170,7 +170,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🛰️</div>
                 <div class="card-title">NASA Verileri</div>
-                <p style="font-size: 0.9rem;">Buzulların değişimini gerçek zamanlı takip edin.</p>
+                <p style="font-size: 0.8rem;">Değişimi gözlemleyin.</p>
             </div>
         """, unsafe_allow_html=True)
         
@@ -179,7 +179,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🧭</div>
                 <div class="card-title">Kültür Keşfi</div>
-                <p style="font-size: 0.9rem;">Gelenekler, diller ve sanatın derinliklerine inin.</p>
+                <p style="font-size: 0.8rem;">Geleneklere dokunun.</p>
             </div>
         """, unsafe_allow_html=True)
         
@@ -188,15 +188,16 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="flag-icon"></div>
                 <div class="card-title">Türkiye'nin Rotası</div>
-                <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
-        </div>
+                <p style="font-size: 0.8rem;">Milli çalışmalarımız.</p>
+            </div>
         """, unsafe_allow_html=True)
-     with col5:
+
+    with col5:
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
                 <div class="card-title">Görev Merkezi</div>
-                <p style="font-size: 0.9rem;">Arktik elçisi olun ve bilginizi test edin.</p>
+                <p style="font-size: 0.8rem;">Bilgini test et.</p>
             </div>
         """, unsafe_allow_html=True)
 
