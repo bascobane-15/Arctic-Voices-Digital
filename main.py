@@ -202,21 +202,6 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
 
-    # 4. GÜNÜN BİLGİSİ
-    bilgiler = [
-        {"baslik": "Kutup Sumrusu", "etiket": "Doğa Gezgini", "anlam": "Dünyanın en uzun yolculuğunu yapan kuş! Her yıl Kuzey ve Güney kutbu arasında uçarak hayatı boyunca Ay'a 3 kez gidip gelecek kadar yol kateder."},
-        {"baslik": "Albedo Etkisi", "etiket": "İklim", "anlam": "Beyaz buzun güneş ışığını yansıtma gücüdür. Buzlar eridikçe koyulaşan deniz daha fazla ısı emer ve ısınma hızlanır."}
-    ]
-    gunun = random.choice(bilgiler)
-    
-    st.markdown(f"""
-        <div class="fact-box">
-            <span style="font-size: 0.8rem; color: #3498db; text-transform: uppercase; letter-spacing: 1px;">Günün Arktik Bilgisi</span>
-            <h4 style="margin-top: 5px;">{gunun['baslik']} <small style="color: #64748b; font-weight: normal;">({gunun['etiket']})</small></h4>
-            <p style="margin-bottom: 0; color: #cbd5e1;">{gunun['anlam']}</p>
-        </div>
-    """, unsafe_allow_html=True)
-
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
