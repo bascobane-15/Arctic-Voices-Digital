@@ -10,80 +10,174 @@ from streamlit_folium import st_folium
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# SİDEBAR VE GENEL TASARIM DENGELEME (CSS)
+# GELİŞMİŞ CSS & MODERN TASARIM
 # -------------------------
 st.markdown("""
 <style>
-    /* Sidebar'ı (Sol Menü) Koyu Yapma */
-    [data-testid="stSidebar"] {
-        background-color: #050a0e !important;
-        border-right: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Sidebar içindeki metinleri beyaz yapma */
-    [data-testid="stSidebar"] section, [data-testid="stSidebar"] label, [data-testid="stSidebar"] p {
-        color: white !important;
-    }
+    /* Açık koyu gri */
+        .stApp {
+            background-color: #343a40;
+            color: #ffffff;
+        }
 
-    /* Arka Plan ve Genel Renk */
-    [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #050a0e 0%, #0b1116 100%);
-        color: white;
-    }
-
+    /* Hero Bölümü */
     .hero-container {
+        position: relative;
         width: 100%;
-        height: 350px;
+        height: 400px;
+        overflow: hidden;
         border-radius: 25px;
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070');
-        background-size: cover;
-        background-position: center;
+        margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.7);
         border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .hero-text-area {
+        text-align: center;
+        padding: 30px;
+        background: rgba(11, 17, 22, 0.6);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-title {
+        font-size: 3.2rem !important;
+        font-weight: 800;
+        background: linear-gradient(to right, #ffffff, #a5f3fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Keşif Kartları */
+    .explore-card {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 25px 15px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .explore-card:hover {
+        transform: translateY(-12px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: #3498db;
+        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
+    }
+
+    /* Türk Bayrağı İkonu */
+    .tr-flag {
+        width: 60px;
+        height: 40px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 15px rgba(227, 10, 23, 0.3);
+    }
+
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .card-title {
+        color: #3498db;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    /* Alt Bilgi Kutusu */
+    .fact-box {
+        background: rgba(52, 152, 219, 0.05);
+        border-left: 4px solid #3498db;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 40px;
     }
 </style>
 """, unsafe_allow_html=True)
 
+# -------------------------
+# NAVİGASYON
+# -------------------------
+menu = st.sidebar.selectbox(
+    "📍 Keşif Rotası Seçin",
+    [
+        "🏔️ Ana Sayfa", 
+        "🗺️ Kültürel Harita", 
+        "🛰️ NASA İklim Verisi", 
+        "🧭 Kültür Keşfi", 
+        "🇹🇷 Türkiye'nin Çalışmaları", 
+        "🎮 Görev Merkezi"
+    ]
+)
+with st.sidebar:
+
+    with open("Kuzey Işıkları.mp4", "rb") as f:
+        video_bytes = f.read()
+        video_base64 = base64.b64encode(video_bytes).decode()
+
+    st.markdown(f"""
+<video width="100%" autoplay loop muted playsinline>
+    <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
+</video>
+""", unsafe_allow_html=True)
+
+
+    st.title("Dijital Arktik Kültür Eğitim Platformu")
+
+    st.markdown("---")
+    st.info("""
+    **Proje Vizyonu:**
+    Bu platform, genç nesillerde insan-merkezli Arktik bilinci oluşturmayı hedefleyen dijital bir eğitim platformudur. 
+    
+# -------------------------
+# ANA SAYFA
+# -------------------------
 if menu == "🏔️ Ana Sayfa":
     
-    # 1. HERO VE HARİTA (SAĞ-SOL DENGESİ)
-    col_hero, col_img = st.columns([1.8, 1.2]) # Sağ tarafı harita için biraz genişlettik
-
-    with col_hero:
-        st.markdown("""
-            <div class="hero-container">
-                <div style="text-align: center; padding: 20px; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); border-radius: 20px;">
-                    <h1 style="font-size: 2.5rem; margin-bottom: 0;">Arktik: Buzun ve İnsanın Hikayesi</h1>
-                    <p style="font-size: 1rem; opacity: 0.8;">Kültürlerin yaşamına ve iklimin geleceğine dokunun.</p>
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
-
-    with col_img:
-        # Senin gönderdiğin Arktik yerli halklar haritasını buraya yerleştiriyoruz
-        # Not: Görselin bilgisayarındaki yolunu veya linkini buraya eklemelisin
-        st.image("https://upload.wikimedia.org/wikipedia/commons/1/1a/Arctic_peoples_atlas.png", 
-                 caption="Arktik Yerli Halklar ve Kültür Coğrafyası",
-                 use_container_width=True)
-
-    # 2. TANITIM METNİ (HATA DÜZELTİLDİ)
+    # 1. HERO BÖLÜMÜ
     st.markdown("""
-        <div style="text-align: center; margin: 40px auto; max-width: 800px; color: #94a3b8;">
-            <p style="font-size: 1.1rem; line-height: 1.6;">
+        <div class="hero-container">
+            <div class="hero-text-area">
+                <h1 class="hero-title">Arktik: Buzun ve İnsanın Hikayesi</h1>
+                <p style="font-size: 1.1rem; opacity: 0.9; color: #e2e8f0;">
+                    Buzulların ötesine geçin, kadim kültürlerin yaşamına ve iklimin geleceğine dokunun.
+                </p>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # 2. TANITIM METNİ
+    st.markdown("""
+        <div style="text-align: center; margin: 20px auto 50px auto; max-width: 800px;">
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8;">
                 Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık insan mirasını barındıran bütüncül bir ekosistem olarak ele alır. 
                 <br><b>Verinin gücünü, kültürün derinliğiyle birleştiriyoruz.</b>
             </p>
         </div>
     """, unsafe_allow_html=True)
 
-    # 3. İNTERAKTİF KEŞİF KARTLARI (5'Lİ DÜZEN)
-    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
+    # 3. İNTERAKTİF KEŞİF KARTLARI
+    st.markdown('<h3 style="text-align: center; margin-bottom: 30px; font-weight: 300;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
     col1, col2, col3, col4, col5 = st.columns(5)
-    
-    # ... (Kart kodları buraya gelecek, önceki mesajdaki ile aynı)
     
     with col1:
         st.markdown("""
@@ -150,7 +244,6 @@ if menu == "🏔️ Ana Sayfa":
             <p style="margin: 0; opacity: 0.8;">{gunun_kelimesi['anlam']}</p>
         </div>
     """, unsafe_allow_html=True)
-    
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
