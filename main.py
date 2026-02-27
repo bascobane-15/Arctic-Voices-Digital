@@ -154,7 +154,7 @@ if menu == "🏔️ Ana Sayfa":
     # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
-    col1, col2, col3, col4. col5 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(4)
     
     with col1:
         st.markdown("""
