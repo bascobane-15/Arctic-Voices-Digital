@@ -119,62 +119,34 @@ with st.sidebar:
 # -------------------------
 if menu == "🏔️ Ana Sayfa":
     
-    # 1. Hero Bölümü
+    # Hero Bölümü
     st.markdown("""
-        <div class="hero-container">
-            <div>
-                <h1 class="hero-title">Arktik: Buzun ve İnsanın Hikayesi</h1>
-                <p style="text-align: center; font-size: 1.3rem; font-weight: 300; opacity: 0.9;">
-                    Bilinmeyene yolculuk, bilimin ışığında devam ediyor.
-                </p>
-            </div>
+        <div style="text-align: center; padding: 50px 0;">
+            <h1 style="font-size: 3.5rem; font-weight: 800; color: white;">Arktik: Buzun ve İnsanın Hikayesi</h1>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
         </div>
     """, unsafe_allow_html=True)
 
-    # 2. Giriş Yazısı
-    st.markdown("<br>", unsafe_allow_html=True)
-    col_mid1, col_mid2, col_mid3 = st.columns([1, 3, 1])
-    with col_mid2:
-        st.markdown("""
-            <div style="text-align: center;">
-                <h3 style="color: #3498db;">Kutupların Geleceğine Yolculuk</h3>
-                <p style="font-size: 1.1rem; color: #d1d5db; line-height: 1.7;">
-                    Bu platform, Arktik'in derin kültürel mirasını, iklim krizinin bilimsel gerçeklerini ve 
-                    <b>Türkiye'nin bu eşsiz coğrafyadaki bilimsel izlerini</b> keşfetmeniz için tasarlandı.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
-
-    # 3. 5'li Kart Grid (Görsel ve Türk Bayrağı ile)
-    st.markdown("""
-    <div class="card-grid">
-        <div class="explore-card">
-            <div class="card-icon">🗺️</div>
-            <div class="card-title">Kültürel Harita</div>
-            <p class="card-text">Yerli halkların yaşam alanlarını ve sınırlarını keşfedin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🛰️</div>
-            <div class="card-title">İklim Verisi</div>
-            <p class="card-text">NASA verileriyle buzullardaki değişimi gözlemleyin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🧭</div>
-            <div class="card-title">Kültür Keşfi</div>
-            <p class="card-text">Gelenekler, diller ve sanatsal mirasın derinliklerine inin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="flag-icon"></div>
-            <div class="card-title">Türkiye'nin Rotası</div>
-            <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
-        </div>
-        <div class="explore-card">
-            <div class="card-icon">🎮</div>
-            <div class="card-title">Görev Merkezi</div>
-            <p class="card-text">Bir Arktik elçisi olmak için eğitiminizi tamamlayın.</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # Keşif Kartları
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    kartlar = [
+        ("🗺️", "Kültürel Harita"),
+        ("🛰️", "NASA Verileri"),
+        ("🧭", "Kültür Keşfi"),
+        ("🇹🇷", "Türkiye"),
+        ("🎮", "Görevler")
+    ]
+    
+    sütunlar = [col1, col2, col3, col4, col5]
+    for i, sütun in enumerate(sütunlar):
+        with sütun:
+            st.markdown(f"""
+                <div class="explore-card">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">{kartlar[i][0]}</div>
+                    <div style="font-weight: bold; color: #a5f3fc;">{kartlar[i][1]}</div>
+                </div>
+            """, unsafe_allow_html=True)
         
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
