@@ -29,7 +29,7 @@ st.markdown("""
 
     /* Sidebar başlık ve metin renkleri */
     [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] p {
-        color: #a5f3fc !important;
+        color: #E30A17 !important;
         text-align: center;
     }
 
