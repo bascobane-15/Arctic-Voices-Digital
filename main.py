@@ -211,15 +211,16 @@ if menu == "🏔️ Ana Sayfa":
         {"kelime": "Umiak", "dil": "İnuit Ulaşımı", "anlam": "Genellikle mors veya mühür derisinden yapılan, ailelerin ve eşyaların taşınmasında kullanılan geniş, açık Arktik teknesi."},
         {"kelime": "Permafrost", "dil": "Jeoloji", "anlam": "En az iki yıl boyunca kesintisiz olarak donmuş halde kalan toprak tabakası. Çözülmesi küresel iklim için büyük bir risk oluşturur."},
         {"kelime": "Nanuq", "dil": "İnuit Dili", "anlam": "Kutup ayısı anlamına gelir. İnuit inanışında 'buzun efendisi' olarak kabul edilen kutsal ve saygın bir varlıktır."},
-        {"baslik": "Albedo Etkisi", "etiket": "İklim", "anlam": "Beyaz buzun güneş ışığını yansıtma gücüdür. Buzlar eridikçe koyulaşan deniz daha fazla ısı emer ve ısınma hızlanır."}
+        {"kelime": "Pemmikan", "dil": "Arktik Azığı", "anlam": "Kurutulmuş et, yağ ve bazen meyvelerin karıştırılmasıyla yapılan, bozulmadan yıllarca dayanabilen yüksek enerjili bir hayatta kalma yiyeceği."}
     ]
-    gunun = random.choice(bilgiler)
     
+    gunun_kelimesi = random.choice(kelimeler)
+
     st.markdown(f"""
-        <div class="fact-box">
-            <span style="font-size: 0.8rem; color: #3498db; text-transform: uppercase; letter-spacing: 1px;">Günün Arktik Bilgisi</span>
-            <h4 style="margin-top: 5px;">{gunun['baslik']} <small style="color: #64748b; font-weight: normal;">({gunun['etiket']})</small></h4>
-            <p style="margin-bottom: 0; color: #cbd5e1;">{gunun['anlam']}</p>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border-left: 5px solid #3498db; margin-top: 20px;">
+            <b style="color: #3498db; font-size: 1.1rem;">❄️ Arktik Kaşif Notu: {gunun_kelimesi['kelime']}</b> 
+            <span style="color: #a0a0a0; font-size: 0.9rem; margin-left: 5px;">({gunun_kelimesi['dil']})</span>
+            <p style="margin-top: 10px; font-size: 1rem; line-height: 1.5;">{gunun_kelimesi['anlam']}</p>
         </div>
     """, unsafe_allow_html=True)
     
