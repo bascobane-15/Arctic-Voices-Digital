@@ -1,8 +1,3 @@
-Anladım, koyu tema çok boğucu gelmiş olabilir. Tasarımı daha ferah, modern ve göz yormayan bir yapıya kavuşturalım. İstediğin gibi sol tarafı (sidebar) beyaz, sağ tarafı (ana içerik) ise çok açık gri yaparak o profesyonel "eğitim platformu" havasını yakalayalım.
-
-Ayrıca paylaştığın ekran görüntülerindeki SyntaxError (metinlerin kapanmaması) ve NameError (random hatası) problemlerini tamamen gideren temizlenmiş kodu aşağıda bulabilirsin.
-
-Python
 import streamlit as st
 import pandas as pd
 import folium
