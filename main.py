@@ -14,11 +14,11 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 st.markdown("""
 <style>
-    /* Derin Arktik Gece Arka Planı */
-    [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #050a0e 0%, #0b1116 100%);
-        color: white;
-    }
+    /* Açık koyu gri */
+        .stApp {
+            background-color: #343a40;
+            color: #ffffff;
+        }
 
     /* Hero Bölümü */
     .hero-container {
