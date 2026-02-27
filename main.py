@@ -127,7 +127,9 @@ menu = st.sidebar.selectbox(
         "🎮 Görev Merkezi"
     ]
 )
-
+# -------------------------
+# ANA SAYFA
+# -------------------------
 if menu == "🏔️ Ana Sayfa":
     
     # 1. HERO BÖLÜMÜ
