@@ -32,6 +32,23 @@ st.markdown("""
         color: #000000 !important;
     }
 
+    .card-icon { font-size: 3rem; margin-bottom: 15px; }
+    
+    /* Türk Bayrağı Özel İkon */
+    .flag-icon {
+        width: 60px;
+        height: 40px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card-title { color: #3498db; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+    .card-text { font-size: 0.85rem; opacity: 0.8; line-height: 1.4; }
+    
     /* Sol Alt Açıklama Kutusu (Siyah, Büyük ve Görünür) */
     .sidebar-footer {
         font-size: 1.1rem !important;
@@ -127,27 +144,36 @@ if menu == "🏔️ Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # Keşif Kartları
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    kartlar = [
-        ("🗺️", "Kültürel Harita"),
-        ("🛰️", "NASA Verileri"),
-        ("🧭", "Kültür Keşfi"),
-        ("🇹🇷", "Türkiye"),
-        ("🎮", "Görevler")
-    ]
-    
-    sütunlar = [col1, col2, col3, col4, col5]
-    for i, sütun in enumerate(sütunlar):
-        with sütun:
-            st.markdown(f"""
-                <div class="explore-card">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">{kartlar[i][0]}</div>
-                    <div style="font-weight: bold; color: #a5f3fc;">{kartlar[i][1]}</div>
-                </div>
-            """, unsafe_allow_html=True)
-        
+    # 3. 5'li Kart Grid (Görsel ve Türk Bayrağı ile)
+    st.markdown("""
+    <div class="card-grid">
+        <div class="explore-card">
+            <div class="card-icon">🗺️</div>
+            <div class="card-title">Kültürel Harita</div>
+            <p class="card-text">Yerli halkların yaşam alanlarını ve sınırlarını keşfedin.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🛰️</div>
+            <div class="card-title">İklim Verisi</div>
+            <p class="card-text">NASA verileriyle buzullardaki değişimi gözlemleyin.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🧭</div>
+            <div class="card-title">Kültür Keşfi</div>
+            <p class="card-text">Gelenekler, diller ve sanatsal mirasın derinliklerine inin.</p>
+        </div>
+        <div class="explore-card">
+            <div class="flag-icon"></div>
+            <div class="card-title">Türkiye'nin Rotası</div>
+            <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🎮</div>
+            <div class="card-title">Görev Merkezi</div>
+            <p class="card-text">Bir Arktik elçisi olmak için eğitiminizi tamamlayın.</p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
