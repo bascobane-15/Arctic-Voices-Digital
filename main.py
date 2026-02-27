@@ -35,16 +35,16 @@ st.markdown("""
     .card-icon { font-size: 3rem; margin-bottom: 15px; }
     
     /* Türk Bayrağı Özel İkon */
-    .flag-icon {
+    .tr-flag-container {
         width: 60px;
         height: 40px;
+        margin: 0 auto 15px auto; /* Ortalamak için */
         background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
         background-size: cover;
         background-position: center;
         border-radius: 4px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+        box-shadow: 0 4px 10px rgba(227, 10, 23, 0.4);
+     }
 
     .card-title { color: #3498db; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
     .card-text { font-size: 0.85rem; opacity: 0.8; line-height: 1.4; }
