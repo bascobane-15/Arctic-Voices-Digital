@@ -144,7 +144,7 @@ if menu == "🏔️ Ana Sayfa":
         </div>
     """, unsafe_allow_html=True)
 
-    # 3. 5'li Kart Grid (Görsel ve Türk Bayrağı ile)
+    # 3. 5'Lİ KEŞİF KARTLARI (Kapsayıcı HTML grid)
     st.markdown("""
     <div class="card-grid">
         <div class="explore-card">
@@ -163,7 +163,7 @@ if menu == "🏔️ Ana Sayfa":
             <p class="card-text">Gelenekler, diller ve sanatsal mirasın derinliklerine inin.</p>
         </div>
         <div class="explore-card">
-            <div class="flag-icon"></div>
+            <div class="card-icon">🇹🇷</div>
             <div class="card-title">Türkiye'nin Rotası</div>
             <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
         </div>
