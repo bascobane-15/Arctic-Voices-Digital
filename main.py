@@ -16,7 +16,7 @@ st.markdown("""
 <style>
     /* Genel Arka Plan */
     [data-testid="stAppViewContainer"] {
-        background: #0b1116; /* Koyu Arktik Gece */
+        background: #0b1116; 
         color: white;
     }
 
@@ -113,8 +113,15 @@ st.markdown("""
 # NAVİGASYON (Sidebar Gizli Tutulabilir)
 # -------------------------
 menu = st.sidebar.selectbox(
-    "Gezinti",
-    ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🎮 Görev Merkezi"]
+    "📍 Keşif Rotası Seçin",
+    [
+        "🏔️ Ana Sayfa", 
+        "🗺️ Kültürel Harita", 
+        "🛰️ NASA İklim Verisi", 
+        "🧭 Kültür Keşfi", 
+        "🇹🇷 Türkiye'nin Çalışmaları", 
+        "🎮 Görev Merkezi"
+    ]
 )
 
 if menu == "🏔️ Ana Sayfa":
@@ -147,7 +154,7 @@ if menu == "🏔️ Ana Sayfa":
     # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4. col5 = st.columns(4)
     
     with col1:
         st.markdown("""
@@ -177,6 +184,14 @@ if menu == "🏔️ Ana Sayfa":
         """, unsafe_allow_html=True)
         
     with col4:
+        st.markdown("""
+            <div class="explore-card">
+                <div class="flag-icon"></div>
+                <div class="card-title">Türkiye'nin Rotası</div>
+                <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
+        </div>
+        """, unsafe_allow_html=True)
+     with col5:
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
