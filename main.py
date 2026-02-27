@@ -150,56 +150,36 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
 
-    # 3. İNTERAKTİF KEŞİF KARTLARI
-    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
-    
-    # Kolonları tanımlıyoruz (Virgül ve sayı kontrol edildi)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    with col1:
-        st.markdown("""
-            <div class="explore-card">
-                <div class="card-icon">🗺️</div>
-                <div class="card-title">Kültürel Harita</div>
-                <p style="font-size: 0.8rem;">Halkların izini sürün.</p>
-            </div>
-        """, unsafe_allow_html=True)
-        
-    with col2:
-        st.markdown("""
-            <div class="explore-card">
-                <div class="card-icon">🛰️</div>
-                <div class="card-title">NASA Verileri</div>
-                <p style="font-size: 0.8rem;">Değişimi gözlemleyin.</p>
-            </div>
-        """, unsafe_allow_html=True)
-        
-    with col3:
-        st.markdown("""
-            <div class="explore-card">
-                <div class="card-icon">🧭</div>
-                <div class="card-title">Kültür Keşfi</div>
-                <p style="font-size: 0.8rem;">Geleneklere dokunun.</p>
-            </div>
-        """, unsafe_allow_html=True)
-        
-    with col4:
-        st.markdown("""
-            <div class="explore-card">
-                <div class="flag-icon"></div>
-                <div class="card-title">Türkiye'nin Rotası</div>
-                <p class="card-text">Milli çalışmalarımız.</p>
-            </div>
-        """, unsafe_allow_html=True)
-
-    with col5:
-        st.markdown("""
-            <div class="explore-card">
-                <div class="card-icon">🎮</div>
-                <div class="card-title">Görev Merkezi</div>
-                <p style="font-size: 0.8rem;">Bilgini test et.</p>
-            </div>
-        """, unsafe_allow_html=True)
+    # 2. Keşif Kartları (5'li Düzen)
+    st.markdown("""
+    <div class="card-grid">
+        <div class="explore-card">
+            <div class="card-icon">🗺️</div>
+            <div class="card-title">Kültürel Harita</div>
+            <p style="font-size: 0.8rem;">Halkların izini sürün.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🛰️</div>
+            <div class="card-title">NASA Verileri</div>
+            <p style="font-size: 0.8rem;">Değişimi gözlemleyin.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🧭</div>
+            <div class="card-title">Kültür Keşfi</div>
+            <p style="font-size: 0.8rem;">Geleneklere dokunun.</p>
+        </div>
+        <div class="explore-card">
+            <div class="flag-icon"></div>
+            <div class="card-title">Türkiye'nin Rotası</div>
+            <p style="font-size: 0.8rem;">Milli çalışmalarımız.</p>
+        </div>
+        <div class="explore-card">
+            <div class="card-icon">🎮</div>
+            <div class="card-title">Görev Merkezi</div>
+            <p style="font-size: 0.8rem;">Bilgini test et.</p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
     kelimeler = [
