@@ -188,7 +188,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="flag-icon"></div>
                 <div class="card-title">Türkiye'nin Rotası</div>
-                <p style="font-size: 0.8rem;">Milli çalışmalarımız.</p>
+                <p class="card-text">Milli çalışmalarımız.</p>
             </div>
         """, unsafe_allow_html=True)
 
