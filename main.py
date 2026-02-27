@@ -144,9 +144,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.info("""
-    **Proje Vizyonu:**
-    Bu platform, genç nesillerde insan-merkezli Arktik bilinci oluşturmayı hedefleyen dijital bir eğitim platformudur. 
-    
+       
 # -------------------------
 # ANA SAYFA
 # -------------------------
