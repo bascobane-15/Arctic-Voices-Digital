@@ -114,16 +114,32 @@ st.markdown("""
     .card-title { color: #3498db; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
     .card-text { font-size: 0.85rem; opacity: 0.8; line-height: 1.4; }
 
-    /* Bilgi Kutusu */
-    .fact-box {
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 20px;
-        padding: 20px 30px;
-        border-left: 6px solid #e74c3c;
-        margin-top: 50px;
-    }
-</style>
-""", unsafe_allow_html=True)
+    /* Güncellenmiş Belirgin Bilgi Kutusu */
+.fact-box {
+    background: #ffffff; /* Kutunun içi beyaz */
+    border-radius: 15px;
+    padding: 25px 35px;
+    border-left: 8px solid #000000; /* Sol çizgi siyah ve daha kalın */
+    border-top: 1px solid #e2e8f0; /* Hafif çerçeve */
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Daha görünür olması için gölge */
+}
+
+/* Kutu içindeki metin ayarları */
+.fact-box h4 {
+    color: #000000 !important; /* Başlık tam siyah */
+    font-size: 1.6rem !important; /* Daha büyük başlık */
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
+}
+
+.fact-box p {
+    color: #1a1a1a !important; /* Açıklama metni koyu ve net */
+    font-size: 1.2rem !important; /* Daha okunabilir font boyutu */
+    line-height: 1.6;
+}
 
 # -------------------------
 # SIDEBAR İÇERİĞİ (SOL TARAF)
