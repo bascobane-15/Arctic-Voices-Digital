@@ -10,61 +10,69 @@ from streamlit_folium import st_folium
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# GELİŞMİŞ CSS & MODERN TASARIM
+# GELİŞMİŞ CSS & GLASSMORPHISM
 # -------------------------
 st.markdown("""
 <style>
-    /* Açık koyu gri */
-        .stApp {
-            background-color: #343a40;
-            color: #ffffff;
-        }
+    /* Genel Arka Plan */
+    [data-testid="stAppViewContainer"] {
+        background: #0b1116; 
+        color: white;
+    }
 
-    /* Hero Bölümü */
+    /* Hero Bölümü Konteynırı */
     .hero-container {
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 450px;
         overflow: hidden;
-        border-radius: 25px;
+        border-radius: 20px;
         margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070&auto=format&fit=crop');
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070&auto=format&fit=crop'); /* Aurora/Buzul Görseli */
         background-size: cover;
         background-position: center;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-        border: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .hero-text-area {
         text-align: center;
-        padding: 30px;
-        background: rgba(11, 17, 22, 0.6);
-        backdrop-filter: blur(8px);
-        border-radius: 20px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
         border: 1px solid rgba(255,255,255,0.1);
     }
 
     .hero-title {
-        font-size: 3.2rem !important;
+        font-size: 3.5rem !important;
         font-weight: 800;
-        background: linear-gradient(to right, #ffffff, #a5f3fc);
+        margin-bottom: 0px;
+        background: -webkit-linear-gradient(#fff, #a5f3fc);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    /* Keşif Kartları */
+    /* Keşif Kartları Tasarımı */
+    .card-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
     .explore-card {
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 25px 15px;
+        padding: 25px;
         text-align: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        min-height: 260px;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-height: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -72,22 +80,10 @@ st.markdown("""
     }
 
     .explore-card:hover {
-        transform: translateY(-12px);
-        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
         border-color: #3498db;
-        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
-    }
-
-    /* Türk Bayrağı İkonu */
-    .tr-flag {
-        width: 60px;
-        height: 40px;
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
-        background-size: cover;
-        background-position: center;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(227, 10, 23, 0.3);
+        box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
     }
 
     .card-icon {
@@ -98,23 +94,23 @@ st.markdown("""
     .card-title {
         color: #3498db;
         font-weight: bold;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
-    /* Alt Bilgi Kutusu */
+    /* Sözlük Kutusu Stilize */
     .fact-box {
-        background: rgba(52, 152, 219, 0.05);
-        border-left: 4px solid #3498db;
+        background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(0,0,0,0));
+        border-left: 5px solid #3498db;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-top: 40px;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # -------------------------
-# NAVİGASYON
+# NAVİGASYON (Sidebar Gizli Tutulabilir)
 # -------------------------
 menu = st.sidebar.selectbox(
     "📍 Keşif Rotası Seçin",
@@ -127,29 +123,7 @@ menu = st.sidebar.selectbox(
         "🎮 Görev Merkezi"
     ]
 )
-with st.sidebar:
 
-    with open("Kuzey Işıkları.mp4", "rb") as f:
-        video_bytes = f.read()
-        video_base64 = base64.b64encode(video_bytes).decode()
-
-    st.markdown(f"""
-<video width="100%" autoplay loop muted playsinline>
-    <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
-</video>
-""", unsafe_allow_html=True)
-
-
-    st.title("Dijital Arktik Kültür Eğitim Platformu")
-
-    st.markdown("---")
-    st.info("""
-    **Proje Vizyonu:**
-    Bu platform, genç nesillerde insan-merkezli Arktik bilinci oluşturmayı hedefleyen dijital bir eğitim platformudur. 
-    
-# -------------------------
-# ANA SAYFA
-# -------------------------
 if menu == "🏔️ Ana Sayfa":
     
     # 1. HERO BÖLÜMÜ
@@ -157,7 +131,7 @@ if menu == "🏔️ Ana Sayfa":
         <div class="hero-container">
             <div class="hero-text-area">
                 <h1 class="hero-title">Arktik: Buzun ve İnsanın Hikayesi</h1>
-                <p style="font-size: 1.1rem; opacity: 0.9; color: #e2e8f0;">
+                <p style="font-size: 1.2rem; opacity: 0.9;">
                     Buzulların ötesine geçin, kadim kültürlerin yaşamına ve iklimin geleceğine dokunun.
                 </p>
             </div>
@@ -165,18 +139,21 @@ if menu == "🏔️ Ana Sayfa":
     """, unsafe_allow_html=True)
 
     # 2. TANITIM METNİ
-    st.markdown("""
-        <div style="text-align: center; margin: 20px auto 50px auto; max-width: 800px;">
-            <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8;">
-                Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık insan mirasını barındıran bütüncül bir ekosistem olarak ele alır. 
-                <br><b>Verinin gücünü, kültürün derinliğiyle birleştiriyoruz.</b>
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
+    col_intro1, col_intro2, col_intro3 = st.columns([1, 2, 1])
+    with col_intro2:
+        st.markdown("""
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #d1d5db;">
+                    Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık insan mirasını barındıran bütüncül bir ekosistem olarak ele alır. 
+                    <b>Verinin gücünü, kültürün derinliğiyle birleştiriyoruz.</b>
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
 
     # 3. İNTERAKTİF KEŞİF KARTLARI
-    st.markdown('<h3 style="text-align: center; margin-bottom: 30px; font-weight: 300;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
+    # Kolonları tanımlıyoruz (Virgül ve sayı kontrol edildi)
     col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
@@ -184,7 +161,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🗺️</div>
                 <div class="card-title">Kültürel Harita</div>
-                <p style="font-size: 0.85rem; color: #cbd5e1;">Halkların izini sürün ve yaşamlarını keşfedin.</p>
+                <p style="font-size: 0.8rem;">Halkların izini sürün.</p>
             </div>
         """, unsafe_allow_html=True)
         
@@ -193,7 +170,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🛰️</div>
                 <div class="card-title">NASA Verileri</div>
-                <p style="font-size: 0.85rem; color: #cbd5e1;">Buzulların değişimini gerçek zamanlı takip edin.</p>
+                <p style="font-size: 0.8rem;">Değişimi gözlemleyin.</p>
             </div>
         """, unsafe_allow_html=True)
         
@@ -202,16 +179,16 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🧭</div>
                 <div class="card-title">Kültür Keşfi</div>
-                <p style="font-size: 0.85rem; color: #cbd5e1;">Gelenekler ve sanatsal mirasın derinliklerine inin.</p>
+                <p style="font-size: 0.8rem;">Geleneklere dokunun.</p>
             </div>
         """, unsafe_allow_html=True)
         
     with col4:
         st.markdown("""
             <div class="explore-card">
-                <div class="tr-flag"></div>
+                <div class="flag-icon"></div>
                 <div class="card-title">Türkiye'nin Rotası</div>
-                <p style="font-size: 0.85rem; color: #cbd5e1;">Milli Kutup Araştırmaları ve bilimsel seferlerimiz.</p>
+                <p class="card-text">Milli çalışmalarımız.</p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -220,7 +197,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
                 <div class="card-title">Görev Merkezi</div>
-                <p style="font-size: 0.85rem; color: #cbd5e1;">Bir Arktik elçisi olun ve bilginizi test edin.</p>
+                <p style="font-size: 0.8rem;">Bilgini test et.</p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -244,6 +221,7 @@ if menu == "🏔️ Ana Sayfa":
             <p style="margin: 0; opacity: 0.8;">{gunun_kelimesi['anlam']}</p>
         </div>
     """, unsafe_allow_html=True)
+    
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
