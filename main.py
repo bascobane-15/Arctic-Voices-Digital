@@ -177,15 +177,16 @@ if menu == "🏔️ Ana Sayfa":
             </div>
         """, unsafe_allow_html=True)
         
-    with col4:
+    with col3:
         st.markdown("""
             <div class="explore-card">
-                <div class="card-icon">🇹🇷</div>
+                <div class="tr-flag-container"></div>
                 <div class="card-title">Türkiye'nin Rotası</div>
-                <p class="card-text">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
+                <p style="font-size: 0.9rem;">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
             </div>
         """, unsafe_allow_html=True)
         
+         
     with col5:
         st.markdown("""
             <div class="explore-card">
