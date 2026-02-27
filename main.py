@@ -7,9 +7,6 @@ import time
 import random
 from streamlit_folium import st_folium
 
-import streamlit as st
-import random
-
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
