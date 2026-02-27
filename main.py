@@ -143,10 +143,6 @@ if menu == "🏔️ Ana Sayfa":
             <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
         </div>
     """, unsafe_allow_html=True)
-
-    # 3. İNTERAKTİF KEŞİF KARTLARI
-    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
-    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     # Tanıtım Cümlesi
     st.markdown("""
         <div style="text-align: center; margin-bottom: 40px; color: #2d3748;">
@@ -154,6 +150,12 @@ if menu == "🏔️ Ana Sayfa":
             insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
         </div>
     """, unsafe_allow_html=True)
+    
+    # 3. İNTERAKTİF KEŞİF KARTLARI
+    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
+    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
+    
+    
     col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
