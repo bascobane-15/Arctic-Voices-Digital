@@ -225,7 +225,7 @@ if menu == "🏔️ Ana Sayfa":
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
-elif menu == "🗺️Kültürel Harita":
+elif menu == "🗺️ Kültürel Harita":
     
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
