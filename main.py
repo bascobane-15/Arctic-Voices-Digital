@@ -7,55 +7,70 @@ import time
 import random
 from streamlit_folium import st_folium
 
+# Sayfa Ayarları
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
 # -------------------------
-# GELİŞMİŞ CSS & MODERN TASARIM
+# GELİŞMİŞ CSS (SIDEBAR ÖZELLEŞTİRME)
 # -------------------------
 st.markdown("""
 <style>
-    /* - Açık koyu gri */
-        .stApp {
-            background-color: #343a40;
-            color: #ffffff;
+    /* Ana Arka Plan */
+    .stApp {
+        background-color: #0b1116;
+        color: #ffffff;
+    }
+
+    /* SOL TARAF (SIDEBAR) TASARIMI */
+    [data-testid="stSidebar"] {
+        background-color: #050a0e !important;
+        border-right: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+    }
+
+    /* Sidebar başlık ve metin renkleri */
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] p {
+        color: #a5f3fc !important;
+        text-align: center;
+    }
+
+    /* Sidebar alt metni stili */
+    .sidebar-footer {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        text-align: center;
+        padding: 15px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 10px;
+        margin-top: 20px;
     }
 
     /* Hero Bölümü */
     .hero-container {
         position: relative;
         width: 100%;
-        height: 400px;
-        overflow: hidden;
+        height: 350px;
         border-radius: 25px;
         margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070&auto=format&fit=crop');
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517111451333-394429976378?q=80&w=2070');
         background-size: cover;
         background-position: center;
         box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-        border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .hero-text-area {
-        text-align: center;
-        padding: 30px;
-        background: rgba(11, 17, 22, 0.6);
-        backdrop-filter: blur(8px);
-        border-radius: 20px;
-        border: 1px solid rgba(255,255,255,0.1);
     }
 
     .hero-title {
-        font-size: 3.2rem !important;
+        font-size: 3rem !important;
         font-weight: 800;
+        text-align: center;
         background: linear-gradient(to right, #ffffff, #a5f3fc);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    /* Keşif Kartları */
+    /* Kartlar */
     .explore-card {
         background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(12px);
@@ -63,70 +78,49 @@ st.markdown("""
         border-radius: 20px;
         padding: 25px 15px;
         text-align: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s ease;
         min-height: 260px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
-    .explore-card:hover {
-        transform: translateY(-12px);
-        background: rgba(255, 255, 255, 0.08);
-        border-color: #3498db;
-        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
-    }
-
-    /* Türk Bayrağı İkonu */
     .tr-flag {
-        width: 60px;
-        height: 40px;
+        width: 60px; height: 40px; margin: 0 auto 15px auto;
         background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg');
-        background-size: cover;
-        background-position: center;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(227, 10, 23, 0.3);
-    }
-
-    .card-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-    }
-
-    .card-title {
-        color: #3498db;
-        font-weight: bold;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-    }
-
-    /* Alt Bilgi Kutusu */
-    .fact-box {
-        background: rgba(52, 152, 219, 0.05);
-        border-left: 4px solid #3498db;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 40px;
+        background-size: cover; border-radius: 4px;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # -------------------------
-# NAVİGASYON
+# SIDEBAR İÇERİĞİ (SOL TARAF)
 # -------------------------
-menu = st.sidebar.selectbox(
-    "📍 Keşif Rotası Seçin",
-    [
-        "🏔️ Ana Sayfa", 
-        "🗺️ Kültürel Harita", 
-        "🛰️ NASA İklim Verisi", 
-        "🧭 Kültür Keşfi", 
-        "🇹🇷 Türkiye'nin Çalışmaları", 
-        "🎮 Görev Merkezi"
-    ]
-)
+with st.sidebar:
+    # 1. Kuzey Işıkları Videosu
+    # Not: "kuzeyısıkları.mp4" dosyasının main.py ile aynı klasörde olduğundan emin ol
+    try:
+        st.video("kuzeyısıkları.mp4")
+    except:
+        # Eğer video dosyası yoksa hata vermemesi için placeholder
+        st.info("Kuzey Işıkları videosu yükleniyor...")
+
+    # 2. Başlık
+    st.markdown("### Dijital Arktik Kültür Eğitim Platformu")
+    
+    # 3. Menü (Navigasyon)
+    menu = st.selectbox(
+        "📍 Keşif Rotası Seçin",
+        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları", "🎮 Görev Merkezi"]
+    )
+
+    st.markdown("---")
+    
+    # 4. Sol Alt Açıklama Metni
+    st.markdown("""
+        <div class="sidebar-footer">
+            Bu platform; Arktik bölgesinde yaşayan yerli topluluklarının kültürlerine yönelik 
+            öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
+            dijital bir eğitim platformudur.
+        </div>
+    """, unsafe_allow_html=True)
 
 # -------------------------
 # ANA SAYFA
