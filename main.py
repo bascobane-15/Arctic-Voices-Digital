@@ -697,19 +697,26 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
 
     st.divider()
 
-    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Beyaz Yazılı Kutu) ---
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ ---
     st.header("📅 5. Arktik Seferi (2025)")
     
-    col1, col2 = st.columns([1, 2])
+    # Sayfayı iki ana kolona bölüyoruz
+    col1, col2 = st.columns([1.5, 2]) # Sol tarafı video için biraz genişlettik
     
     with col1:
-        st.metric(label="Mesafe", value="3.000 Mil")
-        st.metric(label="Proje Sayısı", value="19 Proje")
+        # Senin "Video Burada Olsun" dediğin yer
+        st.video("https://youtu.be/Hd88m7qvMMY")
+        st.caption("📽️ 5. Arktik Seferi Özeti")
+        
+        # Sayısal verileri videonun altına şık bir şekilde ekliyoruz
+        c1, c2 = st.columns(2)
+        c1.metric(label="Mesafe", value="3.000 Mil")
+        c2.metric(label="Proje Sayısı", value="19 Proje")
 
     with col2:
         # Bilgi Kutusu (Beyaz ve Net Metin)
         st.markdown("""
-            <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef; margin-bottom: 15px;">
+            <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef; margin-bottom: 20px;">
                 <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
                 kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri de yer alarak projelerini test ettiler.
@@ -717,21 +724,10 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
             </div>
             """, unsafe_allow_html=True)
         
-        # Video ve Butonu Yan Yana Getiren Kolonlar
-        sub_col1, sub_col2 = st.columns([1, 1])
-        
-        with sub_col1:
-            # 5. Arktik Seferi Kısa Video
-            st.video("https://youtu.be/Hd88m7qvMMY")
-            st.caption("📽️ 5. Arktik Seferi Özeti")
-        
-        with sub_col2:
-            st.write("") # Görsel hizalama için boşluklar
-            st.write("")
-            st.write("")
-            st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
+        # Haber butonu bilgi kutusunun hemen altında
+        st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
 
-    # Bilgi Notu
+    # Bilgi Notu (Yeşil Bant)
     st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
     
     st.divider()
