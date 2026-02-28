@@ -17,7 +17,7 @@ st.markdown("""
 <style> 
    /* Ana Arka Plan - Açık koyu gri */ 
       .stApp { 
-         background-color: #343a40; 
+         background-color: #f2f4f7; 
          color: #ffffff; 
     }
 
