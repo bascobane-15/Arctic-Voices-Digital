@@ -320,10 +320,10 @@ elif menu == "🗺️ Kültürel Harita":
         </div>
     """, unsafe_allow_html=True)
     
-    # ARKTİK KÜLTÜR PANELİ 
-    # -------------------------
-    st.markdown("---")
-    st.title("❄️ Arktik'e Yolculuk")
+# ARKTİK KÜLTÜR PANELİ 
+# -------------------------
+st.markdown("---")
+st.title("❄️ Arktik'e Yolculuk")
 
     # 1. BÜTÜNSEL GÖRÜNÜM
     with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
