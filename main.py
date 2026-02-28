@@ -971,9 +971,9 @@ elif menu == "🎮 Görev Merkezi":
             st.error("❌ HATALI! (Doğru Cevap: Aurora)")
     else:
         q_au = st.radio("✨ Kuzey gökyüzünde görülen renkli ışık dansına ne ad verilir?", 
-                       ["Aurora", "Gökkuşağı", "Meteor Yağmuru"], key="r_aurora")
+                       ["Aurora Borealis", "Gökkuşağı", "Meteor Yağmuru"], key="r_aurora")
         if st.button("Cevabı Onayla", key="b_aurora"):
-            if q_au == "Aurora":
+            if q_au == "Aurora Borealis":
                 st.session_state.puan += 10
                 st.session_state.cevaplananlar["q_aurora"] = "Doğru"
             else:
