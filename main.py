@@ -208,7 +208,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
                 <div class="card-title">Görev Merkezi</div>
-                <p style="font-size: 0.9rem;">Arktik elçisi olun ve bilginizi test edin.</p>
+                <p style="font-size: 0.9rem;">Arktik elçisi olun  ve  bilginizi test edin.</p>
             </div>
         """, unsafe_allow_html=True)
 
