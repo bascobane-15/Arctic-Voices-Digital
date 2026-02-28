@@ -755,98 +755,88 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         </div>
         """, unsafe_allow_html=True)
 # -------------------------
+# -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
-    st.write("Kutup serüveninde öğrendiklerini kanıtlama vakti! Bakalım kaç puan toplayabileceksin?")
+    st.write("Dikkatli ol! Yanlış cevap verirsen o sorudan puan alamazsın. En yüksek skor için bilgilerini tazele!")
 
-    # Puan sistemi kurulumu
+    # Puan ve Durum Sistemi
     if "puan" not in st.session_state: st.session_state.puan = 0
-    if "tamamlananlar" not in st.session_state: st.session_state.tamamlananlar = set()
+    if "cevaplananlar" not in st.session_state: st.session_state.cevaplananlar = {} # Soru: Sonuç (Doğru/Yanlış)
 
-    st.sidebar.metric("🏆 Toplam Puan", st.session_state.puan)
+    # Testi Sıfırlama Butonu (Öğrencinin tekrar denemesi için)
+    if st.sidebar.button("🔄 Testi Baştan Başlat"):
+        st.session_state.puan = 0
+        st.session_state.cevaplananlar = {}
+        st.rerun()
 
-    # Seçeneklerin beyaz ve okunaklı olması için CSS
-    st.markdown("""
-        <style>
-        div[data-testid="stRadio"] label p { color: white !important; font-size: 1.1rem; font-weight: 500; }
-        </style>
-    """, unsafe_allow_html=True)
+    st.sidebar.metric("🏆 Mevcut Skorun", st.session_state.puan)
 
-    # --- YENİ BÖLÜM: TÜRKİYE'NİN ARKTİK YOLCULUĞU SORULARI ---
-    
-    # 1. BURCU ÖZSOY SORUSU
+    # --- 1. SORU: BURCU ÖZSOY ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "BurcuOzsoy" in st.session_state.tamamlananlar:
-        st.success("✅ Prof. Dr. Burcu Özsoy bilgisini kaptın!")
+    if "tr1" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["tr1"] == "Doğru":
+            st.success("✅ Tebrikler! Burcu Özsoy sorusunu doğru bildin (+10 Puan)")
+        else:
+            st.error("❌ Bu soruda hata yaptın! Puan alamadın. (Doğru cevap: Burcu Özsoy)")
     else:
-        q_burcu = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden ve TÜBİTAK MAM Kutup Araştırmaları Enstitüsü müdürü olan bilim insanımız kimdir?", 
+        q_burcu = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
                           ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], key="tr1")
         if st.button("Cevabı Onayla", key="btn_tr1"):
             if q_burcu == "Burcu Özsoy":
                 st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("BurcuOzsoy")
-                st.success("Tebrikler! Doğru cevap.")
-                st.rerun()
+                st.session_state.cevaplananlar["tr1"] = "Doğru"
             else:
-                st.error("Maalesef yanlış. İpucu: Kendisi Türkiye'nin 'Kutup Yıldızı' olarak bilinir!")
+                st.session_state.cevaplananlar["tr1"] = "Yanlış"
+            st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # 2. SEFER SAYISI SORUSU
+    # --- 2. SORU: SEFER SAYISI ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "SeferSayisi" in st.session_state.tamamlananlar:
-        st.success("✅ Sefer sayılarını ezberlemişsin!")
+    if "tr2" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["tr2"] == "Doğru":
+            st.success("✅ Harika! 5 sefer yapıldığını biliyorsun. (+10 Puan)")
+        else:
+            st.error("❌ Hatalı cevap! Puan hanene eklenmedi. (Doğru cevap: 5 Sefer)")
     else:
-        q_sefer = st.radio("🚢 Türkiye, 2025 yılı itibarıyla Arktik bölgesine toplam kaç bilimsel sefer düzenlemiştir?", 
+        q_sefer = st.radio("🚢 Türkiye, 2025 yılına kadar Arktik'e kaç bilimsel sefer düzenlemiştir?", 
                           ["3 Sefer", "5 Sefer", "10 Sefer"], key="tr2")
         if st.button("Cevabı Onayla", key="btn_tr2"):
             if q_sefer == "5 Sefer":
                 st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("SeferSayisi")
-                st.success("Harika! 5. sefer 2025'te başarıyla tamamlandı.")
-                st.rerun()
+                st.session_state.cevaplananlar["tr2"] = "Doğru"
             else:
-                st.error("Yanlış cevap. İpucu: 2025 yılında yapılan son seferin numarasını hatırla!")
+                st.session_state.cevaplananlar["tr2"] = "Yanlış"
+            st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # 3. İLK SEFER YILI SORUSU (Senin için eklediğim soru)
+    # --- 3. SORU: ARKTİK KONSEYİ (Senin için eklediğim 3. soru) ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "IlkSefer" in st.session_state.tamamlananlar:
-        st.success("✅ İlk adımın ne zaman atıldığını biliyorsun!")
+    if "tr3" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["tr3"] == "Doğru":
+            st.success("✅ Doğru! Türkiye gözlemci ülke olmak istiyor. (+10 Puan)")
+        else:
+            st.error("❌ Yanlış! Türkiye'nin hedefi 'Gözlemci' statüsüdür.")
     else:
-        q_ilk = st.radio("🗓️ Türkiye'nin '1. Ulusal Arktik Bilimsel Araştırma Seferi' hangi yılda gerçekleştirilmiştir?", 
-                        ["2015", "2019", "2023"], key="tr3")
+        q_hedef = st.radio("🌍 Türkiye'nin Arktik Konseyi'ndeki temel hedefi nedir?", 
+                          ["Kıta Başkanı Olmak", "Gözlemci Ülke Olmak", "Bölgeyi Satın Almak"], key="tr3")
         if st.button("Cevabı Onayla", key="btn_tr3"):
-            if q_ilk == "2019":
+            if q_hedef == "Gözlemci Ülke Olmak":
                 st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("IlkSefer")
-                st.success("Doğru! Türk bayrağı Arktik'te ilk kez 2019'da dalgalandı.")
-                st.rerun()
+                st.session_state.cevaplananlar["tr3"] = "Doğru"
             else:
-                st.error("Yanlış! İpucu: Pandemi döneminden hemen önceki yılı hatırla.")
+                st.session_state.cevaplananlar["tr3"] = "Yanlış"
+            st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- MEVCUT DİĞER SORULAR (Örnek olarak bir tanesini esnek yapıya çevirdim) ---
-    
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "Sami" in st.session_state.tamamlananlar:
-        st.success("✅ Sami bilgisi ustalıkla öğrenildi!")
-    else:
-        sami_q = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", ["Kanto", "Joik", "Haka"], key="q1")
-        if st.button("Sami Cevabını Onayla"):
-            if sami_q == "Joik":
-                st.session_state.puan += 10
-                st.session_state.tamamlananlar.add("Sami")
-                st.rerun()
-            else:
-                st.error("Hatalı seçim! İpucu: Kuzeyin ruhunu yansıtan bu sanat J ile başlar.")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # ... (Diğer mevcut sorularını buraya ekleyebilirsin)
-
-    # Final Durumu (Soru sayısını toplam soru sayısına göre güncellemelisin, örneğin 15 soru yaptıysan 15 yazmalısın)
-    toplam_soru = 15 # Yeni eklediklerimizle beraber toplam sayı
-    if len(st.session_state.tamamlananlar) >= 3: # Test amaçlı 3 yazdım, hepsini bitirince balon çıksın istersen toplam_soru yaz
-        st.balloons()
-        st.success(f"🎉 Harika! {len(st.session_state.tamamlananlar)} Görevi tamamladın!")
+    # Final Mesajı
+    if len(st.session_state.cevaplananlar) == 3: # Soru sayına göre burayı artır (Örn: 15)
+        st.write("---")
+        st.header(f"🏁 Test Bitti! Toplam Skorun: {st.session_state.puan}")
+        if st.session_state.puan >= 30: # Tam puan durumu
+            st.balloons()
+            st.success("Mükemmel! Sen tam bir Arktik uzmanısın!")
+        else:
+            st.warning("Daha yüksek skor alabilirsin! Sayfaları tekrar oku ve testi baştan başlat.")
