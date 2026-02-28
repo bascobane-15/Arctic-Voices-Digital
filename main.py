@@ -337,12 +337,12 @@ elif menu == "🗺️ Kültürel Harita":
         st.session_state.current_slide = 0
 
     slides = [
-        {"baslik": "ARKTİK ÇEVRE", "img": "1.png", width=800)},
-        {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png", width=800)},
-        {"baslik": "YERLİ HALK", "img": "3.png", width=800)},
-        {"baslik": "İGLO", "img": "4.png", width=800)},
-        {"baslik": "KIYAFETLER", "img": "5.png", width=800)},
-        {"baslik": "BULUŞLAR", "img": "6.png", width=800)},
+        {"baslik": "ARKTİK ÇEVRE", "img": "1.png", },
+        {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png", },
+        {"baslik": "YERLİ HALK", "img": "3.png", },
+        {"baslik": "İGLO", "img": "4.png", },
+        {"baslik": "KIYAFETLER", "img": "5.png",},
+        {"baslik": "BULUŞLAR", "img": "6.png",},
     ]
 
     slide_data = slides[st.session_state.current_slide]
@@ -350,7 +350,7 @@ elif menu == "🗺️ Kültürel Harita":
     # Başlık üstte daha şık durur
     st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
 
-    st.image(slide_data["img"], use_container_width=True)
+    st.image(slide_data["img"],width=800)
 
     # Navigasyon Butonları
     nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
