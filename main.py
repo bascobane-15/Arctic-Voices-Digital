@@ -755,103 +755,120 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         </div>
         """, unsafe_allow_html=True)
 # -------------------------
-# -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
     
-    # OKUNURLUK İÇİN ÖZEL CSS (Yazıları bembeyaz ve net yapar)
+    # --- OKUNURLUK VE GÖRSEL CSS ---
     st.markdown("""
         <style>
-        /* Ana soru metni */
+        /* Soru Metinleri */
         .stMarkdown p { color: white !important; font-size: 1.2rem !important; font-weight: 600 !important; }
         
-        /* Radio buton seçenekleri */
+        /* Seçenekler (Radio) */
         div[data-testid="stRadio"] label p { 
             color: #FFFFFF !important; 
             font-size: 1.1rem !important; 
             font-weight: bold !important;
-            text-shadow: 1px 1px 2px black; /* Arkaya hafif gölge atarak netleştirir */
+            text-shadow: 1px 1px 3px black; 
         }
         
-        /* Kartların içindeki yazıların okunurluğu */
-        .glass-card p { color: white !important; }
-        
-        /* Başlıklar */
-        h1, h2, h3 { color: #00aeef !important; }
+        /* Kart Yapısı */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+        }
         </style>
     """, unsafe_allow_html=True)
 
-    st.write("⚠️ **Dikkat:** Her soru için tek hakkın var! Yanlış cevap puan kazandırmaz.")
-
-    # Puan ve Takip Sistemi
+    # --- PUAN SİSTEMİ KURULUMU ---
     if "puan" not in st.session_state: st.session_state.puan = 0
     if "cevaplananlar" not in st.session_state: st.session_state.cevaplananlar = {}
 
-    # Sidebar Skor ve Sıfırlama
-    st.sidebar.metric("🏆 Toplam Skor", st.session_state.puan)
+    # Sidebar Skor Paneli
+    st.sidebar.title("📊 Yarışma Paneli")
+    st.sidebar.metric("🏆 Mevcut Skor", st.session_state.puan)
     if st.sidebar.button("🔄 Testi Sıfırla (Baştan Başla)"):
         st.session_state.puan = 0
         st.session_state.cevaplananlar = {}
         st.rerun()
 
-    # --- 1. SORU: BURCU ÖZSOY ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "q_burcu" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["q_burcu"] == "Doğru":
-            st.success("✅ TEBRİKLER! Burcu Özsoy bilgisini doğru bildin. (+10 Puan)")
-        else:
-            st.error("❌ HATALI! Bu sorudan puan alamadın. (Doğru Cevap: Burcu Özsoy)")
-    else:
-        q1 = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
-                     ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], key="r1")
-        if st.button("Cevabı Onayla", key="b1"):
-            if q1 == "Burcu Özsoy":
-                st.session_state.puan += 10
-                st.session_state.cevaplananlar["q_burcu"] = "Doğru"
-            else:
-                st.session_state.cevaplananlar["q_burcu"] = "Yanlış"
-            st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.info("💡 Her soruda tek hakkın var! Yanlış cevap puan kazandırmaz, en yüksek skor için dikkatli çöz.")
 
-    # --- 2. SORU: SEFER SAYISI ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "q_sefer" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["q_sefer"] == "Doğru":
-            st.success("✅ HARİKA! 5. seferin güncelliğini yakalamışsın. (+10 Puan)")
-        else:
-            st.error("❌ YANLIŞ! 2025 itibarıyla 5 sefer düzenlenmiştir. Puan alamadın.")
-    else:
-        q2 = st.radio("🚢 Türkiye, 2025 yılına kadar Arktik bölgesine toplam kaç bilimsel sefer düzenlemiştir?", 
-                     ["3 Sefer", "5 Sefer", "10 Sefer"], key="r2")
-        if st.button("Cevabı Onayla", key="b2"):
-            if q2 == "5 Sefer":
-                st.session_state.puan += 10
-                st.session_state.cevaplananlar["q_sefer"] = "Doğru"
+    # --- SORU FONKSİYONU (KODU TEMİZ TUTMAK İÇİN) ---
+    def soru_olustur(id, soru_metni, secenekler, dogru_cevap, basari_mesaji, hata_mesaji):
+        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+        if id in st.session_state.cevaplananlar:
+            if st.session_state.cevaplananlar[id] == "Doğru":
+                st.success(f"✅ {basari_mesaji} (+10 Puan)")
             else:
-                st.session_state.cevaplananlar["q_sefer"] = "Yanlış"
-            st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
+                st.error(f"❌ {hata_mesaji} (Doğru Cevap: {dogru_cevap})")
+        else:
+            secim = st.radio(soru_metni, secenekler, key=f"r_{id}")
+            if st.button("Cevabı Onayla", key=f"b_{id}"):
+                if secim == dogru_cevap:
+                    st.session_state.puan += 10
+                    st.session_state.cevaplananlar[id] = "Doğru"
+                else:
+                    st.session_state.cevaplananlar[id] = "Yanlış"
+                st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- 3. SORU: İKLİM HIZI ---
-    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "q_hiz" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["q_hiz"] == "Doğru":
-            st.success("✅ DOĞRU! Arktik çok daha hızlı ısınıyor. (+10 Puan)")
-        else:
-            st.error("❌ MAALESEF YANLIŞ! Arktik, dünyadan 4 kat daha hızlı ısınmaktadır.")
-    else:
-        q3 = st.radio("🌡️ Arktik bölgesi, dünyanın geri kalanına göre ne kadar daha hızlı ısınmaktadır?", 
-                     ["2 Kat", "4 Kat", "10 Kat"], key="r3")
-        if st.button("Cevabı Onayla", key="b3"):
-            if q3 == "4 Kat":
-                st.session_state.puan += 10
-                st.session_state.cevaplananlar["q_hiz"] = "Doğru"
-            else:
-                st.session_state.cevaplananlar["q_hiz"] = "Yanlış"
-            st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
+    # --- 15 SORULUK LİSTE ---
+
+    # 1. Burcu Özsoy
+    soru_olustur("q1", "👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
+                 ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], "Burcu Özsoy", 
+                 "Doğru! Türk kutup vizyonunun liderini tanıdın.", "Yanlış!")
+
+    # 2. Sefer Sayısı
+    soru_olustur("q2", "🚢 Türkiye, 2025 yılına kadar Arktik'e toplam kaç bilimsel sefer düzenlemiştir?", 
+                 ["3 Sefer", "5 Sefer", "10 Sefer"], "5 Sefer", 
+                 "Harika! Güncel sefer sayısını biliyorsun.", "Hatalı cevap!")
+
+    # 3. İlk Sefer Yılı
+    soru_olustur("q3", "🗓️ Türkiye'nin '1. Ulusal Arktik Bilimsel Araştırma Seferi' hangi yılda yapıldı?", 
+                 ["2015", "2019", "2023"], "2019", 
+                 "Doğru! Serüven 2019'da başladı.", "Yanlış!")
+
+    # 4. Sami Halkı
+    soru_olustur("q4", "❄️ Sami halkının kadim vokal sanatına ne denir?", 
+                 ["Kanto", "Joik", "Haka"], "Joik", 
+                 "Müthiş! Joik kültürü çok özeldir.", "Hatalı!")
+
+    # 5. Igloo
+    soru_olustur("q5", "🏠 İgloo inşasında en önemli malzeme hangisidir?", 
+                 ["Toz Kar", "Buz Kalıpları", "Sıkışmış Sert Kar"], "Sıkışmış Sert Kar", 
+                 "Doğru! Sertleşmiş kar blokları yalıtım sağlar.", "Yanlış!")
+
+    # 6. Nenets
+    soru_olustur("q6", "🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", 
+                 ["Ren Geyiği", "Kutup Ayısı", "Kurt"], "Ren Geyiği", 
+                 "Doğru! Ren geyikleri onların yaşam kaynağıdır.", "Hatalı!")
+
+    # 7. Navigasyon
+    soru_olustur("q7", "🗿 Arktik'te yol bulmak için üst üste dizilen taşlara ne denir?", 
+                 ["Totem", "Inukshuk", "Piramit"], "Inukshuk", 
+                 "Doğru! Inukshuklar kadim yol işaretleridir.", "Yanlış!")
+
+    # 8. Ulaşım
+    soru_olustur("q8", "🐕 Inuitlerin kış ulaşımında en çok güvendiği araç hangisidir?", 
+                 ["Köpek Kızağı (Qamutik)", "Kar Arabası", "At Arabası"], "Köpek Kızağı (Qamutik)", 
+                 "Doğru! Qamutikler en güvenilir araçtır.", "Hatalı!")
+
+    # 9. Sanat
+    soru_olustur("q9", "🎨 Inuit sanatında heykel için kullanılan doğal taş hangisidir?", 
+                 ["Mermer", "Granit", "Sabun Taşı (Soapstone)"], "Sabun Taşı (Soapstone)", 
+                 "Doğru! Sabun taşı kolay şekil alır.", "Yanlış!")
+
+    # 10. Av Araçları
+    soru_olustur("q10", "🛶 Inuitlerin kullandığı tek kişilik deri kaplı kanoya ne denir?", 
+                 ["Kano", "Kayak", "Sal"], "Kayak", 
+                 "
 
     # BİTİŞ EKRANI
     if len(st.session_state.cevaplananlar) == 3:
