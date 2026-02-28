@@ -734,6 +734,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     
     st.divider()
 
+    
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
     
