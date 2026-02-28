@@ -323,7 +323,7 @@ elif menu == "🗺️ Kültürel Harita":
 # ARKTİK KÜLTÜR PANELİ 
 # -------------------------
 st.markdown("---")
-st.title("❄️ Arktik'e Yolculuk")
+   st.title("❄️ Arktik'e Yolculuk")
 
 # 1. BÜTÜNSEL GÖRÜNÜM
 with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
