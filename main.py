@@ -679,73 +679,86 @@ elif menu == "🧭 Kültür Keşfi":
 # TÜRKİYE'NİN ÇALIŞMALARI
 # -------------------------
 elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
-    # --- BOŞLUKLARI DARALTAN CSS ---
+
+    # --- SAYFA DÜZENİ VE BOŞLUK AYARLARI (CSS) ---
     st.markdown("""
         <style>
-            /* Başlıklar ve içerik arasındaki üst-alt boşlukları azaltır */
-            .block-container { padding-top: 1rem; padding-bottom: 1rem; }
-            h1 { margin-top: -20px; padding-bottom: 10px; }
-            h2 { margin-top: 0px; padding-bottom: 5px; }
-            h3 { margin-top: 5px; }
+            /* 1. Sayfanın en üstünde ve en altında nefes alacak boşluk bırakır */
+            .block-container {
+                padding-top: 5rem !important;    /* Üst boşluk */
+                padding-bottom: 5rem !important; /* Alt boşluk */
+            }
             
-            # /* Video ve elementler arasındaki dikey boşluğu minimize eder */
-            .stVideo { margin-bottom: -15px; }
-            .stVerticalBlock { gap: 0.5rem; }
+            /* 2. Başlıklar ve altındaki elemanlar arası mesafeyi daraltır */
+            h1 { margin-top: -30px !important; padding-bottom: 20px !important; }
+            h2 { margin-top: 10px !important; padding-bottom: 5px !important; }
             
-            /* Divider (Ayırıcı çizgi) boşluğunu daraltır */
-            hr { margin: 1em 0 !important; }
+            /* 3. Gereksiz dikey boşlukları (BOŞ yazan yerler) minimize eder */
+            .stVerticalBlock { gap: 0.8rem !important; }
+            div[data-testid="stVerticalBlock"] > div { margin-bottom: -10px !important; }
+
+            /* 4. Videoların altındaki devasa boşluğu kapatır */
+            .stVideo { margin-bottom: -20px !important; }
+            
+            /* 5. Ayırıcı çizgi (Divider) boşluğunu düzenler */
+            hr { margin: 1.5em 0 !important; }
         </style>
     """, unsafe_allow_html=True)
 
+    # --- BAŞLIK ---
     st.title("🚢 Türkiye'nin Arktik Bilimsel Serüveni")
 
     # --- BÖLÜM 1: İLK ARKTİK SEFERİ ---
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
-    st.image("ilk-arktik-sefer.jpg", caption="Türkiye'nin ilk Arktik seferi.", use_container_width=True)
+    st.image("ilk-arktik-sefer.jpg", caption="Türkiye'nin ilk Arktik seferinden bir kare.", use_container_width=True)
     st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
 
     st.divider()
 
-    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (DARALTILMIŞ YAPI) ---
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Video Solda, Yazı Sağda) ---
     st.header("📅 5. Arktik Seferi (2025)")
     
-    # gap="small" parametresi kolonlar arasındaki yatay boşluğu daraltır
-    col1, col2 = st.columns([1.5, 2], gap="small") 
+    col1, col2 = st.columns([1.6, 2], gap="medium") 
     
     with col1:
+        # İstediğin gibi video burada
         st.video("https://youtu.be/Hd88m7qvMMY")
         st.caption("📽️ 5. Arktik Seferi Özeti")
         
-        # Sayısal veriler - Aralarındaki boşluk azaltıldı
-        c1, c2 = st.columns(2)
-        c1.metric(label="Mesafe", value="3.000 Mil")
-        c2.metric(label="Proje Sayısı", value="19 Proje")
+        # Veriler videonun hemen altında, boşluksuz
+        v_col1, v_col2 = st.columns(2)
+        v_col1.metric(label="Mesafe", value="3.000 Mil")
+        v_col2.metric(label="Proje Sayısı", value="19 Proje")
 
     with col2:
+        # Net ve Beyaz Yazılı Bilgi Kutusu
         st.markdown("""
-            <div style="background-color: #003366; padding: 15px; border-radius: 10px; border-left: 5px solid #00aeef;">
-                <p style="color: white; margin: 0; font-size: 15px; line-height: 1.4;">
+            <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
+                <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
                 kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri projelerini test ettiler.
                 </p>
             </div>
             """, unsafe_allow_html=True)
-        st.write("") # Çok küçük bir boşluk
+        st.write("") # Buton için minik bir boşluk
         st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
 
-    st.success("💡 Arktik bölgesi, dünyanın geri kalanından 4 kat daha hızlı ısınıyor!")
+    # Yeşil Bilgi Bandı
+    st.success("💡 Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
     
     st.divider()
 
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
+    st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
     st.video("https://youtu.be/8DczVgr03BQ?si=WKx_5YMTtlR6Am_m")
 
+    # Burcu Özsoy Bilgi Kutusu
     st.markdown("""
-        <div style="background-color: #003366; padding: 15px; border-radius: 10px; border-left: 5px solid #00aeef;">
-            <p style="color: white; margin: 0; font-size: 15px; line-height: 1.4;">
-            <strong>Prof. Dr. Burcu Özsoy Kimdir?</strong> TÜBİTAK MAM Kutup Araştırmaları Enstitüsü müdürüdür. 
-            Türkiye'nin kutup vizyonuna ve bilim seferlerine öncülük etmektedir.
+        <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
+            <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
+            <strong>Prof. Dr. Burcu Özsoy Kimdir?</strong> TÜBİTAK MAM Kutup Araştırmaları Enstitüsü kurucu müdürüdür. 
+            Türkiye'nin kutup bilim seferlerinin koordinatörlüğünü yaparak bu alanda ülkemize öncülük etmektedir.
             </p>
         </div>
         """, unsafe_allow_html=True)
