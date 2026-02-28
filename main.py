@@ -348,7 +348,7 @@ elif menu == "🗺️ Kültürel Harita":
 
     # Başlık üstte daha şık durur
     st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
-
+    st.image(slide_data["img"], width=600)
     st.image(slide_data["img"], use_container_width=True)
 
     # Navigasyon Butonları
