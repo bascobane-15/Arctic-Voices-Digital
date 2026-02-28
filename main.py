@@ -13,13 +13,13 @@ st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 # -------------------------
 # CSS 
 # -------------------------
-st.markdown("""
-<style>
-    /* Ana Arka Plan  - Açık koyu gri */
-        .stApp {
-    background-color: #f2f4f7;  /* AÇIK GRİ YAPTIK */
-    color: #1f2933;            /* Yazıyı koyu yaptık */
-}
+st.markdown(""" 
+<style> 
+   /* Ana Arka Plan - Açık koyu gri */ 
+      .stApp { 
+         background-color: #343a40; 
+         color: #ffffff; 
+    }
 
     /* SOL TARAF (SIDEBAR) BEYAZ */
     [data-testid="stSidebar"] {
