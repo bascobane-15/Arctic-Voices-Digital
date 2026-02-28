@@ -706,18 +706,32 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         st.metric(label="Mesafe", value="3.000 Mil")
         st.metric(label="Proje Sayısı", value="19 Proje")
 
-    with col2:
+   with col2:
+        # Bilgi Kutusu (Beyaz ve Net Metin)
         st.markdown("""
-            <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef;">
+            <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef; margin-bottom: 15px;">
                 <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
                 kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri de yer alarak projelerini test ettiler.
                 </p>
             </div>
             """, unsafe_allow_html=True)
-        st.write("") 
-        st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
+        
+        # Video ve Butonu Yan Yana Getiren Kolonlar
+        sub_col1, sub_col2 = st.columns([1, 1])
+        
+        with sub_col1:
+            # 5. Arktik Seferi Kısa Video
+            st.video("https://youtu.be/Hd88m7qvMMY")
+            st.caption("📽️ 5. Arktik Seferi Özeti")
+        
+        with sub_col2:
+            st.write("") # Görsel hizalama için boşluklar
+            st.write("")
+            st.write("")
+            st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
 
+    # Bilgi Notu
     st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
     
     st.divider()
