@@ -725,6 +725,21 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
 
     # Bilgi Notu
     st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
+    
+
+    # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
+    st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
+    
+    st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
+    st.video("https://youtu.be/8DczVgr03BQ?si=WKx_5YMTtlR6Am_m")
+
+    # Burcu Özsoy Kimdir?
+    st.info("""
+    **Prof. Dr. Burcu Özsoy Kimdir?** TÜBİTAK MAM Kutup Araştırmaları Enstitüsü kurucu müdürü olan Özsoy, Türkiye'nin kutup bilim seferlerinin koordinatörlüğünü yürütmektedir. 
+    Antarktika ve Arktik bölgelerinde çok sayıda bilimsel çalışmaya liderlik ederek Türkiye'nin kutup vizyonuna öncülük etmiştir.
+    """)
+
+
 
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
