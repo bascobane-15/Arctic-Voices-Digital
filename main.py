@@ -882,3 +882,121 @@ elif menu == "🎮 Görev Merkezi":
                 st.session_state.cevaplananlar["q_sami"] = "Yanlış"
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
+        # --- 6. SORU: NENETS ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_nenets" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_nenets"] == "Doğru":
+            st.success("✅ TEBRİKLER! Ren geyiği bilgisini doğru bildin. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Ren Geyiği)")
+    else:
+        q_ne = st.radio("🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", 
+                       ["Misk Öküzü", "Ren Geyiği", "Kutup Ayısı"], key="r_nenets")
+        if st.button("Cevabı Onayla", key="b_nenets"):
+            if q_ne == "Ren Geyiği":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_nenets"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_nenets"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+    # --- 7. SORU: TAŞ YIĞINI (CAIRN) ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_cairn" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_cairn"] == "Doğru":
+            st.success("✅ HARİKA! Cairn bilgisini doğru bildin. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Cairn)")
+    else:
+        q_ca = st.radio("🗿 Arktik'te yol bulmak için üst üste dizilen taşlara ne denir?", 
+                       ["Totem", "Cairn", "Dolmen"], key="r_cairn")
+        if st.button("Cevabı Onayla", key="b_cairn"):
+            if q_ca == "Cairn":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_cairn"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_cairn"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+    # --- 8. SORU: KIZAK ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_kizak" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_kizak"] == "Doğru":
+            st.success("✅ DOĞRU! Köpekli kızak doğru cevap. (+10 Puan)")
+        else:
+            st.error("❌ YANLIŞ! (Doğru Cevap: Köpekli Kızak)")
+    else:
+        q_ki = st.radio("🐕 Inuitlerin geleneksel kış ulaşımında en çok güvendiği araç hangisidir?", 
+                       ["Kar Motoru", "Köpekli Kızak", "At Arabası"], key="r_kizak")
+        if st.button("Cevabı Onayla", key="b_kizak"):
+            if q_ki == "Köpekli Kızak":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_kizak"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_kizak"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+    # --- 9. SORU: KAYAK ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_kayak" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_kayak"] == "Doğru":
+            st.success("✅ TEBRİKLER! Kayak doğru cevap. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Kayak)")
+    else:
+        q_ka = st.radio("🛶 Inuitlerin denizde fok veya balina avlamak için kullandığı tek kişilik deri kaplı kanoya ne denir?", 
+                       ["Kayak", "Kano", "Gondol"], key="r_kayak")
+        if st.button("Cevabı Onayla", key="b_kayak"):
+            if q_ka == "Kayak":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_kayak"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_kayak"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+    # --- 10. SORU: AURORA ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_aurora" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_aurora"] == "Doğru":
+            st.success("✨ MÜKEMMEL! Aurora bilgisini doğru bildin. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Aurora)")
+    else:
+        q_au = st.radio("✨ Kuzey gökyüzünde görülen renkli ışık dansına ne ad verilir?", 
+                       ["Aurora", "Gökkuşağı", "Meteor Yağmuru"], key="r_aurora")
+        if st.button("Cevabı Onayla", key="b_aurora"):
+            if q_au == "Aurora":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_aurora"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_aurora"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+    # --- 11. SORU: KAR GÖZLÜĞÜ ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_gozluk" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_gozluk"] == "Doğru":
+            st.success("🕶️ HARİKA! Inuitler doğru cevap. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Inuitler)")
+    else:
+        q_go = st.radio("🕶️ Kar körlüğünü engellemek için dünyanın ilk güneş gözlüklerini kimler icat etmiştir?", 
+                       ["Vikingler", "Inuitler", "Moğollar"], key="r_gozluk")
+        if st.button("Cevabı Onayla", key="b_gozluk"):
+            if q_go == "Inuitler":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_gozluk"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_gozluk"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
