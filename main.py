@@ -326,9 +326,9 @@ elif menu == "🗺️ Kültürel Harita":
     st.title("❄️ Arktik'e Yolculuk")
 
     # 1. BÜTÜNSEL GÖRÜNÜM
-    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
+    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
         st.image("Arktik'e yolculuk.png", 
-             use_container_width=True, 
+             width=700,   # <-- sabit genişlik
              caption="Arktik Kültür Sistemi - Birleşik Görünüm")
         st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
@@ -337,12 +337,12 @@ elif menu == "🗺️ Kültürel Harita":
         st.session_state.current_slide = 0
 
     slides = [
-        {"baslik": "ARKTİK ÇEVRE", "img": "1.png"},
-        {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
-        {"baslik": "YERLİ HALK", "img": "3.png"},
-        {"baslik": "İGLO", "img": "4.png"},
-        {"baslik": "KIYAFETLER", "img": "5.png"},
-        {"baslik": "BULUŞLAR", "img": "6.png"},
+        {"baslik": "ARKTİK ÇEVRE", "img": "1.png", width=800)},
+        {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png", width=800)},
+        {"baslik": "YERLİ HALK", "img": "3.png", width=800)},
+        {"baslik": "İGLO", "img": "4.png", width=800)},
+        {"baslik": "KIYAFETLER", "img": "5.png", width=800)},
+        {"baslik": "BULUŞLAR", "img": "6.png", width=800)},
     ]
 
     slide_data = slides[st.session_state.current_slide]
