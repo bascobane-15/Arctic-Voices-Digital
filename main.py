@@ -321,59 +321,50 @@ elif menu == "🗺️ Kültürel Harita":
     """, unsafe_allow_html=True)
     
 
-# ARKTİK KÜLTÜR PANELİ 
 # -------------------------
-st.set_page_config(page_title="Arktik'e Yolculuk", layout="centered")
-st.markdown("---")
-st.title("❄️ Arktik'e Yolculuk")
+# 1. BÖLÜM: ARKTİK KÜLTÜR PANELİ
+# -------------------------
+if menu == "❄️ Arktik Kültür Paneli":
+    st.title("❄️ Arktik'e Yolculuk")
+    st.markdown("---")
 
-# 1. BÜTÜNSEL GÖRÜNÜM
-with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
-    # Ana resmin dosya yolunun doğruluğundan emin olun
-    st.image("Arktik'e yolculuk.png", 
-             width=700, 
-             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
-    st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
+    # Bütünsel Görünüm
+    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
+        try:
+            st.image("Arktik'e yolculuk.png", width=700, caption="Arktik Kültür Sistemi - Birleşik Görünüm")
+        except:
+            st.warning("Ana görsel (Arktik'e yolculuk.png) bulunamadı.")
+        st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
-# 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
-# Session state sadece tanımlama için kullanılır
-if 'current_slide' not in st.session_state:
-    st.session_state.current_slide = 0
+    # Slayt Sistemi
+    if 'current_slide' not in st.session_state:
+        st.session_state.current_slide = 0
 
-# Veri listesi if bloğunun DIŞINDA olmalı
-slides = [
-    {"baslik": "ARKTİK ÇEVRE", "img": "1.png"},
-    {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
-    {"baslik": "YERLİ HALK", "img": "3.png"},
-    {"baslik": "İGLO", "img": "4.png"},
-    {"baslik": "KIYAFETLER", "img": "5.png"},
-    {"baslik": "BULUŞLAR", "img": "6.png"},
-]
+    slides = [
+        {"baslik": "ARKTİK ÇEVRE", "img": "1.png"},
+        {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
+        {"baslik": "YERLİ HALK", "img": "3.png"},
+        {"baslik": "İGLO", "img": "4.png"},
+        {"baslik": "KIYAFETLER", "img": "5.png"},
+        {"baslik": "BULUŞLAR", "img": "6.png"},
+    ]
 
-# Mevcut slayt verisini çekiyoruz
-slide_data = slides[st.session_state.current_slide]
+    slide_data = slides[st.session_state.current_slide]
+    st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
 
-# Başlık ve Görsel
-st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
+    try:
+        st.image(slide_data["img"], width=800)
+    except Exception as e:
+        st.error(f"⚠️ Görsel yüklenemedi: {slide_data['img']}")
 
-# Try-Except bloğu: Eğer dosya bulunamazsa hata mesajı gösterir
-try:
-    st.image(slide_data["img"], width=800)
-except Exception as e:
-    st.error(f"⚠️ Görsel yüklenemedi: {slide_data['img']}. Dosyanın script ile aynı klasörde olduğundan emin olun.")
-
-# Navigasyon Butonları
-nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
-
-with nav_col1:
-    if st.button("⬅️ Geri"):
-        if st.session_state.current_slide > 0:
+    # Navigasyon Butonları
+    nav_col1, nav_col2, _ = st.columns([1, 1, 3])
+    with nav_col1:
+        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
             st.session_state.current_slide -= 1
             st.rerun()
-
-with nav_col2:
-    if st.button("İleri ➡️"):
-        if st.session_state.current_slide < len(slides) - 1:
+    with nav_col2:
+        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
             st.session_state.current_slide += 1
             st.rerun()
 # -------------------------
