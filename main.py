@@ -336,13 +336,12 @@ elif menu == "🗺️ Kültürel Harita":
         st.session_state.current_slide = 0
 
     slides = [
-        {"baslik": "📍 YER", "metin": "Arktik ve Kuzey Kutup Bölgesi, kuzey Kanada, Alaska ve Grönland'da yer almaktadır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-location-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
-        {"baslik": "🌌 ÇEVRE", "metin": "Arazi, donmuş tundradan boreal ormanlara kadar değişir.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
-        {"baslik": "💎 DOĞAL KAYNAKLAR", "metin": "Foklar, orca, kutup ayıları, ren geyikleri bu ekosistemin parçasıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-resources-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
-        {"baslik": "🏠 EVLER", "metin": "İglolar buzdan yapılmış geçici barınaklardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-homes-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
-        {"baslik": "🏹 KIYAFETLER VE BULUŞLAR", "metin": "Kürkten yapılan mukluklar ve kar gözlükleri muazzam araçlardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-inventions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
-        {"baslik": "🤝 GELENEKLER", "metin": "Avcılar 'deniz tanrıçasına' teşekkür eder.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-traditions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
-        {"baslik": "👥 YERLİ İNSANLAR", "metin": "Inuit, Aleut, Yu'pik ve Cree gibi halklar koruyuculardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-people-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"}
+        {"baslik": " ARKTİK ÇEVRE", "img": "1.png"},
+        {"baslik": " BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
+        {"baslik": " YERLİ HALK","img": "3.png"},
+        {"baslik": " İGLO", "img": "4.png"},
+        {"baslik": " KIYAFETLER", "img": "5.png"},
+        {"baslik": " BULUŞLAR", "img": "6.png"},
     ]
 
     slide_data = slides[st.session_state.current_slide]
