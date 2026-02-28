@@ -674,6 +674,58 @@ elif menu == "🧭 Kültür Keşfi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
+
+# -------------------------
+# TÜRKİYE'NİN ÇALIŞMALARI
+# -------------------------
+elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
+    st.title("🚢 Türkiye'nin Arktik Bilimsel Serüveni")
+    
+    # Giriş Metni
+    st.markdown("""
+    Türkiye, kutup vizyonu doğrultusunda Kuzey Kutbu'nda (Arktik) bilimsel varlığını her geçen yıl güçlendiriyor. 
+    İşte bu büyük yolculuğun köşe taşları:
+    """)
+    
+    # --- BÖLÜM 1: İLK ARKTİK SEFERİ ---
+    st.header("1. Ulusal Arktik Bilim Seferi (2019)")
+    
+    # Fotoğraf (TÜBİTAK/AA kaynaklı temsili bir görsel yolu kullanılmıştır)
+    st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2019/07/26/thumbs_b_c_5e7178c1b3f793b827e8a93e839e144a.jpg", 
+             caption="Türkiye'nin ilk Arktik seferinden tarihi bir kare.", 
+             use_container_width=True)
+    
+    st.write("""
+    2019 yılında gerçekleştirilen ilk seferle Türk bilim insanları Arktik Okyanusu'na ulaşarak 
+    iklim değişikliği ve deniz kirliliği üzerine kritik veriler topladılar.
+    """)
+
+    # Video
+    st.subheader("🎥 Sefer Belgeseli")
+    st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
+
+    st.divider() # Görsel bir ayırıcı çizgi
+
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ ---
+    st.header("📅 5. Arktik Seferi (2025)")
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.metric(label="Mesafe", value="3.000 Mil")
+        st.metric(label="Proje Sayısı", value="19 Proje")
+
+    with col2:
+        st.info("""
+        **Son Gelişme:** Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
+        kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri de yer alarak projelerini test ettiler.
+        """)
+        
+        st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
+
+    # Bilgi Notu
+    st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
+
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
