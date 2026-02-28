@@ -319,110 +319,54 @@ elif menu == "🗺️ Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
+   # ARKTİK KÜLTÜR PANELİ 
+    # -------------------------
+    st.markdown("---")
+    st.title("❄️ Arktik'e Yolculuk")
 
-# -------------------------
-# SESSION
-# -------------------------
-if 'current_slide' not in st.session_state:
-    st.session_state.current_slide = 0
+    # 1. BÜTÜNSEL GÖRÜNÜM
+    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
+        st.image("Arktik'e yolculuk.png", 
+                 use_container_width=True, 
+                 caption="Arktik Kültür Sistemi - Birleşik Görünüm")
+        st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
-slides = [
-    {"baslik": "📍 YER", "metin": "Arktik ve Kuzey Kutup Bölgesi, kuzey Kanada, Alaska ve Grönland'da yer almaktadır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-location-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
-    {"baslik": "🌌 ÇEVRE", "metin": "Arazi, donmuş tundradan boreal ormanlara kadar değişir.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
-    {"baslik": "💎 DOĞAL KAYNAKLAR", "metin": "Foklar, orca, kutup ayıları, ren geyikleri bu ekosistemin parçasıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-resources-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
-    {"baslik": "🏠 EVLER", "metin": "İglolar buzdan yapılmış geçici barınaklardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-homes-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
-    {"baslik": "🏹 KIYAFETLER VE BULUŞLAR", "metin": "Kürkten yapılan mukluklar ve kar gözlükleri önemli icatlardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-inventions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
-    {"baslik": "🤝 GELENEKLER", "metin": "Avcılar deniz ruhuna teşekkür eder.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-traditions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
-    {"baslik": "👥 YERLİ İNSANLAR", "metin": "Inuit, Aleut, Yu'pik ve Cree gibi halklar doğayla uyum içinde yaşar.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-people-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"}
-]
+    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+    if 'current_slide' not in st.session_state:
+        st.session_state.current_slide = 0
 
-total = len(slides)
-current = st.session_state.current_slide
-slide_data = slides[current]
+    slides = [
+        {"baslik": "📍 YER", "metin": "Arktik ve Kuzey Kutup Bölgesi, kuzey Kanada, Alaska ve Grönland'da yer almaktadır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-location-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+        {"baslik": "🌌 ÇEVRE", "metin": "Arazi, donmuş tundradan boreal ormanlara kadar değişir.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+        {"baslik": "💎 DOĞAL KAYNAKLAR", "metin": "Foklar, orca, kutup ayıları, ren geyikleri bu ekosistemin parçasıdır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-resources-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
+        {"baslik": "🏠 EVLER", "metin": "İglolar buzdan yapılmış geçici barınaklardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-homes-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
+        {"baslik": "🏹 KIYAFETLER VE BULUŞLAR", "metin": "Kürkten yapılan mukluklar ve kar gözlükleri muazzam araçlardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-inventions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
+        {"baslik": "🤝 GELENEKLER", "metin": "Avcılar 'deniz tanrıçasına' teşekkür eder.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-traditions-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
+        {"baslik": "👥 YERLİ İNSANLAR", "metin": "Inuit, Aleut, Yu'pik ve Cree gibi halklar koruyuculardır.", "img": "https://www.storyboardthat.com/storyboard-src/tr-classic/arctic-people-zoom.png", "ses": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"}
+    ]
 
-# -------------------------
-# CSS - Eğitimsel Dinamik
-# -------------------------
-st.markdown("""
-<style>
-.slide-card {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    color: white;
-}
-.slide-title {
-    font-size: 28px;
-    font-weight: 700;
-}
-.slide-text {
-    font-size: 18px;
-    margin-top: 15px;
-}
-.progress-container {
-    margin-top: 15px;
-}
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 4px;
-    display: inline-block;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.5);
-}
-.dot.active {
-    background-color: white;
-}
-</style>
-""", unsafe_allow_html=True)
+    slide_data = slides[st.session_state.current_slide]
+    col_left, col_right = st.columns([1.2, 1])
 
-# -------------------------
-# PROGRESS BAR
-# -------------------------
-st.progress((current + 1) / total)
+    with col_left:
+        st.image(slide_data["img"], use_container_width=True)
 
-# -------------------------
-# CARD LAYOUT
-# -------------------------
-col1, col2 = st.columns([1.2, 1])
+    with col_right:
+        st.subheader(f"Slayt {st.session_state.current_slide + 1}: {slide_data['baslik']}")
+        st.write(slide_data["metin"])
+        st.audio(slide_data["ses"])
 
-with col1:
-    st.image(slide_data["img"], use_container_width=True)
+    # Navigasyon Butonları
+    nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
+    with nav_col1:
+        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+            st.session_state.current_slide -= 1
+            st.rerun()
+    with nav_col2:
+        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+            st.session_state.current_slide += 1
+            st.rerun()
 
-with col2:
-    st.markdown('<div class="slide-card">', unsafe_allow_html=True)
-    st.markdown(f'<div class="slide-title">Slayt {current+1} / {total} – {slide_data["baslik"]}</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="slide-text">{slide_data["metin"]}</div>', unsafe_allow_html=True)
-    st.audio(slide_data["ses"])
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# -------------------------
-# DOT NAVIGATION
-# -------------------------
-dots_html = ""
-for i in range(total):
-    if i == current:
-        dots_html += '<span class="dot active"></span>'
-    else:
-        dots_html += '<span class="dot"></span>'
-
-st.markdown(f"<div style='text-align:center'>{dots_html}</div>", unsafe_allow_html=True)
-
-# -------------------------
-# NAVIGATION BUTTONS
-# -------------------------
-nav1, nav2, nav3 = st.columns([1,1,3])
-
-with nav1:
-    if st.button("⬅️ Geri", use_container_width=True) and current > 0:
-        st.session_state.current_slide -= 1
-        st.rerun()
-
-with nav2:
-    if st.button("İleri ➡️", use_container_width=True) and current < total - 1:
-        st.session_state.current_slide += 1
-        st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ 
 # -------------------------
