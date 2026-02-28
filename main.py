@@ -691,7 +691,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
     
     # Fotoğraf (TÜBİTAK/AA kaynaklı temsili bir görsel yolu kullanılmıştır)
-    st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2019/07/26/thumbs_b_c_5e7178c1b3f793b827e8a93e839e144a.jpg", 
+    st.image("ilk-arktik-sefer.jpg", 
              caption="Türkiye'nin ilk Arktik seferinden tarihi bir kare.", 
              use_container_width=True)
     
