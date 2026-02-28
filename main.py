@@ -689,18 +689,10 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
                 padding-bottom: 5rem !important; /* Alt boşluk */
             }
             
-            /* 2. Başlıklar ve altındaki elemanlar arası mesafeyi daraltır */
-            h1 { margin-top: -30px !important; padding-bottom: 20px !important; }
-            h2 { margin-top: 10px !important; padding-bottom: 5px !important; }
-            
-            /* 3. Gereksiz dikey boşlukları (BOŞ yazan yerler) minimize eder */
-            .stVerticalBlock { gap: 0.8rem !important; }
-            div[data-testid="stVerticalBlock"] > div { margin-bottom: -10px !important; }
-
-            /* 4. Videoların altındaki devasa boşluğu kapatır */
+            /* 2. Videoların altındaki boşluğu azaltır */
             .stVideo { margin-bottom: -20px !important; }
             
-            /* 5. Ayırıcı çizgi (Divider) boşluğunu düzenler */
+            /* 3. Ayırıcı çizgi (Divider) boşluğunu düzenler */
             hr { margin: 1.5em 0 !important; }
         </style>
     """, unsafe_allow_html=True)
