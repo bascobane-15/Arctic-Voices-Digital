@@ -760,83 +760,105 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
 # -------------------------
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
-    st.write("Dikkatli ol! Yanlış cevap verirsen o sorudan puan alamazsın. En yüksek skor için bilgilerini tazele!")
+    
+    # OKUNURLUK İÇİN ÖZEL CSS (Yazıları bembeyaz ve net yapar)
+    st.markdown("""
+        <style>
+        /* Ana soru metni */
+        .stMarkdown p { color: white !important; font-size: 1.2rem !important; font-weight: 600 !important; }
+        
+        /* Radio buton seçenekleri */
+        div[data-testid="stRadio"] label p { 
+            color: #FFFFFF !important; 
+            font-size: 1.1rem !important; 
+            font-weight: bold !important;
+            text-shadow: 1px 1px 2px black; /* Arkaya hafif gölge atarak netleştirir */
+        }
+        
+        /* Kartların içindeki yazıların okunurluğu */
+        .glass-card p { color: white !important; }
+        
+        /* Başlıklar */
+        h1, h2, h3 { color: #00aeef !important; }
+        </style>
+    """, unsafe_allow_html=True)
 
-    # Puan ve Durum Sistemi
+    st.write("⚠️ **Dikkat:** Her soru için tek hakkın var! Yanlış cevap puan kazandırmaz.")
+
+    # Puan ve Takip Sistemi
     if "puan" not in st.session_state: st.session_state.puan = 0
-    if "cevaplananlar" not in st.session_state: st.session_state.cevaplananlar = {} # Soru: Sonuç (Doğru/Yanlış)
+    if "cevaplananlar" not in st.session_state: st.session_state.cevaplananlar = {}
 
-    # Testi Sıfırlama Butonu (Öğrencinin tekrar denemesi için)
-    if st.sidebar.button("🔄 Testi Baştan Başlat"):
+    # Sidebar Skor ve Sıfırlama
+    st.sidebar.metric("🏆 Toplam Skor", st.session_state.puan)
+    if st.sidebar.button("🔄 Testi Sıfırla (Baştan Başla)"):
         st.session_state.puan = 0
         st.session_state.cevaplananlar = {}
         st.rerun()
 
-    st.sidebar.metric("🏆 Mevcut Skorun", st.session_state.puan)
-
     # --- 1. SORU: BURCU ÖZSOY ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "tr1" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["tr1"] == "Doğru":
-            st.success("✅ Tebrikler! Burcu Özsoy sorusunu doğru bildin (+10 Puan)")
+    if "q_burcu" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_burcu"] == "Doğru":
+            st.success("✅ TEBRİKLER! Burcu Özsoy bilgisini doğru bildin. (+10 Puan)")
         else:
-            st.error("❌ Bu soruda hata yaptın! Puan alamadın. (Doğru cevap: Burcu Özsoy)")
+            st.error("❌ HATALI! Bu sorudan puan alamadın. (Doğru Cevap: Burcu Özsoy)")
     else:
-        q_burcu = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
-                          ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], key="tr1")
-        if st.button("Cevabı Onayla", key="btn_tr1"):
-            if q_burcu == "Burcu Özsoy":
+        q1 = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
+                     ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], key="r1")
+        if st.button("Cevabı Onayla", key="b1"):
+            if q1 == "Burcu Özsoy":
                 st.session_state.puan += 10
-                st.session_state.cevaplananlar["tr1"] = "Doğru"
+                st.session_state.cevaplananlar["q_burcu"] = "Doğru"
             else:
-                st.session_state.cevaplananlar["tr1"] = "Yanlış"
+                st.session_state.cevaplananlar["q_burcu"] = "Yanlış"
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
     # --- 2. SORU: SEFER SAYISI ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "tr2" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["tr2"] == "Doğru":
-            st.success("✅ Harika! 5 sefer yapıldığını biliyorsun. (+10 Puan)")
+    if "q_sefer" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_sefer"] == "Doğru":
+            st.success("✅ HARİKA! 5. seferin güncelliğini yakalamışsın. (+10 Puan)")
         else:
-            st.error("❌ Hatalı cevap! Puan hanene eklenmedi. (Doğru cevap: 5 Sefer)")
+            st.error("❌ YANLIŞ! 2025 itibarıyla 5 sefer düzenlenmiştir. Puan alamadın.")
     else:
-        q_sefer = st.radio("🚢 Türkiye, 2025 yılına kadar Arktik'e kaç bilimsel sefer düzenlemiştir?", 
-                          ["3 Sefer", "5 Sefer", "10 Sefer"], key="tr2")
-        if st.button("Cevabı Onayla", key="btn_tr2"):
-            if q_sefer == "5 Sefer":
+        q2 = st.radio("🚢 Türkiye, 2025 yılına kadar Arktik bölgesine toplam kaç bilimsel sefer düzenlemiştir?", 
+                     ["3 Sefer", "5 Sefer", "10 Sefer"], key="r2")
+        if st.button("Cevabı Onayla", key="b2"):
+            if q2 == "5 Sefer":
                 st.session_state.puan += 10
-                st.session_state.cevaplananlar["tr2"] = "Doğru"
+                st.session_state.cevaplananlar["q_sefer"] = "Doğru"
             else:
-                st.session_state.cevaplananlar["tr2"] = "Yanlış"
+                st.session_state.cevaplananlar["q_sefer"] = "Yanlış"
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # --- 3. SORU: ARKTİK KONSEYİ (Senin için eklediğim 3. soru) ---
+    # --- 3. SORU: İKLİM HIZI ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    if "tr3" in st.session_state.cevaplananlar:
-        if st.session_state.cevaplananlar["tr3"] == "Doğru":
-            st.success("✅ Doğru! Türkiye gözlemci ülke olmak istiyor. (+10 Puan)")
+    if "q_hiz" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_hiz"] == "Doğru":
+            st.success("✅ DOĞRU! Arktik çok daha hızlı ısınıyor. (+10 Puan)")
         else:
-            st.error("❌ Yanlış! Türkiye'nin hedefi 'Gözlemci' statüsüdür.")
+            st.error("❌ MAALESEF YANLIŞ! Arktik, dünyadan 4 kat daha hızlı ısınmaktadır.")
     else:
-        q_hedef = st.radio("🌍 Türkiye'nin Arktik Konseyi'ndeki temel hedefi nedir?", 
-                          ["Kıta Başkanı Olmak", "Gözlemci Ülke Olmak", "Bölgeyi Satın Almak"], key="tr3")
-        if st.button("Cevabı Onayla", key="btn_tr3"):
-            if q_hedef == "Gözlemci Ülke Olmak":
+        q3 = st.radio("🌡️ Arktik bölgesi, dünyanın geri kalanına göre ne kadar daha hızlı ısınmaktadır?", 
+                     ["2 Kat", "4 Kat", "10 Kat"], key="r3")
+        if st.button("Cevabı Onayla", key="b3"):
+            if q3 == "4 Kat":
                 st.session_state.puan += 10
-                st.session_state.cevaplananlar["tr3"] = "Doğru"
+                st.session_state.cevaplananlar["q_hiz"] = "Doğru"
             else:
-                st.session_state.cevaplananlar["tr3"] = "Yanlış"
+                st.session_state.cevaplananlar["q_hiz"] = "Yanlış"
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Final Mesajı
-    if len(st.session_state.cevaplananlar) == 3: # Soru sayına göre burayı artır (Örn: 15)
-        st.write("---")
-        st.header(f"🏁 Test Bitti! Toplam Skorun: {st.session_state.puan}")
-        if st.session_state.puan >= 30: # Tam puan durumu
+    # BİTİŞ EKRANI
+    if len(st.session_state.cevaplananlar) == 3:
+        st.divider()
+        st.header(f"🏁 Test Tamamlandı! Skorun: {st.session_state.puan}")
+        if st.session_state.puan == 30:
             st.balloons()
-            st.success("Mükemmel! Sen tam bir Arktik uzmanısın!")
+            st.success("🏆 MÜKEMMEL SKOR! Tam bir Arktik uzmanısın!")
         else:
-            st.warning("Daha yüksek skor alabilirsin! Sayfaları tekrar oku ve testi baştan başlat.")
+            st.info("💡 Skoru yükseltmek için sayfaları tekrar oku ve testi sıfırla!")
