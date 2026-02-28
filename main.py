@@ -325,12 +325,12 @@ elif menu == "🗺️ Kültürel Harita":
 st.markdown("---")
 st.title("❄️ Arktik'e Yolculuk")
 
-    # 1. BÜTÜNSEL GÖRÜNÜM
-    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
-        st.image("Arktik'e yolculuk.png", 
-             width=700,   # <-- sabit genişlik
-             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
-        st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
+# 1. BÜTÜNSEL GÖRÜNÜM
+with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=False):
+   st.image("Arktik'e yolculuk.png", 
+       width=700,   # <-- sabit genişlik
+       caption="Arktik Kültür Sistemi - Birleşik Görünüm")
+   st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
     # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
     if 'current_slide' not in st.session_state:
