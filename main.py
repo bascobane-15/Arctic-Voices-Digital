@@ -706,7 +706,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         st.metric(label="Mesafe", value="3.000 Mil")
         st.metric(label="Proje Sayısı", value="19 Proje")
 
-   with col2:
+    with col2:
         # Bilgi Kutusu (Beyaz ve Net Metin)
         st.markdown("""
             <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef; margin-bottom: 15px;">
