@@ -198,7 +198,7 @@ if menu == "🏔️ Ana Sayfa":
             <div class="explore-card">
                 <div class="tr-flag-container"></div>
                 <div class="card-title">Türkiye'nin Rotası</div>
-                <p style="font-size: 0.9rem;">Milli Kutup Araştırmaları ve bilimsel seferlerimizi inceleyin.</p>
+                <p style="font-size: 0.9rem;">Türkiye’nin milli Arktik seferlerini keşfedin.</p>
             </div>
         """, unsafe_allow_html=True)
         
