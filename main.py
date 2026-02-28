@@ -321,7 +321,7 @@ elif menu == "🗺️ Kültürel Harita":
     """, unsafe_allow_html=True)
 
     # -------------------------
-    # ARKTIK ÖYKÜ VE KÜLTÜR PANELİ (İÇERİYE KAYDIRILDI)
+    # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
     st.markdown("---")
     st.title("❄️ Arktik'in Hikayesi: Yerli Kültürler")
