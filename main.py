@@ -319,53 +319,51 @@ elif menu == "🗺️ Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
-   # ARKTİK KÜLTÜR PANELİ 
-    # -------------------------
-    st.markdown("---")
-    st.title("❄️ Arktik'e Yolculuk")
+    
+    # ARKTİK KÜLTÜR PANELİ 
+# -------------------------
+st.markdown("---")
+st.title("❄️ Arktik'e Yolculuk")
 
-    # 1. BÜTÜNSEL GÖRÜNÜM
-    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
-        st.image("Arktik'e yolculuk.png", 
-                 use_container_width=True, 
-                 caption="Arktik Kültür Sistemi - Birleşik Görünüm")
-        st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
+# 1. BÜTÜNSEL GÖRÜNÜM
+with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
+    st.image("Arktik'e yolculuk.png", 
+             use_container_width=True, 
+             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
+    st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
-    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
-    if 'current_slide' not in st.session_state:
-        st.session_state.current_slide = 0
+# 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+if 'current_slide' not in st.session_state:
+    st.session_state.current_slide = 0
 
-    slides = [
-        {"baslik": " ARKTİK ÇEVRE", "img": "1.png"},
-        {"baslik": " BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
-        {"baslik": " YERLİ HALK","img": "3.png"},
-        {"baslik": " İGLO", "img": "4.png"},
-        {"baslik": " KIYAFETLER", "img": "5.png"},
-        {"baslik": " BULUŞLAR", "img": "6.png"},
-    ]
+slides = [
+    {"baslik": "ARKTİK ÇEVRE", "img": "1.png"},
+    {"baslik": "BÖLGEDEKİ HAYVANLAR", "img": "2.png"},
+    {"baslik": "YERLİ HALK", "img": "3.png"},
+    {"baslik": "İGLO", "img": "4.png"},
+    {"baslik": "KIYAFETLER", "img": "5.png"},
+    {"baslik": "BULUŞLAR", "img": "6.png"},
+]
 
-    slide_data = slides[st.session_state.current_slide]
-    col_left, col_right = st.columns([1.2, 1])
+slide_data = slides[st.session_state.current_slide]
 
-    with col_left:
-        st.image(slide_data["img"], use_container_width=True)
+# Başlık üstte daha şık durur
+st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
 
-    with col_right:
-        st.subheader(f"Slayt {st.session_state.current_slide + 1}: {slide_data['baslik']}")
-        st.write(slide_data["metin"])
-        st.audio(slide_data["ses"])
+st.image(slide_data["img"], use_container_width=True)
 
-    # Navigasyon Butonları
-    nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
-    with nav_col1:
-        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
-            st.session_state.current_slide -= 1
-            st.rerun()
-    with nav_col2:
-        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
-            st.session_state.current_slide += 1
-            st.rerun()
+# Navigasyon Butonları
+nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
 
+with nav_col1:
+    if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+        st.session_state.current_slide -= 1
+        st.rerun()
+
+with nav_col2:
+    if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+        st.session_state.current_slide += 1
+        st.rerun()
 # -------------------------
 # NASA İKLİM VERİSİ 
 # -------------------------
