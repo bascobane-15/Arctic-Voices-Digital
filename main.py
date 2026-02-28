@@ -679,72 +679,73 @@ elif menu == "🧭 Kültür Keşfi":
 # TÜRKİYE'NİN ÇALIŞMALARI
 # -------------------------
 elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
+    # --- BOŞLUKLARI DARALTAN CSS ---
+    st.markdown("""
+        <style>
+            /* Başlıklar ve içerik arasındaki üst-alt boşlukları azaltır */
+            .block-container { padding-top: 1rem; padding-bottom: 1rem; }
+            h1 { margin-top: -20px; padding-bottom: 10px; }
+            h2 { margin-top: 0px; padding-bottom: 5px; }
+            h3 { margin-top: 5px; }
+            
+            # /* Video ve elementler arasındaki dikey boşluğu minimize eder */
+            .stVideo { margin-bottom: -15px; }
+            .stVerticalBlock { gap: 0.5rem; }
+            
+            /* Divider (Ayırıcı çizgi) boşluğunu daraltır */
+            hr { margin: 1em 0 !important; }
+        </style>
+    """, unsafe_allow_html=True)
+
     st.title("🚢 Türkiye'nin Arktik Bilimsel Serüveni")
 
     # --- BÖLÜM 1: İLK ARKTİK SEFERİ ---
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
-    
-    # GitHub'daki resminiz
-    st.image("ilk-arktik-sefer.jpg", 
-             caption="Türkiye'nin ilk Arktik seferinden tarihi bir kare.", 
-             use_container_width=True)
-    
-    st.write("2019 yılında gerçekleştirilen ilk seferle Türk bilim insanları Arktik Okyanusu'nda kritik veriler topladılar.")
-
-    # İlk sefer videosu (İstediğiniz ilk video)
-    st.subheader("🎥 İlk Sefer Videosu")
+    st.image("ilk-arktik-sefer.jpg", caption="Türkiye'nin ilk Arktik seferi.", use_container_width=True)
     st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
 
     st.divider()
 
-    # --- BÖLÜM 2: 5. ARKTİK SEFERİ ---
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (DARALTILMIŞ YAPI) ---
     st.header("📅 5. Arktik Seferi (2025)")
     
-    # Sayfayı iki ana kolona bölüyoruz
-    col1, col2 = st.columns([1.5, 2]) # Sol tarafı video için biraz genişlettik
+    # gap="small" parametresi kolonlar arasındaki yatay boşluğu daraltır
+    col1, col2 = st.columns([1.5, 2], gap="small") 
     
     with col1:
-        # Senin "Video Burada Olsun" dediğin yer
         st.video("https://youtu.be/Hd88m7qvMMY")
         st.caption("📽️ 5. Arktik Seferi Özeti")
         
-        # Sayısal verileri videonun altına şık bir şekilde ekliyoruz
+        # Sayısal veriler - Aralarındaki boşluk azaltıldı
         c1, c2 = st.columns(2)
         c1.metric(label="Mesafe", value="3.000 Mil")
         c2.metric(label="Proje Sayısı", value="19 Proje")
 
     with col2:
-        # Bilgi Kutusu (Beyaz ve Net Metin)
         st.markdown("""
-            <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef; margin-bottom: 20px;">
-                <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
+            <div style="background-color: #003366; padding: 15px; border-radius: 10px; border-left: 5px solid #00aeef;">
+                <p style="color: white; margin: 0; font-size: 15px; line-height: 1.4;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
-                kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri de yer alarak projelerini test ettiler.
+                kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri projelerini test ettiler.
                 </p>
             </div>
             """, unsafe_allow_html=True)
-        
-        # Haber butonu bilgi kutusunun hemen altında
+        st.write("") # Çok küçük bir boşluk
         st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
 
-    # Bilgi Notu (Yeşil Bant)
-    st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
+    st.success("💡 Arktik bölgesi, dünyanın geri kalanından 4 kat daha hızlı ısınıyor!")
     
     st.divider()
 
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
-    
-    st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
-    # Bahsettiğiniz Burcu Özsoy Videosu
     st.video("https://youtu.be/8DczVgr03BQ?si=WKx_5YMTtlR6Am_m")
 
-    # Burcu Özsoy Bilgi Kutusu (Beyaz Yazılı Kutu)
     st.markdown("""
-        <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef;">
-            <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
-            <strong>Prof. Dr. Burcu Özsoy Kimdir?</strong> TÜBİTAK MAM Kutup Araştırmaları Enstitüsü kurucu müdürü olan Özsoy, Türkiye'nin kutup bilim seferlerinin koordinatörlüğünü yürütmektedir. 
-            Antarktika ve Arktik bölgelerinde çok sayıda bilimsel çalışmaya liderlik ederek Türkiye'nin kutup vizyonuna öncülük etmiştir.
+        <div style="background-color: #003366; padding: 15px; border-radius: 10px; border-left: 5px solid #00aeef;">
+            <p style="color: white; margin: 0; font-size: 15px; line-height: 1.4;">
+            <strong>Prof. Dr. Burcu Özsoy Kimdir?</strong> TÜBİTAK MAM Kutup Araştırmaları Enstitüsü müdürüdür. 
+            Türkiye'nin kutup vizyonuna ve bilim seferlerine öncülük etmektedir.
             </p>
         </div>
         """, unsafe_allow_html=True)
