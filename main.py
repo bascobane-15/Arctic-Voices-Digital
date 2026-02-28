@@ -17,9 +17,9 @@ st.markdown("""
 <style>
     /* Ana Arka Plan  - Açık koyu gri */
         .stApp {
-            background-color: #343a40;
-            color: #ffffff;
-        }
+    background-color: #f2f4f7;  /* AÇIK GRİ YAPTIK */
+    color: #1f2933;            /* Yazıyı koyu yaptık */
+}
 
     /* SOL TARAF (SIDEBAR) BEYAZ */
     [data-testid="stSidebar"] {
