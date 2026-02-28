@@ -326,7 +326,9 @@ elif menu == "🗺️ Kültürel Harita":
 
     # 1. BÜTÜNSEL GÖRÜNÜM
     with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
-        st.image("Arktik'e yolculuk.png", width=500)
+        st.image("Arktik'e yolculuk.png",
+             use_container_width=True, 
+             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
         st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
     # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
@@ -346,7 +348,7 @@ elif menu == "🗺️ Kültürel Harita":
 
     # Başlık üstte daha şık durur
     st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
-    st.image(slide_data["img"], width=600)
+    st.image(slide_data["img"], width=300)
     
     # Navigasyon Butonları
     nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
