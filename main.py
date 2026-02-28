@@ -324,11 +324,11 @@ elif menu == "🗺️ Kültürel Harita":
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
     st.markdown("---")
-    st.title("❄️ Arktik'in Hikayesi: Yerli Kültürler")
+    st.title("❄️ Arktik'e Yolculuk")
 
     # 1. BÜTÜNSEL GÖRÜNÜM
-    with st.expander("🌐 Arktik Çevre ve Kültür Zihin Haritasını Gör", expanded=True):
-        st.image("https://files.storyboardthat.com/storyboard-src/tr-classic/arctic-environment-and-cultures-indigenous-peoples.png", 
+    with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
+        st.image("Arktik'e yolculuk.png", 
                  use_container_width=True, 
                  caption="Arktik Kültür Sistemi - Birleşik Görünüm")
         st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
