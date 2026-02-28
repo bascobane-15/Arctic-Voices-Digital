@@ -332,9 +332,9 @@ with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expande
        caption="Arktik Kültür Sistemi - Birleşik Görünüm")
    st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
 
-    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
-    if 'current_slide' not in st.session_state:
-        st.session_state.current_slide = 0
+# 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+if 'current_slide' not in st.session_state:
+    st.session_state.current_slide = 0
 
     slides = [
         {"baslik": "ARKTİK ÇEVRE", "img": "1.png", },
