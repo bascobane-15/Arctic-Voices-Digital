@@ -760,24 +760,17 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
     
-    # OKUNURLUK İÇİN ÖZEL CSS (Yazıları bembeyaz ve net yapar)
+    # OKUNURLUK İÇİN ÖZEL CSS
     st.markdown("""
         <style>
-        /* Ana soru metni */
         .stMarkdown p { color: white !important; font-size: 1.2rem !important; font-weight: 600 !important; }
-        
-        /* Radio buton seçenekleri */
         div[data-testid="stRadio"] label p { 
             color: #FFFFFF !important; 
             font-size: 1.1rem !important; 
             font-weight: bold !important;
-            text-shadow: 1px 1px 2px black; /* Arkaya hafif gölge atarak netleştirir */
+            text-shadow: 1px 1px 2px black; 
         }
-        
-        /* Kartların içindeki yazıların okunurluğu */
         .glass-card p { color: white !important; }
-        
-        /* Başlıklar */
         h1, h2, h3 { color: #00aeef !important; }
         </style>
     """, unsafe_allow_html=True)
@@ -801,7 +794,7 @@ elif menu == "🎮 Görev Merkezi":
         if st.session_state.cevaplananlar["q_burcu"] == "Doğru":
             st.success("✅ TEBRİKLER! Burcu Özsoy bilgisini doğru bildin. (+10 Puan)")
         else:
-            st.error("❌ HATALI! Bu sorudan puan alamadın. (Doğru Cevap: Burcu Özsoy)")
+            st.error("❌ HATALI! (Doğru Cevap: Burcu Özsoy)")
     else:
         q1 = st.radio("👩‍🔬 Türkiye'nin kutup çalışmalarına öncülük eden bilim insanımız kimdir?", 
                      ["Canan Dağdeviren", "Burcu Özsoy", "Aziz Sancar"], key="r1")
@@ -818,9 +811,9 @@ elif menu == "🎮 Görev Merkezi":
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     if "q_sefer" in st.session_state.cevaplananlar:
         if st.session_state.cevaplananlar["q_sefer"] == "Doğru":
-            st.success("✅ HARİKA! 5. seferin güncelliğini yakalamışsın. (+10 Puan)")
+            st.success("✅ HARİKA! 5. sefer bilgisini doğru bildin. (+10 Puan)")
         else:
-            st.error("❌ YANLIŞ! 2025 itibarıyla 5 sefer düzenlenmiştir. Puan alamadın.")
+            st.error("❌ YANLIŞ! 2025 itibarıyla 5 sefer düzenlenmiştir.")
     else:
         q2 = st.radio("🚢 Türkiye, 2025 yılına kadar Arktik bölgesine toplam kaç bilimsel sefer düzenlemiştir?", 
                      ["3 Sefer", "5 Sefer", "10 Sefer"], key="r2")
@@ -839,7 +832,7 @@ elif menu == "🎮 Görev Merkezi":
         if st.session_state.cevaplananlar["q_hiz"] == "Doğru":
             st.success("✅ DOĞRU! Arktik çok daha hızlı ısınıyor. (+10 Puan)")
         else:
-            st.error("❌ MAALESEF YANLIŞ! Arktik, dünyadan 4 kat daha hızlı ısınmaktadır.")
+            st.error("❌ MAALESEF YANLIŞ! Arktik dünyadan 4 kat daha hızlı ısınmaktadır.")
     else:
         q3 = st.radio("🌡️ Arktik bölgesi, dünyanın geri kalanına göre ne kadar daha hızlı ısınmaktadır?", 
                      ["2 Kat", "4 Kat", "10 Kat"], key="r3")
@@ -851,164 +844,41 @@ elif menu == "🎮 Görev Merkezi":
                 st.session_state.cevaplananlar["q_hiz"] = "Yanlış"
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
-    
-    # --- İGLOO SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_igloo" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_igloo"] == "Doğru":
-        st.success("✅ TEBRİKLER! İgloo bilgisini doğru bildin. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: İgloo)")
-else:
-    q_ig = st.radio("🏠 Inuit halkının dondurucu soğuklardan korunmak için kar bloklarıyla inşa ettiği kubbeli barınaklara ne denir?", 
-                   ["Yurt", "İgloo", "Hogan"], key="r_igloo")
-    if st.button("Cevabı Onayla", key="b_igloo"):
-        if q_ig == "İgloo":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_igloo"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_igloo"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
 
-# --- SAMI SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_sami" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_sami"] == "Doğru":
-        st.success("✅ HARİKA! Joik sanatını doğru bildin. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Joik)")
-else:
-    q_sa = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", 
-                   ["Kanto", "Joik", "Haka"], key="r_sami")
-    if st.button("Cevabı Onayla", key="b_sami"):
-        if q_sa == "Joik":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_sami"] = "Doğru"
+    # --- 4. SORU: İGLOO ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_igloo" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_igloo"] == "Doğru":
+            st.success("✅ TEBRİKLER! İgloo bilgisini doğru bildin. (+10 Puan)")
         else:
-            st.session_state.cevaplananlar["q_sami"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
+            st.error("❌ HATALI! (Doğru Cevap: İgloo)")
+    else:
+        q_ig = st.radio("🏠 Inuit halkının kar bloklarıyla inşa ettiği barınaklara ne denir?", 
+                       ["Yurt", "İgloo", "Hogan"], key="r_igloo")
+        if st.button("Cevabı Onayla", key="b_igloo"):
+            if q_ig == "İgloo":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_igloo"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_igloo"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
 
-# --- NENETS SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_nenets" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_nenets"] == "Doğru":
-        st.success("✅ DOĞRU! Ren geyikleri Nenetslerin yaşam kaynağıdır. (+10 Puan)")
+    # --- 5. SORU: SAMI ---
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+    if "q_sami" in st.session_state.cevaplananlar:
+        if st.session_state.cevaplananlar["q_sami"] == "Doğru":
+            st.success("✅ HARİKA! Joik sanatını doğru bildin. (+10 Puan)")
+        else:
+            st.error("❌ HATALI! (Doğru Cevap: Joik)")
     else:
-        st.error("❌ HATALI! (Doğru Cevap: Ren Geyiği)")
-else:
-    q_ne = st.radio("🦌 Nenets halkı hangi hayvanın sürülerine rehberlik eder?", 
-                   ["Ren Geyiği", "Kutup Ayısı", "Bizon"], key="r_nenets")
-    if st.button("Cevabı Onayla", key="b_nenets"):
-        if q_ne == "Ren Geyiği":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_nenets"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_nenets"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-
-# --- INUKSHUK SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_inukshuk" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_inukshuk"] == "Doğru":
-        st.success("✅ TEBRİKLER! Inukshuklar kadim yol işaretleridir. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Inukshuk)")
-else:
-    q_in = st.radio("🗿 Arktik'te yol bulmak veya bir yeri işaretlemek için üst üste dizilen taşlara ne denir?", 
-                   ["Totem", "Inukshuk", "Piramit"], key="r_inukshuk")
-    if st.button("Cevabı Onayla", key="b_inukshuk"):
-        if q_in == "Inukshuk":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_inukshuk"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_inukshuk"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-
-# --- ULAŞIM SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_ulasim" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_ulasim"] == "Doğru":
-        st.success("✅ DOĞRU! Köpek kızakları Arktik'in vazgeçilmezidir. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Köpek Kızağı)")
-else:
-    q_ul = st.radio("🐕 Inuitlerin geleneksel kış ulaşımında en çok güvendiği araç hangisidir?", 
-                   ["Kar Arabası", "At Arabası", "Köpek Kızağı"], key="r_ulasim")
-    if st.button("Cevabı Onayla", key="b_ulasim"):
-        if q_ul == "Köpek Kızağı":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_ulasim"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_ulasim"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-
-# --- KAYAK SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_kayak" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_kayak"] == "Doğru":
-        st.success("✅ TEBRİKLER! 'Kayak' kelimesinin kökeni Inuitlere dayanır. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Kayak)")
-else:
-    q_ka = st.radio("🛶 Inuitlerin avlanmak için kullandığı tek kişilik deri kaplı kanoya ne denir?", 
-                   ["Sal", "Kano", "Kayak"], key="r_kayak")
-    if st.button("Cevabı Onayla", key="b_kayak"):
-        if q_ka == "Kayak":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_kayak"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_kayak"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-
-# --- AURORA SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_aurora" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_aurora"] == "Doğru":
-        st.success("✅ MUHTEŞEM! Kuzey Işıkları'nın bilimsel adını bildin. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Aurora Borealis)")
-else:
-    q_au = st.radio("✨ Kuzey gökyüzünde görülen renkli ışık dansına ne ad verilir?", 
-                   ["Aurora Borealis", "Meteor Yağmuru", "Samanyolu"], key="r_aurora")
-    if st.button("Cevabı Onayla", key="b_aurora"):
-        if q_au == "Aurora Borealis":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_aurora"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_aurora"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-
-# --- GÜNEŞ GÖZLÜĞÜ SORUSU ---
-st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-if "q_gozluk" in st.session_state.cevaplananlar:
-    if st.session_state.cevaplananlar["q_gozluk"] == "Doğru":
-        st.success("✅ HARİKA! Inuitlerin bu dahi icadını bildin. (+10 Puan)")
-    else:
-        st.error("❌ HATALI! (Doğru Cevap: Inuitler)")
-else:
-    q_go = st.radio("🕶️ Kar körlüğünü engellemek için fildişinden dünyanın ilk güneş gözlüklerini kimler icat etmiştir?", 
-                   ["Mısırlılar", "Inuitler", "Romalılar"], key="r_gozluk")
-    if st.button("Cevabı Onayla", key="b_gozluk"):
-        if q_go == "Inuitler":
-            st.session_state.puan += 10
-            st.session_state.cevaplananlar["q_gozluk"] = "Doğru"
-        else:
-            st.session_state.cevaplananlar["q_gozluk"] = "Yanlış"
-        st.rerun()
-st.markdown('</div>', unsafe_allow_html=True)
-    # BİTİŞ EKRANI
-    if len(st.session_state.cevaplananlar) == 3:
-        st.divider()
-        st.header(f"🏁 Test Tamamlandı! Skorun: {st.session_state.puan}")
-        if st.session_state.puan == 30:
-            st.balloons()
-            st.success("🏆 MÜKEMMEL SKOR! Tam bir Arktik uzmanısın!")
-        else:
-            st.info("💡 Skoru yükseltmek için sayfaları tekrar oku ve testi sıfırla!")
+        q_sa = st.radio("❄️ Sami halkının kadim vokal sanatına ne denir?", 
+                       ["Kanto", "Joik", "Haka"], key="r_sami")
+        if st.button("Cevabı Onayla", key="b_sami"):
+            if q_sa == "Joik":
+                st.session_state.puan += 10
+                st.session_state.cevaplananlar["q_sami"] = "Doğru"
+            else:
+                st.session_state.cevaplananlar["q_sami"] = "Yanlış"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True
