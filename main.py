@@ -881,4 +881,4 @@ elif menu == "🎮 Görev Merkezi":
             else:
                 st.session_state.cevaplananlar["q_sami"] = "Yanlış"
             st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True
+    st.markdown('</div>', unsafe_allow_html=True)
