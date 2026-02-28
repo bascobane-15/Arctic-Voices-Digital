@@ -680,33 +680,24 @@ elif menu == "🧭 Kültür Keşfi":
 # -------------------------
 elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.title("🚢 Türkiye'nin Arktik Bilimsel Serüveni")
-    
-    # Giriş Metni
-    st.markdown("""
-    Türkiye, kutup vizyonu doğrultusunda Kuzey Kutbu'nda (Arktik) bilimsel varlığını her geçen yıl güçlendiriyor. 
-    İşte bu büyük yolculuğun köşe taşları:
-    """)
-    
+
     # --- BÖLÜM 1: İLK ARKTİK SEFERİ ---
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
     
-    # Fotoğraf (TÜBİTAK/AA kaynaklı temsili bir görsel yolu kullanılmıştır)
+    # GitHub'daki resminiz
     st.image("ilk-arktik-sefer.jpg", 
              caption="Türkiye'nin ilk Arktik seferinden tarihi bir kare.", 
              use_container_width=True)
     
-    st.write("""
-    2019 yılında gerçekleştirilen ilk seferle Türk bilim insanları Arktik Okyanusu'na ulaşarak 
-    iklim değişikliği ve deniz kirliliği üzerine kritik veriler topladılar.
-    """)
+    st.write("2019 yılında gerçekleştirilen ilk seferle Türk bilim insanları Arktik Okyanusu'nda kritik veriler topladılar.")
 
-    # Video
-    st.subheader("🎥 Sefer Belgeseli")
+    # İlk sefer videosu (İstediğiniz ilk video)
+    st.subheader("🎥 İlk Sefer Videosu")
     st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
 
-    st.divider() # Görsel bir ayırıcı çizgi
+    st.divider()
 
-    # --- BÖLÜM 2: 5. ARKTİK SEFERİ ---
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Beyaz Yazılı Kutu) ---
     st.header("📅 5. Arktik Seferi (2025)")
     
     col1, col2 = st.columns([1, 2])
@@ -716,41 +707,37 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         st.metric(label="Proje Sayısı", value="19 Proje")
 
     with col2:
-        # st.info yerine özel beyaz metinli kutu
         st.markdown("""
             <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef;">
-                <p style="color: white; margin: 0; font-size: 16px;">
+                <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
                 kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri de yer alarak projelerini test ettiler.
                 </p>
             </div>
             """, unsafe_allow_html=True)
-        
-        st.write("") # Küçük bir boşluk
+        st.write("") 
         st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
 
-    # Bilgi Notu
     st.success("💡 **Biliyor muydun?** Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
     
     st.divider()
 
-    
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
     
     st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
+    # Bahsettiğiniz Burcu Özsoy Videosu
     st.video("https://youtu.be/8DczVgr03BQ?si=WKx_5YMTtlR6Am_m")
 
-    # Burcu Özsoy Kimdir? (Beyaz metinli ve net kutu)
+    # Burcu Özsoy Bilgi Kutusu (Beyaz Yazılı Kutu)
     st.markdown("""
         <div style="background-color: #003366; padding: 20px; border-radius: 10px; border-left: 5px solid #00aeef;">
-            <p style="color: white; margin: 0; font-size: 16px;">
+            <p style="color: white; margin: 0; font-size: 16px; line-height: 1.6;">
             <strong>Prof. Dr. Burcu Özsoy Kimdir?</strong> TÜBİTAK MAM Kutup Araştırmaları Enstitüsü kurucu müdürü olan Özsoy, Türkiye'nin kutup bilim seferlerinin koordinatörlüğünü yürütmektedir. 
             Antarktika ve Arktik bölgelerinde çok sayıda bilimsel çalışmaya liderlik ederek Türkiye'nin kutup vizyonuna öncülük etmiştir.
             </p>
         </div>
         """, unsafe_allow_html=True)
-
 # -------------------------
 # 5. SAYFA: OYUN SAYFASI (Test Alanı)
 # -------------------------
