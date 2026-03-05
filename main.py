@@ -366,7 +366,16 @@ elif menu == "🗺️ Kültürel Harita":
 # -------------------------
 elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Analizi")
-    
+    st.markdown("""
+       <style>
+       [data-testid="stMetricValue"] {
+        color: #FFFFFF !important;
+       }
+       [data-testid="stMetricLabel"] {
+        color: #F0F2F6 !important;
+       }
+        </style>
+        """, unsafe_allow_html=True)
     # Veri çekme işlemini önbelleğe alıyoruz (1 saat boyunca saklar)
     @st.cache_data(ttl=3600)
     def load_nasa_data():
