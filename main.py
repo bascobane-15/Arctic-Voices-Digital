@@ -420,22 +420,12 @@ elif menu == "🛰️ NASA İklim Verisi":
             title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
         )
 
-        fig.update_layout(
-            plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)",
-            font=dict(color="white"),
-            title=dict(font=dict(size=22, color="white"), x=0.5),
-            xaxis=dict(title="Yıl", gridcolor="rgba(255,255,255,0.1)"),
-            yaxis=dict(title="Sıcaklık Anomalisi (°C)", gridcolor="rgba(255,255,255,0.1)")
-        )
-
         st.plotly_chart(fig, use_container_width=True)
 
         # Durum Renkleri
         status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
         border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
-        # Canlı Veri Analizi Kartı
         # --- 1. ESTETİK İSTATİSTİK KARTLARI (Cam Efekti) ---
         st.markdown(f"""
             <div style="display: flex; justify-content: space-between; gap: 20px; margin-bottom: 25px;">
