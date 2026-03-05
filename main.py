@@ -517,8 +517,8 @@ elif menu == "🧭 Kültür Keşfi":
         ["Seçiniz", "Inuit", "Nenets" "Sami",]
     )
          
-    # ===================== INUIT =====================
-    elif culture == "Inuit":
+# ===================== INUIT =====================
+elif culture == "Inuit":
 
         st.header("🧊 Inuit Kültürü")
 
