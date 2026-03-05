@@ -319,6 +319,8 @@ elif menu == "🗺️ Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
+
+    # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
     st.markdown("---")
@@ -512,67 +514,9 @@ elif menu == "🧭 Kültür Keşfi":
 
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Sami", "Inuit", "Nenets"]
+        ["Seçiniz", "Inuit", "Nenets" "Sami",]
     )
-
-    # ===================== SAMI =====================
-    if culture == "Sami":
-
-        st.header("🎭 Sami Kültürü")
-
-        # ================= Kıyafet =================
-        st.subheader("👘 Geleneksel Kıyafet: Gákti")
-
-        st.write("""
-        Gákti, Sami halkının geleneksel kıyafetidir.
-        Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
-        """)
-
-        st.image("gakti.jpg", use_container_width=True)
-
-        st.divider()
-
-        # ================= Müzik =================
-        st.subheader("🎵 Joik Müziği")
-
-        st.write("""
-        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
-        Bir kişiyi, doğayı veya bir varlığı temsil eder.
-        """)
-
-        st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
-
-        st.divider()
-        # ================= El Sanatları =================
-        st.subheader("🛠️ Geleneksel El Sanatı: Duodji")
-
-        st.write("""
-        Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
-        Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
-        """)
-
-        # GitHub'a yüklediğin görseli buraya ekliyoruz
-        st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", use_container_width=True)
-
-        # BEYAZ YAZILI BİLGİ KUTUSU
-        st.markdown("""
-            <div style="background-color: rgba(243, 156, 18, 0.2); 
-                        padding: 20px; 
-                        border-radius: 10px; 
-                        border-left: 5px solid #f39c12;
-                        margin: 10px 0px;">
-                <span style="color: white; font-weight: bold; font-size: 1.1em;">💡 İnanılmaz Teknik Detay: Kuksa ve Dokuma Sanatı</span>
-                <p style="color: white; margin-top: 10px; line-height: 1.6;">
-                Duodji'nin en bilinen örneği 'Kuksa' adı verilen ahşap bardaklardır. Bu bardaklar sıradan bir odun parçasından değil, 
-                huş ağacının üzerinde oluşan 'yumru' (burl) kısmından elle oyulur. Bu özel yapı sayesinde Kuksa asla çatlamaz, 
-                ısıyı mükemmel yalıtır ve ömür boyu kullanılabilir. 
-                <br><br>
-                Ayrıca, <b>yumuşak Duodji</b> olarak bilinen el dokuması ürünlerde, ren geyiği sinirlerinden yapılan ipler ve bitkisel boyalarla 
-                renklendirilmiş yünler kullanılarak, doğanın geometrisini yansıtan ve her biri bir hikaye anlatan eşsiz desenler dokunur.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
-       
+         
     # ===================== INUIT =====================
     elif culture == "Inuit":
 
@@ -680,6 +624,64 @@ elif menu == "🧭 Kültür Keşfi":
                 <p style="color: white; margin-top: 10px;">
                 Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
                 Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+# ===================== SAMI =====================
+    if culture == "Sami":
+
+        st.header("🎭 Sami Kültürü")
+
+        # ================= Kıyafet =================
+        st.subheader("👘 Geleneksel Kıyafet: Gákti")
+
+        st.write("""
+        Gákti, Sami halkının geleneksel kıyafetidir.
+        Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
+        """)
+
+        st.image("gakti.jpg", use_container_width=True)
+
+        st.divider()
+
+        # ================= Müzik =================
+        st.subheader("🎵 Joik Müziği")
+
+        st.write("""
+        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
+        Bir kişiyi, doğayı veya bir varlığı temsil eder.
+        """)
+
+        st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
+
+        st.divider()
+        # ================= El Sanatları =================
+        st.subheader("🛠️ Geleneksel El Sanatı: Duodji")
+
+        st.write("""
+        Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
+        Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
+        """)
+
+        # GitHub'a yüklediğin görseli buraya ekliyoruz
+        st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", use_container_width=True)
+
+        # BEYAZ YAZILI BİLGİ KUTUSU
+        st.markdown("""
+            <div style="background-color: rgba(243, 156, 18, 0.2); 
+                        padding: 20px; 
+                        border-radius: 10px; 
+                        border-left: 5px solid #f39c12;
+                        margin: 10px 0px;">
+                <span style="color: white; font-weight: bold; font-size: 1.1em;">💡 İnanılmaz Teknik Detay: Kuksa ve Dokuma Sanatı</span>
+                <p style="color: white; margin-top: 10px; line-height: 1.6;">
+                Duodji'nin en bilinen örneği 'Kuksa' adı verilen ahşap bardaklardır. Bu bardaklar sıradan bir odun parçasından değil, 
+                huş ağacının üzerinde oluşan 'yumru' (burl) kısmından elle oyulur. Bu özel yapı sayesinde Kuksa asla çatlamaz, 
+                ısıyı mükemmel yalıtır ve ömür boyu kullanılabilir. 
+                <br><br>
+                Ayrıca, <b>yumuşak Duodji</b> olarak bilinen el dokuması ürünlerde, ren geyiği sinirlerinden yapılan ipler ve bitkisel boyalarla 
+                renklendirilmiş yünler kullanılarak, doğanın geometrisini yansıtan ve her biri bir hikaye anlatan eşsiz desenler dokunur.
                 </p>
             </div>
         """, unsafe_allow_html=True)
