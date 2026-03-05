@@ -629,7 +629,7 @@ elif culture == "Nenets":
         """, unsafe_allow_html=True)
 
 # ===================== SAMI =====================
-    if culture == "Sami":
+if culture == "Sami":
 
         st.header("🎭 Sami Kültürü")
 
