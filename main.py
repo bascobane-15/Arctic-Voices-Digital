@@ -444,7 +444,11 @@ elif menu == "🛰️ NASA İklim Verisi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
-
+        st.warning("""
+    ⚠️ **Kritik Bilgi:** Küresel sıcaklık anomalisi grafikte her ne kadar 1.2°C civarı görünse de, 
+    'Arktik Amplifikasyon' etkisi nedeniyle Kuzey Kutbu bu orandan **4 kat daha hızlı** ısınmaktadır. 
+    Bu durum, buzulların ve yerli halkların yaşam alanlarının tahmin edilenden daha çabuk yok olmasına neden oluyor.
+""")
         st.markdown("---")
         st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
         
