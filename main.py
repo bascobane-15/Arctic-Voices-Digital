@@ -404,15 +404,7 @@ elif menu == "🛰️ NASA İklim Verisi":
         # 2. Ortalama Artış (Son 10 Yıl)
         recent_avg = df['Temperature'].tail(10).mean()
         
-        with col1:
-            st.metric("Son Ölçüm", f"{latest_temp} °C", delta=f"{round(latest_temp - 0.8, 2)} °C (Baz: 1950)")
         
-        with col2:
-            st.metric("Rekor Yıl", f"{max_year}", f"{max_temp} °C Artış")
-            
-        with col3:
-            st.metric("Son 10 Yıl Ort.", f"{round(recent_avg, 2)} °C", "Kritik Eşik")      
-
         
         st.divider()
         # Grafik
@@ -421,7 +413,11 @@ elif menu == "🛰️ NASA İklim Verisi":
             title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
         )
 
-        
+        st.plotly_chart(fig, use_container_width=True)
+
+        # Durum Renkleri
+        status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
+        border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
         # --- 1. ESTETİK İSTATİSTİK KARTLARI (Cam Efekti) ---
         st.markdown(f"""
