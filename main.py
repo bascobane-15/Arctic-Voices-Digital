@@ -436,20 +436,44 @@ elif menu == "🛰️ NASA İklim Verisi":
         border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
         # Canlı Veri Analizi Kartı
+        # --- 1. ESTETİK İSTATİSTİK KARTLARI (Cam Efekti) ---
         st.markdown(f"""
-            <div style="background-color: {status_color}; padding: 25px; border-radius: 15px; border-left: 8px solid {border_color}; margin-top: 20px;">
-                <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
-                <p style="color: white; font-size: 1.1em;">
-                    NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
+            <div style="display: flex; justify-content: space-between; gap: 20px; margin-bottom: 25px;">
+                <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(10px);">
+                    <p style="color: #bdc3c7; font-size: 0.9em; margin-bottom: 5px; font-family: sans-serif;">Son Ölçüm</p>
+                    <h2 style="color: #ffffff; margin: 0; font-family: sans-serif;">{latest_temp} °C</h2>
+                    <p style="color: #2ecc71; font-size: 0.8em; margin-top: 5px; font-family: sans-serif;">↑ {round(latest_temp - 0.8, 2)} °C (Baz: 1950)</p>
+                </div>
+                <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(10px);">
+                    <p style="color: #bdc3c7; font-size: 0.9em; margin-bottom: 5px; font-family: sans-serif;">Rekor Yıl</p>
+                    <h2 style="color: #ffffff; margin: 0; font-family: sans-serif;">{max_year}</h2>
+                    <p style="color: #e74c3c; font-size: 0.8em; margin-top: 5px; font-family: sans-serif;">↑ {max_temp} °C Artış</p>
+                </div>
+                <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: center; backdrop-filter: blur(10px);">
+                    <p style="color: #bdc3c7; font-size: 0.9em; margin-bottom: 5px; font-family: sans-serif;">Son 10 Yıl Ort.</p>
+                    <h2 style="color: #ffffff; margin: 0; font-family: sans-serif;">{round(recent_avg, 2)} °C</h2>
+                    <p style="color: #f1c40f; font-size: 0.8em; margin-top: 5px; font-family: sans-serif;">Kritik Eşik</p>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+        # --- 2. CANLI VERİ PANELİ VE ARKTİK NOTU (Modern Tasarım) ---
+        st.markdown(f"""
+            <div style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.15), rgba(192, 57, 43, 0.25)); 
+                        padding: 25px; border-radius: 15px; border-left: 8px solid #e74c3c; margin-bottom: 20px;">
+                <h3 style="color: white; margin-top: 0; font-family: sans-serif;">🌍 Küresel Durum Analizi ({latest_year})</h3>
+                <p style="color: #ecf0f1; font-size: 1.1em; font-family: sans-serif;">
+                    NASA verileri, küresel sıcaklık artışının <b>{latest_temp}°C</b> seviyesine ulaştığını doğruluyor. 
+                </p>
+            </div>
+            
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 20px; border-radius: 15px; border: 1px dashed #3498db; margin-bottom: 30px;">
+                <p style="color: #3498db; margin: 0; font-size: 1em; font-family: sans-serif;">
+                    💡 <b>Arktik Farkı:</b> Dünya genelindeki bu artışa rağmen, Arktik bölgesi 
+                    <span style="color: #f1c40f; font-weight: bold;">4 kat daha hızlı</span> ısınarak yerli halkların yaşamını doğrudan tehdit ediyor.
                 </p>
             </div>
         """, unsafe_allow_html=True)
-       
-        st.warning("""
-    ⚠️ **Kritik Bilgi:** Küresel sıcaklık anomalisi grafikte her ne kadar 1.2°C civarı görünse de, 
-    'Arktik Amplifikasyon' etkisi nedeniyle Kuzey Kutbu bu orandan **4 kat daha hızlı** ısınmaktadır. 
-    Bu durum, buzulların ve yerli halkların yaşam alanlarının tahmin edilenden daha çabuk yok olmasına neden oluyor.
-""")
        
         st.markdown("---")
         st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
