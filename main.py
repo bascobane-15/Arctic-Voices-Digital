@@ -394,6 +394,24 @@ elif menu == "🛰️ NASA İklim Verisi":
         latest_temp = df['Temperature'].iloc[-1]
         latest_year = df['Year'].iloc[-1]
        
+ # --- İSTATİSTİK KARTLARI (Grafiğin hemen üzerine ekleyebilirsiniz) ---
+        col1, col2, col3 = st.columns(3)
+        
+        # 1. En Yüksek Sıcaklık Anomalisi
+        max_temp = df['Temperature'].max()
+        max_year = df.loc[df['Temperature'].idxmax(), 'Year']
+        
+        # 2. Ortalama Artış (Son 10 Yıl)
+        recent_avg = df['Temperature'].tail(10).mean()
+        
+        with col1:
+            st.metric("Son Ölçüm", f"{latest_temp} °C", delta=f"{round(latest_temp - 0.8, 2)} °C (Baz: 1950)")
+        
+        with col2:
+            st.metric("Rekor Yıl", f"{max_year}", f"{max_temp} °C Artış")
+            
+        with col3:
+            st.metric("Son 10 Yıl Ort.", f"{round(recent_avg, 2)} °C", "Kritik Eşik")      
 
         
         st.divider()
