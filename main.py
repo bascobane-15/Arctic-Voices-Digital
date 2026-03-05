@@ -364,33 +364,30 @@ elif menu == "🗺️ Kültürel Harita":
             st.rerun()
           
 # -------------------------
-# NASA İKLİM VERİSİ 
-# -------------------------
 elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Analizi")
     
-    try:
-        # Veri çekme işlemi
+    # Veri çekme işlemini önbelleğe alıyoruz (1 saat boyunca saklar)
+    @st.cache_data(ttl=3600)
+    def load_nasa_data():
         url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
         df = pd.read_csv(url, skiprows=1)
-
-        # Veri temizleme
         df = df[["Year", "J-D"]]
         df.columns = ["Year", "Temperature"]
-        
-        # 'Temperature' sütunundaki sayısal olmayan değerleri temizle
         df['Temperature'] = pd.to_numeric(df['Temperature'], errors='coerce')
-        df = df.dropna()
+        return df.dropna()
 
-        # Son ölçülen anomali değerini al (İnovasyon için)
+    try:
+        with st.spinner('NASA verileri güncelleniyor, lütfen bekleyin...'):
+            df = load_nasa_data()
+
+        # Son ölçülen değerler
         latest_temp = df['Temperature'].iloc[-1]
         latest_year = df['Year'].iloc[-1]
 
-        # Grafik oluşturma
+        # Grafik
         fig = px.line(
-            df,
-            x="Year",
-            y="Temperature",
+            df, x="Year", y="Temperature",
             title=f"NASA GISTEMP Küresel Sıcaklık Değişimi (Son Ölçüm: {latest_year})"
         )
 
@@ -405,19 +402,13 @@ elif menu == "🛰️ NASA İklim Verisi":
 
         st.plotly_chart(fig, use_container_width=True)
 
-        # --- İNOVATİF ANALİZ KUTUSU (BEYAZ YAZI) ---
-        st.divider()
-        
+        # Durum Renkleri
         status_color = "rgba(231, 76, 60, 0.2)" if latest_temp > 1.0 else "rgba(52, 152, 219, 0.2)"
         border_color = "#e74c3c" if latest_temp > 1.0 else "#3498db"
         
-        # DİKKAT: Başta 3 tırnak (f""") ve sonda 3 tırnak (""") olmalı
+        # Canlı Veri Analizi Kartı
         st.markdown(f"""
-            <div style="background-color: {status_color}; 
-                        padding: 25px; 
-                        border-radius: 15px; 
-                        border-left: 8px solid {border_color};
-                        margin-top: 20px;">
+            <div style="background-color: {status_color}; padding: 25px; border-radius: 15px; border-left: 8px solid {border_color}; margin-top: 20px;">
                 <h3 style="color: white; margin-top: 0;">🌍 Canlı Veri Analizi ({latest_year})</h3>
                 <p style="color: white; font-size: 1.1em;">
                     NASA verilerine göre küresel sıcaklık artışı şu anda <b>{latest_temp}°C</b> seviyesinde. 
@@ -425,51 +416,25 @@ elif menu == "🛰️ NASA İklim Verisi":
             </div>
         """, unsafe_allow_html=True)
 
-        # --- YENİ EKLEDİĞİMİZ RENKLİ CÜMLE VE ZAMAN MAKİNESİ ---
-        # ÖNEMLİ: Bu satırlar 'try' ile aynı hizada değil, daha İÇERİDE olmalı!
         st.markdown("---")
         st.markdown("### 🕒 İklim Zaman Makinesi: Neler Değişiyor?")
         
-        st.markdown("""
-            <div style="background-color: rgba(52, 152, 219, 0.2); 
-                        padding: 10px; 
-                        border-radius: 5px; 
-                        margin-bottom: 20px;
-                        border: 1px solid #3498db;">
-                <p style="color: #F1C40F; font-weight: bold; margin: 0; text-align: center;">
-                    ❄️ Sıcaklık artışının Arktik yaşamı üzerindeki etkilerini görmek için başlıklara tıklayın.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
+        # Bilgi Notu
+        st.info("❄️ Sıcaklık artışının Arktik yaşamı üzerindeki etkilerini görmek için başlıklara tıklayın.")
         
-        # Şık, genişletilebilir (expander) bir kronoloji
+        # Kronolojik Genişleticiler (Expanders)
         with st.expander("🔵 +0.5°C: Geleneksel Yaşamın Zirvesi"):
-            st.write("""
-                Bu dönemde deniz buzu (Siku) kalındı. Inuit avcıları güvenle buzun üzerine çıkabiliyor, 
-                İglolar kış boyunca erimeden kalabiliyordu. Doğal denge tamdı.
-            """)
+            st.write("Bu dönemde deniz buzu (Siku) kalındı. Inuit avcıları güvenle buzun üzerine çıkabiliyor, iglolar kış boyunca erimeden kalabiliyordu.")
 
         with st.expander("🟡 +1.0°C: Değişimin Başlangıcı"):
-            st.write("""
-                **Albedo Etkisi** zayıflamaya başladı. Buzlar daha erken eriyor, ren geyikleri (Nenetslerin can damarı) 
-                göç yollarındaki nehirleri geçmekte zorlanıyor.
-            """)
+            st.write("**Albedo Etkisi** zayıflamaya başladı. Buzlar daha erken eriyor, ren geyikleri (Nenetslerin can damarı) göç yollarını geçmekte zorlanıyor.")
 
         with st.expander("🟠 +1.5°C: Kritik Eşik (Şu Anki Durum)"):
-            st.write("""
-                NASA verilerinin gösterdiği bu noktada, permafrost (donmuş toprak) eriyor. 
-                Sami halkının köylerinde zemin kaymaları görülmeye başladı. Kuzey Sumrusu'nun durakladığı 
-                kıyı şeritleri sular altında kalma riskiyle karşı karşıya.
-            """)
+            st.write("Permafrost eriyor. Sami halkının köylerinde zemin kaymaları görülmeye başladı. Kıyı şeritleri sular altında kalma riskiyle karşı karşıya.")
 
         with st.expander("🔴 +2.0°C ve Ötesi: Belirsiz Gelecek"):
-            st.error("""
-                Bu seviyede 'Siku' yani kalıcı deniz buzu tamamen yok olabilir. 
-                Bu, sadece bir buzun erimesi değil, binlerce yıllık bir kültürün kütüphanesinin yanması demektir.
-            """)
-            
-    except Exception as e:
-        st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
+            st.error("Siku (kalıcı deniz buzu) tamamen yok olabilir. Bu, binlerce yıllık bir kültürün kütüphanesinin yanması demektir.")
+
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
 
