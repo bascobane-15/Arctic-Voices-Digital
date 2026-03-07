@@ -130,7 +130,7 @@ with st.sidebar:
 
     st.markdown("---")
     
-    # 4. Sol Alt Açıklama Metni (İstediğin Siyah ve Büyük Stil)
+    # 4. Sol Alt Açıklama Metni (Siyah ve Büyük Stil)
     st.markdown("""
         <div class="sidebar-footer">
             Bu platform; Kuzey Kutbu’nda yer alan Arktik Bölgesini tanıtmak ve bu bölgede yaşayan yerli halkların kültürlerine yönelik 
@@ -151,7 +151,7 @@ if menu == "🏔️ Ana Sayfa":
             <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
         </div>
     """, unsafe_allow_html=True)
-    # Tanıtım Cümlesi - Rengi beyaz (white) veya gümüş (silver) yaparak görünür kıldık
+    # Tanıtım Cümlesi 
     st.markdown("""
         <div style="text-align: center; margin-bottom: 40px; color: #e2e8f0; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
             Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
@@ -160,7 +160,7 @@ if menu == "🏔️ Ana Sayfa":
     """, unsafe_allow_html=True)
     
     # 3. İNTERAKTİF KEŞİF KARTLARI
-    # Not: Bu kartlar görsel simülasyondur, tıklama için sidebar kullanılır.
+    
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
     
@@ -346,9 +346,8 @@ elif menu == "🗺️ Kültürel Harita":
 
     slide_data = slides[st.session_state.current_slide]
 
-    # Başlık üstte daha şık durur
     st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
-    st.image(slide_data["img"], width=500)
+    st.image(slide_data["img"], width=400)
     
     # Navigasyon Butonları
     nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
