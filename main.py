@@ -659,15 +659,14 @@ elif menu == "🧭 Kültür Keşfi":
         st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
 
         st.divider()
-        
+      
         # --- NENETS KIYAFET ---
         st.subheader("👘 Geleneksel Kıyafetleri)
-
         st.write("""
         Nenetlerin kıyafetleri, -50 dereceye varan soğuklara dayanmak için ren geyiği ve kutup tilkisi kürkünden üretilen, eldivenleri kollara bağlı, kapüşonlu, "malitsa" (erkek) ve "yaguşka" (kadın) adı verilen geleneksel, dayanıklı kürk paltolardan oluşur..
         """)
 
-        st.image("nenetkıyafet.jpg", use_container_width=True)
+        st.image("nenetkıyafet.jpg", caption="Geleneksel Nenets Kıyafeti")
 
         st.divider()
 
