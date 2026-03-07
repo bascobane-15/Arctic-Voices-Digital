@@ -504,13 +504,13 @@ elif menu == "🧭 Kültür Keşfi":
 
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Saami", "Inuit", "Nenets"]
+        ["Seçiniz", "Sami", "Inuit", "Nenets"]
     )
 
     # ===================== SAMI =====================
-    if culture == "Saami":
+    if culture == "Sami":
 
-        st.header("❄️ Saami Kültürü")
+        st.header("❄️ Sami Kültürü")
 
         # ================= Kıyafet =================
         st.subheader("👘 Geleneksel Kıyafet: Gákti")
@@ -530,7 +530,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🎵 Joik Müziği")
 
         st.write("""
-        Joik, Saami kültürüne özgü geleneksel bir vokal müzik formudur.
+        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
         Bir kişiyi, doğayı veya bir varlığı temsil eder.
         """)
         col1, col2, col3 = st.columns([1,2,1])
@@ -543,7 +543,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🛠️ Geleneksel El Sanatı: Duodji")
 
         st.write("""
-        Duodji, sadece bir el sanatı değil, Saami halkının doğayla kurduğu bağın bir yansımasıdır. 
+        Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
         Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
