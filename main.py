@@ -589,7 +589,7 @@ elif menu == "🧭 Kültür Keşfi":
 
         st.divider()
         
-        st.subheader("🏠 İgloo ve Modern Yaşam")
+        st.subheader("🏠 İgloo ve Yaşam")
 
         st.write("""
         İgloo kar bloklarından yapılan geçici barınaklardır.
