@@ -508,15 +508,15 @@ elif menu == "🧭 Kültür Keşfi":
     )
 
     # ===================== SAMI =====================
-    if culture == "Sami":
+    if culture == "Saami":
 
-        st.header("🎭 Sami Kültürü")
+        st.header("❄️ Saami Kültürü")
 
         # ================= Kıyafet =================
         st.subheader("👘 Geleneksel Kıyafet: Gákti")
 
         st.write("""
-        Gákti, Sami halkının geleneksel kıyafetidir.
+        Gákti, Saami halkının geleneksel kıyafetidir.
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
@@ -530,7 +530,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🎵 Joik Müziği")
 
         st.write("""
-        Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
+        Joik, Saami kültürüne özgü geleneksel bir vokal müzik formudur.
         Bir kişiyi, doğayı veya bir varlığı temsil eder.
         """)
         col1, col2, col3 = st.columns([1,2,1])
@@ -543,7 +543,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🛠️ Geleneksel El Sanatı: Duodji")
 
         st.write("""
-        Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
+        Duodji, sadece bir el sanatı değil, Saami halkının doğayla kurduğu bağın bir yansımasıdır. 
         Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
