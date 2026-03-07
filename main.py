@@ -518,8 +518,10 @@ elif menu == "🧭 Kültür Keşfi":
         Gákti, Sami halkının geleneksel kıyafetidir.
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
+        col1, col2, col3 = st.columns([1,2,1])
 
-        st.image("gakti.jpg", width=500)
+        with col2:
+            st.image("gakti.jpg", width=500)
 
         st.divider()
 
@@ -543,8 +545,10 @@ elif menu == "🧭 Kültür Keşfi":
         Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
         Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
         """)
-        
-        st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
 
         # BEYAZ YAZILI BİLGİ KUTUSU
         st.markdown("""
