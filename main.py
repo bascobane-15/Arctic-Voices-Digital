@@ -519,7 +519,7 @@ elif menu == "🧭 Kültür Keşfi":
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
 
-        st.image("gakti.jpg", use_container_width=True)
+        st.image("gakti.jpg", width=400)
 
         st.divider()
 
