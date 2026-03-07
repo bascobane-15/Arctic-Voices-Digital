@@ -476,8 +476,6 @@ elif menu == "🛰️ NASA İklim Verisi":
         with st.expander("🔴 +2.0°C ve Ötesi: Belirsiz Gelecek"):
             st.error("Siku (kalıcı deniz buzu) tamamen yok olabilir. Bu, binlerce yıllık bir kültürün kütüphanesinin yanması demektir.")
 
-    except Exception as e:
-        st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
        
        
         # --- HİKAYE BAŞLANGICI ---
