@@ -480,8 +480,7 @@ elif menu == "🛰️ NASA İklim Verisi":
         st.error(f"NASA verisine şu an erişilemiyor. Lütfen internet bağlantınızı kontrol edin. Hata: {e}")
        
        
-    # --- HİKAYE BAŞLANGICI ---
-        # Bu satırların tamamı, yukarıdaki "with st.expander" ile aynı hizada olmalı!
+        # --- HİKAYE BAŞLANGICI ---
         st.divider()
         st.header("🧊 Nanuq’un Erimeyen Umudu")
 
