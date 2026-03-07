@@ -581,8 +581,10 @@ elif menu == "🧭 Kültür Keşfi":
         Bu parkalar genellikle fok veya karibu derisinden yapılır.
         Katmanlı yapı vücut ısısını korur.
         """)
+        col1, col2, col3 = st.columns([1,2,1])
 
-        st.image("inuit_clothing.jpg", use_container_width=True)
+        with col2:
+            st.image("inuit_clothing.jpg", width=500)
 
         st.divider()
         
@@ -593,8 +595,10 @@ elif menu == "🧭 Kültür Keşfi":
         Günümüzde Inuit toplulukları modern evlerde yaşamaktadır,
         ancak geleneksel bilgi ve avcılık kültürü devam etmektedir.
         """)
+        col1, col2, col3 = st.columns([1,2,1])
 
-        st.image("igloo.jpg", use_container_width=True)
+        with col2:
+            st.image("igloo.jpg", width=500)
 
         st.divider()
         # --- DÜNYANIN İLK GÜNEŞ GÖZLÜĞÜ ---
