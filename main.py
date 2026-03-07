@@ -641,10 +641,8 @@ elif menu == "🧭 Kültür Keşfi":
         Nenets halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
         Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
         """)
-        col1, col2, col3 = st.columns([1,2,1])
-
-        with col2:
-            st.imag("nenets2.jpg", caption="Geleneksel Nenets Yaşamı ve Ren Geyikleri")
+        
+        st.imag("nenets2.jpg", caption="Geleneksel Nenets Yaşamı ve Ren Geyikleri")
 
         st.divider()
 
@@ -655,10 +653,7 @@ elif menu == "🧭 Kültür Keşfi":
         Bu çadırlar o kadar pratiktir ki, göç sırasında sadece **40 dakika** içinde kurulup sökülebilir. 
         Bir aile yılda yaklaşık **1000 kilometreden fazla** yol kat eder ve her duraklamada bu evi yeniden kurar.
         """)
-        col1, col2, col3 = st.columns([1,2,1])
-
-        with col2:
-            st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
+        st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
 
         st.divider()
       
