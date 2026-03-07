@@ -213,7 +213,7 @@ if menu == "🏔️ Ana Sayfa":
         """, unsafe_allow_html=True)
 
     
-    # 4. GÜNÜN KELİMESİ (Sözlük Kutusu - Alt Kısımda Zarif Bir Detay Olarak)
+    # 4. GÜNÜN KELİMESİ (Sözlük Kutusu)
     kelimeler = [
         {"kelime": "İglo", "dil": "İnuit Mühendisliği", "anlam": "Sıkıştırılmış kardan yapılan, dışarısı -40 derece olsa bile içindeki ısıyı koruyan efsanevi kubbe evler."},
         {"kelime": "Albedo", "dil": "İklim Bilimi", "anlam": "Buzulların güneş ışığını bir ayna gibi yansıtma gücü. Buzlar eridikçe dünya bu koruyucu aynasını kaybeder."},
@@ -243,7 +243,7 @@ elif menu == "🗺️ Kültürel Harita":
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
 
-    # Harita merkezi (Görünümü Türkiye ve Arktik arasını kapsayacak şekilde ayarladım)
+    # Harita merkezi 
     m = folium.Map(
         location=[55, 20], 
         zoom_start=3, 
@@ -289,7 +289,7 @@ elif menu == "🗺️ Kültürel Harita":
     folium.PolyLine(rota_sami, color="#2ecc71", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
     folium.PolyLine(rota_nenets, color="#e74c3c", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
 
-    # Rotanın ortasına küçük bir uçak ikonu (Opsiyonel görsel şölen)
+    # Rotanın ortasına küçük bir uçak ikonu
     folium.Marker(
         location=[55, 10], 
         icon=folium.DivIcon(html=f"""<div style="font-size: 20px; transform: rotate(45deg);">✈️</div>""")
@@ -319,6 +319,7 @@ elif menu == "🗺️ Kültürel Harita":
             </p>
         </div>
     """, unsafe_allow_html=True)
+    # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
     st.markdown("---")
@@ -361,7 +362,8 @@ elif menu == "🗺️ Kültürel Harita":
         if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
             st.session_state.current_slide += 1
             st.rerun()
-          
+# -------------------------
+# NASA İKLİM SAYFASI
 # -------------------------
 elif menu == "🛰️ NASA İklim Verisi":
     st.title("📈 NASA GISTEMP Küresel Sıcaklık Analizi")
@@ -776,7 +778,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
         </div>
         """, unsafe_allow_html=True)
 # -------------------------
-# 5. SAYFA: OYUN SAYFASI (Test Alanı)
+# GÖREV MERKEZİ
 # -------------------------
 elif menu == "🎮 Görev Merkezi":
     st.title("🎯 Arctic Bilgi Görevleri")
