@@ -642,7 +642,7 @@ elif menu == "🧭 Kültür Keşfi":
         Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
         """)
        
-        st.image("nenets2.jpg", caption="Geleneksel Nenets Yaşamı ve Ren Geyikleri")
+        st.image("nenets2.jpg", use_container_width=True))
 
         st.divider()
 
