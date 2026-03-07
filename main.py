@@ -576,26 +576,27 @@ elif menu == "🛰️ NASA İklim Verisi":
             st.header("Sahne 10 – Bir Çağrı")
             st.image("nanuq10.png", use_container_width=True)
             st.write("""
-    **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
-    """)
-        if st.button("Hikayeye Yeniden Başla"):
-           st.session_state.scene = 1
-           st.rerun()
+            **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
+            """)
+            if st.button("Hikayeye Yeniden Başla"):
+                st.session_state.scene = 1
+                st.rerun()
 
-# --- NAVİGASYON BUTONLARI ---
-           st.divider()
-           col1, col2, col3 = st.columns([1, 2, 1])
+        # --- NAVİGASYON BUTONLARI ---
+        # Bu butonlar NASA verileri menüsünün içinde kalması için içeride durmalı
+        st.divider()
+        nav_col1, nav_col2, nav_col3 = st.columns([1, 2, 1])
 
-with col1:
-        if scene > 1:
-           st.button("⬅ Önceki Sahne", on_click=prev_scene)
+        with nav_col1:
+            if scene > 1:
+                st.button("⬅ Önceki Sahne", on_click=prev_scene, key="prev_btn")
 
-with col3:
-        if scene < 10:
-           st.button("Sonraki Sahne ➡", on_click=next_scene)
+        with nav_col3:
+            if scene < 10:
+                st.button("Sonraki Sahne ➡", on_click=next_scene, key="next_btn")
 
-with col2:
-        st.write(f"Sayfa: {scene} / 10")
+        with nav_col2:
+            st.write(f"Sayfa: {scene} / 10")
 
 # -------------------------
 # KÜLTÜR KEŞFİ
