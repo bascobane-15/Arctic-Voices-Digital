@@ -481,10 +481,13 @@ elif menu == "🛰️ NASA İklim Verisi":
        
        
         # --- HİKAYE BAŞLANGICI ---
+        # Try-Except'in tamamen DIŞINDA ama NASA menüsünün İÇİNDE olmalı.
         st.divider()
         st.header("🧊 Nanuq’un Erimeyen Umudu")
+    
+        # Hata ayıklama için test mesajı (Görünce silebilirsin)
+        # st.write(f"Şu anki Sahne: {st.session_state.get('scene', 1)}")
 
-        # Sahne yönetimi (Session State)
         if "scene" not in st.session_state:
             st.session_state.scene = 1
 
