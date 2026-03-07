@@ -519,7 +519,7 @@ elif menu == "🧭 Kültür Keşfi":
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
 
-        st.image("gakti.jpg", width=400)
+        st.image("gakti.jpg", width=500)
 
         st.divider()
 
@@ -543,7 +543,7 @@ elif menu == "🧭 Kültür Keşfi":
         """)
 
         # GitHub'a yüklediğin görseli buraya ekliyoruz
-        st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", use_container_width=True)
+        st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
 
         # BEYAZ YAZILI BİLGİ KUTUSU
         st.markdown("""
