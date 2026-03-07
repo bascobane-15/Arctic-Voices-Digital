@@ -665,9 +665,9 @@ elif menu == "🧭 Kültür Keşfi":
         st.write("""
         Nenetlerin kıyafetleri, -50 dereceye varan soğuklara dayanmak için ren geyiği ve kutup tilkisi kürkünden üretilen, eldivenleri kollara bağlı, kapüşonlu, "malitsa" (erkek) ve "yaguşka" (kadın) adı verilen geleneksel, dayanıklı kürk paltolardan oluşur..
         """)
-       col1, col2, col3 = st.columns([1,2,1])
+        col1, col2, col3 = st.columns([1,2,1])
 
-       with col2:
+        with col2:
             st.image("nenetkıyafet.jpg", width=300)
 
    
