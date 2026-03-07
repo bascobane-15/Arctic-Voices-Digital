@@ -661,7 +661,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
       
         # --- NENETS KIYAFET ---
-        st.subheader("👘 Geleneksel Kıyafetleri)
+        st.subheader("👘 Geleneksel Kıyafetleri")
         st.write("""
         Nenetlerin kıyafetleri, -50 dereceye varan soğuklara dayanmak için ren geyiği ve kutup tilkisi kürkünden üretilen, eldivenleri kollara bağlı, kapüşonlu, "malitsa" (erkek) ve "yaguşka" (kadın) adı verilen geleneksel, dayanıklı kürk paltolardan oluşur..
         """)
