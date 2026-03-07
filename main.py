@@ -504,7 +504,7 @@ elif menu == "🧭 Kültür Keşfi":
 
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Sami", "Inuit", "Nenets"]
+        ["Seçiniz", "Saami", "Inuit", "Nenets"]
     )
 
     # ===================== SAMI =====================
