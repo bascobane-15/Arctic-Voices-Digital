@@ -647,7 +647,7 @@ elif menu == "🧭 Kültür Keşfi":
 
         st.divider()
 
-        # --- AZ BİLİNEN BİLGİ: CHUM ÇADIRLARI ---
+        # --- CHUM ÇADIRLARI ---
         st.subheader("🏠 Hareketli Evler: Chum")
         st.write("""
         Nenetslerin 'Chum' adını verdikleri çadırları, ren geyiği derisinden yapılır. 
@@ -657,6 +657,17 @@ elif menu == "🧭 Kültür Keşfi":
         
         # Eklediğimiz görsel satırı:
         st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
+
+        st.divider()
+        
+        # --- NENETS KIYAFET ---
+        st.subheader("👘 Geleneksel Kıyafetleri)
+
+        st.write("""
+        Nenetlerin kıyafetleri, -50 dereceye varan soğuklara dayanmak için ren geyiği ve kutup tilkisi kürkünden üretilen, eldivenleri kollara bağlı, kapüşonlu, "malitsa" (erkek) ve "yaguşka" (kadın) adı verilen geleneksel, dayanıklı kürk paltolardan oluşur..
+        """)
+
+        st.image("nenetkıyafet.jpg", use_container_width=True)
 
         st.divider()
 
