@@ -610,7 +610,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("kar_gozlugu.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
+            st.image("kar_gozlugu.jpg", caption="Geleneksel Inuit Kar Gözlüğü", width=500 )
 
         st.divider()
 
@@ -622,7 +622,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası")
+            st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası", width=500)
 
         st.markdown("""
     <div style="background-color: rgba(13, 110, 253, 0.2); 
