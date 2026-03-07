@@ -655,7 +655,6 @@ elif menu == "🧭 Kültür Keşfi":
         Bir aile yılda yaklaşık **1000 kilometreden fazla** yol kat eder ve her duraklamada bu evi yeniden kurar.
         """)
         
-        # Eklediğimiz görsel satırı:
         st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
 
         st.divider()
@@ -665,10 +664,8 @@ elif menu == "🧭 Kültür Keşfi":
         st.write("""
         Nenetlerin kıyafetleri, -50 dereceye varan soğuklara dayanmak için ren geyiği ve kutup tilkisi kürkünden üretilen, eldivenleri kollara bağlı, kapüşonlu, "malitsa" (erkek) ve "yaguşka" (kadın) adı verilen geleneksel, dayanıklı kürk paltolardan oluşur..
         """)
-        col1, col2, col3 = st.columns([1,2,1])
-
-        with col2:
-            st.image("nenetkıyafet.jpg", use_container_width=True)
+        
+        st.image("nenetkıyafet.jpg", use_container_width=True)
 
    
         st.divider()
