@@ -607,8 +607,10 @@ elif menu == "🧭 Kültür Keşfi":
         **Puvirnituq:** Inuitler binlerce yıl önce fildişinden bu gözlükleri icat etti. 
         İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
         """)
-        # Dosyayı bilgisayarından 'kar_gozlugu.jpg' adıyla yüklediğini varsayıyorum:
-        st.image("kar_gozlugu.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.image("kar_gozlugu.jpg", caption="Geleneksel Inuit Kar Gözlüğü")
 
         st.divider()
 
@@ -617,8 +619,10 @@ elif menu == "🧭 Kültür Keşfi":
         st.write("""
         **Ammassalik Ahşap Haritaları:** Karanlık kutup gecelerinde sadece dokunarak yolu bulmayı sağlayan 3 boyutlu kıyı haritalarıdır.
         """)
-        # Dosyayı bilgisayarından 'dokunsal_harita.jpg' adıyla yüklediğini varsayıyorum:
-        st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası")
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.image("dokunsal_harita.jpg", caption="Ammassalik Dokunsal Haritası")
 
         st.markdown("""
     <div style="background-color: rgba(13, 110, 253, 0.2); 
