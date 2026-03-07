@@ -530,8 +530,10 @@ elif menu == "🧭 Kültür Keşfi":
         Joik, Sami kültürüne özgü geleneksel bir vokal müzik formudur.
         Bir kişiyi, doğayı veya bir varlığı temsil eder.
         """)
+        col1, col2, col3 = st.columns([1,2,1])
 
-        st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
+        with col2:
+            st.video("https://www.youtube.com/watch?v=bLhmmChzkl0")
 
         st.divider()
         # ================= El Sanatları =================
@@ -541,8 +543,7 @@ elif menu == "🧭 Kültür Keşfi":
         Duodji, sadece bir el sanatı değil, Sami halkının doğayla kurduğu bağın bir yansımasıdır. 
         Her bir parça, doğaya saygı duyularak ve sadece ihtiyaç kadar malzeme alınarak üretilir.
         """)
-
-        # GitHub'a yüklediğin görseli buraya ekliyoruz
+        
         st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
 
         # BEYAZ YAZILI BİLGİ KUTUSU
@@ -723,7 +724,6 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     col1, col2 = st.columns([1.6, 2], gap="medium") 
     
     with col1:
-        # İstediğin gibi video burada
         st.video("https://youtu.be/Hd88m7qvMMY")
         st.caption("📽️ 5. Arktik Seferi Özeti")
         
