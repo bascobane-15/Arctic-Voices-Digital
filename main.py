@@ -403,9 +403,7 @@ elif menu == "🛰️ NASA İklim Verisi":
         
         # 2. Ortalama Artış (Son 10 Yıl)
         recent_avg = df['Temperature'].tail(10).mean()
-        
-        
-        
+               
         st.divider()
         # Grafik
         fig = px.line(
