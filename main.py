@@ -670,7 +670,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
+            st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum",width=500)
 
         st.divider()
       
