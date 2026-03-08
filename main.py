@@ -143,20 +143,57 @@ with st.sidebar:
 # SAĞ TARAF (ANA SAYFA) İÇERİĞİ
 # -------------------------
 if menu == "🏔️ Ana Sayfa":
-    
-    # Hero Bölümü
+
+    # GLOBAL FONT AYARI
     st.markdown("""
-        <div style="text-align: center; padding: 50px 0;">
-            <h1 style="font-size: 3.5rem; font-weight: 800; color: white;"> Dijital Arktik Kültür Eğitim Platformu</h1>
-            <p style="font-size: 1.9rem; opacity:3;">Arktik: Buzun ve İnsanın Hikayesi</p>
-            </div>
+    <style>
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .hero-title{
+        font-size:3.4rem;
+        font-weight:800;
+        color:white;
+        margin-bottom:10px;
+        letter-spacing:0.5px;
+    }
+
+    .hero-subtitle{
+        font-size:1.8rem;
+        color:#cbd5e1;
+        margin-bottom:30px;
+        font-weight:500;
+    }
+
+    .hero-text{
+        font-size:1.15rem;
+        color:#e2e8f0;
+        max-width:900px;
+        margin:auto;
+        line-height:1.7;
+    }
+    </style>
     """, unsafe_allow_html=True)
-    # Tanıtım Cümlesi 
+
+    # HERO BÖLÜMÜ
     st.markdown("""
-        <div style="text-align: center; margin-bottom: 40px; color: #e2e8f0; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-            Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
-            kadim kültürlerin, insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
-        </div>
+    <div style="text-align:center; padding:60px 0;">
+    
+    <div class="hero-title">
+    Dijital Arktik Kültür Eğitim Platformu
+    </div>
+
+    <div class="hero-subtitle">
+    Arktik: Buzun ve İnsanın Hikayesi
+    </div>
+
+    <div class="hero-text">
+    Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
+    kadim kültürlerin insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
+    </div>
+
+    </div>
     """, unsafe_allow_html=True)
     # 3. İNTERAKTİF KEŞİF KARTLARI
     st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
