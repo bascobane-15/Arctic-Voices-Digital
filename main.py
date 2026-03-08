@@ -481,96 +481,96 @@ elif menu == "🛰️ NASA İklim Verisi":
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     # -------------------------
     # Ana Başlık
-st.title("🧊 Nanuq’un Erimeyen Umudu")
-
-# 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
-if 'current_slide' not in st.session_state:
-    st.session_state.current_slide = 0
-
-slides = [
-    {
-        "baslik": "Arktik Bölge",
-        "img": "nanuq1.png",
-        "metin": """
-Çok uzaklarda, dünyanın en tepesinde, her yerin elmas gibi parladığı beyaz bir ülke varmış.  
-
-Bu ülke o kadar soğukmuş ki, nefes aldığınızda havada minik kristaller dans edermiş.  
-
-Burası **Arktik bölgesiymiş**.
-"""
-    },
-    {
-        "baslik": "Nanuq ile Tanışma",
-        "img": "nanuq2.png",
-        "metin": "Bu buzlarla kaplı dünyada küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’muş."
-    },
-    {
-        "baslik": "Anne Şefkati",
-        "img": "nanuq3.png",
-        "metin": "Nanuq annesiyle birlikte buzların üzerinde yürümeyi, avlanmayı ve hayatta kalmayı öğrenirmiş."
-    },
-    {
-        "baslik": "Buzlar Değişiyor",
-        "img": "nanuq4.png",
-        "metin": "Ama bir gün Nanuq fark etmiş ki buzlar eskisi gibi değilmiş."
-    },
-    {
-        "baslik": "Yalnızlık",
-        "img": "nanuq5.png",
-        "metin": "Erimeye başlayan buzlar Nanuq’u yalnız bırakmış."
-    },
-    {
-        "baslik": "İnuit Köyü ve Yeni Bir Umut",
-        "img": "nanuq6.png",
-        "metin": "Bir gün Nanuq uzakta küçük bir köy görmüş."
-    },
-    {
-        "baslik": "Kadim Dostluk",
-        "img": "nanuq7.png",
-        "metin": "Nanuq burada yeni bir arkadaş bulmuş."
-    },
-    {
-        "baslik": "Kavuşma ve Söz Veriş",
-        "img": "nanuq8.png",
-        "metin": "Çocuk ve Nanuq birlikte doğayı korumaya söz vermiş."
-    },
-    {
-        "baslik": "Gelecek Bizim Elimizde",
-        "img": "nanuq9.png",
-        "metin": "Dünya değişiyor ama insanlar isterse doğayı koruyabilir."
-    },
-    {
-        "baslik": "Çağrı",
-        "img": "nanuq19.png",
-        "metin": "Peki biz doğayı korumak için ne yapabiliriz?"
-    },
-]
-
-slide_data = slides[st.session_state.current_slide]
-
-st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
-
-# Resim ve metni yan yana yerleştirme
-col1, col2 = st.columns([1,1])
-
-with col1:
-    st.image(slide_data["img"], width=350)
-
-with col2:
-    st.markdown(slide_data["metin"])
-
-# Navigasyon Butonları
-nav_col1, nav_col2, nav_col3 = st.columns([1,1,3])
-
-with nav_col1:
-    if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
-        st.session_state.current_slide -= 1
-        st.rerun()
-
-with nav_col2:
-    if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
-        st.session_state.current_slide += 1
-        st.rerun()
+   st.title("🧊 Nanuq’un Erimeyen Umudu")
+   
+   # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+   if 'current_slide' not in st.session_state:
+       st.session_state.current_slide = 0
+   
+   slides = [
+       {
+           "baslik": "Arktik Bölge",
+           "img": "nanuq1.png",
+           "metin": """
+   Çok uzaklarda, dünyanın en tepesinde, her yerin elmas gibi parladığı beyaz bir ülke varmış.  
+   
+   Bu ülke o kadar soğukmuş ki, nefes aldığınızda havada minik kristaller dans edermiş.  
+   
+   Burası **Arktik bölgesiymiş**.
+   """
+       },
+       {
+           "baslik": "Nanuq ile Tanışma",
+           "img": "nanuq2.png",
+           "metin": "Bu buzlarla kaplı dünyada küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’muş."
+       },
+       {
+           "baslik": "Anne Şefkati",
+           "img": "nanuq3.png",
+           "metin": "Nanuq annesiyle birlikte buzların üzerinde yürümeyi, avlanmayı ve hayatta kalmayı öğrenirmiş."
+       },
+       {
+           "baslik": "Buzlar Değişiyor",
+           "img": "nanuq4.png",
+           "metin": "Ama bir gün Nanuq fark etmiş ki buzlar eskisi gibi değilmiş."
+       },
+       {
+           "baslik": "Yalnızlık",
+           "img": "nanuq5.png",
+           "metin": "Erimeye başlayan buzlar Nanuq’u yalnız bırakmış."
+       },
+       {
+           "baslik": "İnuit Köyü ve Yeni Bir Umut",
+           "img": "nanuq6.png",
+           "metin": "Bir gün Nanuq uzakta küçük bir köy görmüş."
+       },
+       {
+           "baslik": "Kadim Dostluk",
+           "img": "nanuq7.png",
+           "metin": "Nanuq burada yeni bir arkadaş bulmuş."
+       },
+       {
+           "baslik": "Kavuşma ve Söz Veriş",
+           "img": "nanuq8.png",
+           "metin": "Çocuk ve Nanuq birlikte doğayı korumaya söz vermiş."
+       },
+       {
+           "baslik": "Gelecek Bizim Elimizde",
+           "img": "nanuq9.png",
+           "metin": "Dünya değişiyor ama insanlar isterse doğayı koruyabilir."
+       },
+       {
+           "baslik": "Çağrı",
+           "img": "nanuq19.png",
+           "metin": "Peki biz doğayı korumak için ne yapabiliriz?"
+       },
+   ]
+   
+   slide_data = slides[st.session_state.current_slide]
+   
+   st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
+   
+   # Resim ve metni yan yana yerleştirme
+   col1, col2 = st.columns([1,1])
+   
+   with col1:
+       st.image(slide_data["img"], width=350)
+   
+   with col2:
+       st.markdown(slide_data["metin"])
+   
+   # Navigasyon Butonları
+   nav_col1, nav_col2, nav_col3 = st.columns([1,1,3])
+   
+   with nav_col1:
+       if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+           st.session_state.current_slide -= 1
+           st.rerun()
+   
+   with nav_col2:
+       if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+           st.session_state.current_slide += 1
+           st.rerun()
 # -------------------------
 
 
