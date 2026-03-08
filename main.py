@@ -362,11 +362,11 @@ elif menu == "🗺️ Kültürel Harita":
         if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
             st.session_state.current_slide += 1
             st.rerun()
+           
     # --- HİKAYE BAŞLANGICI ---
-     st.markdown("---")
-     st.title("🧊 Nanuq’un Erimeyen Umudu")
+        st.markdown("---")
+        st.title("🧊 Nanuq’un Erimeyen Umudu")
    
-     # Hata ayıklama için test mesajı (Görünce silebilirsin)
      # st.write(f"Şu anki Sahne: {st.session_state.get('scene', 1)}")
    
      if "scene" not in st.session_state:
