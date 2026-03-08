@@ -144,55 +144,89 @@ with st.sidebar:
 # -------------------------
 if menu == "🏔️ Ana Sayfa":
 
-    # GLOBAL FONT AYARI
     st.markdown("""
     <style>
+
+    /* GENEL FONT */
     html, body, [class*="css"]  {
-        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-family: "Segoe UI", "Inter", system-ui, sans-serif;
     }
 
+    /* HERO ALANI */
+    .hero-container{
+        text-align:center;
+        padding-top:70px;
+        padding-bottom:40px;
+    }
+
+    /* ANA BAŞLIK */
     .hero-title{
-        font-size:3.4rem;
+        font-size:3.8rem;
         font-weight:800;
-        color:white;
-        margin-bottom:10px;
+        background: linear-gradient(90deg,#ffffff,#b8e1ff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
         letter-spacing:0.5px;
+        margin-bottom:10px;
     }
 
+    /* ALT BAŞLIK */
     .hero-subtitle{
-        font-size:1.8rem;
+        font-size:1.9rem;
         color:#cbd5e1;
-        margin-bottom:30px;
         font-weight:500;
+        margin-bottom:35px;
     }
 
+    /* AÇIKLAMA */
     .hero-text{
-        font-size:1.15rem;
+        font-size:1.2rem;
         color:#e2e8f0;
-        max-width:900px;
+        max-width:850px;
         margin:auto;
-        line-height:1.7;
+        line-height:1.8;
+        opacity:0.95;
     }
+
+    /* BÖLÜM BAŞLIĞI */
+    .section-title{
+        text-align:center;
+        font-size:2.2rem;
+        font-weight:700;
+        margin-top:60px;
+        margin-bottom:30px;
+        color:white;
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
-    # HERO BÖLÜMÜ
+
     st.markdown("""
-    <div style="text-align:center; padding:60px 0;">
-    
-    <div class="hero-title">
-    Dijital Arktik Kültür Eğitim Platformu
-    </div>
+    <div class="hero-container">
 
-    <div class="hero-subtitle">
-    Arktik: Buzun ve İnsanın Hikayesi
-    </div>
+        <div class="hero-title">
+        Dijital Arktik Kültür Eğitim Platformu
+        </div>
 
-    <div class="hero-text">
-    Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
-    kadim kültürlerin insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
-    </div>
+        <div class="hero-subtitle">
+        Arktik: Buzun ve İnsanın Hikayesi
+        </div>
 
+        <div class="hero-text">
+        Bu platform, Kuzey Kutbu'nu yalnızca bir buz kütlesi olarak değil; yaşayan, nefes alan ve 
+        binlerce yıllık kadim kültürlerin insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
+        Arktik coğrafyası, yerli halkların yaşam kültürü, iklim değişikliği ve bilimsel araştırmalar 
+        hakkında farkındalık kazandırmayı amaçlayan dijital bir öğrenme alanı sunar.
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+
+    st.markdown("""
+    <div class="section-title">
+    Keşfe Nereden Başlayacaksınız?
     </div>
     """, unsafe_allow_html=True)
     # 3. İNTERAKTİF KEŞİF KARTLARI
