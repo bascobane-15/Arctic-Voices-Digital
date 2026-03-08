@@ -568,14 +568,21 @@ elif menu == "🛰️ NASA İklim Verisi":
            "baslik": "Gelecek Bizim Elimizde",
            "img": "nanuq9.png",
            "metin": """
-   Şimdi Nanuq ve annesi güvenle uyuyorlar. Ama biliyorlar ki, dünyanın her yerindeki çocuklar 
-   onlara yardım ederse, o parlayan beyaz ülke sonsuza dek var olacak.
+   Nanuq ve annesi yan yana oturup ufku izlerken, gökyüzünde dans eden kuzey ışıkları o gece sanki her zamankinden daha parlakmış.
+   
+   Buzlar hâlâ yavaş yavaş erimeye devam ediyormuş. Ancak artık yalnız olmadıklarını biliyorlarmış.
+   
+   İnsan dostlarının onları ve Arktik’i korumak için çabaladığını hissetmişler.
+   
+   Bir süre sonra Nanuq ve annesi buzların üzerinde güvenle uykuya dalmış. Ama kalplerinde bir umut hep varmış.
    """
        },
        {
            "baslik": "Çağrı",
            "img": "nanuq10.png",
            "metin": """
+   Dünyanın dört bir yanındaki çocuklar doğayı korumayı öğrenirse, o parlayan beyaz ülke — Arktik — sonsuza dek var olmaya devam edecekmiş.
+
    **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
    """
        },
