@@ -364,8 +364,9 @@ elif menu == "🗺️ Kültürel Harita":
             st.rerun()
            
     # --- HİKAYE BAŞLANGICI ---
-        st.markdown("---")
-        st.title("🧊 Nanuq’un Erimeyen Umudu")
+        st.divider()
+        st.header("🧊 Nanuq’un Erimeyen Umudu")
+
    
      # st.write(f"Şu anki Sahne: {st.session_state.get('scene', 1)}")
    
