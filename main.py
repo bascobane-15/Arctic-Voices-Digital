@@ -503,7 +503,7 @@ elif menu == "🛰️ NASA İklim Verisi":
            "baslik": "Nanuq ile Tanışma",
            "img": "nanuq2.png",
            "metin":"""
-   Bu beyaz ülkede, bembeyaz tüyleri pamuk şekerine benzeyen küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’tu. 
+   Bu beyaz ülkede, bembeyaz tüyleri pamuk şekerine benzeyen küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’muş. 
    
    Nanuq, kuzey ışıklarının gökyüzünde yeşil bir nehir gibi aktığı gecelerde kar taneleriyle oynamaya bayılırmış.
    """
@@ -552,7 +552,7 @@ elif menu == "🛰️ NASA İklim Verisi":
            "metin": """
    Çocuk, Nanuq'a en sevdiği balığı uzatmış. O an Nanuq şunu fark etmiş: Sadece onun evi erimiyormuş, 
 
-   İnüitlerin de dünyası değişiyormuş. İkisi de aynı güneşin fazla sıcaklığından yorulmuşlardı.
+   İnüitlerin de dünyası değişiyormuş. İkisi de aynı güneşin fazla sıcaklığından etkileniyormuş.
    """
        },
        {
