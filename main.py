@@ -461,7 +461,7 @@ elif menu == "🗺️ Kültürel Harita":
             st.write("""
          **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
          """)
-         if st.button("Hikayeye Yeniden Başla"):
+        if st.button("Hikayeye Yeniden Başla"):
             st.session_state.scene = 1
             st.rerun()
    
