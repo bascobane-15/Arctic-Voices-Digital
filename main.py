@@ -543,7 +543,7 @@ elif menu == "🛰️ NASA İklim Verisi":
            "metin": """
    Buz parçası onu kardan evlerin (iglo) olduğu bir köye sürüklemiş. 
 
-   Orada yaşayanlar, buzun dilini bilen **İnüitler**miş. Küçük bir İnüit çocuğu, Nanuq’u görünce hemen yanına koşmuş.
+   Orada yaşayanlar, buzun dilini bilen **İnüitler**miş. Küçük bir İnüit çocuğu, Nanuq’u görünce hemen ona yardıma koşmuş.
    """
        },
        {
@@ -572,9 +572,9 @@ elif menu == "🛰️ NASA İklim Verisi":
    
    Buzlar hâlâ yavaş yavaş erimeye devam ediyormuş. Ancak artık yalnız olmadıklarını biliyorlarmış.
    
-   İnsan dostlarının onları ve Arktik’i korumak için çabaladığını hissetmişler.
+   İnsan dostlarının onları ve Arktik’i korumak için çabaladığını biliyorlarmış.
    
-   Bir süre sonra Nanuq ve annesi buzların üzerinde güvenle uykuya dalmış. Ama kalplerinde bir umut hep varmış.
+   Bir süre sonra Nanuq ve annesi buzların üzerinde güvenle uykuya dalmış. Ama kalplerinde hep bir umut varmış.
    """
        },
        {
@@ -583,7 +583,7 @@ elif menu == "🛰️ NASA İklim Verisi":
            "metin": """
    Dünyanın dört bir yanındaki çocuklar doğayı korumayı öğrenirse, o parlayan beyaz ülke — Arktik — sonsuza dek var olmaya devam edecekmiş.
 
-   **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
+   **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmesin. Bizim ve sizin çabalarınızla devam etsin.
    """
        },
    ]
