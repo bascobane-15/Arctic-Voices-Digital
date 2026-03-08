@@ -479,7 +479,14 @@ elif menu == "🛰️ NASA İklim Verisi":
             
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
-    
+    # -------------------------
+    st.markdown("---")
+    st.title("🧊 Nanuq’un Erimeyen Umudu")
+    with st.expander("🌐 Arktik Bölge", expanded=True):
+        st.image("nanuq1.png",
+             use_container_width=True, 
+             caption=" Çok uzaklarda, dünyanın en tepesinde, her yerin elmas gibi parladığı beyaz bir ülke varmış.    Bu ülke o kadar soğukmuş ki, nefes aldığınızda havada minik kristaller dans edermiş.    Burası: Arktik bölgesiymiş")
+
 # -------------------------
 # KÜLTÜR KEŞFİ
 # -------------------------
