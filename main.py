@@ -605,17 +605,20 @@ elif menu == "🛰️ NASA İklim Verisi":
     nav_col1, nav_col2, nav_col3 = st.columns([1,1,3])
    
     with nav_col1:
-        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
-           st.session_state.current_slide -= 1
-           st.rerun()
+    if st.button("⬅️ Geri"):
+        if st.session_state.current_slide > 0:
+            st.session_state.current_slide -= 1
+        else:
+            st.session_state.current_slide = len(slides) - 1
+        st.rerun()
    
     with nav_col2:
-        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
-           st.session_state.current_slide += 1
-           st.rerun()
-# -------------------------
-
-
+    if st.button("İleri ➡️"):
+        if st.session_state.current_slide < len(slides) - 1:
+            st.session_state.current_slide += 1
+        else:
+            st.session_state.current_slide = 0
+        st.rerun()
 # -------------------------
 # KÜLTÜR KEŞFİ
 # -------------------------
