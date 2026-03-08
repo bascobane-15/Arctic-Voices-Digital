@@ -470,16 +470,16 @@ elif menu == "🗺️ Kültürel Harita":
             st.divider()
         nav_col1, nav_col2, nav_col3 = st.columns([1, 2, 1])
    
-            with nav_col1:
-              if scene > 1:
-                   st.button("⬅ Önceki Sahne", on_click=prev_scene, key="prev_btn")
+        with nav_col1:
+            if scene > 1:
+                 st.button("⬅ Önceki Sahne", on_click=prev_scene, key="prev_btn")
+
+       with nav_col3:
+           if scene < 10:
+                st.button("Sonraki Sahne ➡", on_click=next_scene, key="next_btn")
    
-            with nav_col3:
-              if scene < 10:
-                   st.button("Sonraki Sahne ➡", on_click=next_scene, key="next_btn")
-   
-            with nav_col2:
-                   st.write(f"Sayfa: {scene} / 10")
+       with nav_col2:
+                st.write(f"Sayfa: {scene} / 10")
 
     
 # -------------------------
