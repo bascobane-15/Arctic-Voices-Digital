@@ -502,7 +502,9 @@ elif menu == "🛰️ NASA İklim Verisi":
        {
            "baslik": "Nanuq ile Tanışma",
            "img": "nanuq2.png",
-           "metin": "Bu buzlarla kaplı dünyada küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’muş."
+           "metin": "
+           Bu beyaz ülkede, bembeyaz tüyleri pamuk şekerine benzeyen küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’tu.    
+           Nanuq, kuzey ışıklarının gökyüzünde yeşil bir nehir gibi aktığı gecelerde kar taneleriyle oynamaya bayılırmış."
        },
        {
            "baslik": "Anne Şefkati",
