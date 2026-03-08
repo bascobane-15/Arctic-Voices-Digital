@@ -474,11 +474,11 @@ elif menu == "🗺️ Kültürel Harita":
             if scene > 1:
                  st.button("⬅ Önceki Sahne", on_click=prev_scene, key="prev_btn")
 
-       with nav_col3:
+        with nav_col3:
            if scene < 10:
                 st.button("Sonraki Sahne ➡", on_click=next_scene, key="next_btn")
    
-       with nav_col2:
+        with nav_col2:
                 st.write(f"Sayfa: {scene} / 10")
 
     
