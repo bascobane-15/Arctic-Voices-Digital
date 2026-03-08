@@ -890,7 +890,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
             <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
                 <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
                 <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
-                kapsamlı araştırmalar yaptı. Bu seferde ilk kez lise öğrencileri projelerini test ettiler.
+                kapsamlı araştırmalar yaptı. Bu seferde  lise öğrencileri de projelerini test ettiler.
                 </p>
             </div>
             """, unsafe_allow_html=True)
