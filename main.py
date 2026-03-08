@@ -480,7 +480,7 @@ elif menu == "🛰️ NASA İklim Verisi":
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     # -------------------------
-    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+        st.title("🧊 Nanuq’un Erimeyen Umudu")
     if 'current_slide' not in st.session_state:
         st.session_state.current_slide = 0
 
