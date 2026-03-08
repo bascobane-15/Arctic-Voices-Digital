@@ -480,10 +480,10 @@ elif menu == "🛰️ NASA İklim Verisi":
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     # -------------------------
-        st.title("🧊 Nanuq’un Erimeyen Umudu")
+        
     if 'current_slide' not in st.session_state:
         st.session_state.current_slide = 0
-
+        st.title("🧊 Nanuq’un Erimeyen Umudu")
     slides = [
         {"baslik": "Arktik Bölge", "img": "nanuq1.png"},
         {"baslik": " Nanuq ile Tanışma ", "img": "nanuq2.png"},
