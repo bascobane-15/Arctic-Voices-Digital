@@ -480,12 +480,43 @@ elif menu == "🛰️ NASA İklim Verisi":
     except Exception as e:
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     # -------------------------
-    st.markdown("---")
-    st.title("🧊 Nanuq’un Erimeyen Umudu")
-    with st.expander("🌐 Arktik Bölge", expanded=True):
-        st.image("nanuq1.png",
-             use_container_width=True, 
-             caption=" Çok uzaklarda, dünyanın en tepesinde, her yerin elmas gibi parladığı beyaz bir ülke varmış.    Bu ülke o kadar soğukmuş ki, nefes aldığınızda havada minik kristaller dans edermiş.    Burası: Arktik bölgesiymiş")
+    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+    if 'current_slide' not in st.session_state:
+        st.session_state.current_slide = 0
+
+    slides = [
+        {"baslik": "Arktik Bölge", "img": "nanuq1.png"},
+        {"baslik": " Nanuq ile Tanışma ", "img": "nanuq2.png"},
+        {"baslik": " Anne Şefkati ", "img": "nanuq3.png"},
+        {"baslik": "Buzlar Değişiyor", "img": "nanuq4.png"},
+        {"baslik": "Yalnızlık", "img": "nanuq5.png"},
+        {"baslik": "– İnüit Köyü ve Yeni Bir Umut ", "img": "nanuq6.png"},
+        {"baslik": " Kadim Dostluk ", "img": "nanuq7.png"},
+        {"baslik": "Kavuşma ve Söz Veriş", "img": "nanuq8.png"},
+        {"baslik": " Gelecek Bizim Elimizde ", "img": "nanuq9.png"},
+        {"baslik": "Çağrı", "img": "nanuq19.png"},
+
+    ]
+    slide_data = slides[st.session_state.current_slide]
+
+    st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
+    st.image(slide_data["img"], width=400)
+    
+    # Navigasyon Butonları
+    nav_col1, nav_col2, nav_col3 = st.columns([1, 1, 3])
+
+    with nav_col1:
+        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+            st.session_state.current_slide -= 1
+            st.rerun()
+
+    with nav_col2:
+        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+            st.session_state.current_slide += 1
+            st.rerun()
+ 
+# -------------------------
+
 
 # -------------------------
 # KÜLTÜR KEŞFİ
