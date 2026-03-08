@@ -583,7 +583,7 @@ elif menu == "🛰️ NASA İklim Verisi":
            "metin": """
    Dünyanın dört bir yanındaki çocuklar doğayı korumayı öğrenirse, o parlayan beyaz ülke — Arktik — sonsuza dek var olmaya devam edecekmiş.
 
-   **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmesin. Bizim ve sizin çabalarınızla devam etsin.
+   **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmesin. 
    """
        },
    ]
