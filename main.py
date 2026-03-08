@@ -481,13 +481,13 @@ elif menu == "🛰️ NASA İklim Verisi":
         st.error(f"NASA verisine şu an erişilemiyor. Hata: {e}")
     # -------------------------
     # Ana Başlık
-   st.title("🧊 Nanuq’un Erimeyen Umudu")
+    st.title("🧊 Nanuq’un Erimeyen Umudu")
    
-   # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
-   if 'current_slide' not in st.session_state:
+    # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
+    if 'current_slide' not in st.session_state:
        st.session_state.current_slide = 0
    
-   slides = [
+    slides = [
        {
            "baslik": "Arktik Bölge",
            "img": "nanuq1.png",
@@ -546,29 +546,29 @@ elif menu == "🛰️ NASA İklim Verisi":
        },
    ]
    
-   slide_data = slides[st.session_state.current_slide]
+    slide_data = slides[st.session_state.current_slide]
    
-   st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
+    st.subheader(f"📌 Slayt {st.session_state.current_slide + 1} / {len(slides)} – {slide_data['baslik']}")
    
-   # Resim ve metni yan yana yerleştirme
-   col1, col2 = st.columns([1,1])
+    # Resim ve metni yan yana yerleştirme
+    col1, col2 = st.columns([1,1])
    
-   with col1:
+    with col1:
        st.image(slide_data["img"], width=350)
    
-   with col2:
+    with col2:
        st.markdown(slide_data["metin"])
    
-   # Navigasyon Butonları
-   nav_col1, nav_col2, nav_col3 = st.columns([1,1,3])
+    # Navigasyon Butonları
+    nav_col1, nav_col2, nav_col3 = st.columns([1,1,3])
    
-   with nav_col1:
-       if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
+    with nav_col1:
+        if st.button("⬅️ Geri") and st.session_state.current_slide > 0:
            st.session_state.current_slide -= 1
            st.rerun()
    
-   with nav_col2:
-       if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
+    with nav_col2:
+        if st.button("İleri ➡️") and st.session_state.current_slide < len(slides) - 1:
            st.session_state.current_slide += 1
            st.rerun()
 # -------------------------
