@@ -363,8 +363,8 @@ elif menu == "🗺️ Kültürel Harita":
             st.session_state.current_slide += 1
             st.rerun()
     # --- HİKAYE BAŞLANGICI ---
-     st.divider()
-     st.header("🧊 Nanuq’un Erimeyen Umudu")
+     st.markdown("---")
+     st.title("🧊 Nanuq’un Erimeyen Umudu")
    
      # Hata ayıklama için test mesajı (Görünce silebilirsin)
      # st.write(f"Şu anki Sahne: {st.session_state.get('scene', 1)}")
