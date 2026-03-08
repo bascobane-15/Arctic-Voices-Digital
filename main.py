@@ -147,8 +147,8 @@ if menu == "🏔️ Ana Sayfa":
     # Hero Bölümü
     st.markdown("""
         <div style="text-align: center; padding: 50px 0;">
-            <h1 style="font-size: 3.5rem; font-weight: 800; color: white;">Arktik: Buzun ve İnsanın Hikayesi</h1>
-            <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
+            <h1 style="font-size: 3.5rem; font-weight: 800; color: white;"> Dijital Arktik Kültür ve Eğitim Platformu</h1>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Arktik: Buzun ve İnsanın Hikayesi.Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
         </div>
     """, unsafe_allow_html=True)
     # Tanıtım Cümlesi 
