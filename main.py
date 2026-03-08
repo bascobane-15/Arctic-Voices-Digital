@@ -369,8 +369,8 @@ elif menu == "🗺️ Kültürel Harita":
    
      # st.write(f"Şu anki Sahne: {st.session_state.get('scene', 1)}")
    
-     if "scene" not in st.session_state:
-         st.session_state.scene = 1
+        if "scene" not in st.session_state:
+            st.session_state.scene = 1
    
      # Sahne fonksiyonları (Burada tanımlanabilir)
      def next_scene(): st.session_state.scene += 1
@@ -379,91 +379,91 @@ elif menu == "🗺️ Kültürel Harita":
      scene = st.session_state.scene
    
      # Sahne İçerikleri
-     if scene == 1:
-         st.header("Sahne 1 – Arktik’e Yolculuk")
-         st.image("nanuq1.png", use_container_width=True)
-         st.write("""
+        if scene == 1:
+            st.header("Sahne 1 – Arktik’e Yolculuk")
+            st.image("nanuq1.png", use_container_width=True)
+            st.write("""
    Çok uzaklarda, dünyanın en tepesinde, her yerin elmas gibi parladığı beyaz bir ülke varmış. 
    Bu ülke o kadar soğukmuş ki, nefes aldığınızda havada minik kristaller dans edermiş. 
    Burası **Arktik bölgesiymiş**.
    """)
-         st.info("Arktik = Dünya'nın kuzey kutup bölgesi")
+            st.info("Arktik = Dünya'nın kuzey kutup bölgesi")
    
-     elif scene == 2:
-         st.header("Sahne 2 – Nanuq ile Tanışma")
-         st.image("nanuq2.png", use_container_width=True)
-         st.write("""
+        elif scene == 2:
+            st.header("Sahne 2 – Nanuq ile Tanışma")
+            st.image("nanuq2.png", use_container_width=True)
+            st.write("""
    Bu beyaz ülkede, bembeyaz tüyleri pamuk şekerine benzeyen küçük bir kutup ayısı yaşarmış. Adı **Nanuq**’tu. 
    Nanuq, kuzey ışıklarının gökyüzünde yeşil bir nehir gibi aktığı gecelerde kar taneleriyle oynamaya bayılırmış.
    """)
-         st.success("Bilgi: Kutup ayıları mükemmel yüzücülerdir!")
+            st.success("Bilgi: Kutup ayıları mükemmel yüzücülerdir!")
    
-     elif scene == 3:
-         st.header("Sahne 3 – Anne Şefkati")
-         st.image("nanuq3.png", use_container_width=True)
-         st.write("""
+        elif scene == 3:
+            st.header("Sahne 3 – Anne Şefkati")
+            st.image("nanuq3.png", use_container_width=True)
+            st.write("""
    Nanuq’un en sevdiği şey, annesinin kocaman patilerine basarak buzun üzerinde yürümeyi öğrenmekmiş. 
    Annesi ona fısıldarmış: *"Bak küçük Nanuq, bu buzlar bizim köprümüz. Eğer onlar olmazsa, yolumuzu kaybederiz."*
    """)
    
-     elif scene == 4:
-         st.header("Sahne 4 – Buzlar Değişiyor")
-         st.image("nanuq4.png", use_container_width=True)
-         st.write("""
+        elif scene == 4:
+            st.header("Sahne 4 – Buzlar Değişiyor")
+            st.image("nanuq4.png", use_container_width=True)
+            st.write("""
    Bir gün, güneş her zamankinden daha sıcak doğmuş. Nanuq, ayaklarının altındaki buzun "çat... pat..." diye sesler çıkardığını duymuş. 
    Dev buz kütleleri birbirinden ayrılmaya, devasa çatlaklar oluşmaya başlamış.
    """)
    
-     elif scene == 5:
-         st.header("Sahne 5 – Yalnızlık")
-         st.image("nanuq5.png", use_container_width=True)
-         st.write("""
+        elif scene == 5:
+            st.header("Sahne 5 – Yalnızlık")
+            st.image("nanuq5.png", use_container_width=True)
+            st.write("""
    Nanuq bir sabah uyandığında, kendini küçücük bir buz parçasının üzerinde bulmuş. 
    Annesi uzaktaki bir kıyıda kalmış. Nanuq’un o simsiyah burnu titriyor, gözlerinden yaşlar süzülüyormuş. 
    *"Neden evim eriyor?"* diye sormuş.
    """)
    
-     elif scene == 6:
-         st.header("Sahne 6 – İnüit Köyü ve Yeni Bir Umut")
-         st.image("nanuq6.png", use_container_width=True)
-         st.write("""
+        elif scene == 6:
+            st.header("Sahne 6 – İnüit Köyü ve Yeni Bir Umut")
+            st.image("nanuq6.png", use_container_width=True)
+            st.write("""
    Buz parçası onu kardan evlerin (iglo) olduğu bir köye sürüklemiş. 
    Orada yaşayanlar, buzun dilini bilen **İnüitler**miş. Küçük bir İnüit çocuğu, Nanuq’u görünce hemen yanına koşmuş.
    """)
    
-     elif scene == 7:
-         st.header("Sahne 7 – Kadim Dostluk")
-         st.image("nanuq7.png", use_container_width=True)
-         st.write("""
+        elif scene == 7:
+            st.header("Sahne 7 – Kadim Dostluk")
+            st.image("nanuq7.png", use_container_width=True)
+            st.write("""
    Çocuk, Nanuq'a en sevdiği balığı uzatmış. O an Nanuq şunu fark etmiş: Sadece onun evi erimiyormuş, 
    İnüitlerin de dünyası değişiyormuş. İkisi de aynı güneşin fazla sıcaklığından yorulmuşlardı.
    """)
    
-     elif scene == 8:
-         st.header("Sahne 8 – Kavuşma ve Söz Veriş")
-         st.image("nanuq8.png", use_container_width=True)
-         st.write("""
+        elif scene == 8:
+            st.header("Sahne 8 – Kavuşma ve Söz Veriş")
+            st.image("nanuq8.png", use_container_width=True)
+            st.write("""
    Nanuq, yeni dostunun yardımıyla annesine kavuşmuş. O gece İnüit çocuk ve ailesi gökyüzüne bakarken bir söz vermişler: 
    *"Doğayı koruyacağız ve dünyayı serin tutacağız ki Nanuq’un evi hiç bitmesin."*
    """)
    
-     elif scene == 9:
-         st.header("Sahne 9 – Gelecek Bizim Elimizde")
-         st.image("nanuq9.png", use_container_width=True)
-         st.write("""
+        elif scene == 9:
+            st.header("Sahne 9 – Gelecek Bizim Elimizde")
+            st.image("nanuq9.png", use_container_width=True)
+            st.write("""
    Şimdi Nanuq ve annesi güvenle uyuyorlar. Ama biliyorlar ki, dünyanın her yerindeki çocuklar 
    onlara yardım ederse, o parlayan beyaz ülke sonsuza dek var olacak.
    """)
    
-     elif scene == 10:
-         st.header("Sahne 10 – Bir Çağrı")
-         st.image("nanuq10.png", use_container_width=True)
-         st.write("""
+        elif scene == 10:
+            st.header("Sahne 10 – Bir Çağrı")
+            st.image("nanuq10.png", use_container_width=True)
+            st.write("""
          **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
          """)
          if st.button("Hikayeye Yeniden Başla"):
-             st.session_state.scene = 1
-             st.rerun()
+            st.session_state.scene = 1
+            st.rerun()
    
      # --- NAVİGASYON BUTONLARI ---
      # Bu butonlar NASA verileri menüsünün içinde kalması için içeride durmalı
