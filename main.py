@@ -511,42 +511,73 @@ elif menu == "🛰️ NASA İklim Verisi":
        {
            "baslik": "Anne Şefkati",
            "img": "nanuq3.png",
-           "metin": "Nanuq annesiyle birlikte buzların üzerinde yürümeyi, avlanmayı ve hayatta kalmayı öğrenirmiş."
+           "metin":"""
+   Nanuq’un en sevdiği şey, annesinin kocaman patilerine basarak buzun üzerinde yürümeyi öğrenmekmiş. 
+   
+   Annesi ona fısıldarmış: *"Bak küçük Nanuq, bu buzlar bizim köprümüz. Eğer onlar olmazsa, yolumuzu kaybederiz.
+   """
        },
        {
            "baslik": "Buzlar Değişiyor",
            "img": "nanuq4.png",
-           "metin": "Ama bir gün Nanuq fark etmiş ki buzlar eskisi gibi değilmiş."
+           "metin": """
+   Bir gün, güneş her zamankinden daha sıcak doğmuş. Nanuq, ayaklarının altındaki buzun "çat... pat..." diye sesler çıkardığını duymuş.
+   
+   Dev buz kütleleri birbirinden ayrılmaya, devasa çatlaklar oluşmaya başlamış.
+   """
        },
        {
            "baslik": "Yalnızlık",
            "img": "nanuq5.png",
-           "metin": "Erimeye başlayan buzlar Nanuq’u yalnız bırakmış."
+           "metin": """
+   Nanuq bir sabah uyandığında, kendini küçücük bir buz parçasının üzerinde bulmuş. 
+   
+   Annesi uzaktaki bir kıyıda kalmış. Nanuq’un o simsiyah burnu titriyor, gözlerinden yaşlar süzülüyormuş. 
+   
+   *"Neden evim eriyor?"* diye sormuş.
+   """
        },
        {
            "baslik": "İnuit Köyü ve Yeni Bir Umut",
            "img": "nanuq6.png",
-           "metin": "Bir gün Nanuq uzakta küçük bir köy görmüş."
+           "metin": """
+   Buz parçası onu kardan evlerin (iglo) olduğu bir köye sürüklemiş. 
+
+   Orada yaşayanlar, buzun dilini bilen **İnüitler**miş. Küçük bir İnüit çocuğu, Nanuq’u görünce hemen yanına koşmuş.
+   """
        },
        {
            "baslik": "Kadim Dostluk",
            "img": "nanuq7.png",
-           "metin": "Nanuq burada yeni bir arkadaş bulmuş."
+           "metin": """
+   Çocuk, Nanuq'a en sevdiği balığı uzatmış. O an Nanuq şunu fark etmiş: Sadece onun evi erimiyormuş, 
+
+   İnüitlerin de dünyası değişiyormuş. İkisi de aynı güneşin fazla sıcaklığından yorulmuşlardı.
+   """
        },
        {
            "baslik": "Kavuşma ve Söz Veriş",
            "img": "nanuq8.png",
-           "metin": "Çocuk ve Nanuq birlikte doğayı korumaya söz vermiş."
+           "metin": """
+   Nanuq, yeni dostunun yardımıyla annesine kavuşmuş. O gece İnüit çocuk ve ailesi gökyüzüne bakarken bir söz vermişler: 
+
+   *"Doğayı koruyacağız ve dünyayı serin tutacağız ki Nanuq’un evi hiç bitmesin."*
+   """
        },
        {
            "baslik": "Gelecek Bizim Elimizde",
            "img": "nanuq9.png",
-           "metin": "Dünya değişiyor ama insanlar isterse doğayı koruyabilir."
+           "metin": """
+   Şimdi Nanuq ve annesi güvenle uyuyorlar. Ama biliyorlar ki, dünyanın her yerindeki çocuklar 
+   onlara yardım ederse, o parlayan beyaz ülke sonsuza dek var olacak.
+   """
        },
        {
            "baslik": "Çağrı",
-           "img": "nanuq19.png",
-           "metin": "Peki biz doğayı korumak için ne yapabiliriz?"
+           "img": "nanuq10.png",
+           "metin": """
+   **Doğayı Koru, Geleceği Koru!** Nanuq'un hikayesi burada bitmiyor, senin çabalarınla devam ediyor.
+   """
        },
    ]
    
