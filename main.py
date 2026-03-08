@@ -468,7 +468,7 @@ elif menu == "🗺️ Kültürel Harita":
      # --- NAVİGASYON BUTONLARI ---
      # Bu butonlar NASA verileri menüsünün içinde kalması için içeride durmalı
             st.divider()
-     nav_col1, nav_col2, nav_col3 = st.columns([1, 2, 1])
+              nav_col1, nav_col2, nav_col3 = st.columns([1, 2, 1])
    
             with nav_col1:
               if scene > 1:
