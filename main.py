@@ -149,14 +149,13 @@ if menu == "🏔️ Ana Sayfa":
         <div style="text-align: center; padding: 50px 0;">
             <h1 style="font-size: 3.5rem; font-weight: 800; color: white;"> Dijital Arktik Kültür Eğitim Platformu</h1>
             <p style="font-size: 1.2rem; opacity: 0.8;">Arktik: Buzun ve İnsanın Hikayesi</p>
-            <p style="font-size: 1.2rem; opacity: 0.8;">Buzulların ötesine geçin, kadim kültürlerin yaşamına dokunun.</p>
-        </div>
+            </div>
     """, unsafe_allow_html=True)
     # Tanıtım Cümlesi 
     st.markdown("""
         <div style="text-align: center; margin-bottom: 40px; color: #e2e8f0; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
             Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
-            insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
+            kadim kültürlerin, insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
         </div>
     """, unsafe_allow_html=True)
     
