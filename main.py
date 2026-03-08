@@ -373,10 +373,10 @@ elif menu == "🗺️ Kültürel Harita":
             st.session_state.scene = 1
    
      # Sahne fonksiyonları (Burada tanımlanabilir)
-     def next_scene(): st.session_state.scene += 1
-     def prev_scene(): st.session_state.scene -= 1
+        def next_scene(): st.session_state.scene += 1
+        def prev_scene(): st.session_state.scene -= 1
    
-     scene = st.session_state.scene
+        scene = st.session_state.scene
    
      # Sahne İçerikleri
         if scene == 1:
