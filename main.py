@@ -682,6 +682,16 @@ elif menu == "🧭 Kültür Keşfi":
         ["Seçiniz", "Sami", "Inuit", "Nenets"]
     )
 
+    # --- İNOVATİF ARKTİK RADYOSU ---
+    st.subheader("📻 Arktik Radyosu: Inuit Frekansı")
+    with st.expander("🎧 Kutup Seslerini Dinlemek İçin Tıkla"):
+         st.write("Şu an Grönland kıyılarında bir buzun çatırmasını ve kutup rüzgarını duyuyorsunuz...")
+         # Yeni ve daha stabil link:
+         st.audio("vifotofreesounds-frozen-tides-486658.mp3")
+         st.audio("lux-aeterna-cold-arctic-ambient-441447.mp3")
+         st.audio("musicword-arctic-288238.mp3")
+   
+
     # ===================== SAMI =====================
     if culture == "Sami":
 
@@ -824,7 +834,8 @@ elif menu == "🧭 Kültür Keşfi":
             # Yeni ve daha stabil link:
             st.audio("vifotofreesounds-frozen-tides-486658.mp3")
             st.audio("lux-aeterna-cold-arctic-ambient-441447.mp3")
-                 
+            st.audio("musicword-arctic-288238.mp3")
+               
     # ===================== NENETS =====================
     elif culture == "Nenets":
         st.header("🦌 Nenets Kültürü: Tundra'nın Göçebe Efendileri")
