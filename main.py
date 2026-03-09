@@ -923,12 +923,25 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.video("https://youtu.be/Hd88m7qvMMY")
     st.caption("📽️ 5. Arktik Seferi Özeti")
       
-    # 2. Metrikler (Videonun hemen altında yan yana durması için küçük sütunlar)
-    v_col1, v_col2 = st.columns(2)
-    v_col1.metric(label="Mesafe", value="3.000 Mil")
-    v_col2.metric(label="Proje Sayısı", value="19 Proje")
-      
-    st.write("") # Görsel bir boşluk ekler
+    # 2. Okunabilir Beyaz Metrikler (HTML/CSS ile)
+    m_col1, m_col2 = st.columns(2)
+    with m_col1:
+       st.markdown("""
+           <div style="background-color: #003366; padding: 15px; border-radius: 10px; text-align: center; border-bottom: 3px solid #00aeef;">
+               <p style="color: #00aeef; margin: 0; font-size: 14px; font-weight: bold;">MESAFE</p>
+               <p style="color: white; margin: 0; font-size: 24px; font-weight: bold;">3.000 Mil</p>
+           </div>
+       """, unsafe_allow_html=True)
+
+    with m_col2:
+       st.markdown("""
+           <div style="background-color: #003366; padding: 15px; border-radius: 10px; text-align: center; border-bottom: 3px solid #00aeef;">
+               <p style="color: #00aeef; margin: 0; font-size: 14px; font-weight: bold;">PROJE SAYISI</p>
+               <p style="color: white; margin: 0; font-size: 24px; font-weight: bold;">19 Proje</p>
+           </div>
+       """, unsafe_allow_html=True)
+   
+    st.write("") # Görsel bir boşluk
       
     # 3. Bilgi Kutusu (Videonun ve metriklerin altında)
     st.markdown("""
