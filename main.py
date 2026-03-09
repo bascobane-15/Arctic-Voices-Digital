@@ -916,33 +916,33 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
 
     st.divider()
 
-    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Video Solda, Yazı Sağda) ---
+    # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Video Üstte, Yazılar Altta) ---
     st.header("📅 5. Arktik Seferi (2025)")
-    
-    col1, col2 = st.columns([1.6, 2], gap="medium") 
-    
-    with col1:
-        st.video("https://youtu.be/Hd88m7qvMMY")
-        st.caption("📽️ 5. Arktik Seferi Özeti")
-        
-        # Veriler videonun hemen altında, boşluksuz
-        v_col1, v_col2 = st.columns(2)
-        v_col1.metric(label="Mesafe", value="3.000 Mil")
-        v_col2.metric(label="Proje Sayısı", value="19 Proje")
-
-    with col2:
-        # Net ve Beyaz Yazılı Bilgi Kutusu
-        st.markdown("""
-            <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
-                <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
-                <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
-                kapsamlı araştırmalar yaptı. Bu seferde  lise öğrencileri de projelerini test ettiler.
-                </p>
-            </div>
-            """, unsafe_allow_html=True)
-        st.write("") # Buton için minik bir boşluk
-        st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
-   
+      
+    # 1. Video Bölümü
+    st.video("https://youtu.be/Hd88m7qvMMY")
+    st.caption("📽️ 5. Arktik Seferi Özeti")
+      
+    # 2. Metrikler (Videonun hemen altında yan yana durması için küçük sütunlar)
+    v_col1, v_col2 = st.columns(2)
+    v_col1.metric(label="Mesafe", value="3.000 Mil")
+    v_col2.metric(label="Proje Sayısı", value="19 Proje")
+      
+    st.write("") # Görsel bir boşluk ekler
+      
+    # 3. Bilgi Kutusu (Videonun ve metriklerin altında)
+    st.markdown("""
+          <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
+              <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
+              <strong>Son Gelişme:</strong> Türkiye, 2025 yılında gerçekleştirilen 5. sefer ile Svalbard Takımadaları çevresinde 
+              kapsamlı araştırmalar yaptı. Bu seferde lise öğrencileri de projelerini test ettiler.
+              </p>
+          </div>
+          """, unsafe_allow_html=True)
+      
+    st.write("") # Buton öncesi minik bir boşluk
+    st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
+      
     st.divider()
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
