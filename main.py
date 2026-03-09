@@ -818,39 +818,12 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
 
         # --- İNOVATİF ARKTİK RADYOSU ---
-        
+        st.subheader("📻 Arktik Radyosu: Inuit Frekansı")
+        with st.expander("🎧 Kutup Seslerini Dinlemek İçin Tıkla"):
+            st.write("Şu an Grönland kıyılarında bir buzun çatırmasını ve kutup rüzgarını duyuyorsunuz...")
+            # Yeni ve daha stabil link:
+            st.audio("vifotofreesounds-frozen-tides-486658.mp3")
 
-         def play_audio(file_path):
-             with open(file_path, "rb") as audio_file:
-                 audio_bytes = audio_file.read()
-             st.audio(audio_bytes, format="audio/mp3")
-         
-         
-         st.subheader("📻 Arktik Radyosu: Inuit Frekansı")
-         
-         with st.expander("🎧 Kutup Seslerini Dinlemek İçin Tıkla"):
-         
-             kanal = st.selectbox(
-                 "📡 Radyo Kanalı",
-                 [
-                     "🧊 Buzlar Eriyor",
-                     "🌌 Arktik Ambient",
-                     "❄️ Arktik Atmosfer",
-                     "🌍 İklim Alarmı"
-                 ]
-             )
-         
-             if kanal == "🧊 Buzlar Eriyor":
-                 play_audio("assets/musicword-ice-is-melting-304667.mp3")
-         
-             elif kanal == "🌌 Arktik Ambient":
-                 play_audio("assets/lux-aeterna-cold-arctic-ambient-441447.mp3")
-         
-             elif kanal == "❄️ Arktik Atmosfer":
-                 play_audio("assets/musicword-arctic-288238.mp3")
-         
-             elif kanal == "🌍 İklim Alarmı":
-                 play_audio("assets/musicword-ice-is-melting-304667.mp3")
                  
     # ===================== NENETS =====================
     elif culture == "Nenets":
