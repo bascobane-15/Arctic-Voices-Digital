@@ -835,8 +835,10 @@ elif menu == "🧭 Kültür Keşfi":
         Nenets halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
         Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
         """)
-       
-        st.image("nenets2.jpg", use_container_width=True)
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.image("nenets2.jpg", width=500)
 
         st.divider()
 
