@@ -824,7 +824,7 @@ elif menu == "🧭 Kültür Keşfi":
 
             st.write("Arktik atmosferinden bir radyo kanalı seç ve kutupların seslerini dinle.")
 
-             kanal = st.selectbox(
+            kanal = st.selectbox(
                  "📡 Radyo Kanalı Seç",
                  [
                      "🧊 Buzlar Eriyor",
@@ -834,16 +834,16 @@ elif menu == "🧭 Kültür Keşfi":
                  ]
              )
             
-             if kanal == "🧊 Buzlar Eriyor":
+            if kanal == "🧊 Buzlar Eriyor":
                  st.audio("assets/musicword-ice-is-melting-304667.mp3")
             
-             elif kanal == "🌌 Arktik Ambient":
+            elif kanal == "🌌 Arktik Ambient":
                  st.audio("assets/lux-aeterna-cold-arctic-ambient-441447.mp3")
             
-             elif kanal == "❄️ Arktik Atmosfer":
+            elif kanal == "❄️ Arktik Atmosfer":
                  st.audio("assets/musicword-arctic-288238.mp3")
             
-             elif kanal == "🌍 İklim Değişikliği Alarmı":
+            elif kanal == "🌍 İklim Değişikliği Alarmı":
                  st.audio("assets/musicword-ice-is-melting-304667.mp3")
         
     # ===================== NENETS =====================
