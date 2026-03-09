@@ -860,11 +860,10 @@ elif menu == "🧭 Kültür Keşfi":
 
         with col2:
             st.image("nenetkıyafet.jpg", width=500)
-
-   
+  
         st.divider()
-        ----
-        st.subheader("Kutup İkliminde Kültür ve Mücadele: Nenetler")
+        # ----NENETS KÜLTÜR
+        st.subheader("🦌 Kutup İkliminde Kültür ve Mücadele: Nenetler")
 
         st.write("""
         Rusya’nın kuzeyindeki Yamal Yarımadası’nda yaşayan Nenetler: Göçebe ren geyiği çobanlarının zorlu doğada kurduğu geleneksel yaşam ve kültür.
