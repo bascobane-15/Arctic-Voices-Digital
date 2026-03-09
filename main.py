@@ -942,12 +942,8 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
             """, unsafe_allow_html=True)
         st.write("") # Buton için minik bir boşluk
         st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
-
-    # Yeşil Bilgi Bandı
-    st.success("💡 Arktik bölgesi, dünyanın geri kalanından tam 4 kat daha hızlı ısınıyor!")
-    
+   
     st.divider()
-
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
     st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
