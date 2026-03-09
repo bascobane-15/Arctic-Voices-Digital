@@ -819,7 +819,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
 
         # --- İNOVATİF ARKTİK RADYOSU ---
-        st.subheader("📻 Arktik Radyosu: Inuit Frekansı")
+        st.subheader("📻 Arktik Radyosu: Kuzeyin Sesleri")
         with st.expander("🎧 Kutup Seslerini Dinlemek İçin Tıkla"):
             st.write("Şu an Arktik’in büyüleyici atmosferinden ilham alan melodileri dinliyorsunuz; bu müzikler sizi kuzeyin sakinliği ve kutupların derin doğasıyla buluşturacak....")
             # Yeni ve daha stabil link:
