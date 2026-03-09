@@ -835,11 +835,7 @@ elif menu == "🧭 Kültür Keşfi":
         Nenets halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
         Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
         """)
-        col1, col2, col3 = st.columns([1,2,1])
-
-        with col2:
-            st.image("nenets2.jpg", use_container_width=True)
-
+        st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
         st.divider()
 
         # --- CHUM ÇADIRLARI ---
@@ -864,13 +860,13 @@ elif menu == "🧭 Kültür Keşfi":
             st.image("nenetkıyafet.jpg", width=500)
   
         st.divider()
-        # ----NENETS KÜLTÜR
-        st.subheader("🦌 Kutup İkliminde Kültür ve Mücadele: Nenetler")
+        # ----NENETS
+        st.subheader("🦌 Nenetler ve Ren Geyikleri")
 
         st.write("""
-        Rusya’nın kuzeyindeki Yamal Yarımadası’nda yaşayan Nenetler: Göçebe ren geyiği çobanlarının zorlu doğada kurduğu geleneksel yaşam ve kültür.
+        Göçebe ren geyiği çobanlarının zorlu doğada kurduğu geleneksel yaşam ve kültür.
         """)
-        st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
+        st.image("nenets2.jpg", use_container_width=True)
 
         st.divider()
         # --- NENETS DİLİ VE DOĞA  ---
