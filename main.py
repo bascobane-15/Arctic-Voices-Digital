@@ -863,7 +863,18 @@ elif menu == "🧭 Kültür Keşfi":
 
    
         st.divider()
+        ----
+        st.subheader("Kutup İkliminde Kültür ve Mücadele: Nenetler")
 
+        st.write("""
+        Rusya’nın kuzeyindeki Yamal Yarımadası’nda yaşayan Nenetler: Göçebe ren geyiği çobanlarının zorlu doğada kurduğu geleneksel yaşam ve kültür.
+        """)
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
+
+        st.divider()
         # --- NENETS DİLİ VE DOĞA  ---
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
