@@ -877,9 +877,7 @@ elif menu == "🧭 Kültür Keşfi":
              st.write("""
              Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, 
              **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan 
-             delikli nesneyi eldeki çubukla havada yakalamaktır. 
-             
-             Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
+             delikli nesneyi eldeki çubukla havada yakalamaktır. Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
              """)
         st.divider()
 
