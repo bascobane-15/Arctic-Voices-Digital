@@ -840,26 +840,27 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
          
          # --- 1. OYUN: YO-YO ---
-        col1_img, col1_content = st.columns([1, 1.5]) 
+        st.subheader("🪀 İnüit Yo-Yosu")
 
+         # Sütunları oluştur
+        col1_img, col1_content = st.columns([1, 1.5]) 
+         
         with col1_img:
-             st.subheader("🪀 İnüit Yo-Yosu")
+             # Başlık yukarıda olduğu için resim artık en tepeden başlayacak
              st.image("yoyo.png", use_container_width=True)
          
         with col1_content:
-             # 1. Önce Videoyu koy (Videonun dosya yolunu kontrol et)
+             # Video da artık resimle aynı hizadan başlayacak
              st.video("yo_yo_video.mp4")
              
-             # 2. Videonun hemen altına yazıyı ekle
              st.write("""
              **İnüit Yo-Yosu:** Geleneksel olarak deri torbaların içine ağır malzemeler doldurulup 
              bir iple birbirine bağlanmasıyla yapılır. Oyuncu, her iki elini kullanarak 
              bu topları zıt yönlerde dairesel olarak döndürmeye çalışır; 
              bu oyun bilek gücünü ve ritim duygusunu geliştirir.
              """)
-    
-        st.divider()
-         
+             
+                  
         # --- 2. OYUN: AJAGAK ---
         col2_img, col2_text = st.columns([1, 2])
          
