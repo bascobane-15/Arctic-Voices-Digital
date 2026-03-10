@@ -900,7 +900,21 @@ elif menu == "🧭 Kültür Keşfi":
         """)
         st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
         st.divider()
-
+        # --- NENETS DİLİ VE DOĞA  ---
+        st.markdown("""
+            <div style="background-color: rgba(52, 152, 219, 0.2); 
+                        padding: 20px; 
+                        border-radius: 10px; 
+                        border-left: 5px solid #3498db;
+                        margin: 10px 0px;">
+                <span style="color: white; font-weight: bold;">❄️ Dilin Gücü:</span>
+                <p style="color: white; margin-top: 10px;">
+                Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
+                Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+        st.divider()
         # --- CHUM ÇADIRLARI ---
         st.subheader("🏠 Hareketli Evler: Chum")
         st.write("""
@@ -934,7 +948,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
 
         # --- TUNDRANIN SIFIR ATIK BİLGELİĞİ (DOĞA DOSTU YEŞİL TASARIM) ---
-        st.markdown("### ♻️ Sıfır Atık Bilgeliği ")
+        st.markdown("### ♻️ Sıfır Atık Bilgeliği: Doğayı Koruma Kültürü")
         
         st.markdown(
              """
@@ -990,20 +1004,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         st.write("") # Görsel boşluk 
         st.divider()
-        # --- NENETS DİLİ VE DOĞA  ---
-        st.markdown("""
-            <div style="background-color: rgba(52, 152, 219, 0.2); 
-                        padding: 20px; 
-                        border-radius: 10px; 
-                        border-left: 5px solid #3498db;
-                        margin: 10px 0px;">
-                <span style="color: white; font-weight: bold;">❄️ Dilin Gücü:</span>
-                <p style="color: white; margin-top: 10px;">
-                Nenets dilinde 'kar'ı tanımlamak için kullanılan onlarca farklı kelime vardır. 
-                Karın sertliğine, rengine ve sürüşe uygunluğuna göre her durumu ayrı bir kelimeyle ifade ederler.
-                </p>
-            </div>
-        """, unsafe_allow_html=True)
+        
 
 # -------------------------
 # TÜRKİYE'NİN ÇALIŞMALARI
