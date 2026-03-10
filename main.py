@@ -932,6 +932,21 @@ elif menu == "🧭 Kültür Keşfi":
         st.image("nenets2.jpg", use_container_width=True)
 
         st.divider()
+
+        st.subheader("♻️ Tundranın Sıfır Atık Bilgeliği")
+
+        st.success("""
+         **Nenetlerin Doğa İle Anlaşması:** Nenet mutfağında ve yaşamında 'çöp' kavramı yoktur. Avladıkları veya yetiştirdikleri her canlının her zerresine saygı duyarlar. 
+         Ren geyiğinin boynuzundan düğme, sinirinden iplik, derisinden ise -50 dereceye dayanan evler yaparlar. 
+         """)
+         
+        expander = st.expander("Ren Geyiğinin Dönüşümünü İncele")
+        expander.write("""
+         - **Boynuzlar:** El aletleri ve süs eşyaları.
+         - **Deri:** Kışlık botlar (Kisy) ve çadır örtüsü.
+         - **Sinir/Tendon:** Su geçirmez dikiş ipliği.
+         - **Kan:** Dondurucu soğukta hayati vitamin kaynağı.
+         """)
         # --- NENETS DİLİ VE DOĞA  ---
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
