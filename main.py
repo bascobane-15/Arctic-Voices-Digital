@@ -940,7 +940,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.markdown(
              """
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
-                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Nenetlerin Doğa İle Anlaşması</h4>
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
                  <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
                      Nenet mutfağında ve yaşamında 'çöp' kavramı yoktur. Avladıkları her canlının her zerresine saygı duyarlar. 
                      <span style="color: #d8f3dc; font-weight: bold;">Ren geyiğinin boynuzundan düğme, sinirinden iplik, derisinden ise -50 dereceye dayanan evler yaparlar.</span>
