@@ -950,7 +950,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         st.write("") # Görsel boşluk
          
-        t.markdown("#### 🦌 Ren Geyiğinin Dönüşümü")
+        st.markdown("#### 🦌 Ren Geyiğinin Dönüşümü")
          
         # 2 Sütunlu Kart Düzeni
         col1, col2 = st.columns(2)
