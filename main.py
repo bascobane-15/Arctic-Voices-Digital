@@ -833,8 +833,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         with col1_img:
              st.subheader("🪀 İnüit Yo-Yosu")
-             # Görsel ve Video Yer Tutucuları (Buraya kendi dosya yollarını ekleyebilirsin)
-             st.image("Yo yo.png ")
+             st.image("Yoyo.png ")
              # st.video("yo_yo_video.mp4") 
          
         with col1_text:
