@@ -821,11 +821,22 @@ elif menu == "🧭 Kültür Keşfi":
         # ---İnüit Oyunları---
         st.markdown("## ❄️ Arktik Mirası: Geleneksel İnüit Oyunları")
 
-        st.info("""
-         **Kutup dondurucu soğuğunda hayatta kalmak sadece güç değil, üstün bir beceri de ister!** ❄️  
-         İnüit çocuklarının yüzyıllardır hem eğlenmek hem de avcılık yeteneklerini geliştirmek için oynadıkları, kültürün en sevilen oyunlarıyla tanış: **Yo-Yo ve Ajagak (Kemik Oyunu).** El-göz koordinasyonunu geliştiren ve toplumsal bağları güçlendiren bu eğlenceli dünyayı keşfetmeye hazır mısın? 🎯
-         """)
+        # st.info yerine bu bloğu yapıştır:
+        st.markdown(
+             """
+             <div style="background-color: #1E3A5F; padding: 20px; border-radius: 10px; border-left: 6px solid #4A90E2;">
+                 <p style="color: white; font-size: 1.1rem; margin-bottom: 0; line-height: 1.6;">
+                     <span style="font-size: 1.2rem;"><strong>Kutup dondurucu soğuğunda hayatta kalmak sadece güç değil, üstün bir beceri de ister! ❄️</strong></span><br><br>
+                     İnüit çocuklarının yüzyıllardır hem eğlenmek hem de avcılık yeteneklerini geliştirmek için oynadıkları, 
+                     kültürün en sevilen oyunlarıyla tanış: <b>Yo-Yo ve Ajagak (Kemik Oyunu).</b> 
+                     El-göz koordinasyonunu geliştiren ve toplumsal bağları güçlendiren bu eğlenceli dünyayı keşfetmeye hazır mısın? 🎯
+                 </p>
+             </div>
+             """, 
+             unsafe_allow_html=True
+         )
          
+        st.write("") # Görsel bir nefes payı
         st.divider()
          
          # --- 1. OYUN: YO-YO ---
