@@ -872,7 +872,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         with aj_col_content:
              # Video dosya adının tam doğru olduğundan emin ol
-             st.video("ajagaq-video.mp4")
+             st.video("ajagak_video.mp4")
              
              st.write("""
              Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, 
