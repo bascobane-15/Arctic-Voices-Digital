@@ -863,19 +863,25 @@ elif menu == "🧭 Kültür Keşfi":
                   
         # --- 2. OYUN: AJAGAK ---
         st.subheader("🎯 Ajagak:Halkalı Çubuk")
-        col1_img, col2_content = st.columns([1, 1.5])
+               
+        aj_col_img, aj_col_content = st.columns([1, 1.5])
          
-        with col2_img:
-             st.subheader("🎯 Ajagak")
-             st.image("ajagaq-game.png")
-         with col2_content:
-             st.video("ajagaq-video.mp4")    
-                 
+        with aj_col_img:
+             # use_container_width=True eklemek resmi sütuna tam yayar
+             st.image("ajagaq-game.png", use_container_width=True)
+         
+        with aj_col_content:
+             # Video dosya adının tam doğru olduğundan emin ol
+             st.video("ajagaq-video.mp4")
+             
              st.write("""
-             Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan delikli nesneyi eldeki çubukla havada yakalamaktır. 
+             Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, 
+             **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan 
+             delikli nesneyi eldeki çubukla havada yakalamaktır. 
+             
              Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
              """)
-         st.divider()
+        st.divider()
 
         # --- İNOVATİF ARKTİK RADYOSU ---
         st.subheader("📻 Arktik Radyosu: Kuzeyin Sesleri")
