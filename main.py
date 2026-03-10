@@ -933,20 +933,60 @@ elif menu == "🧭 Kültür Keşfi":
 
         st.divider()
 
-        st.subheader("♻️ Tundranın Sıfır Atık Bilgeliği")
-
-        st.success("""
-         **Nenetlerin Doğa İle Anlaşması:** Nenet mutfağında ve yaşamında 'çöp' kavramı yoktur. Avladıkları veya yetiştirdikleri her canlının her zerresine saygı duyarlar. 
-         Ren geyiğinin boynuzundan düğme, sinirinden iplik, derisinden ise -50 dereceye dayanan evler yaparlar. 
-         """)
+        # --- TUNDRANIN SIFIR ATIK BİLGELİĞİ (DOĞA DOSTU YEŞİL TASARIM) ---
+        st.markdown("### ♻️ Tundranın Sıfır Atık Bilgeliği")
          
-        expander = st.expander("Ren Geyiğinin Dönüşümünü İncele")
-        expander.write("""
-         - **Boynuzlar:** El aletleri ve süs eşyaları.
-         - **Deri:** Kışlık botlar (Kisy) ve çadır örtüsü.
-         - **Sinir/Tendon:** Su geçirmez dikiş ipliği.
-         - **Kan:** Dondurucu soğukta hayati vitamin kaynağı.
-         """)
+        # Üst Bilgi Kutusu (Koyu Yeşil Arka Plan + Beyaz Yazı)
+        st.markdown(
+             """
+             <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Nenetlerin Doğa İle Anlaşması</h4>
+                 <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
+                     Nenet mutfağında ve yaşamında 'çöp' kavramı yoktur. Avladıkları her canlının her zerresine saygı duyarlar. 
+                     <span style="color: #d8f3dc; font-weight: bold;">Ren geyiğinin boynuzundan düğme, sinirinden iplik, derisinden ise -50 dereceye dayanan evler yaparlar.</span>
+                 </p>
+             </div>
+             """, 
+             unsafe_allow_html=True
+         )
+         
+        st.write("") # Görsel boşluk
+         
+        # Maddelerin Hep Açık ve Estetik Durması İçin Kart Yapısı
+        st.markdown("#### 🦌 Ren Geyiğinin Dönüşümü")
+         
+        # 2 Sütunlu Kart Düzeni
+        col1, col2 = st.columns(2)
+         
+        with col1:
+             st.markdown(
+                 """
+                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
+                     <b style="color: #d8f3dc; font-size: 1.2rem;">🦴 Boynuzlar:</b><br>
+                     <span style="color: white; font-size: 1rem;">El aletleri, süs eşyaları ve kızak parçaları üretilir.</span>
+                 </div>
+                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
+                     <b style="color: #d8f3dc; font-size: 1.2rem;">👞 Deri:</b><br>
+                     <span style="color: white; font-size: 1rem;">Kışlık botlar (Kisy), giysiler ve Chum (çadır) örtüsü yapılır.</span>
+                 </div>
+                 """, unsafe_allow_html=True
+             )
+         
+        with col2:
+             st.markdown(
+                 """
+                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
+                     <b style="color: #d8f3dc; font-size: 1.2rem;">🧵 Sinir/Tendon:</b><br>
+                     <span style="color: white; font-size: 1rem;">Dünyanın en sağlam, su geçirmez doğal dikiş ipliğine dönüşür.</span>
+                 </div>
+                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
+                     <b style="color: #d8f3dc; font-size: 1.2rem;">🩸 Kan:</b><br>
+                     <span style="color: white; font-size: 1rem;">Dondurucu soğukta hayati taze vitamin ve demir kaynağıdır.</span>
+                 </div>
+                 """, unsafe_allow_html=True
+             )
+         
+        st.divider()
         # --- NENETS DİLİ VE DOĞA  ---
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
