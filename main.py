@@ -862,19 +862,20 @@ elif menu == "🧭 Kültür Keşfi":
              
                   
         # --- 2. OYUN: AJAGAK ---
-        col2_img, col2_text = st.columns([1, 2])
+        st.subheader("🎯 Ajagak:Halkalı Çubuk")
+        col1_img, col1_content = st.columns([1, 1.5])
          
         with col2_img:
              st.subheader("🎯 Ajagak")
              st.image("ajagaq-game.png")
-             st.video("ajagak_video.mp4")
-         
-        with col2_text:
+         with col1_content:
+             st.video("ajagaq-video.mp4")    
+                 
              st.write("""
              Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan delikli nesneyi eldeki çubukla havada yakalamaktır. 
              Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
              """)
-             st.button("Ajagak Tekniğini Öğren", key="btn_ajagak")
+             
          
         st.divider()
 
