@@ -863,7 +863,7 @@ elif menu == "🧭 Kültür Keşfi":
                   
         # --- 2. OYUN: AJAGAK ---
         st.subheader("🎯 Ajagak:Halkalı Çubuk")
-        col1_img, col1_content = st.columns([1, 1.5])
+        col1_img, col2_content = st.columns([1, 1.5])
          
         with col2_img:
              st.subheader("🎯 Ajagak")
