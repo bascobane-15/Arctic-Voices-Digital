@@ -963,10 +963,25 @@ elif menu == "🧭 Kültür Keşfi":
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
                  <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
                  <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
-                     🏗️ Nenetlerin yaşadığı çadırlar (Chum), sıfır atık felsefesinin mimari bir harikasıdır. 
+                     ⛺ Nenetlerin yaşadığı çadırlar (Chum), sıfır atık felsefesinin mimari bir harikasıdır. 
                      Tamamen Doğal: Sadece ren geyiği derisi ve ahşap direklerden oluşur. Çadır toplandığında, tundranın üzerinde tek bir plastik parça veya beton kalıntısı bırakmazlar. 
                      Doğa, çadırın kurulduğu yeri birkaç hafta içinde eski haline döndürür. 
                      
+             </div>
+             """, 
+             unsafe_allow_html=True
+         )
+         
+        st.write("") # Görsel boşluk 
+
+        st.markdown(
+             """
+             <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
+                 <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
+                     🦌🛷 Nenetlerin ulaşımı, binlerce yıldır doğayı kirletmeden ve hiçbir kalıcı atık bırakmadan gerçekleşir. 
+                     Ulaşım için fosil yakıtlı araçlar yerine, ren geyikleriyle çekilen ve tamamen doğal malzemeden yapılan kızaklar kullanılır. Bu da ulaşımın karbon ayak izini sıfıra indirir.
+                     Kızaklar (Narty), tamamen yerel ahşap ve deri bağlardan yapılır. Kullanım ömrü dolduğunda doğaya bırakılır ve hiçbir plastik veya metal atık oluşturmadan toprağa karışır.
              </div>
              """, 
              unsafe_allow_html=True
