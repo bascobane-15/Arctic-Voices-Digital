@@ -934,11 +934,11 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
 
         # --- TUNDRANIN SIFIR ATIK BİLGELİĞİ (DOĞA DOSTU YEŞİL TASARIM) ---
-        st.markdown("### ♻️ Tundranın Sıfır Atık Bilgeliği")
+        st.markdown("♻️ Doğayı Koruma Kültürü: Sıfır Atık Bilgeliği")
         st.markdown(
              """
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
-                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı</h4>
                  <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
                      Nenet mutfağında ve yaşamında 'çöp' kavramı yoktur. Avladıkları her canlının her zerresine saygı duyarlar. 
                      <span style="color: #d8f3dc; font-weight: bold;">Ren geyiğinin boynuzundan düğme, sinirinden iplik, derisinden ise -50 dereceye dayanan evler yaparlar.</span>
@@ -961,7 +961,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.markdown(
              """
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
-                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Kusursuz Uyum</h4>
                  <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
                      ⛺ Nenetlerin yaşadığı çadırlar (Chum), sıfır atık felsefesinin mimari bir harikasıdır. 
                      Tamamen Doğal: Sadece ren geyiği derisi ve ahşap direklerden oluşur. Çadır toplandığında, tundranın üzerinde tek bir plastik parça veya beton kalıntısı bırakmazlar. 
@@ -977,7 +977,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.markdown(
              """
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
-                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Doğaya Saygı:Doğayı Koruma Kültürü</h4>
+                 <h4 style="color: #d8f3dc; margin-top: 0;">🍃 Ekolojik Denge</h4>
                  <p style="color: white; font-size: 1.15rem; line-height: 1.6;">
                      🦌🛷 Nenetlerin ulaşımı, binlerce yıldır doğayı kirletmeden ve hiçbir kalıcı atık bırakmadan gerçekleşir. 
                      Ulaşım için fosil yakıtlı araçlar yerine, ren geyikleriyle çekilen ve tamamen doğal malzemeden yapılan kızaklar kullanılır. Bu da ulaşımın karbon ayak izini sıfıra indirir.
