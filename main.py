@@ -934,7 +934,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
 
         # --- TUNDRANIN SIFIR ATIK BİLGELİĞİ (DOĞA DOSTU YEŞİL TASARIM) ---
-        st.markdown("##### ♻️ Doğayı Koruma Kültürü: Sıfır Atık Bilgeliği")
+        st.markdown("### ♻️ Doğayı Koruma Kültürü: Sıfır Atık Bilgeliği")
         
         st.markdown(
              """
