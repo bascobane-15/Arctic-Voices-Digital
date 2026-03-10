@@ -833,7 +833,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         with col1_img:
              st.subheader("🪀 İnüit Yo-Yosu")
-             st.image("yoyo.png ")
+             st.image("yoyo.png")
              # st.video("yo_yo_video.mp4") 
          
         with col1_text:
