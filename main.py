@@ -950,7 +950,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         st.write("") # Görsel boşluk
          
-        expander = st.expander("#### 🦌 Ren Geyiğinin Dönüşümü")
+        expander = st.expander("🦌 Ren Geyiğinin Dönüşümü")
         expander.write("""
          - **🦴Boynuzlar:** El aletleri ve süs eşyaları.
          - **👞Deri:** Kışlık botlar (Kisy) ve çadır örtüsü.
