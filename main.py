@@ -829,21 +829,22 @@ elif menu == "🧭 Kültür Keşfi":
         st.divider()
          
          # --- 1. OYUN: YO-YO ---
-        col1_img, col1_text = st.columns([1, 2])
+        col1_visual, col1_video = st.columns([1, 1]) # Eşit genişlikte görsel ve video
+
+        with col1_visual:
+             st.image("yoyo.png", use_container_width=True, caption="İnüit Yo-Yosu Görseli")
          
-        with col1_img:
-             st.subheader("🪀 İnüit Yo-Yosu")
-             st.image("yoyo.png")
-             st.video("yo_yo_video.mp4") 
+        with col1_video:
+             st.video("yo_yo_video.mp4", format="video/mp4")
          
-        with col1_text:
-             st.write("""
-             Geleneksel olarak deri torbaların içine ağır malzemeler doldurulup bir iple birbirine bağlanmasıyla yapılır. 
-             Oyuncu, her iki elini kullanarak bu topları zıt yönlerde dairesel olarak döndürmeye çalışır; 
-             bu oyun **bilek gücünü** ve **ritim duygusunu** geliştirir.
-             """)
-             st.button("Yo-Yo Nasıl Yapılır?", key="btn_yoyo")
-         
+         # Metni tam genişlikte görsel ve videonun altına al
+        st.write("""
+         **İnüit Yo-Yosu:** Geleneksel olarak deri torbaların içine ağır malzemeler doldurulup bir iple birbirine bağlanmasıyla yapılır. 
+         Oyuncu, her iki elini kullanarak bu topları zıt yönlerde dairesel olarak döndürmeye çalışır; 
+         bu oyun bilek gücünü ve ritim duygusunu geliştirir.
+         """)
+        st.button("Yo-Yo Nasıl Yapılır?", key="btn_yoyo")
+                  
         st.divider()
          
         # --- 2. OYUN: AJAGAK ---
