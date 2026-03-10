@@ -950,38 +950,14 @@ elif menu == "🧭 Kültür Keşfi":
          
         st.write("") # Görsel boşluk
          
-        st.markdown("#### 🦌 Ren Geyiğinin Dönüşümü")
-         
-        # 2 Sütunlu Kart Düzeni
-        col1, col2 = st.columns(2)
-         
-        with col1:
-             st.markdown(
-                 """
-                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
-                     <b style="color: #d8f3dc; font-size: 1.2rem;">🦴 Boynuzlar:</b><br>
-                     <span style="color: white; font-size: 1rem;">El aletleri, süs eşyaları,oyuncaklar ve kızak parçaları üretilir.</span>
-                 </div>
-                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
-                     <b style="color: #d8f3dc; font-size: 1.2rem;">👞 Deri:</b><br>
-                     <span style="color: white; font-size: 1rem;">Kışlık botlar (Kisy), giysiler ve Chum (çadır) örtüsü yapılır.</span>
-                 </div>
-                 """, unsafe_allow_html=True
-             )
-         
-        with col2:
-             st.markdown(
-                 """
-                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
-                     <b style="color: #d8f3dc; font-size: 1.2rem;">🧵 Sinir/Tendon:</b><br>
-                     <span style="color: white; font-size: 1rem;">Dünyanın en sağlam, su geçirmez doğal dikiş ipliğine dönüşür.</span>
-                 </div>
-                 <div style="background-color: #40916c; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
-                     <b style="color: #d8f3dc; font-size: 1.2rem;">🥩 Et ve Kan:</b><br>
-                     <span style="color: white; font-size: 1rem;">Dondurucu soğukta hayati taze vitamin, demir ve besin kaynağıdır.</span>
-                 </div>
-                 """, unsafe_allow_html=True
-             )
+        expander = st.expander("#### 🦌 Ren Geyiğinin Dönüşümü")
+        expander.write("""
+         - **🦴Boynuzlar:** El aletleri ve süs eşyaları.
+         - **👞Deri:** Kışlık botlar (Kisy) ve çadır örtüsü.
+         - **🧵Sinir/Tendon:** Su geçirmez dikiş ipliği.
+         - **🥩Et ve Kan:** Dondurucu soğukta hayati vitamin kaynağı.
+         """)
+        
         st.markdown(
              """
              <div style="background-color: #2d6a4f; padding: 25px; border-radius: 15px; border-left: 10px solid #95d5b2;">
