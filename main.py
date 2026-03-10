@@ -937,16 +937,7 @@ elif menu == "🧭 Kültür Keşfi":
             st.image("nenetkıyafet.jpg", width=500)
   
         st.divider()
-        # ----NENETS
-        st.subheader("🦌 Nenetler ve Ren Geyikleri")
-
-        st.write("""
-        Göçebe ren geyiği çobanlarının zorlu doğada kurduğu geleneksel yaşam ve kültür.
-        """)
-        st.image("nenets2.jpg", use_container_width=True)
-
-        st.divider()
-
+        
         # --- TUNDRANIN SIFIR ATIK BİLGELİĞİ (DOĞA DOSTU YEŞİL TASARIM) ---
         st.markdown("### ♻️ Sıfır Atık Bilgeliği: Doğayı Koruma Kültürü")
         
