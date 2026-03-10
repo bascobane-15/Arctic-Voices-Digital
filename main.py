@@ -817,7 +817,8 @@ elif menu == "🧭 Kültür Keşfi":
     </div>
 """, unsafe_allow_html=True)
         st.divider()
-        -----
+       
+        # ---İnüit Oyunları---
         st.markdown("## ❄️ Arktik Mirası: Geleneksel İnüit Oyunları")
 
         st.info("""
