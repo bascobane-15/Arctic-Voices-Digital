@@ -868,17 +868,14 @@ elif menu == "🧭 Kültür Keşfi":
         with col2_img:
              st.subheader("🎯 Ajagak")
              st.image("ajagaq-game.png")
-         with col1_content:
+         with col2_content:
              st.video("ajagaq-video.mp4")    
                  
              st.write("""
              Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan delikli nesneyi eldeki çubukla havada yakalamaktır. 
              Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
              """)
-             
-         
-        st.divider()
-
+         st.divider()
 
         # --- İNOVATİF ARKTİK RADYOSU ---
         st.subheader("📻 Arktik Radyosu: Kuzeyin Sesleri")
