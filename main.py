@@ -817,6 +817,52 @@ elif menu == "🧭 Kültür Keşfi":
     </div>
 """, unsafe_allow_html=True)
         st.divider()
+        -----
+        st.markdown("## ❄️ Arktik Mirası: Geleneksel İnüit Oyunları")
+
+        st.info("""
+         **Kutup dondurucu soğuğunda hayatta kalmak sadece güç değil, üstün bir beceri de ister!** ❄️  
+         İnüit çocuklarının yüzyıllardır hem eğlenmek hem de avcılık yeteneklerini geliştirmek için oynadıkları, kültürün en sevilen oyunlarıyla tanış: **Yo-Yo ve Ajagak (Kemik Oyunu).** El-göz koordinasyonunu geliştiren ve toplumsal bağları güçlendiren bu eğlenceli dünyayı keşfetmeye hazır mısın? 🎯
+         """)
+         
+        st.divider()
+         
+         # --- 1. OYUN: YO-YO ---
+        col1_img, col1_text = st.columns([1, 2])
+         
+        with col1_img:
+             st.subheader("🪀 İnüit Yo-Yosu")
+             # Görsel ve Video Yer Tutucuları (Buraya kendi dosya yollarını ekleyebilirsin)
+             st.image("Yo yo.png ")
+             # st.video("yo_yo_video.mp4") 
+         
+        with col1_text:
+             st.write("""
+             Geleneksel olarak deri torbaların içine ağır malzemeler doldurulup bir iple birbirine bağlanmasıyla yapılır. 
+             Oyuncu, her iki elini kullanarak bu topları zıt yönlerde dairesel olarak döndürmeye çalışır; 
+             bu oyun **bilek gücünü** ve **ritim duygusunu** geliştirir.
+             """)
+             st.button("Yo-Yo Nasıl Yapılır?", key="btn_yoyo")
+         
+        st.divider()
+         
+         # --- 2. OYUN: AJAGAK ---
+         col2_img, col2_text = st.columns([1, 2])
+         
+         with col2_img:
+             st.subheader("🎯 Ajagak")
+             st.image("ajagaq-game.png")
+             # st.video("ajagak_video.mp4")
+         
+         with col2_text:
+             st.write("""
+             Delikli bir kemik veya ahşap parçasının bir iple çubuğa bağlı olduğu bu oyun, **el-göz koordinasyonunu** en üst seviyeye çıkarır. Temel amaç, havaya fırlatılan delikli nesneyi eldeki çubukla havada yakalamaktır. 
+             Bu, avcılık becerileri için kritik bir ön hazırlık niteliğindedir.
+             """)
+             st.button("Ajagak Tekniğini Öğren", key="btn_ajagak")
+         
+         st.divider()
+
 
         # --- İNOVATİF ARKTİK RADYOSU ---
         st.subheader("📻 Arktik Radyosu: Kuzeyin Sesleri")
