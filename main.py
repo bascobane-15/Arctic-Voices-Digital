@@ -868,7 +868,7 @@ elif menu == "🧭 Kültür Keşfi":
          
         with aj_col_img:
              # use_container_width=True eklemek resmi sütuna tam yayar
-             st.image("Ajagak.jpg", use_container_width=True)
+             st.image("Ajagaq.jpg", use_container_width=True)
          
         with aj_col_content:
              # Video dosya adının tam doğru olduğundan emin ol
