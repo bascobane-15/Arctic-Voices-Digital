@@ -301,9 +301,6 @@ if menu == "🏔️ Ana Sayfa":
     """, unsafe_allow_html=True)
     
 # -------------------------
-# EĞLENCELİ KÜLTÜREL HARİTA
-# -------------------------
-# -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA (AYDINLIK VERSİYON)
 # -------------------------
 elif menu == "🗺️ Kültürel Harita":
@@ -374,7 +371,7 @@ elif menu == "🗺️ Kültürel Harita":
     )
 
     # Alt bilgi kutusunu da daha okunabilir yaptık
-    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!")
+    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!"
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
