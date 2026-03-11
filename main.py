@@ -745,7 +745,7 @@ elif menu == "🧭 Kültür Keşfi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
-       # ================= El Sanatları =================
+       # ================= Doğal evleri =================
         st.subheader("⛺ Göçebe Yaşamın Simgesi: Lavvu")
 
         st.write("""
@@ -758,7 +758,27 @@ elif menu == "🧭 Kültür Keşfi":
 
         with col2:
              st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", use_container_width=True)
-       
+         # ================= Takvimleri =================   
+        st.subheader("⛺ Doğanın Takvimi: Sekiz Mevsim")
+
+        st.write("""
+        •	Samiler için zaman, bizim bildiğimiz 4 mevsimden ibaret değildir. 
+        Onlar doğayı ve ren geyiklerinin hareketlerini 8 farklı mevsime bölerler. 
+        Ren geyiklerinin yaşam döngüleri nedeniyle Sami dilinde 4 değil 8 mevsim vardır. 
+        Kış, Bahar-Kış, İlkbahar, Bahar-Yaz, Yaz, Yaz-Sonbahar, Sonbahar, Sonbahar-Kış şeklindedir.
+        Sami dilinde aylara, ren geyiğinin hayat aşamalarının isimleri verilmiştir.
+        """)
+        st.markdown("""
+            <div style="background-color: rgba(52, 152, 219, 0.2); 
+                        padding: 20px; 
+                        border-radius: 10px; 
+                        border-left: 5px solid #3498db;
+                        margin: 10px 0px;">
+                <p style="color: white; margin-top: 10px;">
+                ❄️İklim değişikliğiyle birlikte mevsimlerin kayması, Samilerin binlerce yıllık takvimini ve ren geyiklerinin beslenme yollarını doğrudan etkilemektedir.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
     # ===================== INUIT =====================
     elif culture == "Inuit":
 
