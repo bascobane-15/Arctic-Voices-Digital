@@ -757,7 +757,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", use_container_width=True)
+            st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org")
        
     # ===================== INUIT =====================
     elif culture == "Inuit":
