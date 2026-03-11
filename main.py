@@ -103,7 +103,7 @@ st.markdown("""
        text-align: center;
        
        /* DEĞİŞİKLİK BURADA: */
-       height: 250px;            /* min-height yerine sabit height verdik */
+       height: 240px;            /* min-height yerine sabit height verdik */
        display: flex;            /* İçeriği dikeyde yaymak için */
        flex-direction: column;   /* İçindekileri alt alta diz */
        justify-content: center;  /* İçindekileri dikeyde ortala */
