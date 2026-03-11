@@ -759,7 +759,7 @@ elif menu == "🧭 Kültür Keşfi":
         with col2:
              st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", use_container_width=True)
          # ================= Takvimleri =================   
-        st.subheader("⛺ Doğanın Takvimi: Sekiz Mevsim")
+        st.subheader("📅 Doğanın Takvimi: Sekiz Mevsim")
 
         st.write("""
         •	Samiler için zaman, bizim bildiğimiz 4 mevsimden ibaret değildir. 
@@ -779,6 +779,16 @@ elif menu == "🧭 Kültür Keşfi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
+       # ================= Beslenme =================
+        st.subheader("🥩Sürdürülebilir Bir Beslenme Kültürü: "Suovas")
+
+        st.write("""
+        Samilerin doğadan elde ettikleri gıdayı saklama biçimleri (tütsüleme ve kurutma)  önemli bir kültürel unsurdur.
+        Özellikle tütsülenmiş ren geyiği eti olan Suovas, Kuzey Sami dilinde "füme" anlamına gelen, geleneksel olarak ren geyiği etinin tuzlanıp huş ağacı dumanında tütsülenmesiyle hazırlanan bir Sami lezzetidir. 
+        Bu hem bir lezzet hem de bir hayatta kalma teknolojisidir.
+
+        """)
+        
     # ===================== INUIT =====================
     elif culture == "Inuit":
 
