@@ -129,6 +129,16 @@ st.markdown("""
         margin-bottom: 20px !important;
         text-align: center;
     }
+    /* Üstteki tanıtım yazılarının (paragraf) alt boşluğunu tamamen kaldırır */
+    .stMarkdown div p {
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    /* Eğer başlık hala çok uzaktaysa bu sınıfı da ekleyebilirsiniz */
+    h3 {
+        padding-top: 0px !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 # -------------------------
