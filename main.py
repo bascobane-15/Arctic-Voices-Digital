@@ -369,9 +369,21 @@ elif menu == "🗺️ Kültürel Harita":
         height=500, 
         use_container_width=True
     )
-
-    # Alt bilgi kutusunu da daha okunabilir yaptık
-    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!")
+    st.markdown("""
+        <div style="background-color: #f0f8ff; 
+                    padding: 20px; 
+                    border-radius: 15px; 
+                    margin-top: 25px;
+                    border: 2px solid #3498db;
+                    text-align: center;
+                    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+            <p style="color: #1a5276; font-weight: bold; margin: 0; font-size: 1.2em;">
+                💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. 
+                <br>
+                <span style="color: #2980b9;">Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!</span>
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
