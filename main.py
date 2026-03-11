@@ -754,10 +754,7 @@ elif menu == "🧭 Kültür Keşfi":
         Lavvu'nun yaşam alanının içinde, ısıtma ve sivrisinekleri uzak tutmak için ortada bir şömine(odun sobası) bulunur. 
         Duman, genellikle açık bırakılan lavvu'nun tepesindeki duman deliğinden dışarı çıkar.
         """)
-        col1, col2, col3 = st.columns([1,2,1])
-
-        with col2:
-            st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org")
+        st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", use_container_width=True)
        
     # ===================== INUIT =====================
     elif culture == "Inuit":
