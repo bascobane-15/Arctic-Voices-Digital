@@ -779,7 +779,7 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("📅 Doğanın Takvimi: Sekiz Mevsim")
 
         st.write("""
-        •	Samiler için zaman, bizim bildiğimiz 4 mevsimden ibaret değildir. 
+        Samiler için zaman, bizim bildiğimiz 4 mevsimden ibaret değildir. 
         Onlar doğayı ve ren geyiklerinin hareketlerini 8 farklı mevsime bölerler. 
         Ren geyiklerinin yaşam döngüleri nedeniyle Sami dilinde 4 değil 8 mevsim vardır. 
         Kış, Bahar-Kış, İlkbahar, Bahar-Yaz, Yaz, Yaz-Sonbahar, Sonbahar, Sonbahar-Kış şeklindedir.
