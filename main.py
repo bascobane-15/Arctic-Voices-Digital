@@ -303,16 +303,19 @@ if menu == "🏔️ Ana Sayfa":
 # -------------------------
 # EĞLENCELİ KÜLTÜREL HARİTA
 # -------------------------
+# -------------------------
+# EĞLENCELİ KÜLTÜREL HARİTA (AYDINLIK VERSİYON)
+# -------------------------
 elif menu == "🗺️ Kültürel Harita":
     
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
 
-    # Harita merkezi 
+    # Harita merkezi - tiles parametresini değiştirdik!
     m = folium.Map(
         location=[55, 20], 
         zoom_start=3, 
-        tiles="CartoDB dark_matter"
+        tiles="OpenStreetMap" # Burası artık daha aydınlık ve detaylı
     )
 
     # 1. TÜRKİYE (BAŞLANGIÇ NOKTASI)
@@ -323,45 +326,44 @@ elif menu == "🗺️ Kültürel Harita":
     ).add_to(m)
 
     # 2. HALKLAR VE ÖZEL İKONLAR (EMOJİLERLE)
-    # Inuit (Küçük Eskimo Emojisi)
+    # Inuit
     folium.Marker(
         location=[64.2, -51.7],
         popup="<b>İnuitler</b><br>❄️ Buzun ve karın koruyucuları.",
         icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">🧑‍🌾</div>""")
     ).add_to(m)
 
-    # Sami (Ren Geyiği Emojisi)
+    # Sami
     folium.Marker(
         location=[68.5, 23.6],
         popup="<b>Samiler</b><br>🦌 Ren geyikleriyle yaşayan kadim halk.",
         icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">🦌</div>""")
     ).add_to(m)
 
-    # Nenets (Çadır Emojisi)
+    # Nenets
     folium.Marker(
         location=[67.5, 53.0],
         popup="<b>Nenetsler</b><br>⛺ Tundranın göçebe çobanları.",
         icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">⛺</div>""")
     ).add_to(m)
 
-    # 3. UÇAK ROTASI (TÜRKİYE -> ARKTIK)
-    # Ankara'dan her bir merkeze giden kesikli uçuş çizgileri
+    # 3. UÇAK ROTASI
     rota_inuit = [[39.9, 32.8], [64.2, -51.7]]
     rota_sami = [[39.9, 32.8], [68.5, 23.6]]
     rota_nenets = [[39.9, 32.8], [67.5, 53.0]]
 
-    folium.PolyLine(rota_inuit, color="#3498db", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
-    folium.PolyLine(rota_sami, color="#2ecc71", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
-    folium.PolyLine(rota_nenets, color="#e74c3c", weight=2.5, opacity=0.8, dash_array='10').add_to(m)
+    # Çizgilerin rengini aydınlık haritada daha belirgin olması için koruduk veya koyulaştırdık
+    folium.PolyLine(rota_inuit, color="blue", weight=3, opacity=0.7, dash_array='10').add_to(m)
+    folium.PolyLine(rota_sami, color="green", weight=3, opacity=0.7, dash_array='10').add_to(m)
+    folium.PolyLine(rota_nenets, color="darkred", weight=3, opacity=0.7, dash_array='10').add_to(m)
 
-    # Rotanın ortasına küçük bir uçak ikonu
+    # Rotanın ortasına uçak ikonu
     folium.Marker(
         location=[55, 10], 
-        icon=folium.DivIcon(html=f"""<div style="font-size: 20px; transform: rotate(45deg);">✈️</div>""")
+        icon=folium.DivIcon(html=f"""<div style="font-size: 25px; transform: rotate(45deg);">✈️</div>""")
     ).add_to(m)
 
     # Haritayı göster
-    # width=None ve use_container_width=True beraber kullanılır
     from streamlit_folium import st_folium
     
     st_folium(
@@ -371,19 +373,8 @@ elif menu == "🗺️ Kültürel Harita":
         use_container_width=True
     )
 
-    st.markdown("""
-        <div style="background-color: rgba(52, 152, 219, 0.2); 
-                    padding: 15px; 
-                    border-radius: 10px; 
-                    margin-top: 20px;
-                    border: 1px solid #3498db;
-                    text-align: center;">
-            <p style="color: #F1C40F; font-weight: bold; margin: 0; font-size: 1.1em;">
-                💡 İpucu: Haritadaki simgelere tıklayarak detayları görebilirsin. 
-                Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
+    # Alt bilgi kutusunu da daha okunabilir yaptık
+    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler Türkiye'den olan uçuş rotalarımızı temsil eder!")
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
