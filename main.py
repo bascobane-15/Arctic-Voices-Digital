@@ -117,6 +117,18 @@ st.markdown("""
        background: rgba(255, 255, 255, 0.1);
        border-color: #a5f3fc;
    }
+
+    /* Üstteki tanıtım metninin altındaki boşluğu siler */
+    .stMarkdown p {
+        margin-bottom: 5px !important;
+    }
+
+    /* "Keşfe Nereden Başlayacaksınız?" başlığının üst ve alt boşluğunu ayarlar */
+    .discovery-title {
+        margin-top: -10px !important;  /* Negatif değer yukarı çeker */
+        margin-bottom: 20px !important;
+        text-align: center;
+    }
 </style>
 """, unsafe_allow_html=True)
 # -------------------------
