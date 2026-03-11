@@ -768,6 +768,8 @@ elif menu == "🧭 Kültür Keşfi":
         Kış, Bahar-Kış, İlkbahar, Bahar-Yaz, Yaz, Yaz-Sonbahar, Sonbahar, Sonbahar-Kış şeklindedir.
         Sami dilinde aylara, ren geyiğinin hayat aşamalarının isimleri verilmiştir.
         """)
+        st.write("") # Görsel bir nefes payı
+        st.divider()
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
                         padding: 20px; 
@@ -779,6 +781,8 @@ elif menu == "🧭 Kültür Keşfi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
+        st.write("") # Görsel bir nefes payı
+        st.divider()
         # ================= Beslenme =================
         st.subheader("🥩Sürdürülebilir Bir Beslenme Kültürü: Suovas")
 
