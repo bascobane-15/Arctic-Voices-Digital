@@ -96,19 +96,27 @@ st.markdown("""
 
     /* Keşif Kartları */
     .explore-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 20px;
-        text-align: center;
-        min-height: 220px;
-        transition: transform 0.3s;
-    }
+       background: rgba(255, 255, 255, 0.05);
+       border: 1px solid rgba(255, 255, 255, 0.1);
+       border-radius: 20px;
+       padding: 20px;
+       text-align: center;
+       
+       /* DEĞİŞİKLİK BURADA: */
+       height: 280px;            /* min-height yerine sabit height verdik */
+       display: flex;            /* İçeriği dikeyde yaymak için */
+       flex-direction: column;   /* İçindekileri alt alta diz */
+       justify-content: center;  /* İçindekileri dikeyde ortala */
+       align-items: center;      /* Yatayda ortala */
+       
+       transition: transform 0.3s;
+   }
+
     .explore-card:hover {
-        transform: translateY(-10px);
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #a5f3fc;
-    }
+       transform: translateY(-10px);
+       background: rgba(255, 255, 255, 0.1);
+       border-color: #a5f3fc;
+   }
 </style>
 """, unsafe_allow_html=True)
 # -------------------------
