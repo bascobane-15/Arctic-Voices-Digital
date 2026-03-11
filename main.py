@@ -727,6 +727,20 @@ elif menu == "🧭 Kültür Keşfi":
         with col2:
             st.image("duodji.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
 
+        # ================= El Sanatları =================
+        st.subheader("⛺ Göçebe Yaşamın Simgesi: Lavvu")
+
+        st.write("""
+        Samilerin de Lavvu adını verdikleri geleneksel çadırları vardır. 
+        Lavvu'nun tasarımı, sert Arktik rüzgarlarına dayanacak şekilde aerodinamiktir ve Samilerin çevreye zarar vermeden yaşama felsefesini simgeler. 
+        Lavvu'nun yaşam alanının içinde, ısıtma ve sivrisinekleri uzak tutmak için ortada bir şömine(odun sobası) bulunur. 
+        Duman, genellikle açık bırakılan lavvu'nun tepesindeki duman deliğinden dışarı çıkar.
+        """)
+        col1, col2, col3 = st.columns([1,2,1])
+
+        with col2:
+            st.image("lavvu.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
+
         # BEYAZ YAZILI BİLGİ KUTUSU
         st.markdown("""
             <div style="background-color: rgba(243, 156, 18, 0.2); 
