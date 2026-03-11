@@ -829,8 +829,9 @@ elif menu == "🧭 Kültür Keşfi":
         # --- DÜNYANIN İLK GÜNEŞ GÖZLÜĞÜ ---
         st.subheader("🕶️ Dünyanın İlk Güneş Gözlüğü")
         st.write("""
-        **Puvirnituq:** Inuitler binlerce yıl önce fildişinden bu gözlükleri icat etti. 
-        İnce bir çizgi sayesinde ışığı süzer ve kar körlüğünü engeller.
+        İnuitler (ve Yupikler) binlerce yıl önce Arktik koşullarında  fildişi, kemik veya tahtadan yapılan kar gözlüklerini (iggaak) geliştirmiştir.
+        Kar körlüğünü önleyen ilk güneş gözlükleri olarak kabul edilen bu gözlüklerdeki, ince yatay çizgiler, yoğun kar yansımasını (UV ışınlarını) süzer, kontrastı artırır ve gözü korur.
+        Oldukça hafif olan bu gözlükler, kullanıcının yüzüne göre oyularak şekillendirilmiş ve kişiye özel hâle getirilmiştir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
 
