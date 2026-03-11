@@ -758,6 +758,8 @@ elif menu == "🧭 Kültür Keşfi":
 
         with col2:
              st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", use_container_width=True)
+        st.write("") # Görsel bir nefes payı
+        st.divider()
          # ================= Takvimleri =================   
         st.subheader("📅 Doğanın Takvimi: Sekiz Mevsim")
 
@@ -768,8 +770,6 @@ elif menu == "🧭 Kültür Keşfi":
         Kış, Bahar-Kış, İlkbahar, Bahar-Yaz, Yaz, Yaz-Sonbahar, Sonbahar, Sonbahar-Kış şeklindedir.
         Sami dilinde aylara, ren geyiğinin hayat aşamalarının isimleri verilmiştir.
         """)
-        st.write("") # Görsel bir nefes payı
-        st.divider()
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
                         padding: 20px; 
