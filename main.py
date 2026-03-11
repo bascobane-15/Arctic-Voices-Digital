@@ -769,6 +769,8 @@ elif menu == "🧭 Kültür Keşfi":
         Lavvu'nun yaşam alanının içinde, ısıtma ve sivrisinekleri uzak tutmak için ortada bir şömine(odun sobası) bulunur. 
         Duman, genellikle açık bırakılan lavvu'nun tepesindeki duman deliğinden dışarı çıkar.
         """)
+        st.write("") # Görsel bir nefes payı
+        st.divider()
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
