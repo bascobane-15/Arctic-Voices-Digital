@@ -371,7 +371,7 @@ elif menu == "🗺️ Kültürel Harita":
     )
 
     # Alt bilgi kutusunu da daha okunabilir yaptık
-    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!"
+    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!")
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
