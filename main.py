@@ -739,7 +739,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("lavvu.jpg", caption="Geleneksel Sami El Sanatları: Duodji", width=500)
+            st.image("lavvu.jpg", caption="Yaklaşık 1900 yılında çekilmişBir Sami ailesi Fotoğrafı:wikipedia.org", width=500)
 
         # BEYAZ YAZILI BİLGİ KUTUSU
         st.markdown("""
