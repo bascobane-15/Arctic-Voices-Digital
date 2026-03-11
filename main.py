@@ -339,7 +339,7 @@ elif menu == "🗺️ Kültürel Harita":
 
     # Nenets
     folium.Marker(
-        location=[67.5, 53.0],
+        location=[70.0, 70.0],
         popup="<b>Nenetsler</b><br>⛺ Tundranın göçebe çobanları.",
         icon=folium.DivIcon(html=f"""<div style="font-size: 30px;">⛺</div>""")
     ).add_to(m)
