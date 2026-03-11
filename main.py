@@ -217,8 +217,7 @@ if menu == "🏔️ Ana Sayfa":
     """, unsafe_allow_html=True)
 
     # 3. İNTERAKTİF KEŞİF KARTLARI
-    st.markdown('<h3 style="text-align: center; margin-bottom: 30px;">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
-    
+    st.markdown('<h3 class="discovery-title">Keşfe Nereden Başlayacaksınız?</h3>', unsafe_allow_html=True)
     
     col1, col2, col3, col4, col5 = st.columns(5)
     
