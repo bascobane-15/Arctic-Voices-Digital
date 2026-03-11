@@ -816,9 +816,9 @@ elif menu == "🧭 Kültür Keşfi":
         st.subheader("🏠 İgloo ve Yaşam")
 
         st.write("""
-        İgloo kar bloklarından yapılan geçici barınaklardır.
-        Günümüzde Inuit toplulukları modern evlerde yaşamaktadır,
-        ancak geleneksel bilgi ve avcılık kültürü devam etmektedir.
+        İgloo kar bloklarından yapılan kubbe şeklindeki barınaklardır. İnuitler igloları genellikle av mevsimlerinde geçici barınak olarak kullanırlardı.
+        İglolar sertleşmiş kardan kesilen bloklarla yapılır. Karın içindeki hava boşlukları mükemmel bir yalıtım sağlar. Dışarıdaki sıcaklık -40°C iken, içeride sadece vücut ısısı veya küçük bir kandil yardımıyla sıcaklık 15-20°C'ye kadar çıkabilir.
+        Günümüzde Inuit toplulukları modern evlerde yaşamaktadır, ancak geleneksel bilgi devam etmektedir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
 
