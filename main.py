@@ -347,7 +347,7 @@ elif menu == "🗺️ Kültürel Harita":
     # 3. UÇAK ROTASI
     rota_inuit = [[39.9, 32.8], [64.2, -51.7]]
     rota_sami = [[39.9, 32.8], [68.5, 23.6]]
-    rota_nenets = [[39.9, 32.8], [67.5, 53.0]]
+    rota_nenets = [[39.9, 32.8], [70.0, 70.0]]
 
     # Çizgilerin rengini aydınlık haritada daha belirgin olması için koruduk veya koyulaştırdık
     folium.PolyLine(rota_inuit, color="blue", weight=3, opacity=0.7, dash_array='10').add_to(m)
