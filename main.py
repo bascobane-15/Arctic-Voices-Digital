@@ -232,7 +232,9 @@ if menu == "🏔️ Ana Sayfa":
     with col4:
         st.markdown("""
             <div class="explore-card">
+            
                 <div class="tr-flag-container"></div>
+                
                 <div class="card-title">Türkiye'nin Rotası</div>
                 <p style="font-size: 0.9rem;">Milli Kutup Araştırmaları ve Arktik seferlerimizi keşfedin.</p>
             </div>
@@ -243,6 +245,7 @@ if menu == "🏔️ Ana Sayfa":
         st.markdown("""
             <div class="explore-card">
                 <div class="card-icon">🎮</div>
+                
                 <div class="card-title">Görev Merkezi</div>
                 <p style="font-size: 0.9rem;">Arktik elçisi olun  ve  bilginizi test edin.</p>
             </div>
