@@ -780,7 +780,7 @@ elif menu == "🧭 Kültür Keşfi":
             </div>
         """, unsafe_allow_html=True)
         # ================= Beslenme =================
-        st.subheader("🥩Sürdürülebilir Bir Beslenme Kültürü: "Suovas")
+        st.subheader("🥩Sürdürülebilir Bir Beslenme Kültürü: Suovas")
 
         st.write("""
         Samilerin doğadan elde ettikleri gıdayı saklama biçimleri (tütsüleme ve kurutma)  önemli bir kültürel unsurdur.
