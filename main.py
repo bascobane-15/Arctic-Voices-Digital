@@ -369,7 +369,7 @@ elif menu == "🗺️ Kültürel Harita":
         height=500, 
         use_container_width=True
     )
-
+    st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!")
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
