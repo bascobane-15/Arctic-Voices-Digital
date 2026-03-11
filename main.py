@@ -779,7 +779,7 @@ elif menu == "🧭 Kültür Keşfi":
                 </p>
             </div>
         """, unsafe_allow_html=True)
-       # ================= Beslenme =================
+        # ================= Beslenme =================
         st.subheader("🥩Sürdürülebilir Bir Beslenme Kültürü: "Suovas")
 
         st.write("""
