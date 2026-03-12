@@ -6,7 +6,7 @@ import folium
 import time
 import random
 from streamlit_folium import st_folium
-
+import streamlit.components.v1 as components
 # Sayfa Ayarları
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
@@ -1379,3 +1379,13 @@ elif menu == "🎮 Görev Merkezi":
         st.success("🏆 TÜM GÖREVLER TAMAMLANDI!")
         st.markdown(f"## 🎖️ Toplam Puanın: {st.session_state.puan}")
         st.info("❄️ Artık resmi olarak bir **ARCTIC MASTER – Kutup Kaşifi** oldun!")
+
+st.title("🧩 Kutup Dostlarını Bul! – Arktik Hayvanları Eşleştirme Oyunu")
+
+components.html(
+"""
+<iframe src="https://learningapps.org/watch?v=p4sryv94a26" style="border:0px;width:100%;height:500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+style="border:0px;width:100%;height:500px"></iframe>
+""",
+height=520
+)
