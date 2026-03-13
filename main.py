@@ -1380,23 +1380,5 @@ elif menu == "🎮 Görev Merkezi":
         st.markdown(f"## 🎖️ Toplam Puanın: {st.session_state.puan}")
         st.info("❄️ Artık resmi olarak bir **ARCTIC MASTER – Kutup Kaşifi** oldun!")
 
-st.title("🐻‍❄️ Kutup Dostlarını Bul! – Arktik Hayvanları Eşleştirme Oyunu")
 
-components.html(
-"""
-<iframe src="https://learningapps.org/watch?v=p4sryv94a26" style="border:0px;width:100%;height:500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-style="border:0px;width:100%;height:500px"></iframe>
-""",
-height=520
-)
-
-st.title("❄️ Arktik’i Tanıyor Musun?– Bil Bakalım")
-
-components.html(
-"""
-<iframe style="max-width:100%" src="https://wordwall.net/tr/embed/40821e6412da42c3ae80cca3159c7e50?themeId=1&templateId=38&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
-style="border:0px;width:100%;height:500px"></iframe>
-""",
-height=520
-)
 
