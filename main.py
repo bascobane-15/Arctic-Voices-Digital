@@ -1380,7 +1380,7 @@ elif menu == "🎮 Görev Merkezi":
         st.markdown(f"## 🎖️ Toplam Puanın: {st.session_state.puan}")
         st.info("❄️ Artık resmi olarak bir **ARCTIC MASTER – Kutup Kaşifi** oldun!")
 
-if menu == "🎯 Görev Merkezi":
+elif menu == "🎯 Görev Merkezi":
 
     st.title("🐻‍❄️ Kutup Dostlarını Bul! – Arktik Hayvanları Eşleştirme Oyunu")
 
