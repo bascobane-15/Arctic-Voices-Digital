@@ -694,7 +694,7 @@ elif menu == "🧭 Kültür Keşfi":
 
     culture = st.selectbox(
         "Topluluk Seç:",
-        ["Seçiniz", "Inuit", "Nenets", "Sami"]
+        ["Seçiniz", "Inuit", "Nenet", "Sami"]
     )
 
 
@@ -955,8 +955,8 @@ elif menu == "🧭 Kültür Keşfi":
             st.audio("lux-aeterna-cold-arctic-ambient-441447.mp3")
             st.audio("musicword-arctic-288238.mp3")
                
-    # ===================== NENETS =====================
-    elif culture == "Nenetler":
+    # ===================== NENET =====================
+    elif culture == "Nenet":
         st.header("🦌 Nenet Kültürü: Tundra'nın Göçebe Efendileri")
         
         st.write("""
@@ -965,7 +965,7 @@ elif menu == "🧭 Kültür Keşfi":
         """)
         st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
         st.divider()
-        # --- NENETS DİLİ VE DOĞA  ---
+        # --- NENET DİLİ VE DOĞA  ---
         st.markdown("""
             <div style="background-color: rgba(52, 152, 219, 0.2); 
                         padding: 20px; 
