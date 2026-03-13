@@ -956,11 +956,11 @@ elif menu == "🧭 Kültür Keşfi":
             st.audio("musicword-arctic-288238.mp3")
                
     # ===================== NENETS =====================
-    elif culture == "Nenets":
-        st.header("🦌 Nenets Kültürü: Tundra'nın Göçebe Efendileri")
+    elif culture == "Nenetler":
+        st.header("🦌 Nenet Kültürü: Tundra'nın Göçebe Efendileri")
         
         st.write("""
-        Nenets halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
+        Nenet halkı, Sibirya'nın en kuzeyinde, sıcaklığın **-50°C**'ye kadar düştüğü Yamal Yarımadası'nda yaşar. 
         Binlerce yıldır ren geyikleriyle birlikte dünyanın en uzun göç yollarından birini tamamlarlar.
         """)
         st.video("https://youtu.be/fVgL4O2d_cQ?si=MJ8lh-KkXkSwcAoN")
@@ -983,11 +983,11 @@ elif menu == "🧭 Kültür Keşfi":
         # --- CHUM ÇADIRLARI ---
         st.subheader("🏠 Hareketli Evler: Chum")
         st.write("""
-        Nenetslerin 'Chum' adını verdikleri çadırları, ren geyiği derisinden yapılır. 
+        Nenetlerin 'Chum' adını verdikleri çadırları, ren geyiği derisinden yapılır. 
         Bu çadırlar o kadar pratiktir ki, göç sırasında sadece **40 dakika** içinde kurulup sökülebilir. 
         Bir aile yılda yaklaşık **1000 kilometreden fazla** yol kat eder ve her duraklamada bu evi yeniden kurar.
         """)
-        st.image("chum.jpg", caption="Geleneksel Nenets Çadırı: Chum")
+        st.image("chum.jpg", caption="Geleneksel Nenet Çadırı: Chum.Fotoğraf:Ahmet UÇAL")
 
         st.divider()
       
@@ -999,7 +999,7 @@ elif menu == "🧭 Kültür Keşfi":
         col1, col2, col3 = st.columns([1,2,1])
 
         with col2:
-            st.image("nenetkıyafet.jpg", width=500)
+            st.image("nenetkıyafet.jpg", width=500, caption=Fotoğraf:Ahmet UÇAL")
   
         st.divider()
         
@@ -1380,5 +1380,23 @@ elif menu == "🎮 Görev Merkezi":
         st.markdown(f"## 🎖️ Toplam Puanın: {st.session_state.puan}")
         st.info("❄️ Artık resmi olarak bir **ARCTIC MASTER – Kutup Kaşifi** oldun!")
 
+if menu == "🎯 Görev Merkezi":
 
+    st.title("🐻‍❄️ Kutup Dostlarını Bul! – Arktik Hayvanları Eşleştirme Oyunu")
+
+    components.html(
+    """
+    <iframe src="https://learningapps.org/watch?v=p4sryv94a26" style="border:0px;width:100%;height:500px" allowfullscreen="true"></iframe>
+    """,
+    height=520
+    )
+
+    st.title("❄️ Arktik’i Tanıyor Musun? – Bil Bakalım")
+
+    components.html(
+    """
+    <iframe style="max-width:100%" src="https://wordwall.net/tr/embed/40821e6412da42c3ae80cca3159c7e50?themeId=1&templateId=38&fontStackId=0" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    """,
+    height=520
+    )
 
