@@ -1389,3 +1389,14 @@ style="border:0px;width:100%;height:500px"></iframe>
 """,
 height=520
 )
+
+st.title("❄️ Arktik’i Tanıyor Musun?– Bil Bakalım")
+
+components.html(
+"""
+<iframe style="max-width:100%" src="https://wordwall.net/tr/embed/40821e6412da42c3ae80cca3159c7e50?themeId=1&templateId=38&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
+style="border:0px;width:100%;height:500px"></iframe>
+""",
+height=520
+)
+
