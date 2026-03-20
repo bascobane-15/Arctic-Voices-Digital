@@ -134,8 +134,6 @@ st.markdown("""
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
     }
-    
-    
 </style>
 """, unsafe_allow_html=True)
 # -------------------------
