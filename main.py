@@ -148,17 +148,27 @@ with st.sidebar:
 
     st.sidebar.markdown('<div class="sidebar-brand-title">DİJİTAL ARKTİK KÜLTÜR<br>EĞİTİM PLATFORMU (DAKEP)</div>', unsafe_allow_html=True)
     
-    menu = st.selectbox(
-        "📍 Keşif Rotası Seçin",
-        [
+    st.markdown("""
+    <style>
+    .flag-option img {
+       width: 20px;
+       vertical-align: middle;
+       margin-right: 8px;
+    }
+    </style>
+      """, unsafe_allow_html=True)
+      
+      option = st.radio(
+          "📍 Keşif Rotası Seçin",
+          [
               "🏔️ Ana Sayfa",
               "🗺️ Kültürel Harita",
               "🛰️ NASA İklim Verisi",
               "🧭 Kültür Keşfi",
-              "Türkiye'nin Çalışmaları 🇹🇷",
+              "🇹🇷 Türkiye'nin Çalışmaları",
               "🎮 Görev Merkezi"
-        ]
-    )
+          ]
+      )
     st.markdown("---")
     
     # 4. Sol Alt Açıklama Metni (Siyah ve Büyük Stil)
