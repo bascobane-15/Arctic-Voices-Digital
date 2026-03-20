@@ -1386,7 +1386,7 @@ elif menu == "🎮 Görev Merkezi":
     height=520
     )
 
-    st.title("❄️ Arktik’i Tanıyor Musun? – Bil Bakalım")
+    st.title("☃️🥶❄️ Arktik Serüven")
 
     components.html(
     """
