@@ -135,10 +135,7 @@ st.markdown("""
         padding-bottom: 0px !important;
     }
     
-    /* Eğer başlık hala çok uzaktaysa bu sınıfı da ekleyebilirsiniz */
-    h3 {
-        padding-top: 0px !important;
-    }
+    
 </style>
 """, unsafe_allow_html=True)
 # -------------------------
