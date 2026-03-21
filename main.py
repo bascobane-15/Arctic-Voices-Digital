@@ -1395,3 +1395,40 @@ elif menu == "🎮 Görev Merkezi":
     height=520
     )
 
+    # Sayfayı geniş mod yapalım
+    st.set_page_config(page_title="Sami Macerası", layout="wide")
+   
+   # Başlık
+    st.title("❄️ Arktik serüven")
+   
+   # GitHub Oyun Linkin
+    game_url = "https://cellad6060-source.github.io/SamiKulturuOyunu1/"
+   
+   # Oyun Penceresi
+    st.write("### 🎮 Oyunu Başlat")
+    components.iframe(game_url, width=1000, height=650, scrolling=False)
+   
+    st.write("---")
+   
+   # Kontroller Paneli
+    col1, col2 = st.columns(2)
+   
+    with col1:
+       st.subheader("⌨️ Kontroller")
+       st.markdown("""
+       * *A Tuşu:* Sola Hareket
+       * *D Tuşu:* Sağa Hareket
+       * *Space (Boşluk):* Zıplama
+       * *E Tuşu:* İglolarla Etkileşim (Soruları Cevapla)
+       """)
+   
+    with col2:
+       st.subheader("🌡️ Hayatta Kalma İpucu")
+       st.info("""
+       Karakterin soğuktan donmamalı! Yol boyunca karşına çıkan iglolara 
+       yaklaş ve *'E'* tuşuna basarak içeri gir. Soruları doğru bilirsen 
+       vücut ısın yükselir ve yoluna devam edebilirsin.
+       """)
+   
+    st.caption("Oyun yüklenmiyorsa lütfen sayfayı yenileyiniz.")
+       
