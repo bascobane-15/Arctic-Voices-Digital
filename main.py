@@ -1424,7 +1424,7 @@ elif menu == "🎮 Görev Merkezi":
    
     with col2:
        st.subheader("🌡️ Hayatta Kalma İpucu")
-       st.info("""
+       st.markdown("""
        Karakterin soğuktan donmamalı! Yol boyunca karşına çıkan iglolara 
        yaklaş ve *'E'* tuşuna basarak içeri gir. Soruları doğru bilirsen 
        vücut ısın yükselir ve yoluna devam edebilirsin.
