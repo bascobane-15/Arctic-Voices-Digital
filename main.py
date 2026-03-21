@@ -1234,7 +1234,7 @@ elif menu == "🎮 Görev Merkezi":
             st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
    
-
+    
     # --- 4. SORU: KIZAK ---
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     if "q_kizak" in st.session_state.cevaplananlar:
