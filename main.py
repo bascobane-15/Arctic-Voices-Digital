@@ -150,7 +150,7 @@ with st.sidebar:
     
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
-        ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", " ☾☆ Türkiye'nin Rotası", "🎮 Görev Merkezi"]
+         ["🏔️ Ana Sayfa", "🗺️ Kültürel Harita", "🛰️ NASA İklim Verisi", "🧭 Kültür Keşfi", "🇹🇷 Türkiye'nin Çalışmaları", "🎮 Görev Merkezi"]
     )
 
     st.markdown("---")
@@ -1060,8 +1060,7 @@ elif menu == "🧭 Kültür Keşfi":
 # -------------------------
 # TÜRKİYE'NİN ÇALIŞMALARI
 # -------------------------
-elif menu == "☾☆ Türkiye'nin Rotası":
-
+elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     # --- SAYFA DÜZENİ VE BOŞLUK AYARLARI (CSS) ---
     st.markdown("""
         <style>
