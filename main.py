@@ -1060,7 +1060,7 @@ elif menu == "🧭 Kültür Keşfi":
 # -------------------------
 # TÜRKİYE'NİN ÇALIŞMALARI
 # -------------------------
-elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
+elif menu == "☾☆ Türkiye'nin Rotası":
 
     # --- SAYFA DÜZENİ VE BOŞLUK AYARLARI (CSS) ---
     st.markdown("""
