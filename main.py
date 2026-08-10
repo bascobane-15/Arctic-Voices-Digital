@@ -335,7 +335,7 @@ elif menu == "🗺️ Kültürel Harita":
             st.image("gakti.jpg", width=750)
 
     st.divider()
- # ==========================================================
+ # =========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
   
