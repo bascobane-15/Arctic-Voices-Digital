@@ -7,6 +7,7 @@ import time
 import random
 from streamlit_folium import st_folium
 import streamlit.components.v1 as components
+import textwrap
 # Sayfa Ayarları
 st.set_page_config(page_title="Arctic Culture", page_icon="🌍", layout="wide")
 
