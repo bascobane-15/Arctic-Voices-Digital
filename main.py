@@ -444,6 +444,68 @@ elif menu == "🗺️ Kültürel Harita":
         use_container_width=True
     )
     st.info("💡 **İpucu:** Haritadaki simgelere tıklayarak detayları görebilirsin. Kesikli çizgiler uçuş rotalarımızı temsil eder!")
+    st.title("✈️ Türkiye'den Antarktika'ya Yolculuk")
+    st.subheader("Buzul Kıtanın İzinde Bir Keşif Rotası")
+      
+    # 1. HARİTA MERKEZİ (Dünyanın genelini kapsayacak şekilde meridyen/paralel ayarlandı)
+    m = folium.Map(
+          location=[-20, 20], 
+          zoom_start=2, 
+          tiles="OpenStreetMap"
+    )
+      
+    # 2. TÜRKİYE (BAŞLANGIÇ NOKTASI)
+    folium.Marker(
+          location=[39.9, 32.8], # Ankara
+          popup="<b>Burası Evimiz!</b><br>Antarktika yolculuğu buradan başlıyor. 🚀",
+          icon=folium.Icon(color="red", icon="home", prefix="fa")
+    ).add_to(m)
+      
+    # 3. ANTARKTİKA NOKTALARI VE ÖZEL İKONLAR
+    # Türkiye Antarktika Bilimsel Araştırma Üssü Geçici Yerleşkesi (Horseshoe Adası)
+    folium.Marker(
+          location=[-67.8, -67.1],
+          popup="<b>Horseshoe Adası</b><br>🇹🇷 Türk Ulusal Antarktika Bilim Seferleri Merkezi.",
+          icon=folium.DivIcon(html="""<div style="font-size: 30px;">🔬</div>""")
+    ).add_to(m)
+      
+    # Güney Kutup Noktası (Amundsen-Scott Üssü)
+    folium.Marker(
+          location=[-90.0, 0.0],
+          popup="<b>Güney Kutup Noktası</b><br>📌 Dünyanın en güney ucu.",
+          icon=folium.DivIcon(html="""<div style="font-size: 30px;">📍</div>""")
+    ).add_to(m)
+      
+    # Penguen Kolonisi (Ross Denizi / Kıta Kıyısı)
+    folium.Marker(
+          location=[-77.5, 166.0],
+          popup="<b>Ross Denizi</b><br>🐧 İmparator ve Adélie penguenlerinin yaşam alanı.",
+          icon=folium.DivIcon(html="""<div style="font-size: 30px;">🐧</div>""")
+    ).add_to(m)
+      
+    # 4. UÇAK VE GEMİ ROTALARI
+    rota_horseshoe = [[39.9, 32.8], [-67.8, -67.1]]
+    rota_kutup = [[39.9, 32.8], [-90.0, 0.0]]
+    rota_ross = [[39.9, 32.8], [-77.5, 166.0]]
+      
+    # Çizgiler (Kesikli rotalar)
+    folium.PolyLine(rota_horseshoe, color="red", weight=3, opacity=0.7, dash_array='10').add_to(m)
+    folium.PolyLine(rota_kutup, color="blue", weight=3, opacity=0.7, dash_array='10').add_to(m)
+    folium.PolyLine(rota_ross, color="darkblue", weight=3, opacity=0.7, dash_array='10').add_to(m)
+      
+    # Rota üzerindeki simgesel ulaşım ikonu
+    folium.Marker(
+          location=[-15, 15], 
+          icon=folium.DivIcon(html="""<div style="font-size: 25px; transform: rotate(135deg);">✈️</div>""")
+    ).add_to(m)
+      
+    # 5. HARİTAYI GÖSTER
+    st_folium(
+          m, 
+          width=None, 
+          height=550, 
+          use_container_width=True
+    )
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
     # -------------------------
