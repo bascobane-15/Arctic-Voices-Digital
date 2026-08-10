@@ -334,8 +334,7 @@ elif menu == "🗺️ Kültürel Harita":
     col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
-    st.image("PiriReis.jpg", width=750)
-   
+         st.image("PiriReis.jpg", width=750)
 
     st.divider()
     st.markdown(
