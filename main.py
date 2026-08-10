@@ -300,205 +300,200 @@ if menu == "🏔️ Ana Sayfa":
 # EĞLENCELİ KÜLTÜREL HARİTA (AYDINLIK VERSİYON)
 # -------------------------
 elif menu == "🗺️ Kültürel Harita":
-import streamlit as st
-import textwrap
 
-# ==========================================================
-# 🇹🇷 BAŞLIK KARTI
-# ==========================================================
-st.markdown(
-    textwrap.dedent("""
-    <div style="
-        background: linear-gradient(135deg, #8B0000 0%, #B22222 55%, #8B0000 100%);
-        padding: 22px 25px;
-        border-radius: 16px;
-        text-align: center;
-        color: white;
-        margin-bottom: 18px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.20);
-    ">
-        <div style="font-size:42px; margin-bottom:5px;">🇹🇷 🧭</div>
-        <h2 style="margin:0; font-size:28px; font-weight:700; color:#ffffff;">
-            TÜRKİYE'DEN KUTUPLARA
-        </h2>
-        <p style="font-size:19px; margin:8px 0 0 0; font-weight:500; color:#f8f9fa;">
-            Piri Reis'in Haritasından Arktik'in Keşfine
-        </p>
-    </div>
-    """),
-    unsafe_allow_html=True
-)
-
-# ==========================================================
-# 🗺️ PİRİ REİS HARİTASI
-# ==========================================================
-piri_reis_map = (
-    "https://commons.wikimedia.org/wiki/Special:FilePath/"
-    "1513%20Piri%20Reis.jpg"
-)
-
-st.image(
-    piri_reis_map,
-    caption="Piri Reis'in 1513 tarihli dünya haritası",
-    use_container_width=True
-)
-
-# ==========================================================
-# 🧭 TARİHSEL BAĞLANTI
-# ==========================================================
-st.markdown(
-    textwrap.dedent("""
-    <div style="
-        background: #f8f9fa;
-        color: #2c3e50;
-        padding: 20px 24px;
-        border-radius: 14px;
-        border-left: 6px solid #8B0000;
-        margin: 18px 0 20px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    ">
-        <h3 style="color:#8B0000; margin-top:0; margin-bottom:12px;">
-            🧭 Haritacılık Mirasından Kutup Araştırmalarına
-        </h3>
-        <p style="font-size:16px; line-height:1.7; text-align:justify; color:#333;">
-            <b>Piri Reis</b>, denizcilik ve haritacılık tarihimizin önemli
-            isimlerinden biri olarak, farklı coğrafyalara ilişkin bilgileri
-            haritalarında bir araya getirmiştir.
-        </p>
-        <p style="font-size:16px; line-height:1.7; text-align:justify; color:#333;">
-            Bugün Türkiye, geçmişten gelen bu keşif ve bilim mirasını
-            <b>bilim, teknoloji ve araştırma</b> yoluyla geleceğe taşımaktadır.
-            Arktik ve Antarktika bölgelerine yönelik bilimsel çalışmalar,
-            Türkiye'nin kutup araştırmalarındaki varlığının önemli bir
-            göstergesidir.
-        </p>
-        <div style="
-            background:#ffffff;
-            padding:14px 18px;
-            border-radius:10px;
-            text-align:center;
-            margin-top:15px;
-            border:1px solid #ddd;
-        ">
-            <span style="font-size:18px; font-weight:700; color:#8B0000;">
-                🇹🇷 GEÇMİŞTEN GELECEĞE
-            </span>
-            <br>
-            <span style="font-size:17px; line-height:2; color:#222;">
-                🗺️ Haritalar &nbsp; → &nbsp; 🧭 Keşif &nbsp; → &nbsp; 🔬 Bilim &nbsp; → &nbsp; ❄️ Kutuplar
-            </span>
-        </div>
-    </div>
-    """),
-    unsafe_allow_html=True
-)
-
-# ==========================================================
-# ⏳ ZAMAN YOLCULUĞU (ZAMAN ÇİZGİSİ)
-# ==========================================================
-st.markdown(
-    textwrap.dedent("""
-    <div style="margin: 20px 0 25px 0;">
-        <h3 style="text-align:center; color:#8B0000; margin-bottom:18px;">
-            ⏳ 1513 → 2026 | Bir Keşif Yolculuğu
-        </h3>
-        <div style="
-            display:flex;
-            align-items:stretch;
-            justify-content:center;
-            gap:12px;
-            flex-wrap:wrap;
-        ">
-            <div style="
-                flex:1;
-                min-width:190px;
-                background:#f8f9fa;
-                color:#333;
-                padding:18px;
-                border-radius:12px;
-                text-align:center;
-                border-top:5px solid #8B0000;
-            ">
-                <div style="font-size:30px;">🗺️</div>
-                <h4 style="margin:7px 0; color:#8B0000;">1513</h4>
-                <p style="margin:0; font-size:14px; color:#444;">
-                    <b>Piri Reis</b><br>Haritacılık ve denizcilik mirası
-                </p>
-            </div>
-            <div style="display:flex; align-items:center; font-size:24px; color:#8B0000;">
-                ➜
-            </div>
-            <div style="
-                flex:1;
-                min-width:190px;
-                background:#f8f9fa;
-                color:#333;
-                padding:18px;
-                border-radius:12px;
-                text-align:center;
-                border-top:5px solid #8B0000;
-            ">
-                <div style="font-size:30px;">🔬</div>
-                <h4 style="margin:7px 0; color:#8B0000;">Günümüz</h4>
-                <p style="margin:0; font-size:14px; color:#444;">
-                    <b>Türkiye</b><br>Bilim ve teknolojiyle yeni keşifler
-                </p>
-            </div>
-            <div style="display:flex; align-items:center; font-size:24px; color:#8B0000;">
-                ➜
-            </div>
-            <div style="
-                flex:1;
-                min-width:190px;
-                background:#f8f9fa;
-                color:#333;
-                padding:18px;
-                border-radius:12px;
-                text-align:center;
-                border-top:5px solid #8B0000;
-            ">
-                <div style="font-size:30px;">❄️</div>
-                <h4 style="margin:7px 0; color:#8B0000;">Gelecek</h4>
-                <p style="margin:0; font-size:14px; color:#444;">
-                    <b>Kutup Araştırmaları</b><br>Arktik ve Antarktika
-                </p>
-            </div>
-        </div>
-    </div>
-    """),
-    unsafe_allow_html=True
-)
-
-# ==========================================================
-# 🇹🇷 MİLLİ VURGU
-# ==========================================================
-st.markdown(
-    textwrap.dedent("""
-    <div style="
-        background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
-        padding: 18px 24px;
-        border-radius: 14px;
-        text-align: center;
-        margin: 20px 0 25px 0;
-        border: 1px solid #ddd;
-    ">
-        <div style="font-size:27px;">🇹🇷</div>
-        <p style="
-            font-size:18px;
-            font-weight:600;
-            line-height:1.6;
-            margin:8px 0;
-            color:#2c3e50;
-        ">
-            "Haritalarla başlayan keşif ruhu, bugün bilim ve teknolojiyle kutuplara uzanıyor."
-        </p>
-        <p style="font-size:14px; color:#666; margin-bottom:0;">
-            DAKEP • Dijital Arktik Kültür Eğitim Platformu
-        </p>
-    </div>
-    """),
-    unsafe_allow_html=True
-)
+   st.markdown(
+       textwrap.dedent("""
+       <div style="
+           background: linear-gradient(135deg, #8B0000 0%, #B22222 55%, #8B0000 100%);
+           padding: 22px 25px;
+           border-radius: 16px;
+           text-align: center;
+           color: white;
+           margin-bottom: 18px;
+           box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+       ">
+           <div style="font-size:42px; margin-bottom:5px;">🇹🇷 🧭</div>
+           <h2 style="margin:0; font-size:28px; font-weight:700; color:#ffffff;">
+               TÜRKİYE'DEN KUTUPLARA
+           </h2>
+           <p style="font-size:19px; margin:8px 0 0 0; font-weight:500; color:#f8f9fa;">
+               Piri Reis'in Haritasından Arktik'in Keşfine
+           </p>
+       </div>
+       """),
+       unsafe_allow_html=True
+   )
+   
+   # ==========================================================
+   # 🗺️ PİRİ REİS HARİTASI
+   # ==========================================================
+   piri_reis_map = (
+       "https://commons.wikimedia.org/wiki/Special:FilePath/"
+       "1513%20Piri%20Reis.jpg"
+   )
+   
+   st.image(
+       piri_reis_map,
+       caption="Piri Reis'in 1513 tarihli dünya haritası",
+       use_container_width=True
+   )
+   
+   # ==========================================================
+   # 🧭 TARİHSEL BAĞLANTI
+   # ==========================================================
+   st.markdown(
+       textwrap.dedent("""
+       <div style="
+           background: #f8f9fa;
+           color: #2c3e50;
+           padding: 20px 24px;
+           border-radius: 14px;
+           border-left: 6px solid #8B0000;
+           margin: 18px 0 20px 0;
+           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+       ">
+           <h3 style="color:#8B0000; margin-top:0; margin-bottom:12px;">
+               🧭 Haritacılık Mirasından Kutup Araştırmalarına
+           </h3>
+           <p style="font-size:16px; line-height:1.7; text-align:justify; color:#333;">
+               <b>Piri Reis</b>, denizcilik ve haritacılık tarihimizin önemli
+               isimlerinden biri olarak, farklı coğrafyalara ilişkin bilgileri
+               haritalarında bir araya getirmiştir.
+           </p>
+           <p style="font-size:16px; line-height:1.7; text-align:justify; color:#333;">
+               Bugün Türkiye, geçmişten gelen bu keşif ve bilim mirasını
+               <b>bilim, teknoloji ve araştırma</b> yoluyla geleceğe taşımaktadır.
+               Arktik ve Antarktika bölgelerine yönelik bilimsel çalışmalar,
+               Türkiye'nin kutup araştırmalarındaki varlığının önemli bir
+               göstergesidir.
+           </p>
+           <div style="
+               background:#ffffff;
+               padding:14px 18px;
+               border-radius:10px;
+               text-align:center;
+               margin-top:15px;
+               border:1px solid #ddd;
+           ">
+               <span style="font-size:18px; font-weight:700; color:#8B0000;">
+                   🇹🇷 GEÇMİŞTEN GELECEĞE
+               </span>
+               <br>
+               <span style="font-size:17px; line-height:2; color:#222;">
+                   🗺️ Haritalar &nbsp; → &nbsp; 🧭 Keşif &nbsp; → &nbsp; 🔬 Bilim &nbsp; → &nbsp; ❄️ Kutuplar
+               </span>
+           </div>
+       </div>
+       """),
+       unsafe_allow_html=True
+   )
+   
+   # ==========================================================
+   # ⏳ ZAMAN YOLCULUĞU (ZAMAN ÇİZGİSİ)
+   # ==========================================================
+   st.markdown(
+       textwrap.dedent("""
+       <div style="margin: 20px 0 25px 0;">
+           <h3 style="text-align:center; color:#8B0000; margin-bottom:18px;">
+               ⏳ 1513 → 2026 | Bir Keşif Yolculuğu
+           </h3>
+           <div style="
+               display:flex;
+               align-items:stretch;
+               justify-content:center;
+               gap:12px;
+               flex-wrap:wrap;
+           ">
+               <div style="
+                   flex:1;
+                   min-width:190px;
+                   background:#f8f9fa;
+                   color:#333;
+                   padding:18px;
+                   border-radius:12px;
+                   text-align:center;
+                   border-top:5px solid #8B0000;
+               ">
+                   <div style="font-size:30px;">🗺️</div>
+                   <h4 style="margin:7px 0; color:#8B0000;">1513</h4>
+                   <p style="margin:0; font-size:14px; color:#444;">
+                       <b>Piri Reis</b><br>Haritacılık ve denizcilik mirası
+                   </p>
+               </div>
+               <div style="display:flex; align-items:center; font-size:24px; color:#8B0000;">
+                   ➜
+               </div>
+               <div style="
+                   flex:1;
+                   min-width:190px;
+                   background:#f8f9fa;
+                   color:#333;
+                   padding:18px;
+                   border-radius:12px;
+                   text-align:center;
+                   border-top:5px solid #8B0000;
+               ">
+                   <div style="font-size:30px;">🔬</div>
+                   <h4 style="margin:7px 0; color:#8B0000;">Günümüz</h4>
+                   <p style="margin:0; font-size:14px; color:#444;">
+                       <b>Türkiye</b><br>Bilim ve teknolojiyle yeni keşifler
+                   </p>
+               </div>
+               <div style="display:flex; align-items:center; font-size:24px; color:#8B0000;">
+                   ➜
+               </div>
+               <div style="
+                   flex:1;
+                   min-width:190px;
+                   background:#f8f9fa;
+                   color:#333;
+                   padding:18px;
+                   border-radius:12px;
+                   text-align:center;
+                   border-top:5px solid #8B0000;
+               ">
+                   <div style="font-size:30px;">❄️</div>
+                   <h4 style="margin:7px 0; color:#8B0000;">Gelecek</h4>
+                   <p style="margin:0; font-size:14px; color:#444;">
+                       <b>Kutup Araştırmaları</b><br>Arktik ve Antarktika
+                   </p>
+               </div>
+           </div>
+       </div>
+       """),
+       unsafe_allow_html=True
+   )
+   
+   # ==========================================================
+   # 🇹🇷 MİLLİ VURGU
+   # ==========================================================
+   st.markdown(
+       textwrap.dedent("""
+       <div style="
+           background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
+           padding: 18px 24px;
+           border-radius: 14px;
+           text-align: center;
+           margin: 20px 0 25px 0;
+           border: 1px solid #ddd;
+       ">
+           <div style="font-size:27px;">🇹🇷</div>
+           <p style="
+               font-size:18px;
+               font-weight:600;
+               line-height:1.6;
+               margin:8px 0;
+               color:#2c3e50;
+           ">
+               "Haritalarla başlayan keşif ruhu, bugün bilim ve teknolojiyle kutuplara uzanıyor."
+           </p>
+           <p style="font-size:14px; color:#666; margin-bottom:0;">
+               DAKEP • Dijital Arktik Kültür Eğitim Platformu
+           </p>
+       </div>
+       """),
+       unsafe_allow_html=True
+   )
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
 
