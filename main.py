@@ -324,7 +324,7 @@ elif menu == "🗺️ Kültürel Harita":
 """,
     unsafe_allow_html=True
 )
-    
+    st.subheader("🗺️ PİRİ REİS HARİTASI")
     st.write("""
        Piri Reis'in 1513 tarihli dünya haritası.
         """)
