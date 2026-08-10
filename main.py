@@ -207,16 +207,17 @@ if menu == "🏔️ Ana Sayfa":
     <div style="text-align:center; padding:60px 0;">
     
     <div class="hero-title">
-    Dijital Arktik Kültür Eğitim Platformu
+    Dijital Kutup Kültür Eğitim Platformu
     </div>
 
     <div class="hero-subtitle">
-    Arktik: Buzun ve İnsanın Hikayesi
+    Kutuplar: Donmuş Dünyanın, Kadim Kültürlerin ve Bilimin Hikâyesi
     </div>
 
     <div class="hero-text">
-    Bu platform, Kuzey Kutbu'nu sadece bir buz kütlesi olarak değil; yaşayan, nefes alan ve binlerce yıllık 
-    kadim kültürlerin insan mirasını barındıran bütüncül bir ekosistem olarak ele alır.
+    Bu platform, her iki kutup bölgesini de sadece donmuş birer buz kütlesi olarak görmez; 
+    aksine onları yaşayan, nefes alan, Arktik'teki kadim yerli kültürlerden 
+    Antarktika'daki modern bilimsel  keşiflere uzanan devasa birer küresel ekosistem ve insanlık mirası olarak ele alır.
     </div>
 
     </div>
