@@ -339,8 +339,8 @@ st.image(
      caption="Piri Reis'in 1513 tarihli dünya haritası",
      use_container_width=True
 )   
-    st.title("✈️ Türkiye'den Arktik'e Yolculuk")
-    st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
+st.title("✈️ Türkiye'den Arktik'e Yolculuk")
+st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
   
     # Harita merkezi - tiles parametresini değiştirdik!
     m = folium.Map(
