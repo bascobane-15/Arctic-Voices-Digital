@@ -508,7 +508,7 @@ elif menu == "🗺️ Kültürel Harita":
     )
     # -------------------------
     # ARKTİK KÜLTÜR PANELİ 
-    # -------------------------
+    # ------------------------
     st.markdown("---")
     st.title("❄️ Arktik'e Yolculuk")
 
