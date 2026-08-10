@@ -329,12 +329,10 @@ elif menu == "🗺️ Kültürel Harita":
        Piri Reis’in 1513 tarihli haritası, döneminin coğrafi keşif anlayışını yansıtan önemli bir eser olarak, 
        bugün Türkiye’nin kutup bölgelerine uzanan bilimsel keşif yolculuğuna ilham veren güçlü bir tarihsel mirastır. 
         """)
-    col1, col2, col3 = st.columns([1,2,1])
-
-    with col2:
-            st.image("PiriReis.jpg", width=750)
+    st.image("PiriReis.jpg", use_container_width=True)
 
     st.divider()
+   
  # =========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
