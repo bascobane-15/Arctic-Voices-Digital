@@ -308,7 +308,7 @@ elif menu == "🗺️ Kültürel Harita":
 
     # Üst milli başlık
     st.markdown(
-        """
+        textwrap.dedent("""
         <div style="
             background: linear-gradient(135deg, #8B0000 0%, #B22222 55%, #8B0000 100%);
             padding: 22px 25px;
@@ -340,9 +340,10 @@ elif menu == "🗺️ Kültürel Harita":
             </p>
 
         </div>
-        """,
+        """),
         unsafe_allow_html=True
     )
+
 
 
     # ==========================================================
