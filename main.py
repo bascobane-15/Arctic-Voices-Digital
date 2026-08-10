@@ -300,7 +300,33 @@ if menu == "🏔️ Ana Sayfa":
 # EĞLENCELİ KÜLTÜREL HARİTA (AYDINLIK VERSİYON)
 # -------------------------
 elif menu == "🗺️ Kültürel Harita":
-  
+    st.markdown(
+    """
+<div style="
+    background: linear-gradient(135deg, #8B0000 0%, #B22222 55%, #8B0000 100%);
+    padding: 22px 25px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+">
+    <div style="font-size:42px; margin-bottom:5px;">
+        🇹🇷 🧭
+    </div>
+    <h2 style="margin:0; font-size:28px; font-weight:700;">
+        TÜRKİYE'DEN KUTUPLARA
+    </h2>
+    <p style="font-size:19px; margin:8px 0 0 0; font-weight:500;">
+        Piri Reis'in Haritasından Arktik'in Keşfine
+    </p>
+</div>
+""",
+    unsafe_allow_html=True
+)
+    
+
+ # ==========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
   
