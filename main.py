@@ -1283,12 +1283,37 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.video("https://youtu.be/ilae63gqOKM?si=gwj1hR8bZqGGCUzA")
     st.divider()
     
+
+    # --- BÖLÜM 2: 10. ANTARTİKA SEFERİ (Video Üstte, Yazılar Altta) ---
+    st.header("🐧 10. ANTARTİKA Seferi (2026)")
+      
+    # 1. Video Bölümü
+    st.video("https://youtu.be/KviWb6bfbno?si=c0cIWVgye4HBaXCy")
+    st.caption("📽️ 10. Antarktika Seferi Özeti")
     
+    st.write("") # Görsel bir boşluk
+      
+    st.markdown("""
+          <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
+              <p style="color: white; margin: 0; font-size: 15px; line-height: 1.5;">
+              <strong>Son Gelişme:</strong> Türkiye, 26 Ocak - 1 Mart 2026 tarihleri arasında
+              Cumhurbaşkanlığı himayesinde ve TÜBİTAK Kutup Araştırmaları Enstitüsü (KARE) koordinasyonunda 10. Ulusal Antarktika Bilim Seferi (TAE-X)  
+              başarıyla tamamlanmıştır. Bu seferde Ulusal Antarktika Bilim Seferi kapsamında Horseshoe Adası'ndaki Türk Bilimsel Araştırma Kampı'nın yıllık 
+              altyapı bakımlarını başarıyla tamamlamıştır.  Kamp; bilim insanlarının iklim değişikliği ile kozmik radyasyon alanında topladığı ilk verilere ve 
+              TEKNOFEST birincisi lise öğrencilerinin kutup ortamındaki özgün deneylerine ev sahipliği yapmıştır.
+              </p>
+          </div>
+          """, unsafe_allow_html=True)
+      
+    st.write("") # Buton öncesi minik bir boşluk
+    st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/antarktika-bilim-seferi/10-ulusal-antarktika-bilim-seferi-sona-erdi/3850902")
+    st.divider()
+
+        
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
     st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
     st.video("https://youtu.be/8DczVgr03BQ?si=WKx_5YMTtlR6Am_m")
-
     # Burcu Özsoy Bilgi Kutusu
     st.markdown("""
         <div style="background-color: #003366; padding: 18px; border-radius: 10px; border-left: 5px solid #00aeef;">
