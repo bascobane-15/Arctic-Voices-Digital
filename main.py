@@ -326,8 +326,7 @@ elif menu == "🗺️ Kültürel Harita":
 )
     
     st.write("""
-        Gákti, Saami halkının geleneksel kıyafetidir.
-        Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
+       Piri Reis'in 1513 tarihli dünya haritası.
         """)
     col1, col2, col3 = st.columns([1,2,1])
 
