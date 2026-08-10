@@ -329,7 +329,7 @@ elif menu == "🗺️ Kültürel Harita":
         Gákti, Saami halkının geleneksel kıyafetidir.
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
-        col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
             st.image("gakti.jpg", width=750)
