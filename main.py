@@ -335,8 +335,9 @@ elif menu == "🗺️ Kültürel Harita":
     """)
     
     st.markdown(
-    """
+        """
     <div style="
+     ^
     background: #f8f9fa;
     padding: 20px 24px;
     border-radius: 14px;
