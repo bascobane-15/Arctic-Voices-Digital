@@ -1238,6 +1238,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     Türkiye'nin resmi nitelikteki 1. Ulusal Antarktika Bilim Seferi (TAE-I), 
     Cumhurbaşkanlığı himayesinde ve ilgili bakanlıkların koordinasyonunda 2017 yılında gerçekleştirilmiştir.
     """)
+    st.write("") # Görsel boşluk
     st.video("https://youtu.be/ilae63gqOKM?si=gwj1hR8bZqGGCUzA")
     st.divider()
 
