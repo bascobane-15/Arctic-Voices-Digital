@@ -325,18 +325,16 @@ elif menu == "🗺️ Kültürel Harita":
     unsafe_allow_html=True
 )
     
-        st.subheader("👘 Geleneksel Kıyafet: Gákti")
-
-        st.write("""
+    st.write("""
         Gákti, Saami halkının geleneksel kıyafetidir.
         Renkler ve desenler kişinin bölgesini ve aile bağlarını gösterebilir.
         """)
         col1, col2, col3 = st.columns([1,2,1])
 
-        with col2:
+    with col2:
             st.image("gakti.jpg", width=750)
 
-        st.divider()
+    st.divider()
  # ==========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
