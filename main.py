@@ -517,7 +517,7 @@ elif menu == "🗺️ Kültürel Harita":
         st.image("Arktik'e yolculuk.png",
              use_container_width=True, 
              caption="Antarktika Yaşam ve Bilim")
-    st.title("❄️ "Antarktika'ya Yolculuk: Beyaz Kıta'nın Keşfi")
+    st.title("❄️ Antarktika'ya Yolculuk: Beyaz Kıta'nın Keşfi")
 
     # 1. BÜTÜNSEL GÖRÜNÜM
     with st.expander("🌐 Buzul Kıtanın İzinde Bir Keşif Rotası", expanded=True):
