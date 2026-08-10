@@ -378,44 +378,7 @@ elif menu == "🗺️ Kültürel Harita":
 """,
     unsafe_allow_html=True
 )
-    st.markdown(
-        textwrap.dedent("""
-        <div style="
-            background:linear-gradient(135deg,#fdfdfd,#f1f1f1);
-            padding:18px 24px;
-            border-radius:14px;
-            text-align:center;
-            margin:20px 0 25px 0;
-            border:1px solid #ddd;
-        ">
-
-            <div style="font-size:27px;">
-                🇹🇷
-            </div>
-
-            <p style="
-                font-size:19px;
-                font-weight:600;
-                line-height:1.6;
-                margin:8px 0;
-            ">
-                "Haritalarla başlayan keşif ruhu,
-                bugün bilim ve teknolojiyle kutuplara uzanıyor."
-            </p>
-
-            <p style="
-                font-size:15px;
-                color:#555;
-                margin-bottom:0;
-            ">
-                DAKEP • Dijital Arktik Kültür Eğitim Platformu
-            </p>
-
-        </div>
-        """),
-        unsafe_allow_html=True
-    )
- # =========================================================
+# =========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
   
