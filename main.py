@@ -331,7 +331,11 @@ elif menu == "🗺️ Kültürel Harita":
        bugün Türkiye’nin kutup bölgelerine uzanan bilimsel keşif yolculuğuna ilham veren güçlü bir tarihsel mirastır. 
         """)
     st.write("") # Görsel boşluk 
-    st.image("PiriReis.jpg", use_container_width=True)
+    col1, col2, col3 = st.columns([1,2,1])
+
+    with col2:
+    st.image("PiriReis.jpg", width=750)
+   
 
     st.divider()
     st.markdown(
