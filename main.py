@@ -1226,7 +1226,7 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     """, unsafe_allow_html=True)
 
     # --- BAŞLIK ---
-    st.title("🚢 Türkiye'nin Arktik Bilimsel Serüveni")
+    st.title("🚢 Türkiye'nin Kutuplardaki Bilimsel Serüveni")
 
     # --- BÖLÜM 1: İLK ARKTİK SEFERİ ---
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
