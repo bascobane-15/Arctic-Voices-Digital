@@ -349,7 +349,7 @@ elif menu == "🗺️ Kültürel Harita":
                 margin-top:0;
                 margin-bottom:12px;
             ">
-                🧭 Haritacılık Mirasından Kutup Araştırmalarına
+               🧭 Haritacılık Mirasından Kutup Araştırmalarına
             </h3>
 
             <p style="
