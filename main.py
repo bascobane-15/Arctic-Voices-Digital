@@ -147,7 +147,7 @@ with st.sidebar:
     except:
         st.info("Video dosyası bekleniyor...")
 
-    st.sidebar.markdown('<div class="sidebar-brand-title">DİJİTAL ARKTİK KÜLTÜR<br>EĞİTİM PLATFORMU (DAKEP)</div>', unsafe_allow_html=True)
+    st.sidebar.markdown('<div class="sidebar-brand-title">DİJİTAL KUTUP KÜLTÜR<br>EĞİTİM PLATFORMU (DAKEP)</div>', unsafe_allow_html=True)
     
     menu = st.selectbox(
         "📍 Keşif Rotası Seçin",
