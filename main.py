@@ -333,6 +333,7 @@ elif menu == "🗺️ Kültürel Harita":
 
     st.divider()
     """)
+    
     st.markdown(
         """
     <div style="
