@@ -516,8 +516,14 @@ elif menu == "🗺️ Kültürel Harita":
     with st.expander("🌐 Arktik Yaşamı ve Kültürü Storyboard Panosu", expanded=True):
         st.image("Arktik'e yolculuk.png",
              use_container_width=True, 
-             caption="Arktik Kültür Sistemi - Birleşik Görünüm")
-        st.info("💡 Aşağıdaki slaytlar üzerinden detayları inceleyin.")
+             caption="Antarktika Yaşam ve Bilim")
+    st.title("❄️ "Antarktika'ya Yolculuk: Beyaz Kıta'nın Keşfi"")
+
+    # 1. BÜTÜNSEL GÖRÜNÜM
+    with st.expander("🌐 Buzul Kıtanın İzinde Bir Keşif Rotası", expanded=True):
+        st.image("Antartika.png",
+             use_container_width=True, 
+             caption="Antarktika Yaşam ve Bilim")
 
     # 2. ETKİLEŞİMLİ SLAYT SİSTEMİ
     if 'current_slide' not in st.session_state:
