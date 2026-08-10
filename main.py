@@ -340,6 +340,7 @@ elif menu == "🗺️ Kültürel Harita":
     bugün bilim ve teknolojiyle kutuplara taşınmasını simgelemektedir.
     """)
     st.markdown(
+        """
     <div style="
     background: #f8f9fa;
     padding: 20px 24px;
