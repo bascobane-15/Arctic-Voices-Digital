@@ -1232,7 +1232,13 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
     st.image("ilk-arktik-sefer.jpg", caption="Türkiye'nin ilk Arktik seferinden bir kare.", use_container_width=True)
     st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
-
+    # --- BÖLÜM 1: İLK ANTARTİKA SEFERİ ---
+    st.header("1. Ulusal Antarktika Bilim Seferi (2017)")
+    st.write("""
+    Türkiye'nin resmi nitelikteki 1. Ulusal Antarktika Bilim Seferi (TAE-I), 
+    Cumhurbaşkanlığı himayesinde ve ilgili bakanlıkların koordinasyonunda 2017 yılında gerçekleştirilmiştir.
+    """)
+    st.video("https://youtu.be/ilae63gqOKM?si=gwj1hR8bZqGGCUzA")
     st.divider()
 
     # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Video Üstte, Yazılar Altta) ---
