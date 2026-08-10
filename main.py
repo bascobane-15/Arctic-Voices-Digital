@@ -326,7 +326,8 @@ elif menu == "🗺️ Kültürel Harita":
 )
     st.subheader("🗺️ PİRİ REİS HARİTASI")
     st.write("""
-       Piri Reis'in 1513 tarihli dünya haritası.
+       Piri Reis’in 1513 tarihli haritası, döneminin coğrafi keşif anlayışını yansıtan önemli bir eser olarak, 
+       bugün Türkiye’nin kutup bölgelerine uzanan bilimsel keşif yolculuğuna ilham veren güçlü bir tarihsel mirastır. 
         """)
     col1, col2, col3 = st.columns([1,2,1])
 
