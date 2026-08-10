@@ -332,8 +332,6 @@ elif menu == "🗺️ Kültürel Harita":
     st.image("PiriReis.jpg", use_container_width=True)
 
     st.divider()
-    """)
-    
     st.markdown(
         """
     <div style="
