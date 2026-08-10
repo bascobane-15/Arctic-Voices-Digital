@@ -332,12 +332,6 @@ elif menu == "🗺️ Kültürel Harita":
     st.image("PiriReis.jpg", use_container_width=True)
 
     st.divider()
-    st.write("""
-    16.yüzyılda Piri Reis’in ünlü dünya haritasında Antarktika’ya en yakın Güney Amerika kıyılarını tasvir ettiği dünya haritası, 
-    döneminin coğrafi bilgi birikimini ve denizcilik mirasını yansıtan önemli eserlerden biridir. Bugün Türkiye, geçmişten gelen bu keşif ve 
-    haritacılık mirasını bilim ve teknolojiyle geleceğe taşımaktadır. Türkiye’nin Arktik ve Antarktika bölgelerine yönelik bilimsel araştırmaları, 
-    kutup coğrafyalarının daha iyi anlaşılmasına katkı sağlamaktadır. Geçmişten geleceğe uzanan bu yolculuk; haritalarla başlayan keşif ruhunun, 
-    bugün bilim ve teknolojiyle kutuplara taşınmasını simgelemektedir.
     """)
     st.markdown(
         """
@@ -362,6 +356,8 @@ elif menu == "🗺️ Kültürel Harita":
         <b>bilim, teknoloji ve araştırma</b> yoluyla geleceğe taşımaktadır.
         Arktik ve Antarktika bölgelerine yönelik bilimsel çalışmalar,
         Türkiye'nin kutup araştırmalarındaki varlığının önemli bir göstergesidir.
+        Geçmişten geleceğe uzanan bu yolculuk; haritalarla başlayan keşif ruhunun, 
+        bugün bilim ve teknolojiyle kutuplara taşınmasını simgelemektedir.
     </p>
     <div style="
         background:#ffffff;
