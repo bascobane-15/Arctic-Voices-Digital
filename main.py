@@ -1232,15 +1232,6 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
     st.header("1. Ulusal Arktik Bilim Seferi (2019)")
     st.image("ilk-arktik-sefer.jpg", caption="Türkiye'nin ilk Arktik seferinden bir kare.", use_container_width=True)
     st.video("https://youtu.be/Jsf8ggWzKAQ?si=r4Uazv532UJ-7qKl")
-    # --- BÖLÜM 1: İLK ANTARTİKA SEFERİ ---
-    st.header("1. Ulusal Antarktika Bilim Seferi (2017)")
-    st.write("""
-    Türkiye'nin resmi nitelikteki 1. Ulusal Antarktika Bilim Seferi (TAE-I), 
-    Cumhurbaşkanlığı himayesinde ve ilgili bakanlıkların koordinasyonunda 2017 yılında gerçekleştirilmiştir.
-    """)
-    st.write("") # Görsel boşluk
-    st.video("https://youtu.be/ilae63gqOKM?si=gwj1hR8bZqGGCUzA")
-    st.divider()
 
     # --- BÖLÜM 2: 5. ARKTİK SEFERİ (Video Üstte, Yazılar Altta) ---
     st.header("📅 5. Arktik Seferi (2025)")
@@ -1281,8 +1272,18 @@ elif menu == "🇹🇷 Türkiye'nin Çalışmaları":
       
     st.write("") # Buton öncesi minik bir boşluk
     st.link_button("Haberin Detaylarını Oku (AA)", "https://www.aa.com.tr/tr/ekonomi/turkiyenin-kuzey-kutbundaki-bilimsel-ayak-izi-5-arktik-seferi/3650001")
-      
     st.divider()
+   # --- BÖLÜM 1: İLK ANTARTİKA SEFERİ ---
+    st.header("1. Ulusal Antarktika Bilim Seferi (2017)")
+    st.write("""
+    Türkiye'nin resmi nitelikteki 1. Ulusal Antarktika Bilim Seferi (TAE-I), 
+    Cumhurbaşkanlığı himayesinde ve ilgili bakanlıkların koordinasyonunda 2017 yılında gerçekleştirilmiştir.
+    """)
+    st.write("") # Görsel boşluk
+    st.video("https://youtu.be/ilae63gqOKM?si=gwj1hR8bZqGGCUzA")
+    st.divider()
+    
+    
     # --- BÖLÜM 3: UZMAN GÖRÜŞÜ ---
     st.header("🎙️ Uzman Görüşü: Burcu Özsoy")
     st.subheader("Kutup Bölgeleri Bize Ne Anlatıyor?")
