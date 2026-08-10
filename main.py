@@ -325,19 +325,20 @@ elif menu == "🗺️ Kültürel Harita":
     unsafe_allow_html=True
 )
     
-# ==========================================================
-# PİRİ REİS HARİTASI
-# ==========================================================
-piri_reis_map = (
-       "https://commons.wikimedia.org/wiki/Special:FilePath/"
-       "1513%20Piri%20Reis.jpg"
-   )
-   
-    st.image(
-       piri_reis_map,
-       caption="Piri Reis'in 1513 tarihli dünya haritası",
-       use_container_width=True
-   )      
+ # ==========================================================
+ # 🗺️ PİRİ REİS HARİTASI
+ # ==========================================================
+
+ piri_reis_map = (
+     "https://commons.wikimedia.org/wiki/Special:FilePath/"
+     "1513%20Piri%20Reis.jpg"
+ )
+
+ st.image(
+     piri_reis_map,
+     caption="Piri Reis'in 1513 tarihli dünya haritası",
+     use_container_width=True
+ )   
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
   
