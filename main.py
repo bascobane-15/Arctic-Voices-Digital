@@ -332,86 +332,13 @@ elif menu == "🗺️ Kültürel Harita":
     st.image("PiriReis.jpg", use_container_width=True)
 
     st.divider()
-
-    st.markdown(
-        textwrap.dedent("""
-        <div style="
-            background: #f8f9fa;
-            padding: 20px 24px;
-            border-radius: 14px;
-            border-left: 6px solid #8B0000;
-            margin: 18px 0 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        ">
-
-            <h3 style="
-                color:#8B0000;
-                margin-top:0;
-                margin-bottom:12px;
-            ">
-               🧭 Haritacılık Mirasından Kutup Araştırmalarına
-            </h3>
-
-            <p style="
-                font-size:16px;
-                line-height:1.7;
-                text-align:justify;
-            ">
-                <b>Piri Reis</b>, denizcilik ve haritacılık tarihimizin önemli
-                isimlerinden biri olarak, farklı coğrafyalara ilişkin bilgileri
-                haritalarında bir araya getirmiştir.
-            </p>
-
-            <p style="
-                font-size:16px;
-                line-height:1.7;
-                text-align:justify;
-            ">
-                Bugün Türkiye, geçmişten gelen bu keşif ve bilim mirasını
-                <b>bilim, teknoloji ve araştırma</b> yoluyla geleceğe taşımaktadır.
-                Arktik ve Antarktika bölgelerine yönelik bilimsel çalışmalar,
-                Türkiye'nin kutup araştırmalarındaki varlığının önemli bir
-                göstergesidir.
-            </p>
-
-            <div style="
-                background:#fff;
-                padding:14px 18px;
-                border-radius:10px;
-                text-align:center;
-                margin-top:15px;
-                border:1px solid #ddd;
-            ">
-
-                <span style="
-                    font-size:18px;
-                    font-weight:700;
-                    color:#8B0000;
-                ">
-                    🇹🇷 GEÇMİŞTEN GELECEĞE
-                </span>
-
-                <br>
-
-                <span style="
-                    font-size:17px;
-                    line-height:2;
-                ">
-                    🗺️ Haritalar
-                    &nbsp; → &nbsp;
-                    🧭 Keşif
-                    &nbsp; → &nbsp;
-                    🔬 Bilim
-                    &nbsp; → &nbsp;
-                    ❄️ Kutuplar
-                </span>
-
-            </div>
-
-        </div>
-        """),
-        unsafe_allow_html=True
-    )
+    st.write("""
+    16.yüzyılda Piri Reis’in ünlü dünya haritasında Antarktika’ya en yakın Güney Amerika kıyılarını tasvir ettiği dünya haritası, 
+    döneminin coğrafi bilgi birikimini ve denizcilik mirasını yansıtan önemli eserlerden biridir. Bugün Türkiye, geçmişten gelen bu keşif ve 
+    haritacılık mirasını bilim ve teknolojiyle geleceğe taşımaktadır. Türkiye’nin Arktik ve Antarktika bölgelerine yönelik bilimsel araştırmaları, 
+    kutup coğrafyalarının daha iyi anlaşılmasına katkı sağlamaktadır. Geçmişten geleceğe uzanan bu yolculuk; haritalarla başlayan keşif ruhunun, 
+    bugün bilim ve teknolojiyle kutuplara taşınmasını simgelemektedir.
+    """)
  # =========================================================
     st.title("✈️ Türkiye'den Arktik'e Yolculuk")
     st.subheader("Yerli Halkların İzinde Bir Keşif Rotası")
