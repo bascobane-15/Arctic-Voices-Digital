@@ -1583,7 +1583,7 @@ elif menu == "🎮 Görev Merkezi":
     st.set_page_config(page_title="Sami Macerası", layout="wide")
    
    # Başlık
-    st.title("☃️🥶❄️ Kutup Serüven")
+    st.title("☃️🥶❄️ Kutup Serüveni")
    
    # GitHub Oyun Linkin
     game_url = "https://cellad6060-source.github.io/SamiKulturuOyunu1/"
