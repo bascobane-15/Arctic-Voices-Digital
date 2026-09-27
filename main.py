@@ -159,9 +159,11 @@ with st.sidebar:
     # 4. Sol Alt Açıklama Metni (Siyah ve Büyük Stil)
     st.markdown("""
         <div class="sidebar-footer">
-            Bu platform; Kuzey Kutbu’nda yer alan Arktik Bölgesini tanıtmak ve bu bölgede yaşayan yerli halkların kültürlerine yönelik 
-            öğrenci bilgi ve farkındalık düzeyini artırmak amacıyla geliştirilmiş, 
-            dijital bir eğitim platformudur.
+            Bu platform; Bu platform; öğrencilere kutup bölgelerini tanıtan, 
+            Türkiye’nin kutup araştırmalarını öğreten, 
+            kullanıcılarına  Arktik ve Antarktika coğrafyası ve Arktik yerli halklarının 
+            kültürlerini keşfettirmeyi amaçlayan dijital bir eğitim platformudur. 
+            
         </div>
     """, unsafe_allow_html=True)
 
