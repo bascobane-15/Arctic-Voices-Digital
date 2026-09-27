@@ -319,7 +319,7 @@ elif menu == "🗺️ Kültürel Harita":
         TÜRKİYE'DEN KUTUPLARA
     </h2>
     <p style="font-size:19px; margin:8px 0 0 0; font-weight:500;">
-        Piri Reis'in Haritasından Arktik'in Keşfine
+        Piri Reis'in Haritasından Kutupların Keşfine
     </p>
 </div>
 """,
