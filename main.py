@@ -1570,7 +1570,7 @@ elif menu == "🎮 Görev Merkezi":
     height=520
     )
 
-    st.title("❄ Arktik’i Tanıyor Musun? – Bil Bakalım")
+    st.title("❄ Bil Bakalım")
 
     components.html(
     """
@@ -1583,7 +1583,7 @@ elif menu == "🎮 Görev Merkezi":
     st.set_page_config(page_title="Sami Macerası", layout="wide")
    
    # Başlık
-    st.title("☃️🥶❄️ Arktik Serüven")
+    st.title("☃️🥶❄️ Kutup Serüven")
    
    # GitHub Oyun Linkin
     game_url = "https://cellad6060-source.github.io/SamiKulturuOyunu1/"
