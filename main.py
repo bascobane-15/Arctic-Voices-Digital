@@ -293,7 +293,7 @@ if menu == "🏔️ Ana Sayfa":
 
     st.markdown(f"""
         <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border-left: 5px solid #3498db; margin-top: 20px;">
-            <b style="color: #3498db; font-size: 1.1rem;">❄️ Arktik Kaşif Notu: {gunun_kelimesi['kelime']}</b> 
+            <b style="color: #3498db; font-size: 1.1rem;">❄️Kutup Kaşif Notu: {gunun_kelimesi['kelime']}</b> 
             <span style="color: #a0a0a0; font-size: 0.9rem; margin-left: 5px;">({gunun_kelimesi['dil']})</span>
             <p style="margin-top: 10px; font-size: 1rem; line-height: 1.5;">{gunun_kelimesi['anlam']}</p>
         </div>
