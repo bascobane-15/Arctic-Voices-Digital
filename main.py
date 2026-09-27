@@ -159,7 +159,7 @@ with st.sidebar:
     # 4. Sol Alt Açıklama Metni (Siyah ve Büyük Stil)
     st.markdown("""
         <div class="sidebar-footer">
-            Bu platform; Bu platform; öğrencilere kutup bölgelerini tanıtan, 
+            Bu platform; öğrencilere kutup bölgelerini tanıtan, 
             Türkiye’nin kutup araştırmalarını öğreten, 
             kullanıcılarına  Arktik ve Antarktika coğrafyası ve Arktik yerli halklarının 
             kültürlerini keşfettirmeyi amaçlayan dijital bir eğitim platformudur. 
