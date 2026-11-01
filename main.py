@@ -209,7 +209,7 @@ if menu == "🏔️ Ana Sayfa":
     <div style="text-align:center; padding:60px 0;">
     
     <div class="hero-title">
-    Dijital Kutup Kültür Eğitim Platformu
+    Dijital Kutup Eğitim Platformu - DİKAP
     </div>
 
     <div class="hero-subtitle">
